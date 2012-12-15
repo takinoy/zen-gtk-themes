@@ -1,0 +1,30 @@
+/* Fallback Mode Panel */
+
+PanelApplet,
+PanelSeparator {
+    background-image: none;
+    background-color: #CCCCCC;
+}
+
+
+PanelApplet .button {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(#CCCCCC, 1.1)),
+                                     to (shade(#CCCCCC, 0.95)));
+    border-color: shade(#CCCCCC, 0.8);
+    border-style: solid;
+    border-top-color: shade(#CCCCCC, 0.8);
+    border-right-color: shade(#CCCCCC, 0.7);
+    border-bottom-color: shade(#CCCCCC, 0.7);
+    border-left-color: shade(#CCCCCC, 0.8);
+}
+
+PanelApplet .button:active{
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@button_prelight, 1.1)),
+                                     to (shade(@button_prelight, 0.95)));
+    border-color: @border_selected;
+}
+
+PanelApplet .button:prelight {
+}
