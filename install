@@ -1,0 +1,45 @@
+#!/bin/sh
+
+check_file_exist() {
+if ls $1 > /dev/null
+	then
+		echo "$1 already exist, do you want to remove it y/N ?"
+		read answer
+		case $answer in
+		y|Y ) rm -r $1 ;;
+		* ) echo "exit" ; exit 1 ;;
+		esac
+fi
+}
+
+repository="$HOME/Public"
+theme_dir="$HOME/.themes"
+
+# package.name
+echo "which theme do you want to install ?"
+read pkgname
+# delete the shortest substring on the left
+version=${pkgname#*-}
+
+# extract archive
+mkdir /tmp/theme-install
+
+cd /tmp/theme-install
+tar -xf $repository/$pkgname.tar.gz
+
+# install
+set $(ls)
+if [ $# = 1 ]
+	then
+	cd $1
+fi
+
+set $(ls)
+until [ $# = 0 ]
+do
+	if [ "${1%%-*}" == "${pkgname%%-*}" ]
+	then
+	ln -s -r -v $1 $theme_dir/$1'-'$version
+	fi
+shift
+done

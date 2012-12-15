@@ -1,0 +1,26 @@
+#!/bin/sh
+
+repository="$HOME/Public"
+theme_dir="$HOME/.themes"
+
+# package.name
+echo "which theme do you want to remove ?"
+read pkgname
+# delete the longest substring on the left
+name=${pkgname%%-*}
+version=${pkgname#*-}
+
+# remove
+
+cd $theme_dir
+
+rmlist=$(find $name*$version)
+
+echo "do you want to remove theses files into $theme_dir y/N ?"
+echo $rmlist
+read answer
+case $answer in
+y|Y ) rm $rmlist ;;
+* ) echo "exit" ; exit 1 ;;
+esac
+

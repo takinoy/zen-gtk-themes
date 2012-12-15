@@ -1,0 +1,75 @@
+#!/bin/sh
+set -e
+
+###### CONFIG########
+# Create directories
+#target directories
+
+# package.name
+pkgname=${PWD##*/}
+name=${pkgname%%-*}
+version='0.6.0'
+
+# Copy
+target_dir=$(grep "$name-" pkglist)
+#target_dir='Zen-test'
+
+cp_source=$name
+# files or dir to copy
+path_copy='
+gtk-2.0/gtk-widgets.rc
+gtk-2.0/apps/libreoffice.rc
+'
+
+# Build an archive from sources
+check_file_exist() {
+if ls $1 > /dev/null
+	then
+		echo "$1 already exist, do you want to remove it y/N ?"
+		read answer
+		case $answer in
+		y|Y ) rm -r $1 ;;
+		* ) echo "exit" ; exit 1 ;;
+		esac
+fi
+}
+
+check_file_exist cache/$pkgname-$version
+mkdir cache/$pkgname-$version
+
+while read path
+do
+cp -r $path cache/$pkgname-$version
+done < pkglist
+
+echo "path copy = $path_copy"
+
+function copy {
+	if [ "$1" == "" ]
+	then echo 'No files to copy, aborded.'
+	else 
+		until [ $# = 0 ]
+		do
+			cp -f -l -r -v  $1 $(dirname "../$var/$1")
+			shift
+		done
+	fi
+	}
+	
+function make {
+if [ "$1" != "" ]
+then
+until [ $# = 0 ]
+do
+	# target directory
+	var=$1
+	# action
+	copy $path_copy
+	shift
+done
+else echo "no target directories for copying, aborded."
+fi
+}
+
+cd cache/$pkgname-$version/$cp_source
+make $target_dir

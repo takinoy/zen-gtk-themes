@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Zen-nokto
+Type=X-GNOME-Metatheme
+Comment=
+
+[X-GNOME-Metatheme]
+GtkTheme=Zen-nokto
+MetacityTheme=alinea
+IconTheme=Foxtrot
+GtkColorScheme=base_color:#262626,fg_color:#EBE5BC,tooltip_fg_color:#000000,selected_bg_color:#246662,selected_fg_color:#000000,text_color:#E6E6E6,bg_color:#3C3C3C,tooltip_bg_color:#F9FFBF
+CursorTheme=default
+CursorSize=18
+NotificationTheme=slider
