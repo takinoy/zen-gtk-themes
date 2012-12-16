@@ -7,7 +7,6 @@ t=3
 themes='Zen-blua Zen-nigra Zen-nokto Zen-papero Zen-verda'
 # run A winget factory 
 		awf-gtk2  &
-		awf-gtk3  &
 set $themes
 	if [ "$1" != "" ]
 	then
