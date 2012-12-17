@@ -1,6 +1,9 @@
 #!/bin/sh
 set -e
 
+# switch to pkg branch
+git checkout pkg
+
 ###### CONFIG########
 # Create directories
 #target directories
@@ -8,39 +11,17 @@ set -e
 # package.name
 pkgname=${PWD##*/}
 name=${pkgname%%-*}
-version='0.6.0'
 
 # Copy
-target_dir=$(grep "$name-" pkglist)
-#target_dir='Zen-test'
+target_dir=$(ls -1 | grep "$name-")
 
 cp_source=$name
 # files or dir to copy
 path_copy='
 gtk-2.0/gtk-widgets.rc
 gtk-2.0/apps/libreoffice.rc
+gtk-3.0/gtk-widgets.css
 '
-
-# Build an archive from sources
-check_file_exist() {
-if ls $1 > /dev/null
-	then
-		echo "$1 already exist, do you want to remove it y/N ?"
-		read answer
-		case $answer in
-		y|Y ) rm -r $1 ;;
-		* ) echo "exit" ; exit 1 ;;
-		esac
-fi
-}
-
-check_file_exist cache/$pkgname-$version
-mkdir cache/$pkgname-$version
-
-while read path
-do
-cp -r $path cache/$pkgname-$version
-done < pkglist
 
 echo "path copy = $path_copy"
 
@@ -71,5 +52,5 @@ else echo "no target directories for copying, aborded."
 fi
 }
 
-cd cache/$pkgname-$version/$cp_source
+cd $cp_source
 make $target_dir

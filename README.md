@@ -8,9 +8,9 @@ Date : december 10, 2012
 The main goal of this theme is to keep it simple, consistent and to be visually appealing.
 
 Features :
-- thin menubar, toolbar and icons
-- compatibility with Xfce widgets, Xfce notify theme
-- six pre-configured color schemes compatibles with gnome and xfce : Zen, Zen-blua, Zen-nigra, Zen-nokto, Zen-verda, Zen-papero.
+ - thin menubar, toolbar and icons
+ - compatibility with Xfce widgets, Xfce notify theme
+ - six pre-configured color schemes compatibles with gnome and Xfce : Zen, Zen-blua, Zen-nigra, Zen-nokto, Zen-verda, Zen-papero.
 
 This version use only the clearlook engine.
 
