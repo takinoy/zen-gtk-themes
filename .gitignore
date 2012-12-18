@@ -4,3 +4,7 @@
 
 *.tmp
 cache/*
+
+# exception
+!cache/PKGBUILD
+

@@ -19,6 +19,8 @@ The Murrine engine version >=0.98 is needed for the gtk2 version of this theme. 
 Install :
  - extract the archive and copy the theme folders you want into ~/.theme.
  - switch to the gtk theme in your theme manager
+ 
+ Arch users : zen-gtk-themes is available in AUR.
 
 Extras :
  - xfwm4 and metacity-1 windows decorator (see my others artworks)
