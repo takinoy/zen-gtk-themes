@@ -1,11 +1,12 @@
-Zen version 0.6.0
------------------
+zen-gtk-themes version 0.6.0
+----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : december 10, 2012
+Date : december 18, 2012
+Sources : https://github.com/cedl38/Zen-gtk-themes
 
-The main goal of this theme is to keep it simple, consistent and to be visually appealing.
+The main goal of this theme is to keep it simple, consistent and being visually appealing.
 
 Features :
  - thin menubar, toolbar and icons
