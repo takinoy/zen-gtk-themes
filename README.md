@@ -1,11 +1,12 @@
-Zen version 0.6.0
------------------
+zen-gtk-themes version 0.6.1
+----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : december 10, 2012
+Date : december 18, 2012
+Sources : https://github.com/cedl38/Zen-gtk-themes
 
-The main goal of this theme is to keep it simple, consistent and to be visually appealing.
+The main goal of this theme is to keep it simple, consistent and being visually appealing.
 
 Features :
  - thin menubar, toolbar and icons
@@ -19,6 +20,8 @@ The Murrine engine version >=0.98 is needed for the gtk2 version of this theme. 
 Install :
  - extract the archive and copy the theme folders you want into ~/.theme.
  - switch to the gtk theme in your theme manager
+ 
+ Arch users : "zen-gtk-themes" is available in AUR.
 
 Extras :
  - xfwm4 and metacity-1 windows decorator (see my others artworks)
@@ -40,6 +43,10 @@ Suggest for firefox users : to forces Firefox applied your theme install the add
 
 Changelog:
 ----------
+
+0.6.1
+- Rise tab height.
+- Package "zen-gtk-themes" in "AUR" for archlinux users.
 
 0.6.0
 - Remove shadow on menubar.
