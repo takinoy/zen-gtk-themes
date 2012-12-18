@@ -767,7 +767,7 @@ GtkScale.mark {
 }
 
 tab * {
-    padding: 1px 2px 1px 2px;
+    padding: 2px 2px 1px 2px;
 }
 
 .notebook tab {
@@ -781,7 +781,7 @@ tab * {
 }
 
 .notebook tab:active, .notebook tab *:active {
-    padding: 2px 2px 1px 2px;
+    padding: 3px 2px 1px 2px;
 /*
     color: @text_color;
 */
