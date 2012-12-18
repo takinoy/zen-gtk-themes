@@ -42,37 +42,38 @@ Changelog:
 ----------
 
 0.6.0
-- remove shadow on menubar
-- update color sheme for panel, menu, menubar, scroolbar and prelight state
-- modify gtk2 theme to match to its gtk3 version :
+- Remove shadow on menubar.
+- Rpdate color sheme for panel, menu, menubar, scroolbar and prelight state.
+- Modify gtk2 theme to match to its gtk3 version :
 	- remove space between menu frame and menu items
 	- selected color variations between odd and even row for treeviews
-	- flat style for selected items
-- improve focused items effects for gtk3
-- bug fix for selected items color in evince (gtk3)
+	- flat style for selected items.
+- Improve focused items effects for gtk3.
+- Bug fix for selected items color in evince (gtk3).
+- Sources available in git repository.
 
 0.5.0
 - Improve theme rendering and consistency for gtk2 and gtk3 versions.
-- Themes can be installed independently
-- bugs fixed in gtk3 css files, gtk3 gnome-terminal text color.
+- Themes can be installed independently.
+- Bugs fixed in gtk3 css files, gtk3 gnome-terminal text color.
 
 0.4.4
-- use the murrine engine for gtk-2 version
-- theme ported to gtk3 >=3.4
+- Use the murrine engine for gtk-2 version.
+- Theme ported to gtk3 >=3.4.
 
 0.3.4
-- last gtk2 version with the clearlook engine
-- updates from 0.6.0 branch (gtk2)
+- Last gtk2 version with the clearlook engine.
+- Updates from 0.6.0 branch (gtk2).
 
 0.3.2
-- new color schemes and preconfigured settings
-- add notify theme for xfce
+- New color schemes and preconfigured settings.
+- Add notify theme for xfce.
 
 0.2.2 :
-- panels, menu and treeviews settings can be edited in a separate GtkRC file
-- adjustments of color setting and widget proprieties for light and dark color schemes
+- Panels, menu and treeviews settings can be edited in a separate GtkRC file.
+- Adjustments of color setting and widget proprieties for light and dark color schemes.
 
 0.1.1 :
-- patch to set scrollbars width in libreoffice
+- Patch to set scrollbars width in libreoffice.
 
-note : versions 0.2 to 0.3 uses the clearlooks engine
+Note : versions 0.2 to 0.3 uses the clearlooks engine.
