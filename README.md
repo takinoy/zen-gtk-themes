@@ -1,5 +1,5 @@
-Zen version 0.x.x
------------------
+zen-gtk-themes version 0.x.x
+----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
