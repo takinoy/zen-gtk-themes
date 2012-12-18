@@ -1,4 +1,4 @@
-zen-gtk-themes version 0.6.0
+zen-gtk-themes version 0.6.1
 ----------------------------
 
 Author : Cédric Leporcq
@@ -21,7 +21,7 @@ Install :
  - extract the archive and copy the theme folders you want into ~/.theme.
  - switch to the gtk theme in your theme manager
  
- Arch users : zen-gtk-themes is available in AUR.
+ Arch users : "zen-gtk-themes" is available in AUR.
 
 Extras :
  - xfwm4 and metacity-1 windows decorator (see my others artworks)
@@ -43,6 +43,10 @@ Suggest for firefox users : to forces Firefox applied your theme install the add
 
 Changelog:
 ----------
+
+0.6.1
+- Rise tab height.
+- Package "zen-gtk-themes" in "AUR" for archlinux users.
 
 0.6.0
 - Remove shadow on menubar.

@@ -1,4 +1,4 @@
-zen-gtk-themes version 0.6.0
+zen-gtk-themes version 0.6.1
 ----------------------------
 
 Author : Cédric Leporcq
@@ -44,6 +44,10 @@ add the following command in the application launcher :
 
 Changelog:
 ----------
+
+0.6.1
+- Rise tab height.
+- "zen-gtk-themes" is available in AUR.
 
 0.6.0
 - Remove shadow on menubar.
