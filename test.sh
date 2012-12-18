@@ -4,8 +4,9 @@
 t=3
 
 # test les themes
-themes='Zen-blua Zen-nigra Zen-nokto Zen-papero Zen-verda'
-# run A winget factory 
+themes=$(ls -1 | grep "$name-")
+
+# run "A Widget Factory"
 		awf-gtk2  &
 set $themes
 	if [ "$1" != "" ]

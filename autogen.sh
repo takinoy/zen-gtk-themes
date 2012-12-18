@@ -31,7 +31,7 @@ pkgname=${PWD##*/}
 name=${pkgname%%-*}
 # Create directories
 #target directories
-target_dir=$(grep "$name-" pkglist)
+target_dir=$(ls -1 | grep "$name-")
 #target_dir='Zen-test'
 
 #current_dir=$(basename $(pwd))
