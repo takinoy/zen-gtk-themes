@@ -14,7 +14,7 @@ version=${pkgname#*-}
 
 cd $theme_dir
 
-rmlist=$(find $name*$version)
+rmlist=$(ls -1 | grep "$name.*$version")
 
 echo "do you want to remove theses files into $theme_dir y/N ?"
 echo $rmlist
