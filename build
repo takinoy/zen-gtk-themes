@@ -2,7 +2,7 @@
 set -e
 
 # switch to pkg branch
-git checkout pkg
+git checkout pkg-0.3
 
 ###### CONFIG########
 # Create directories
