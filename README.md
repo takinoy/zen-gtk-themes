@@ -41,18 +41,18 @@ Changelog:
 ----------
 
 0.3.4
-- last gtk2 version with the clearlook engine
-- updates from 0.6.0 branch (gtk2)
+- Last gtk2 version with the clearlook engine.
+- Updates from 0.6 branch (gtk2).
 
 0.3.2
-- new color schemes and preconfigured settings
-- add notify theme for xfce
+- New color schemes and preconfigured settings.
+- Add notify theme for xfce.
 
 0.2.2 :
-- panels, menu and treeviews settings can be edited in a separate GtkRC file
-- adjustments of color setting and widget proprieties for light and dark color schemes
+- Panels, menu and treeviews settings can be edited in a separate GtkRC file.
+- Adjustments of color setting and widget proprieties for light and dark color schemes.
 
 0.1.1 :
-- patch to set scrollbars width in libreoffice
+- Patch to set scrollbars width in libreoffice.
 
 note : versions 0.2 to 0.3 uses the clearlooks engine
