@@ -1,4 +1,4 @@
-zen-gtk-themes version 0.6.1
+zen-gtk-themes version 0.6.2
 ----------------------------
 
 Author : Cédric Leporcq
@@ -43,6 +43,12 @@ Suggest for firefox users : to forces Firefox applied your theme install the add
 
 Changelog:
 ----------
+0.6.2
+- Fix titlebar color issue for nigra theme.
+
+0.6.1
+- Rise tab height (gtk3).
+- Package "zen-gtk-themes" in "AUR" for archlinux users.
 
 0.6.1
 - Rise tab height.
@@ -50,27 +56,26 @@ Changelog:
 
 0.6.0
 - Remove shadow on menubar.
-- Rpdate color sheme for panel, menu, menubar, scroolbar and prelight state.
+- Update color sheme for panel, menu, menubar, scroolbar and prelight state.
 - Modify gtk2 theme to match to its gtk3 version :
 	- remove space between menu frame and menu items
 	- selected color variations between odd and even row for treeviews
 	- flat style for selected items.
 - Improve focused items effects for gtk3.
 - Bug fix for selected items color in evince (gtk3).
-- Sources available in git repository.
+- Sources availables in git repository.
 
 0.5.0
 - Improve theme rendering and consistency for gtk2 and gtk3 versions.
 - Themes can be installed independently.
-- Bugs fixed in gtk3 css files, gtk3 gnome-terminal text color.
 
 0.4.4
 - Use the murrine engine for gtk-2 version.
 - Theme ported to gtk3 >=3.4.
 
-0.3.4
+0.3.5
 - Last gtk2 version with the clearlook engine.
-- Updates from 0.6.0 branch (gtk2).
+- Updates from 0.6 branch (gtk2).
 
 0.3.2
 - New color schemes and preconfigured settings.
