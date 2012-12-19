@@ -7,9 +7,9 @@ set -e
 # merge shared stuff
 # git merge shared
 # switch to pkg branch
-git checkout pkg
+git checkout m-pkg
 # merge and resolve conflicts
-# git merge branchname
+# git merge master
 
 # replace symbolic links with source file :
 
@@ -67,3 +67,5 @@ make $target_dir
 # git commit -a -m "vx.x.x"
 # git tag vx.x.x
 # git push origin vx.x.x
+
+# Update pkgbuild
