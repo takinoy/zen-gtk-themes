@@ -72,7 +72,7 @@ Changelog:
 - Use the murrine engine for gtk-2 version.
 - Theme ported to gtk3 >=3.4.
 
-0.3.4
+0.3.5
 - Last gtk2 version with the clearlook engine.
 - Updates from 0.6 branch (gtk2).
 
