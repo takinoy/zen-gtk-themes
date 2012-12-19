@@ -1,4 +1,4 @@
-zen-gtk-themes version 0.3.4
+zen-gtk-themes version 0.3.5
 ----------------------------
 
 Author : Cédric Leporcq
@@ -40,7 +40,7 @@ Suggest for firefox users : to forces Firefox applied your theme install the add
 Changelog:
 ----------
 
-0.3.4
+0.3.5
 - Last gtk2 version with the clearlook engine.
 - Updates from 0.6 branch (gtk2).
 

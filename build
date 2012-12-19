@@ -9,7 +9,7 @@ set -e
 # switch to pkg branch
 git checkout v0.3-pkg
 # merge and resolve conflicts
-# git merge master
+# git merge v0.3
 
 # replace symbolic links with source file :
 
