@@ -97,54 +97,44 @@ style "default"
 	base[INSENSITIVE] = @bg_color
 	base[ACTIVE]      = @button_prelight
 
-	engine "murrine" 
-	{
-		animation           = FALSE
-		contrast            = 0.7               # 0.8 for less contrast, more than 1.0 for more contrast on borders
-		focus_color         = @button_prelight
-		glazestyle          = 0                 # 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved highlight, 4 = beryl highlight
-		gradient_shades     = {1.0,1.0,1.0,1.0} #{1.1,1.0,1.0,0.87} 
-		glowstyle           = 0                 # 0,1,2,3,4
-		glow_shade          = 1.1
-		highlight_shade     = 1.0               # set highlight amount for buttons or widgets
-		lightborder_shade   = 1.0               # sets lightborder amount for buttons or widgets
-		lightborderstyle    = 0                # 0 = lightborder on top side, 1 = lightborder on all sides
-		listviewheaderstyle = 1                 # 0 = flat, 1 = glassy, 2 = raised
-		listviewstyle       = 0                 # 0 = nothing, 1 = dotted
-		menubaritemstyle    = 0                 # 0 = menuitem look, 1 = button look
-		menubarstyle        = 0                 # 0 = flat, 1 = glassy, 2 = gradient, 3 = striped
-		#menuitemstyle       = 0                 # 0 = flat, 1 = glassy, 2 = striped
-		menustyle           = 0                 # 0 = no vertical menu stripe, 1 = display vertical menu stripe
-		progressbarstyle    = 1                 # 0 = nothing, 1 = stripes, 2 = lines
-		reliefstyle         = 0                 # 0 = flat, 1 = inset, 2 = shadow
-		rgba                = FALSE             # FALSE = disabled, TRUE = enabled
-		roundness           = 2                 # 0 = squared, 1 = old default, more will increase roundness
-		scrollbarstyle      = 2                 # 0 = nothing, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
-		sliderstyle         = 1                 # 0 = nothing added, 1 = handles
-		stepperstyle        = 0                 # 0 = standard, 1 = integrated stepper handles, 2 = unknown			
-		toolbarstyle        = 0                 # 0 = flat, 1 = glassy, 2 = gradient		
-
-		# Murrine version >=0.98
-		#arrowstyle          = 0                 # 0 = normal arrows, 1 = filled arrows		
-		border_shades       = { 1.2, 1.0 }      # gradient to draw on border
-		cellstyle	    = 0
-		colorize_scrollbar  = FALSE		
-		comboboxstyle       = 0                 # 0 = normal combobox, 1 = colorized combobox below arrow		
-		expanderstyle	    = 0
-		focusstyle	    = 3
-		prelight_shade      = .95               # shade level for scrollbar's slider, comboboxstyle(1), and prelight state with gradient_colors		
-		separatorstyle      = 1                 # 0 = Hard seperators 1 = Smooth seperators
-		#shadow_shades       = { 0.8, 2.2 }       gradient for shadows.
-		textstyle           = 0                 # 0 = normal text, 1 = inset		
-		trough_shades	    = { 0.85, 0.95 }	# draw gradient on trough of GtkScrollbar and GtkProgressbar
-		trough_border_shades = { 0.9, 0.9 }
-		}
+    engine "xfce"
+    {
+	smooth_edge = true
+	grip_style = none
+        boxfill
+        {
+            fill_style = plain
+        }
+    }
 }
 
-class "GtkWidget"                  style "default"
-#widget_class "*"                   style "default"
+#class "GtkWidget"                  style "default"
+widget_class "*"                   style "default"
 
-style "entry" {
+style "gradient" = "default"
+{
+    engine "xfce"
+    {
+        smooth_edge = true
+        grip_style = none
+        boxfill
+        {
+            fill_style = gradient
+            orientation = vertical
+            shade_start = 1.10
+            shade_end = 0.90
+        }
+    }
+}
+
+widget_class "*GtkList*"           style "gradient"
+class "*GtkList*"                  style "gradient"
+widget_class "*GtkCList*"          style "gradient"
+class "*GtkCList*"                 style "gradient"
+widget_class "*Text*"              style "gradient"
+class "*Text*"                     style "gradient"
+
+style "entry" = "gradient" {
 	xthickness = 3
 	ythickness = 3
  
@@ -153,35 +143,36 @@ style "entry" {
 }
 
 class "*Entry*"                    style "entry"
-widget_class "*Entry*"                    style "entry"
+widget_class "*Entry*"             style "entry"
 
 #############
 #   Menus   #
 #############
 
-style "menu"
+style "menu" = "gradient"
 {
-	xthickness = 0
-	ythickness = 0
-	
+	xthickness = 1
+	ythickness = 1
 	bg[NORMAL]      = mix (0.6, @base_color, @bg_color)  # Color of menu background.
 	fg[NORMAL]      = @text_color
 	#bg[INSENSITIVE]      = shade (1.04, @bg_color)
 	fg[PRELIGHT] 	= @selected_fg_color  # Color of prelight menu item text.
 	base[NORMAL]	= @base_color # Color for menu-item radio/checks background.
-    #bg[PRELIGHT]	= shade(1.1, @selected_bg_color)
+    bg[PRELIGHT]	= shade(1.1, @selected_bg_color)
     bg[SELECTED]      = shade(1.1, @selected_bg_color)
 	fg[INSENSITIVE]   = mix(0.7, darker(mix (0.6, @base_color, @bg_color)), @text_color)
 
-  	engine "murrine" 
-	{
-		gradient_shades     = {1.0,1.0,1.0,1.0} #{1.1,1.0,1.0,0.87}
-		#border_shades = { 0.9, 0.9 }
-		border_shades = { 1.1, 1.1 }
-		#roundness = 0
-		#lightborderstyle        = 1
-
-	}
+    engine "xfce"
+    {
+        smooth_edge = true
+        boxfill
+        {
+            fill_style = plain
+            orientation = vertical
+            shade_start = 1.1
+            shade_end = 0.9
+        }
+    }
 }
 
 
@@ -217,6 +208,18 @@ style "menuitem" = "menu"
 {
     xthickness = 1
     ythickness = 2
+
+    engine "xfce"
+    {
+        smooth_edge = true
+        boxfill
+        {
+            fill_style = plain
+            orientation = vertical
+            shade_start = 0.90
+            shade_end = 1.10
+        }
+    }
 }
 
 widget_class "*MenuItem*"          style "menuitem"
@@ -227,15 +230,12 @@ style "menubar" = "menu"
     xthickness = 1
     ythickness = 3
 	GtkMenuBar :: shadow-type = GTK_SHADOW_NONE
+    bg[PRELIGHT]	= shade (1.05, @button_prelight)
 	bg[SELECTED]	= shade (1.05, @button_prelight)
     #bg[SELECTED]      = @button_prelight
 	bg[NORMAL]      = @bg_color  # Color of menu background.
 	fg[NORMAL]      = @fg_color
 	fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
-  	engine "murrine" 
-	{
-		roundness = 0
-	} 
 }
 
 widget_class "*BonoboDockItem"     style "menubar"
@@ -268,13 +268,18 @@ style "menuitem_text_is_fg_color_workaround" {
 # This is the part of the workaround that fixes the menus
 widget "*.gtk-combobox-popup-menu.*" style "menuitem_text_is_fg_color_workaround"
 
-style "pager"
+style "pager" = "gradient"
 {
     xthickness = 0
     ythickness = 0
 
     bg[SELECTED]      = @tooltip_bg_color
     fg[SELECTED]      = @tooltip_fg_color
+
+    engine "xfce"
+    {
+        smooth_edge = true
+    }
 }
 
 widget_class "*Pager*"             style "pager"
@@ -297,13 +302,18 @@ style "button" = "default"
     #fg[SELECTED]      = "#f00000"
 	bg[INSENSITIVE]   = shade (1.04, @bg_color)
 
-  	engine "murrine" 
-	{
-		gradient_shades     = {1.1,1.0,1.0,0.95}
-		contrast            = 0.8
-		#reliefstyle         = 0
-		border_shades = { 0.95, 0.9 }		
-	}
+    engine "xfce"
+    {
+        smooth_edge = true
+        grip_style = none
+        boxfill
+        {
+            fill_style = gradient
+            orientation = vertical
+            shade_start = 1.10
+            shade_end = 0.90
+        }
+    }
 }
 
 widget_class "*Button*"            style "button"
@@ -350,9 +360,7 @@ style "iconview" = "view" {
 style "treeview" = "iconview"
 {
 	# Enable color variation for odd and even rows.
-	engine "pixmap"
-	{
-	}
+
 }
 
 style "sidepane"
@@ -379,13 +387,19 @@ style "treeview_header" = "default" {
 	xthickness = 2
 	ythickness = 1
 	bg[PRELIGHT] = shade (1.04,@bg_color)
-
-  	engine "murrine" 
-	{
-		roundness = 0
-		gradient_shades     = {0.96,0.96,0.96,0.92}
-	}
+    engine "xfce"
+    {
+        smooth_edge = true
+        boxfill
+        {
+            fill_style = plain
+            orientation = vertical
+            shade_start = 0.92
+            shade_end = 1.0
+        }
+    }
 }
+
 # Treeview headers (and similar stock GTK+ widgets)
 widget_class "*.<GtkTreeView>.<GtkButton>" style "treeview_header"
 widget_class "*.<GtkCTree>.<GtkButton>" style "treeview_header"
@@ -403,11 +417,6 @@ style "notebook" = "default"
     bg[ACTIVE]   = mix (0.85, shade(0.88,@bg_color),"#FFFFFF")  # Unfocused tab background.
 	bg[NORMAL]   = mix(0.8, @bg_color, "#FFFFFF") # Tab background.
 
-	engine "murrine" 
-	{
-		contrast        = 1.1
-		gradient_shades     = {1.3,1.1,1.1,0.9}
-	} 
 }
 
 widget_class "*.GtkNotebook"       style "notebook"
@@ -427,11 +436,19 @@ style "scrollbar" = "default"
 {
 	bg[NORMAL]        = mix (0.9, @bg_color,"#FFFFFF")
     bg[PRELIGHT]      = mix (0.15, @button_prelight, @bg_color)
-
-	engine "murrine" {
-		gradient_shades	= {1.1,1.0,1.0,0.9}
-		border_shades	= {0.9, 0.9}			
-	}
+  
+    engine "xfce"
+    {
+        smooth_edge = true
+        #grip_style = none
+        boxfill
+        {
+            fill_style = gradient
+            orientation = automatic
+            shade_start = 1.10
+            shade_end = 0.90
+        }
+    }
 }
 
 widget_class "*GtkScrollbar*"     style "scrollbar"
@@ -449,13 +466,18 @@ style "scale"="scrollbar"
 	GtkWidget	::focus-padding		= 2
 	bg[SELECTED] = @button_prelight
 
-	engine "murrine"
-	{
-		roundness 		= 7
-		gradient_shades		= {1.1,1.0,1.0,0.9}
-		contrast		= 1.0
-		roundness = 2		
-	}
+    engine "xfce"
+    {
+        smooth_edge = true
+        grip_style = handle
+        boxfill
+        {
+            fill_style = gradient
+            orientation = automatic
+            shade_start = 1.10
+            shade_end = 0.90
+        }
+    }
 }
 
 widget_class "*GtkHScale*"         style "scale"
@@ -470,7 +492,7 @@ style "statusbar" {
 
 widget_class "*<GtkStatusbar>*" style "statusbar"
 
-style "progress"
+style "progress" = "gradient"
 {
     xthickness = 1
     ythickness = 1
@@ -479,17 +501,18 @@ style "progress"
 	bg[SELECTED]	  = @button_prelight
     bg[PRELIGHT]      = @button_prelight
 
-	engine "murrine" {
-		gradient_shades = {1.0,1.0,1.0,0.9}
-		#trough_shades	= {0.95, 1.15}
-		#trough_border_shades	= { 0.8, 0.7 }
-		roundness 	= 7
-		contrast	= 0.6
-		#border_shades	= { 0.9, 0.9 }
-		#lightborder_shade   = 1.0
-		#glowstyle	= 0
-		#glow_shade	= 1.0
-	}
+    engine "xfce"
+    {
+        smooth_edge = true
+        grip_style = none
+        boxfill
+        {
+            fill_style = gradient
+            orientation = automatic
+            shade_start = 1.10
+            shade_end = 0.90
+        }
+    }
 }
 
 widget_class "*GtkProgress*"       style "progress"
@@ -497,7 +520,16 @@ class "*GtkProgress*"              style "progress"
 
 style "handlebox" = "default"
 {
-
+	
+    engine "xfce"
+    {
+        smooth_edge = true
+        grip_style = none
+        boxfill
+        {
+            fill_style = plain
+        }
+    }
 }
 
 widget_class "*HandleBox*"         style "handlebox"
@@ -523,9 +555,6 @@ style "titlebar" = "default"
     bg[SELECTED] = @button_prelight
     fg[SELECTED] = mix(0.26, @bg_color, @selected_fg_color)
     fg[INSENSITIVE] = mix(0.5, @bg_color, @fg_color)
-	#bg[SELECTED] = mix(0.2, @button_prelight, "#3C3C3C")
-	#fg[SELECTED]	= "#FFFFFF"
-    #fg[INSENSITIVE] = "#E6E6E6"
 }
 
 widget "xfwm"                      style "titlebar"

@@ -31,12 +31,15 @@ style "panel" = "light-panel"
 
 style "panel_button" = "default"
 {
-		engine "murrine" {
-		#border_shades	= { 1.0, 1.0 }
-		contrast        = 0.6
-		#gradient_shades     = {0.9,1.0,1.0,1.0}
-		roundness	= 0
-	}
+    engine "xfce"
+    {
+	smooth_edge = true
+	#grip_style = slide
+        boxfill
+        {
+            fill_style = plain
+        }
+    }
 }
 
 # Theme panel elements

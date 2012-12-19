@@ -5,7 +5,7 @@ style "colors_papero"
 	bg_pixmap[NORMAL] 	= "window-bg.png"	
 }
 
-class "GtkWidget"                  style "colors_papero"
+widget_class "*"                   style "default"
 
 widget_class "*GtkTree*"           style "sidepane"
 class "*GtkTree*"                  style "sidepane"
