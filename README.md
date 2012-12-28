@@ -1,4 +1,4 @@
-zen-gtk-themes version 0.6.2
+zen-gtk-themes version 0.6.3
 ----------------------------
 
 Author : Cédric Leporcq
@@ -43,6 +43,10 @@ Suggest for firefox users : to forces Firefox applied your theme install the add
 
 Changelog:
 ----------
+
+0.6.3
+- Improve gtk2/gtk3 consistency (menubar padding, arrowstyle).
+
 0.6.2
 - Fix titlebar color issue for nigra theme.
 
@@ -52,11 +56,8 @@ Changelog:
 
 0.6.0
 - Remove shadow on menubar.
-- Update color sheme for panel, menu, menubar, scroolbar and prelight state.
-- Modify gtk2 theme to match to its gtk3 version :
-	- remove space between menu frame and menu items
-	- selected color variations between odd and even row for treeviews
-	- flat style for selected items.
+- Update color scheme for panel, menu, menubar, scroolbar and prelight state.
+- Modify gtk2 theme to match to its gtk3 version.
 - Improve focused items effects for gtk3.
 - Bug fix for selected items color in evince (gtk3).
 - Sources availables in git repository.

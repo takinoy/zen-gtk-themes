@@ -1,7 +1,7 @@
 # Maintainer: Ced <cedl38@gmail.com>
 
 pkgname=zen-gtk-themes
-pkgver=0.6.2
+pkgver=0.6.3
 pkgrel=1
 pkgdesc="A gtk2/gtk3 theme for Xfce and gnome that attempt to keep it simple, consistent and being visually appealing."
 arch=('any')
