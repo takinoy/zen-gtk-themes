@@ -125,7 +125,7 @@ style "default"
 		toolbarstyle        = 0                 # 0 = flat, 1 = glassy, 2 = gradient		
 
 		# Murrine version >=0.98
-		#arrowstyle          = 0                 # 0 = normal arrows, 1 = filled arrows		
+		arrowstyle          = 2                 # 0 = normal arrows, 1 = filled arrows, 2 = triangular arrows	
 		border_shades       = { 1.2, 1.0 }      # gradient to draw on border
 		cellstyle	    = 0
 		colorize_scrollbar  = FALSE		
