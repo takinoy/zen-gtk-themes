@@ -977,6 +977,10 @@ GtkNotebook tab:active {
     border-color: @border_selected;
 }
 
+.menubar>.menuitem {
+    padding: 3px 2px 3px 2px;
+}
+
 .menubar>.menuitem:hover {
     background-color: @button_prelight ;
     border-color: shade(@button_prelight, 0.9);   
