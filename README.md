@@ -1,9 +1,9 @@
-zen-gtk-themes version 0.6.3
+zen-gtk-themes version 0.7.0
 ----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : december 18, 2012
+Date : december 29, 2012
 Sources : https://github.com/cedl38/Zen-gtk-themes
 
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
@@ -31,11 +31,15 @@ Extract it and copy the folder icon-themes/Foxtrot/ into ~/.icons.
 
 Specific settings for libreoffice :
 Using small scrollbars in libreoffice 3.* cause sheet Tabs too small.
-To fix the scrollbar width for libreoffice you have two options :
- - Run the script "libreoffice.rc"
-add the following command in the application launcher :
-# bash -c 'GTK2_RC_FILES=$HOME/.themes/Zen/gtk-2.0/apps/libreoffice.rc application-command'
- - edit Zen/gtk-2.0/gtkrc and change value of "GtkScrollbar::slider-width" from "12" to "14"
+To fix the scrollbar width for libreoffice you have tree options :
+ - add the following command in the application launcher :
+# bash -c 'GTK2_RC_FILES=$HOME/.themes/Zen/gtk-2.0/apps/libreoffice.rc application-command' --> run the patch "libreoffice.rc"
+ - run the script libreoffice-patch.sh (use it with care) :
+ # cd <package-directory>
+ # chmod +x libreoffice-patch.sh
+ # ./libreoffice-patch.sh
+ This script will add customs application launchers for libreoffice in .local/share/applications. You can remove the generated files libreoffice-* safely.
+ - edit Zen/gtk-2.0/gtkrc and change value of "GtkScrollbar::slider-width" from "11" to "14".
 see also :
 http://urukrama.wordpress.com/2008/07/13/setting-a-custom-gtk-theme-for-specific-applications/
 
@@ -44,23 +48,16 @@ Suggest for firefox users : to forces Firefox applied your theme install the add
 Changelog:
 ----------
 
-0.6.3
-- Improve gtk2/gtk3 consistency (menubar padding, arrowstyle).
+0.7.0
+- Improve gtk2/gtk3 consistency : menubar padding, arrowstyle.
+- add libreoffice-patch.sh script.
 
 0.6.2
-- Fix titlebar color issue for nigra theme.
-
-0.6.1
-- Rise tab height (gtk3).
-- Package "zen-gtk-themes" in "AUR" for archlinux users.
-
-0.6.0
 - Remove shadow on menubar.
 - Update color scheme for panel, menu, menubar, scroolbar and prelight state.
-- Modify gtk2 theme to match to its gtk3 version.
-- Improve focused items effects for gtk3.
-- Bug fix for selected items color in evince (gtk3).
+- Improve gtk2/gtk3 consistency.
 - Sources availables in git repository.
+- Package "zen-gtk-themes" in "AUR" for archlinux users.
 
 0.5.0
 - Improve theme rendering and consistency for gtk2 and gtk3 versions.
