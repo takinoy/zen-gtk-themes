@@ -9,10 +9,10 @@ url="http://xfce-look.org/content/show.php/Zen+suite?content=149883"
 license=('GPL3')
 groups=('xfce')
 depends=('gtk2' 'gtk-engines' 'gtk-engine-murrine')
-optdepends=('alinea-themes' 'mini-xfwm4-theme' 'gnome-themes-extras: Foxtrot icons' 'xfce4-notifyd' 'gtk3>=3.4.1' 'libreoffice-patch.sh : script to increase sheet tabs for LibreOffice. See README for more infos')
+optdepends=('alinea-themes' 'mini-xfwm4-theme' 'gnome-themes-extras: Foxtrot icons' 'xfce4-notifyd' 'gtk3>=3.4.1' 'libreoffice-patch.sh: script to increase sheet tabs for LibreOffice. See README for more infos')
 
 source=("https://github.com/cedl38/$pkgname/archive/v$pkgver.tar.gz")
-sha256sums=('1376e5d7d51562aa8ba6435e4206d5f5a74fe571b2ceeee5dc10f2491389886e')
+sha256sums=('85ad39262222cac7ba369f6c607987fcc5ca9dc0cdb431ed3bc440d465faede5')
 
 build() {
   cd $srcdir/$pkgname'-'$pkgver
