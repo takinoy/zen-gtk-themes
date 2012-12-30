@@ -59,7 +59,7 @@ Changelog:
 - Sources availables in git repository.
 - Package "zen-gtk-themes" in "AUR" for archlinux users.
 
-0.5.0
+0.5
 - Improve theme rendering and consistency for gtk2 and gtk3 versions.
 - Themes can be installed independently.
 

@@ -301,14 +301,13 @@ widget_class "*OptionMenu*"        style "button"
 class "*OptionMenu*"               style "button"
 
 style "comboboxentry" {
-
 }
 widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
 
+style "combobox" {
 #don't work
-#style "combobox" {
-	#fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
-#}
+#fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
+}
 
 #widget_class "*<GtkCombo>*" style "combobox"
 
