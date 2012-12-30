@@ -291,10 +291,8 @@ style "button" = "default"
 
     bg[NORMAL]        = mix (0.9, @bg_color, @base_color) # Color for buttons.
 	bg[PRELIGHT]      = mix(0.4, @button_prelight, shade(1.0, @bg_color))
-    bg[SELECTED]      = @selected_bg_color
+    bg[SELECTED]      = @button_prelight
 
-    #fg[ACTIVE]        = "#f00000"
-    #fg[SELECTED]      = "#f00000"
 	bg[INSENSITIVE]   = shade (1.04, @bg_color)
 
   	engine "murrine" 
