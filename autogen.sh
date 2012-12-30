@@ -28,7 +28,7 @@ esac
 ###### CONFIG########
 # package.name
 pkgname=${PWD##*/}
-name=${pkgname%%-*}
+name=X${pkgname%%-*}
 # Create directories
 #target directories
 target_dir=$(ls -1 | grep "$name-")
