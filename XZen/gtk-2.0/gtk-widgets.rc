@@ -25,14 +25,14 @@ style "default"
 
 	GtkPaned::handle-size = 3 # Width of handles.
 	GtkRange::trough-border = 0
-	GtkRange::slider-width = 12
+	GtkRange::slider-width = 11
 	GtkRange::stepper-size = 12
 	GtkScale::slider-length	= 24 # Length of sliders.
 	GtkScale::trough-side-details = 1
     GtkScale::slider-width  = 12
 
  	GtkScrollbar::min-slider-length = 20 # Min. length of scrollbars.
-	GtkScrollbar::slider-width = 12
+	GtkScrollbar::slider-width = 11
 	GtkScrollbar::stepper-size = 20
     
   	GtkScrolledWindow::scrollbar-spacing = 0 # This sets the spacing between scrollbars.

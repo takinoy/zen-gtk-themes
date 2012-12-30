@@ -4,6 +4,9 @@
 
 *.tmp
 cache/*
+TODO
+archives/*
+screenshots/*
 
 # exception
 !cache/PKGBUILD

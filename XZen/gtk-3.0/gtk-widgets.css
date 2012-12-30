@@ -26,7 +26,7 @@
     -GtkPaned-handle-size: 3;
     -GtkProgressBar-min-horizontal-bar-height: 12;
     -GtkProgressBar-min-vertical-bar-width: 12;
-    -GtkRange-slider-width: 12;
+    -GtkRange-slider-width: 11;
     -GtkRange-stepper-size: 20;
     -GtkRange-stepper-spacing: 0;
     -GtkRange-trough-border: 0;
@@ -983,6 +983,10 @@ GtkNotebook tab:active {
 .menubar:selected {
     background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@selected_bg_color, 0.9)), to(shade(@selected_bg_color, 0.85)));
     border-color: @border_selected;
+}
+
+.menubar>.menuitem {
+    padding: 3px 2px 3px 2px;
 }
 
 .menubar>.menuitem:hover {

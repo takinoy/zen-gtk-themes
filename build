@@ -1,8 +1,17 @@
 #!/bin/sh
+
 set -e
 
+# How to build :
+
+# merge shared stuff
+# git merge shared
 # switch to pkg branch
 git checkout m-pkg
+# merge and resolve conflicts
+# git merge master
+
+# replace symbolic links with source file :
 
 ###### CONFIG########
 # Create directories
@@ -12,7 +21,6 @@ git checkout m-pkg
 pkgname=${PWD##*/}
 name=${pkgname%%-*}
 
-# Copy
 target_dir=$(ls -1 | grep "$name-")
 
 cp_source=$name
@@ -54,3 +62,8 @@ fi
 
 cd $cp_source
 make $target_dir
+
+# make a commit
+# git commit -a -m "vx.x.x"
+# git tag vx.x.x
+# git push origin vx.x.x
