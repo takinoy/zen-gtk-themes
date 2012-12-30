@@ -1,9 +1,9 @@
-zen-gtk-themes version 0.7
+zen-gtk-themes version 0.7.1
 ----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : december 29, 2012
+Date : december 30, 2012
 Sources : https://github.com/cedl38/Zen-gtk-themes
 
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
@@ -47,6 +47,8 @@ Suggest for firefox users : to forces Firefox applied your theme install the add
 
 Changelog:
 ----------
+0.7.1
+- libreoffice-patch.sh should work if the theme is installed in /usr/share/themes or $HOME/.themes.
 
 0.7
 - Improve gtk2/gtk3 consistency : menubar padding, arrowstyle.
