@@ -5,8 +5,21 @@
 # copy libreoffice exec to .local/share/applications
 
 lo_exec='calc.desktop draw.desktop startcenter.desktop writer.desktop'
+theme_dir=""
+cd /usr/share/themes
+if find Zen* > /dev/null
+then
+theme_dir=$(pwd)/$(find Zen* | head -1)
+else
 cd $HOME/.themes
-theme_dir=$(find Zen* | head -1)
+	if find Zen* > /dev/null
+	then
+	theme_dir=$(pwd)/$(find Zen* | head -1)
+	else
+	echo "Theme Zen* not installed, aborded"
+	exit 1
+	fi
+fi
 
 set $lo_exec
 until [ $# = 0 ]
@@ -22,9 +35,9 @@ exec=$(echo $1 | cut -f1 -d.)
 	# replace exec lines in files
 	if [ "$1" == "startcenter.desktop" ]
 	then
-	sed -i "s|Exec=libreoffice %U|Exec=bash -c 'GTK2_RC_FILES=$\HOME/.themes/$theme_dir/gtk-2.0/apps/libreoffice.rc libreoffice %U'|g" "/home/cedric/.local/share/applications/libreoffice-$1"	
+	sed -i "s|Exec=libreoffice %U|Exec=bash -c 'GTK2_RC_FILES=$theme_dir/gtk-2.0/apps/libreoffice.rc libreoffice %U'|g" "/home/cedric/.local/share/applications/libreoffice-$1"	
 	else
-	sed -i "s|Exec=libreoffice --$exec %U|Exec=bash -c 'GTK2_RC_FILES=$\HOME/.themes/$theme_dir/gtk-2.0/apps/libreoffice.rc libreoffice --$exec %U'|g" "/home/cedric/.local/share/applications/libreoffice-$1"
+	sed -i "s|Exec=libreoffice --$exec %U|Exec=bash -c 'GTK2_RC_FILES=$theme_dir/gtk-2.0/apps/libreoffice.rc libreoffice --$exec %U'|g" "/home/cedric/.local/share/applications/libreoffice-$1"
 	fi	
 shift
 done
