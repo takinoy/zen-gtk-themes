@@ -6,7 +6,7 @@
 
 lo_exec='calc.desktop draw.desktop startcenter.desktop writer.desktop'
 cd $HOME/.themes
-theme_dir=$(find Zen* | head -1)
+theme_dir=XZen
 
 set $lo_exec
 until [ $# = 0 ]
