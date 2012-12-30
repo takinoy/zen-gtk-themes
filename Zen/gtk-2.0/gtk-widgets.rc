@@ -4,8 +4,6 @@
 
 gtk-icon-sizes	= "gtk-large-toolbar=24,24:gtk-small-toolbar=16,16:gtk-button=16,16:gtk-dialog=16,16" # This enables "compact-mode".
 
-#gtk-button-images	= 0 # Enables or disables icons on buttons (OS X-like).
-
 style "default"
 {
 	xthickness = 2
@@ -14,12 +12,8 @@ style "default"
 	GtkButton::child-displacement-x = 1 # Pressed button icon displacement.
 	GtkButton::child-displacement-y = 1 # Pressed button icon displacement.
 	GtkButton::default_outside_border            = {0, 0, 0, 0}
-    #GtkButton::child_internal_pad_x           = 0
-    #GtkButtonBox::child_internal_pad_y           = 0
-    #GtkButtonBox::child_min_heigth               = 0
-    #GtkButtonBox::child_min_width                = 0
     GtkButton::default-border = { 0, 0, 0, 0 }
-   	GtkButton      ::focus-padding		= 0 # This can give you a more compact appearance.
+   	GtkButton::focus-padding = 0 # This can give you a more compact appearance.
 	GtkCheckButton::indicator-size = 12 # Size for check buttons.
 	GtkRadioButton::indicator-size = 12
 
@@ -41,9 +35,8 @@ style "default"
   	GtkProgressBar::min-horizontal-bar-height = 12
 
 	GtkToolbar::internal-padding = 0 # Toolbar padding.
-	GtkToolbar::shadow_type           = none
+	GtkToolbar::shadow_type = none
 	GtkTreeView::expander-size = 12
-    #GtkTreeView::expander-size                   = 11
 	GtkTreeView::vertical-separator = 0
 
 	GtkMenu::horizontal-padding = 0
@@ -57,7 +50,7 @@ style "default"
 	GtkEntry::honors-transparent-bg-hint = 1
 	GtkMenuBar::internal-padding = 0
 
-    GtkMenuItem::selected_shadow_type            = etched-in
+    GtkMenuItem::selected_shadow_type = etched-in
 
 	GtkRange::slider_width            = 15
     GtkRange::stepper_size            = 15
@@ -68,7 +61,7 @@ style "default"
 	#NautilusIconContainer::frame_text=1
 	#NautilusIconContainer::normal_alpha=150
 
-    #ExoIconBar::focus_padding                    = 1
+    #ExoIconBar::focus_padding = 1
 
 	####################
 	# Color Definitions
@@ -103,9 +96,9 @@ style "default"
 		toolbarstyle = 0 # 0 makes toolbars flat.
 		animation = TRUE # FALSE disables progressbar animations.
 		radius = 2.0
-		style		= GUMMY # Could also be set to GLOSSY.
+		style = GUMMY # Could also be set to GLOSSY.
 
-		hint		= "use-hints" # Set a hint to disable backward compatibility fallbacks.
+		hint = "use-hints" # Set a hint to disable backward compatibility fallbacks.
 		contrast = 0.92
 	}
 }
@@ -171,10 +164,6 @@ style "dark-menu" {
 	text[SELECTED]	= @selected_fg_color
 	text[ACTIVE]	= @selected_fg_color
 	text[INSENSITIVE]	= "#000000"
-
-#	fg[PRELIGHT] = @selected_fg_color  # Color of selected menu item text.
-#	bg[SELECTED] = mix (0.7, @selected_bg_color, @bg_color)  # Color of menu items.
-#	bg[PRELIGHT]	= mix (0.7, @selected_bg_color, @bg_color)  # Color of menu items.
 }
 
 widget_class "*Menu*"              style "menu"
