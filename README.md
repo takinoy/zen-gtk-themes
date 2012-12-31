@@ -1,4 +1,4 @@
-zen-gtk-themes version 0.7.1
+zen-gtk-themes version 0.7.2
 ----------------------------
 
 Author : Cédric Leporcq
@@ -37,8 +37,10 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 
 Changelog:
 ----------
-0.7.1
-- libreoffice-patch.sh should work even if the theme is installed in /usr/share/themes or $HOME/.themes.
+
+0.7.2 : adjust gtk3 arrow scaling.
+
+0.7.1 : libreoffice-patch.sh should work even if the theme is installed in /usr/share/themes or $HOME/.themes.
 
 0.7
 - Improve gtk2/gtk3 consistency : menubar padding, arrowstyle.
