@@ -7,11 +7,14 @@ set -e
 # merge shared stuff
 # git merge shared
 # switch to pkg branch
-git checkout m-pkg
+# git checkout m-pkg
 # merge and resolve conflicts
 # git merge master
+# git checkout v0.3
+# ./build
 
 # replace symbolic links with source file :
+git checkout v0.3-pkg
 
 ###### CONFIG########
 # Create directories
@@ -66,6 +69,6 @@ make $target_dir
 # make a commit
 # git commit -a -m "vx.x.x"
 # git tag vx.x.x
-# git push origin vx.x.x
+# git push --tags
 
 # Update pkgbuild
