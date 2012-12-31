@@ -1,4 +1,4 @@
-zen-gtk-themes version 0.3.6
+zen-gtk-themes version 0.3.7
 ----------------------------
 
 Author : Cédric Leporcq

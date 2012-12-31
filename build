@@ -7,11 +7,14 @@ set -e
 # merge shared stuff
 # git merge shared
 # switch to pkg branch
-git checkout v0.3-pkg
+# git checkout v0.3-pkg
 # merge and resolve conflicts
 # git merge v0.3
+# git checkout v0.3
+# ./build
 
 # replace symbolic links with source file :
+git checkout v0.3-pkg
 
 ###### CONFIG########
 # Create directories
@@ -28,6 +31,7 @@ cp_source=$name
 path_copy='
 gtk-2.0/gtk-widgets.rc
 gtk-2.0/apps/libreoffice.rc
+gtk-3.0/gtk-widgets.css
 '
 
 echo "path copy = $path_copy"
@@ -65,6 +69,6 @@ make $target_dir
 # make a commit
 # git commit -a -m "vx.x.x"
 # git tag vx.x.x
-# git push origin vx.x.x
+# git push --tags
 
 # Update pkgbuild
