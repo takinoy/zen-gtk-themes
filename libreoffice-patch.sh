@@ -1,10 +1,17 @@
 #!/bin/sh
 
 # patch for libre-office
+# This script will add customs application launchers for libreoffice in .local/share/applications to run the patch "libreoffice.rc" when libreoffice is launched. 
+# The folowing command will be added in the application lancher :
+# bash -c 'GTK2_RC_FILES=$HOME/.themes/Zen/gtk-2.0/apps/libreoffice.rc application-command'
+# You can remove the generated files libreoffice-* safely.
+#see also :
+#http://urukrama.wordpress.com/2008/07/13/setting-a-custom-gtk-theme-for-specific-applications/
 
-# copy libreoffice exec to .local/share/applications
-
+# applications to patch
 lo_exec='calc.desktop draw.desktop startcenter.desktop writer.desktop'
+
+# find the installation directory of the theme.
 theme_dir=""
 cd /usr/share/themes
 if find Zen* > /dev/null
@@ -28,6 +35,7 @@ do
 exec=$(echo $1 | cut -f1 -d.)
 	if [ -f /usr/lib/libreoffice/share/xdg/$1 ]
 	then
+	# copy libreoffice exec to .local/share/applications
 	cp -v /usr/lib/libreoffice/share/xdg/$1 $HOME/.local/share/applications/libreoffice-$1
 	else  
 	echo "libreoffice-$1 is not installed, aborded" | exit 0
@@ -41,4 +49,3 @@ exec=$(echo $1 | cut -f1 -d.)
 	fi	
 shift
 done
-
