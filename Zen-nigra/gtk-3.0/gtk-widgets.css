@@ -90,6 +90,10 @@
     border-color: @border_selected;
 }
 
+.notebook *:selected {
+	background-color: @selected_bg_color;
+}
+
 .frame {
     border-style: solid;
     border-radius: 2px;

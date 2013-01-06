@@ -38,7 +38,10 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 Changelog:
 ----------
 
-0.7.3 : resize combobox and entry widgets for gtk3
+0.7.3
+ - resize combobox and entry widgets for gtk3
+ - fix bug for notebook selected item
+ 
 0.7.2 : adjust gtk3 arrow scaling.
 0.7.1 : libreoffice-patch.sh should work even if the theme is installed in /usr/share/themes or $HOME/.themes.
 
