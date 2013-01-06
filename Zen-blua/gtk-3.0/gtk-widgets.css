@@ -212,7 +212,8 @@ GtkDrawingArea {
     border-width: 1px;
     border-color: @border_normal;
     border-radius: 3px;
-    padding: 2px 3px 2px 3px;
+
+    padding: 3px 3px 3px 3px;
 }
 
 .entry:insensitive,
@@ -370,9 +371,15 @@ buttons focus
 }
 
 GtkComboBox {
+	padding: 1px;
 }
 
-GtkComboBox .button {
+GtkComboBox>.button {
+	padding: 1px;
+}
+
+GtkComboBox .menuitem  {
+	padding: 1px 3px;
 }
 
 .combobox-entry .entry {
@@ -382,6 +389,10 @@ GtkComboBox .button {
 
 .combobox-entry .button {
     border-radius: 0px 3px 3px 0px;
+}
+
+.spinbutton {
+	padding: 2px;
 }
 
 .spinbutton.button {
@@ -815,7 +826,7 @@ GtkNotebook tab:active {
  }
 
 .menuitem {
-    padding: 3px 0px;
+    padding: 3px;
     border-width: 1px 1px 1px 1px;
 }
 
