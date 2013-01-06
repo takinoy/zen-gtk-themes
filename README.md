@@ -45,34 +45,34 @@ Changelog:
 0.7
  - Improve gtk2/gtk3 consistency : menubar padding, arrowstyle.
  - add libreoffice-patch.sh script.
- 
+
 0.6.2
  - Remove shadow on menubar.
  - Update color scheme for panel, menu, menubar, scroolbar and prelight state.
  - Improve gtk2/gtk3 consistency.
  - Sources availables in git repository.
  - Package "zen-gtk-themes" in "AUR" for archlinux users.
- 
+
 0.5
  - Improve theme rendering and consistency for gtk2 and gtk3 versions.
  - Themes can be installed independently.
- 
+
 0.4.4
  - Use the murrine engine for gtk-2 version.
  - Theme ported to gtk3 >=3.4.
- 
+
 0.3.7
  - Last gtk2 version with the clearlook engine.
  - Updates from 0.7 branch (gtk2).
- 
+
 0.3.2
  - New color schemes and preconfigured settings.
  - Add notify theme for xfce.
- 
+
 0.2.2
  - Panels, menu and treeviews settings can be edited in a separate GtkRC file.
  - Adjustments of color setting and widget proprieties for light and dark color schemes.
- 
+
 0.1.1
  - Patch to set scrollbars width in libreoffice.
 

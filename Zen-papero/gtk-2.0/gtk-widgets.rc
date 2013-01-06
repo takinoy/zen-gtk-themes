@@ -28,7 +28,7 @@ style "default"
  	GtkScrollbar::min-slider-length = 20 # Min. length of scrollbars.
 	GtkScrollbar::slider-width = 11
 	GtkScrollbar::stepper-size = 20
-    
+
   	GtkScrolledWindow::scrollbar-spacing = 0 # This sets the spacing between scrollbars.
 
   	GtkProgressBar::min-vertical-bar-width= 12
@@ -90,13 +90,13 @@ style "default"
 	base[INSENSITIVE] = @bg_color
 	base[ACTIVE]      = @button_prelight
 
-	engine "murrine" 
+	engine "murrine"
 	{
 		animation           = FALSE
 		contrast            = 0.7               # 0.8 for less contrast, more than 1.0 for more contrast on borders
 		focus_color         = @button_prelight
 		glazestyle          = 0                 # 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved highlight, 4 = beryl highlight
-		gradient_shades     = {1.0,1.0,1.0,1.0} #{1.1,1.0,1.0,0.87} 
+		gradient_shades     = {1.0,1.0,1.0,1.0} #{1.1,1.0,1.0,0.87}
 		glowstyle           = 0                 # 0,1,2,3,4
 		glow_shade          = 1.1
 		highlight_shade     = 1.0               # set highlight amount for buttons or widgets
@@ -140,7 +140,7 @@ class "GtkWidget"                  style "default"
 style "entry" {
 	xthickness = 3
 	ythickness = 3
- 
+
 	bg[SELECTED] = @button_prelight
 	fg[SELECTED] = @text_color
 }
@@ -166,7 +166,7 @@ style "menu"
     bg[SELECTED]      = shade(1.1, @selected_bg_color)
 	fg[INSENSITIVE]   = mix(0.7, darker(mix (0.6, @base_color, @bg_color)), @text_color)
 
-  	engine "murrine" 
+  	engine "murrine"
 	{
 		gradient_shades     = {1.0,1.0,1.0,1.0} #{1.1,1.0,1.0,0.87}
 		#border_shades = { 0.9, 0.9 }
@@ -221,10 +221,10 @@ style "menubar" = "menu"
 	bg[NORMAL]      = @bg_color  # Color of menu background.
 	fg[NORMAL]      = @fg_color
 	fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
-  	engine "murrine" 
+  	engine "murrine"
 	{
 		roundness = 0
-	} 
+	}
 }
 
 widget_class "*BonoboDockItem"     style "menubar"
@@ -284,7 +284,7 @@ style "button" = "default"
 
 	bg[INSENSITIVE]   = shade (1.04, @bg_color)
 
-  	engine "murrine" 
+  	engine "murrine"
 	{
 		gradient_shades     = {1.1,1.0,1.0,0.95}
 		contrast            = 0.8
@@ -366,7 +366,7 @@ style "treeview_header" = "default" {
 	ythickness = 1
 	bg[PRELIGHT] = shade (1.04,@bg_color)
 
-  	engine "murrine" 
+  	engine "murrine"
 	{
 		roundness = 0
 		gradient_shades     = {0.96,0.96,0.96,0.92}
@@ -389,11 +389,11 @@ style "notebook" = "default"
     bg[ACTIVE]   = mix (0.85, shade(0.88,@bg_color),"#FFFFFF")  # Unfocused tab background.
 	bg[NORMAL]   = mix(0.8, @bg_color, "#FFFFFF") # Tab background.
 
-	engine "murrine" 
+	engine "murrine"
 	{
 		contrast        = 1.1
 		gradient_shades     = {1.3,1.1,1.1,0.9}
-	} 
+	}
 }
 
 widget_class "*.GtkNotebook"       style "notebook"
