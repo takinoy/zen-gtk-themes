@@ -12,5 +12,5 @@ path=$(ls -1 | grep "$name")
 
 # rm link files to directory
 cd $theme_dir
-rm $path
+rm -v $path
 
