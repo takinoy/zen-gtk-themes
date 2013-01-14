@@ -3,7 +3,7 @@ zen-gtk-themes version 0.7.3
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : december 31, 2012
+Date : January 14, 2013
 Sources : https://github.com/cedl38/Zen-gtk-themes
 
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
@@ -40,7 +40,7 @@ Changelog:
 
 0.7.3
  - resize combobox and entry widgets for gtk3
- - fix bug for notebook selected item
+ - fix bug for notebook selected items
  
 0.7.2 : adjust gtk3 arrow scaling.
 0.7.1 : libreoffice-patch.sh should work even if the theme is installed in /usr/share/themes or $HOME/.themes.
