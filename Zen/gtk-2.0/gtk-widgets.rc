@@ -28,7 +28,7 @@ style "default"
  	GtkScrollbar::min-slider-length = 20 # Min. length of scrollbars.
 	GtkScrollbar::slider-width = 12
 	GtkScrollbar::stepper-size = 20
-    
+
   	GtkScrolledWindow::scrollbar-spacing = 0 # This sets the spacing between scrollbars.
 
   	GtkProgressBar::min-vertical-bar-width= 12
@@ -109,7 +109,7 @@ class "GtkWidget"                  style "default"
 style "entry" {
 	xthickness = 3
 	ythickness = 3
- 
+
 	bg[SELECTED] = @button_prelight
 	fg[SELECTED] = @text_color
 
@@ -130,7 +130,7 @@ style "menu"
 {
 	xthickness = 0
 	ythickness = 0
-	
+
 	bg[NORMAL]      = mix (0.6, @base_color, @bg_color)  # Color of menu background.
 	fg[NORMAL]      = @text_color
 	#bg[INSENSITIVE]      = shade (1.04, @bg_color)
@@ -190,7 +190,7 @@ style "menubar" = "menu"
 	fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
 
 	engine "clearlooks" {
-		hint = "menubar"		
+		hint = "menubar"
 	}
 }
 
@@ -361,12 +361,12 @@ style "notebook" = "default"
     bg[ACTIVE]   = mix (0.85, shade(0.88,@bg_color),"#FFFFFF")  # Unfocused tab background.
 	bg[NORMAL]   = mix(0.8, @bg_color, "#FFFFFF") # Tab background.
 
-	engine "clearlooks" 
+	engine "clearlooks"
 	{
 		radius = 2.0 # Roundness of menu items.
 		style = GLOSSY
 		contrast = 1.0
-	}    
+	}
 }
 
 widget_class "*.GtkNotebook"       style "notebook"

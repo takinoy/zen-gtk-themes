@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # patch for libre-office
-# This script will add customs application launchers for libreoffice in .local/share/applications to run the patch "libreoffice.rc" when libreoffice is launched. 
+# This script will add customs application launchers for libreoffice in .local/share/applications to run the patch "libreoffice.rc" when libreoffice is launched.
 # The folowing command will be added in the application lancher :
 # bash -c 'GTK2_RC_FILES=$HOME/.themes/Zen/gtk-2.0/apps/libreoffice.rc application-command'
 # You can remove the generated files libreoffice-* safely.
@@ -37,15 +37,15 @@ exec=$(echo $1 | cut -f1 -d.)
 	then
 	# copy libreoffice exec to .local/share/applications
 	cp -v /usr/lib/libreoffice/share/xdg/$1 $HOME/.local/share/applications/libreoffice-$1
-	else  
+	else
 	echo "libreoffice-$1 is not installed, aborded" | exit 0
 	fi
 	# replace exec lines in files
 	if [ "$1" == "startcenter.desktop" ]
 	then
-	sed -i "s|Exec=libreoffice %U|Exec=bash -c 'GTK2_RC_FILES=$theme_dir/gtk-2.0/apps/libreoffice.rc libreoffice %U'|g" "/home/cedric/.local/share/applications/libreoffice-$1"	
+	sed -i "s|Exec=libreoffice %U|Exec=bash -c 'GTK2_RC_FILES=$theme_dir/gtk-2.0/apps/libreoffice.rc libreoffice %U'|g" "/home/cedric/.local/share/applications/libreoffice-$1"
 	else
 	sed -i "s|Exec=libreoffice --$exec %U|Exec=bash -c 'GTK2_RC_FILES=$theme_dir/gtk-2.0/apps/libreoffice.rc libreoffice --$exec %U'|g" "/home/cedric/.local/share/applications/libreoffice-$1"
-	fi	
+	fi
 shift
 done

@@ -31,7 +31,7 @@ echo "path copy = $path_copy"
 function copy {
 	if [ "$1" == "" ]
 	then echo 'No files to copy, aborded.'
-	else 
+	else
 		until [ $# = 0 ]
 		do
 			cp -f -l -r -v  $1 $(dirname "../$var/$1")
@@ -39,7 +39,7 @@ function copy {
 		done
 	fi
 	}
-	
+
 function make {
 if [ "$1" != "" ]
 then
