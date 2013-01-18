@@ -40,7 +40,7 @@ function copy {
 		done
 	fi
 	}
-	
+
 function make {
 if [ "$1" != "" ]
 then

@@ -43,9 +43,9 @@ exec=$(echo $1 | cut -f1 -d.)
 	# replace exec lines in files
 	if [ "$1" == "startcenter.desktop" ]
 	then
-	sed -i "s|Exec=libreoffice %U|Exec=bash -c 'GTK2_RC_FILES=$theme_dir/gtk-2.0/apps/libreoffice.rc libreoffice %U'|g" "/home/cedric/.local/share/applications/libreoffice-$1"	
+	sed -i "s|Exec=libreoffice %U|Exec=bash -c 'GTK2_RC_FILES=$theme_dir/gtk-2.0/apps/libreoffice.rc libreoffice %U'|g" "/home/cedric/.local/share/applications/libreoffice-$1"
 	else
 	sed -i "s|Exec=libreoffice --$exec %U|Exec=bash -c 'GTK2_RC_FILES=$theme_dir/gtk-2.0/apps/libreoffice.rc libreoffice --$exec %U'|g" "/home/cedric/.local/share/applications/libreoffice-$1"
-	fi	
+	fi
 shift
 done

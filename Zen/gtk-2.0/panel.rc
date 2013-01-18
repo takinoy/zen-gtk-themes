@@ -12,7 +12,7 @@ style "light-panel" = "default" {
 	bg[NORMAL] = "#CCCCCC"
 	bg[PRELIGHT] = mix(0.6, @button_prelight, "#CCCCCC")
 	bg[ACTIVE] = @button_prelight
-	
+
 }
 
 style "adaptive-panel" = "default" {
