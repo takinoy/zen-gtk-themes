@@ -67,7 +67,7 @@ style "default"
 	# Color Definitions
 	####################
 	bg[NORMAL]        = @bg_color
-	bg[PRELIGHT]      = shade (1.02, @bg_color)
+	bg[PRELIGHT]      = mix(0.4, @button_prelight, shade(1.0, @bg_color))
 	bg[SELECTED]      = @selected_bg_color # Color for selected items.
 	bg[INSENSITIVE]   = @bg_color
 	bg[ACTIVE]        = shade (0.9, @bg_color)
@@ -246,11 +246,7 @@ style "button" = "default"
 	ythickness = 3
 
     bg[NORMAL]        = mix (0.9, @bg_color, @base_color) # Color for buttons.
-	bg[PRELIGHT]      = mix(0.4, @button_prelight, shade(1.0, @bg_color))
-    bg[SELECTED]      = @selected_bg_color
-
-    #fg[ACTIVE]        = "#f00000"
-    #fg[SELECTED]      = "#f00000"
+    bg[SELECTED]      = @button_prelight
 	bg[INSENSITIVE]   = shade (1.04, @bg_color)
 
 	engine "clearlooks" {
