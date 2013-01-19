@@ -248,6 +248,7 @@ style "button" = "default"
     bg[NORMAL]        = mix (0.9, @bg_color, @base_color) # Color for buttons.
     bg[SELECTED]      = @button_prelight
 	bg[INSENSITIVE]   = shade (1.04, @bg_color)
+	bg[ACTIVE]        = mix (0.15, @button_prelight, @bg_color)
 
 	engine "clearlooks" {
 		focus_color = @selected_bg_color
@@ -267,15 +268,14 @@ class "*button*"                   style "button"
 widget_class "*OptionMenu*"        style "button"
 class "*OptionMenu*"               style "button"
 
-style "comboboxentry" {
-
+style "comboboxentry" = "button" {
 }
-widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
+#widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
 
+style "combobox" = "button" {
 #don't work
-#style "combobox" {
 	#fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
-#}
+}
 
 #widget_class "*<GtkCombo>*" style "combobox"
 
