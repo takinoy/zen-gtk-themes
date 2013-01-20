@@ -746,7 +746,7 @@ tab * {
 .notebook tab:active, .notebook tab *:active {
     padding: 3px 2px 1px 2px;
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (mix(shade (@button_prelight, 1.05), @notebook_active, 0.7)),
+                                     from (mix(@button_prelight, @notebook_active, 0.9)),
                                      to (@notebook_active));
     border-color: @button_prelight;
 }
@@ -771,7 +771,7 @@ GtkNotebook tab:active {
 .notebook tab.right:active {
     background-image: none;
     background-image: -gtk-gradient(linear, right top, left top,
-                                     from (mix(shade (@button_prelight, 1.05), @notebook_active, 0.7)),
+                                     from (mix(@button_prelight, @notebook_active, 0.9)),
                                      to (@notebook_active));
     border-width: 1px 1px 1px 0;
 }
@@ -787,7 +787,7 @@ GtkNotebook tab:active {
 .notebook tab.bottom:active {
     border-width: 0 1px 1px 1px;
     background-image: -gtk-gradient(linear, left bottom, left top,
-                                     from (mix(shade (@button_prelight, 1.05), @notebook_active, 0.7)),
+                                     from (mix(@button_prelight, @notebook_active, 0.9)),
                                      to (@notebook_active));
 }
 
@@ -802,7 +802,7 @@ GtkNotebook tab:active {
 .notebook tab.left:active {
     background-image: none;
     background-image: -gtk-gradient(linear, left top, right top,
-                                     from (mix(shade (@button_prelight, 1.05), @notebook_active, 0.7)),
+                                     from (mix(@button_prelight, @notebook_active, 0.9)),
                                      to (@notebook_active));
     border-width: 1px 0 1px 1px;
 }
