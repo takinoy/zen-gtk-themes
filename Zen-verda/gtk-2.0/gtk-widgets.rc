@@ -282,13 +282,14 @@ style "button" = "default"
     bg[NORMAL]        = mix (0.9, @bg_color, @base_color) # Color for buttons.
     bg[SELECTED]      = @button_prelight
 	bg[INSENSITIVE]   = shade (1.04, @bg_color)
+	bg[ACTIVE]        = mix (0.15, @button_prelight, @bg_color)
 
   	engine "murrine"
 	{
-		gradient_shades     = {1.1,1.0,1.0,0.95}
+		gradient_shades     = {1.05,1.02,1.02,0.95}
 		contrast            = 0.8
 		#reliefstyle         = 0
-		border_shades = { 0.95, 0.9 }		
+		border_shades = { 0.95, 0.9 }
 	}
 }
 
@@ -299,11 +300,11 @@ class "*button*"                   style "button"
 widget_class "*OptionMenu*"        style "button"
 class "*OptionMenu*"               style "button"
 
-style "comboboxentry" {
+style "comboboxentry" = "button" {
 }
-widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
+#widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
 
-style "combobox" {
+style "combobox" = "button" {
 #don't work
 #fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
 }
@@ -321,7 +322,6 @@ class "GtkSpinButton" style "spinbutton"
 
 style "view" {
 	base[NORMAL] = shade (0.93,@base_color)
-
 }
 
 style "iconview" = "view" {
@@ -368,7 +368,7 @@ style "treeview_header" = "default" {
   	engine "murrine"
 	{
 		roundness = 0
-		gradient_shades     = {0.96,0.96,0.96,0.92}
+		gradient_shades     = {1.0,1.0,1.0,0.95}
 	}
 }
 # Treeview headers (and similar stock GTK+ widgets)
@@ -414,7 +414,7 @@ style "scrollbar" = "default"
     bg[PRELIGHT]      = mix (0.15, @button_prelight, @bg_color)
 
 	engine "murrine" {
-		gradient_shades	= {1.1,1.0,1.0,0.9}
+		gradient_shades	= {1.05,1.0,1.0,0.9}
 		border_shades	= {0.9, 0.9}			
 	}
 }
