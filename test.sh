@@ -1,7 +1,11 @@
 #!/bin/sh
 
 # sleep
-t=3
+t=5
+
+# package.name
+pkgname=${PWD##*/}
+name=${pkgname%%-*}
 
 # test les themes
 themes=$(ls -1 | grep "$name-")
