@@ -346,8 +346,8 @@ style "notebook" = "default"
 {
 	xthickness = 3 # Width of tabs and notebook borders.
 	ythickness = 1 # Height of tabs and notebook borders.
-    bg[ACTIVE]   = mix (0.85, shade(0.88,@bg_color),"#FFFFFF")  # Unfocused tab background.
-	bg[NORMAL]   = mix(0.8, @bg_color, "#FFFFFF") # Tab background.
+    bg[ACTIVE]   = shade(0.95,@bg_color)  # Unfocused tab background.
+	bg[NORMAL]   = shade(1.05,@bg_color) # Tab background.
 
 	engine "clearlooks"
 	{
