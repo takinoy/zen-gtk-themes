@@ -298,7 +298,7 @@ GtkSwitch.slider,
 }
 
 GtkSwitch.trough {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_darker, 1.1)), to(@bg_darker));
+    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_darker, 1.08)), to(@bg_darker));
     border-color: @button_border;
 }
 
@@ -309,7 +309,7 @@ GtkComboBox:insensitive,
     color: @fg_insensitive;
     border-color:@border_insensitive;
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@button_bg_insensitive, 1.1)),
+                                     from (shade(@button_bg_insensitive, 1.08)),
                                      to (shade(@button_bg_insensitive, 0.95)));
     border-top-color: @border_insensitive;
     border-right-color: shade(@border_insensitive, 0.9);
@@ -340,7 +340,7 @@ GtkSwitch:hover,
 
 .button:selected,
 GtkSwitch.trough:active {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@button_prelight, 0.95)), to(shade(@button_prelight, 1.1)));
+    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@button_prelight, 0.95)), to(shade(@button_prelight, 1.08)));
     border-color: @border_selected;
     color: @selected_fg_color;
 }
@@ -597,7 +597,7 @@ column-header:last-child .button {
 
 .scrollbar.slider.horizontal, .scrollbar.button.horizontal {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(mix (#FFF, @bg_color, 0.9), 1.1)),
+                                     from (shade(mix (#FFF, @bg_color, 0.9), 1.08)),
                                      to (shade(mix (#FFF, @bg_color, 0.9), 0.9)));
     border-color: @border_normal;
 }
@@ -605,34 +605,34 @@ column-header:last-child .button {
 .scrollbar.button.horizontal:insensitive,
 .slider.horizontal:insensitive {
 
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_color, 1.1)), to(shade(@bg_color, 0.9)));
+    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_color, 1.08)), to(shade(@bg_color, 0.9)));
     color: @fg_insensitive;
     border-color: @border_insensitive;
 }
 
 .scrollbar.button.horizontal:selected,
 .slider.horizontal:selected {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@button_prelight, 1.1)), to(shade(@button_prelight, 0.9)));
+    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@button_prelight, 1.08)), to(shade(@button_prelight, 0.9)));
     border-color: @border_selected;
 }
 
 .scrollbar.button.vertical, .scrollbar.slider.vertical {
     background-image: -gtk-gradient(linear, left top, right top,
-                                     from (shade(mix (#FFF, @bg_color, 0.9), 1.1)),
+                                     from (shade(mix (#FFF, @bg_color, 0.9), 1.08)),
                                      to (shade(mix (#FFF, @bg_color, 0.9), 0.9)));
     border-color: @border_normal;
 }
 
 .scrollbar.button.vertical:insensitive,
 .slider.vertical:insensitive {
-    background-image: -gtk-gradient(linear, left top, right top, from(shade(@bg_color, 1.1)), to(shade(@bg_color, 0.9)));
+    background-image: -gtk-gradient(linear, left top, right top, from(shade(@bg_color, 1.08)), to(shade(@bg_color, 0.9)));
     color: @fg_insensitive;
     border-color: @border_insensitive;
 }
 
 .scrollbar.button.vertical:selected,
 .slider.vertical:selected {
-    background-image: -gtk-gradient(linear, left top, right top, from(shade(@button_prelight, 1.1)), to(shade(@button_prelight, 0.9)));
+    background-image: -gtk-gradient(linear, left top, right top, from(shade(@button_prelight, 1.08)), to(shade(@button_prelight, 0.9)));
     border-color: @border_selected;
 }
 
