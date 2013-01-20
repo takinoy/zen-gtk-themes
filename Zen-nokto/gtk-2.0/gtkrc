@@ -3,3 +3,12 @@ gtk-color-scheme ="base_color:#262626\nfg_color:#EBE5BC\ntooltip_fg_color:#00000
 gtk-color-scheme = "button_prelight:#246662"
 
 include "gtk-widgets.rc"
+
+style "notebook-nokto" = "notebook"
+{
+    bg[ACTIVE]   = shade(1.2,@bg_color)  # Unfocused tab background.
+	bg[NORMAL]   = shade(0.8,@bg_color) # Tab background.	
+}
+
+widget_class "*.GtkNotebook"       style "notebook-nokto"
+class "*.GtkNotebook"              style "notebook-nokto"
