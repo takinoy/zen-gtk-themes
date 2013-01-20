@@ -292,11 +292,14 @@ GtkSwitch.slider,
     color: @fg_color;
 }
 
-.button:active,
+.button:active {
+    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_prelight, 1.05)), to(shade(@bg_prelight, 0.95)));
+    border-color: @button_border;
+}
+
 GtkSwitch.trough {
     background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_darker, 1.1)), to(@bg_darker));
-        border-color: @button_border;
-
+    border-color: @button_border;
 }
 
 GtkSwitch:insensitive,
