@@ -235,15 +235,6 @@ class "*MenuBar*"                  style "menubar"
 widget_class "*ToolBar"            style "menubar"
 class "*ToolBar"                   style "menubar"
 
-style "dark_menuitem_text_is_fg_color_workaround"
-{
-	text[NORMAL]        = "#E6E6E6"
-	text[PRELIGHT]      = @selected_fg_color
-	text[SELECTED]      = @selected_fg_color
-	text[ACTIVE]        = @fg_color
-	text[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
-}
-
 style "menuitem_text_is_fg_color_workaround" {
 
 	text[NORMAL]      = @fg_color
@@ -256,7 +247,7 @@ style "menuitem_text_is_fg_color_workaround" {
 # Work around for http://bugzilla.gnome.org/show_bug.cgi?id=382646
 # Note that this work around assumes that the combobox is _not_ in appears-as-list mode.
 # This is the part of the workaround that fixes the menus
-widget "*.gtk-combobox-popup-menu.*" style "menuitem_text_is_fg_color_workaround"
+# widget "*.gtk-combobox-popup-menu.*" style "menuitem_text_is_fg_color_workaround"
 
 style "pager"
 {
