@@ -15,13 +15,13 @@ set $themes
 		do
 		xfconf-query -c xsettings -p /Net/ThemeName -s "$1"
 		xfconf-query -c xsettings -p /Net/IconThemeName -s "Foxtrot"
-		echo "theme $1 tested, sleep for $t sec, $# restants"			
+		echo "theme $1 tested, sleep for $t sec, $# restants"
 		sleep $t
 		shift
 		done
-	fi	
+	fi
 
-# Theme de l'utilisateur	
+# Theme de l'utilisateur
 xfconf-query -c xsettings -p /Net/ThemeName -s "Zen"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Foxtrot"
 

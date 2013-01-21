@@ -28,7 +28,7 @@ style "default"
  	GtkScrollbar::min-slider-length = 20 # Min. length of scrollbars.
 	GtkScrollbar::slider-width = 12
 	GtkScrollbar::stepper-size = 20
-    
+
   	GtkScrolledWindow::scrollbar-spacing = 0 # This sets the spacing between scrollbars.
 
   	GtkProgressBar::min-vertical-bar-width= 12
@@ -67,7 +67,7 @@ style "default"
 	# Color Definitions
 	####################
 	bg[NORMAL]        = @bg_color
-	bg[PRELIGHT]      = shade (1.02, @bg_color)
+	bg[PRELIGHT]      = mix(0.4, @button_prelight, shade(1.0, @bg_color))
 	bg[SELECTED]      = @selected_bg_color # Color for selected items.
 	bg[INSENSITIVE]   = @bg_color
 	bg[ACTIVE]        = shade (0.9, @bg_color)
@@ -109,7 +109,7 @@ class "GtkWidget"                  style "default"
 style "entry" {
 	xthickness = 3
 	ythickness = 3
- 
+
 	bg[SELECTED] = @button_prelight
 	fg[SELECTED] = @text_color
 
@@ -130,7 +130,7 @@ style "menu"
 {
 	xthickness = 0
 	ythickness = 0
-	
+
 	bg[NORMAL]      = mix (0.6, @base_color, @bg_color)  # Color of menu background.
 	fg[NORMAL]      = @text_color
 	#bg[INSENSITIVE]      = shade (1.04, @bg_color)
@@ -190,7 +190,7 @@ style "menubar" = "menu"
 	fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
 
 	engine "clearlooks" {
-		hint = "menubar"		
+		hint = "menubar"
 	}
 }
 
@@ -200,15 +200,6 @@ widget_class "*MenuBar*"           style "menubar"
 class "*MenuBar*"                  style "menubar"
 widget_class "*ToolBar"            style "menubar"
 class "*ToolBar"                   style "menubar"
-
-style "dark_menuitem_text_is_fg_color_workaround"
-{
-	text[NORMAL]        = "#E6E6E6"
-	text[PRELIGHT]      = @selected_fg_color
-	text[SELECTED]      = @selected_fg_color
-	text[ACTIVE]        = @fg_color
-	text[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
-}
 
 style "menuitem_text_is_fg_color_workaround" {
 
@@ -222,7 +213,7 @@ style "menuitem_text_is_fg_color_workaround" {
 # Work around for http://bugzilla.gnome.org/show_bug.cgi?id=382646
 # Note that this work around assumes that the combobox is _not_ in appears-as-list mode.
 # This is the part of the workaround that fixes the menus
-widget "*.gtk-combobox-popup-menu.*" style "menuitem_text_is_fg_color_workaround"
+# widget "*.gtk-combobox-popup-menu.*" style "menuitem_text_is_fg_color_workaround"
 
 style "pager"
 {
@@ -246,10 +237,9 @@ style "button" = "default"
 	ythickness = 3
 
     bg[NORMAL]        = mix (0.9, @bg_color, @base_color) # Color for buttons.
-	bg[PRELIGHT]      = mix(0.4, @button_prelight, shade(1.0, @bg_color))
     bg[SELECTED]      = @button_prelight
-
 	bg[INSENSITIVE]   = shade (1.04, @bg_color)
+	bg[ACTIVE]        = mix (0.15, @button_prelight, @bg_color)
 
 	bg[ACTIVE]	= shade (0.9, @bg_color) # Color for pressed-buttons.
 	engine "clearlooks"{
@@ -267,11 +257,11 @@ class "*button*"                   style "button"
 widget_class "*OptionMenu*"        style "button"
 class "*OptionMenu*"               style "button"
 
-style "comboboxentry" {
-
+style "comboboxentry" = "button" {
 }
-widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
+#widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
 
+style "combobox" = "button" {
 #don't work
 #style "combobox" {
 	#fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
@@ -354,16 +344,17 @@ style "notebook" = "default"
 {
 	xthickness = 3 # Width of tabs and notebook borders.
 	ythickness = 1 # Height of tabs and notebook borders.
-    bg[ACTIVE]   = mix (0.85, shade(0.88,@bg_color),"#FFFFFF")  # Unfocused tab background.
-	bg[NORMAL]   = mix(0.8, @bg_color, "#FFFFFF") # Tab background.
+	
 	bg[SELECTED] = @button_prelight
+    bg[ACTIVE]   = shade(0.95, @bg_color)  # Unfocused tab background.
+	bg[NORMAL]   = shade(1.05, @bg_color) # Tab background.
 
-	engine "clearlooks" 
+	engine "clearlooks"
 	{
 		radius = 2.0 # Roundness of menu items.
 		style = GLOSSY
 		contrast = 1.0
-	}    
+	}
 }
 
 widget_class "*.GtkNotebook"       style "notebook"
