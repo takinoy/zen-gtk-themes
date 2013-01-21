@@ -6,8 +6,15 @@ include "gtk-widgets.rc"
 
 style "notebook-nokto" = "notebook"
 {
-	bg[ACTIVE]   = shade(1.2,@bg_color)  # Unfocused tab background.
-	bg[NORMAL]   = shade(0.8,@bg_color) # Tab background.
+	bg[ACTIVE]   = shade(1.1, @bg_color) # Unfocused tab background.
+	bg[NORMAL]   = shade(0.8, @bg_color) # Tab background.
+
+	engine "clearlooks"
+	{
+		radius = 2.0 # Roundness of menu items.
+		style = CLASSIC
+		contrast = 1.1
+	}
 }
 
 widget_class "*.GtkNotebook"       style "notebook-nokto"
