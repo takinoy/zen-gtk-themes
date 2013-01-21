@@ -1,9 +1,9 @@
-zen-gtk-themes version 0.7.3
+zen-gtk-themes version 0.8
 ----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : January 14, 2013
+Date : January 21, 2013
 Sources : https://github.com/cedl38/Zen-gtk-themes
 
 http://opendesktop.org/ content :
@@ -39,18 +39,18 @@ You can remove the generated files libreoffice-* safely.
 Changelog:
 ----------
 
+0.8
+ - Adjust button, notebook, radiocheck colors.
+ - Change fg_color and text_color for dark themes.
+ - Change active button color.
+ - Fix combobox-menu text color in zen-nigra.
 0.7.3
- - resize combobox and entry widgets for gtk3
- - fix bug for notebook selected items
-0.7.2 : adjust gtk3 arrow scaling.
-0.7.1 : libreoffice-patch.sh should work even if the theme is installed in /usr/share/themes or $HOME/.themes.
-0.7
- - Improve gtk2/gtk3 consistency : menubar padding, arrowstyle.
- - add libreoffice-patch.sh script.
+ - Fix bug for notebook selected items
+ - Improve gtk2/gtk3 consistency : menubar, arrows, combobox.
+ - Add libreoffice-patch.sh script.
 0.6.2
  - Remove shadow on menubar.
  - Update color scheme for panel, menu, menubar, scroolbar and prelight state.
- - Improve gtk2/gtk3 consistency.
  - Sources availables in git repository.
  - Package "zen-gtk-themes" in "AUR" for archlinux users.
 0.5
@@ -59,9 +59,10 @@ Changelog:
 0.4.4
  - Use the murrine engine for gtk-2 version.
  - Theme ported to gtk3 >=3.4.
-0.3.7
+0.3.8
  - Last gtk2 version with the clearlook engine.
- - Updates from 0.7 branch (gtk2).
+ - Updates from 0.8 branch (gtk2).
+
 0.3.2
  - New color schemes and preconfigured settings.
  - Add notify theme for xfce.
