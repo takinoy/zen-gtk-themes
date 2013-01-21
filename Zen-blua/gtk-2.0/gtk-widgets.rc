@@ -263,9 +263,8 @@ style "comboboxentry" = "button" {
 
 style "combobox" = "button" {
 #don't work
-#style "combobox" {
 	#fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
-#}
+}
 
 #widget_class "*<GtkCombo>*" style "combobox"
 
@@ -344,10 +343,9 @@ style "notebook" = "default"
 {
 	xthickness = 3 # Width of tabs and notebook borders.
 	ythickness = 1 # Height of tabs and notebook borders.
-	
 	bg[SELECTED] = @button_prelight
-    bg[ACTIVE]   = shade(0.95, @bg_color)  # Unfocused tab background.
-	bg[NORMAL]   = shade(1.05, @bg_color) # Tab background.
+	bg[ACTIVE]   = shade(0.95,@bg_color)  # Unfocused tab background.
+	bg[NORMAL]   = shade(1.05,@bg_color) # Tab background.
 
 	engine "clearlooks"
 	{
