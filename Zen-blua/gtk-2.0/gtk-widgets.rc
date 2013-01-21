@@ -67,7 +67,7 @@ style "default"
 	# Color Definitions
 	####################
 	bg[NORMAL]        = @bg_color
-	bg[PRELIGHT]      = mix(0.4, @button_prelight, shade(1.0, @bg_color))
+	bg[PRELIGHT]      = shade (1.02, @bg_color)
 	bg[SELECTED]      = @selected_bg_color # Color for selected items.
 	bg[INSENSITIVE]   = @bg_color
 	bg[ACTIVE]        = shade (0.9, @bg_color)
@@ -270,12 +270,13 @@ style "button" = "default"
 	xthickness = 3
 	ythickness = 3
 
-    bg[NORMAL]        = mix (0.9, @bg_color, @base_color) # Color for buttons.
-    bg[SELECTED]      = @button_prelight
+	bg[NORMAL]        = mix (0.9, @bg_color, @base_color) # Color for buttons.
+	bg[PRELIGHT]      = mix(0.4, @button_prelight, @bg_color)
+	bg[SELECTED]      = @button_prelight
 	bg[INSENSITIVE]   = shade (1.04, @bg_color)
 	bg[ACTIVE]        = mix (0.15, @button_prelight, @bg_color)
 
-  	engine "murrine"
+	engine "murrine"
 	{
 		gradient_shades     = {1.05,1.02,1.02,0.95}
 		contrast            = 0.8
@@ -290,6 +291,7 @@ widget_class "*button*"            style "button"
 class "*button*"                   style "button"
 widget_class "*OptionMenu*"        style "button"
 class "*OptionMenu*"               style "button"
+widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest  "button"
 
 style "comboboxentry" = "button" {
 }
@@ -302,10 +304,20 @@ style "combobox" = "button" {
 
 #widget_class "*<GtkCombo>*" style "combobox"
 
-style "spinbutton"="button" {
+style "spinbutton" = "button" {
 }
 
 class "GtkSpinButton" style "spinbutton"
+
+style "radiocheck" = "button"
+{
+	bg[PRELIGHT]	= shade(1.03,@bg_color)
+}
+
+class "GtkRadio*"	style "radiocheck"
+class "GtkCheck*"	style "radiocheck"
+widget_class "*<GtkRadioButton>*"		style "radiocheck"
+widget_class "*<GtkCheckButton>*"		style "radiocheck"
 
 ##########
 # views  #
