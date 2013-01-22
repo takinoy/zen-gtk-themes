@@ -27,7 +27,7 @@ set $themes
 	fi
 
 # Theme de l'utilisateur
-xfconf-query -c xsettings -p /Net/ThemeName -s "Zen"
+xfconf-query -c xsettings -p /Net/ThemeName -s "ZenX"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Foxtrot"
 
 #GTK theme:

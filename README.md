@@ -1,10 +1,10 @@
-xzen-gtk-themes version 0.8
+zenx-gtk-themes version 0.8
 ----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
 Date : January 21, 2013
-Sources : https://github.com/cedl38/Zen-gtk-themes
+Sources : https://github.com/cedl38/zenx-gtk-themes
 
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
 
@@ -12,13 +12,13 @@ Features :
  - thin menubar, toolbar and icons
  - gtk2 and gtk3 (version >=3.4)
  - compatibility with Xfce widgets, Xfce notify theme
- - six pre-configured color schemes compatibles with gnome and Xfce : Zen, Zen-blua, Zen-nigra, Zen-nokto, Zen-verda, Zen-papero.
+ - six pre-configured color schemes compatibles with gnome and Xfce : ZenX, ZenX-blua, ZenX-nigra, ZenX-nokto, ZenX-verda, ZenX-papero.
 
 The gtk-3 version is mostly tested on few applications under Xfce. Do not hesitate to try it in full gtk-3 environnement and report any issues.
 The xfce is needed for the gtk2 version of this theme.
 
 Install : extract the archive and copy the theme folders you want into ~/.theme.
-Arch users : "zen-gtk-themes" is available in AUR.
+Arch users : "zenx-gtk-themes" is available in AUR.
 
 Extras :
  - xfwm4 and metacity-1 windows decorator (see my others artworks)
@@ -27,9 +27,9 @@ Extras :
 Specific settings for libreoffice :
 Using small scrollbars in libreoffice 3.* cause sheet tabs too small. You can fix scrollbar width for LibreOffice two ways :
 - run the script libreoffice-patch.sh (use it with care). This script will add customs application launchers for libreoffice in .local/share/applications to run the patch "libreoffice.rc" when libreoffice is launched. The folowing command will be added in the application lancher :
-# bash -c 'GTK2_RC_FILES=$HOME/.themes/Zen/gtk-2.0/apps/libreoffice.rc application-command'
+# bash -c 'GTK2_RC_FILES=$HOME/.themes/ZenX/gtk-2.0/apps/libreoffice.rc application-command'
 You can remove the generated files libreoffice-* safely.
-- edit Zen/gtk-2.0/gtkrc and change value of "GtkScrollbar::slider-width" from "11" to "14" for example.
+- edit ZenX/gtk-2.0/gtkrc and change value of "GtkScrollbar::slider-width" from "11" to "14" for example.
 see also :
 http://urukrama.wordpress.com/2008/07/13/setting-a-custom-gtk-theme-for-specific-applications/
 
@@ -42,7 +42,7 @@ Changelog:
  - Adjust button, notebook, radiocheck colors.
  - Change fg_color and text_color for dark themes.
  - Change active button color.
- - Fix combobox-menu text color in zen-nigra.
+ - Fix combobox-menu text color in ZenX-nigra.
 
 0.7.3
  - Fix bug for notebook selected items
@@ -53,7 +53,7 @@ Changelog:
  - Remove shadow on menubar.
  - Update color scheme for panel, menu, menubar, scroolbar and prelight state.
  - Sources availables in git repository.
- - Package "zen-gtk-themes" in "AUR" for archlinux users.
+ - Package "zenx-gtk-themes" in "AUR" for archlinux users.
 
 0.5
  - Improve theme rendering and consistency for gtk2 and gtk3 versions.

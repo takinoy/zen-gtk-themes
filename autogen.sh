@@ -15,7 +15,7 @@ set -e
 
 # package.name
 pkgname=${PWD##*/}
-name=X${pkgname%%-*}
+name=${pkgname%%-*}X
 
 target_dir=$(ls -1 | grep "$name-")
 
