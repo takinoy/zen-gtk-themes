@@ -1,5 +1,5 @@
 zenx-gtk-themes version 0.8.0
-----------------------------
+-----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license

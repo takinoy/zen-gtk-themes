@@ -1,5 +1,5 @@
 zenx-gtk-themes version 0.8.0
-----------------------------
+-----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
@@ -44,7 +44,6 @@ Changelog:
  - Change fg_color and text_color for dark themes.
  - Change active button color.
  - Fix gtk2 combobox-menu text color in ZenX-nigra.
-
 0.7.3
  - Fix bug for notebook selected items
  - Improve gtk2/gtk3 consistency : menubar, arrows, combobox.
