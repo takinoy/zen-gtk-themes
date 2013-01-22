@@ -2,7 +2,7 @@
 
 style "colors_papero"
 {
-	bg_pixmap[NORMAL] 	= "window-bg.png"	
+	bg_pixmap[NORMAL] 	= "window-bg.png"
 }
 
 widget_class "*"                   style "default"

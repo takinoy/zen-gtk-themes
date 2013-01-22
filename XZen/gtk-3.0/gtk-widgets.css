@@ -11,18 +11,16 @@
     -GtkButton-child-displacement-x: 1;
     -GtkButton-child-displacement-y: 1;
     -GtkButton-default-border: 0;
-
     -GtkButton-interior-focus: false;
     -GtkCheckButton-indicator-size   : 12;
     -GtkCheckMenuItem-indicator-size: 12;
-
     -GtkExpander-expander-size: 11;
     -GtkHTML-link-color: @link_color;
     -GtkIMHtml-hyperlink-color: @link_color;
-    -GtkMenuBar-internal-padding: 0;
     -GtkMenu-horizontal-padding: 0;
-    -GtkMenu-vertical-padding: 0;  
-    
+    -GtkMenu-vertical-padding: 0;
+    -GtkMenuBar-internal-padding: 0;
+    -GtkMenuItem-arrow-scaling: 0.5;
     -GtkPaned-handle-size: 3;
     -GtkProgressBar-min-horizontal-bar-height: 12;
     -GtkProgressBar-min-vertical-bar-width: 12;
@@ -30,45 +28,19 @@
     -GtkRange-stepper-size: 20;
     -GtkRange-stepper-spacing: 0;
     -GtkRange-trough-border: 0;
-
-/*
-    -GtkScale-value-spacing          : 0;
-*/
 	-GtkScale-slider-length : 24;
-
     -GtkScrollbar-min-slider-length: 25;
-/*
-    -GtkScrollbar-stepper-size: 20;
-    -GtkScrollbar-slider-width: 12;
-    -GtkScrollbar-trough-border: 0;
-*/
     -GtkScrolledWindow-scrollbar-spacing: 0;
     -GtkScrolledWindow-scrollbars-within-bevel : 1;
     -GtkSeparatorMenuItem-horizontal-padding: 0;
     -GtkStatusbar-shadow-type: none;
     -GtkTextView-error-underline-color: @error_color;
     -GtkToolbar-internal-padding: 0;
-
-/*
-    -GtkToolItemGroup-expander-size: 11;
-*/
     -GtkTreeView-expander-size: 11;
-/*
-    -GtkTreeView-horizontal-separator: 0;
-    -GtkTreeView-vertical-separator: 0;
-*/
-
     -GtkWidget-focus-padding: 0;
     -GtkWidget-link-color: @link_color;
     -GtkWidget-visited-link-color: @link_color;
 
-/*
-    -GtkWidget-window-dragging: true;
-*/
-/*
-    -WnckTasklist-fade-overlay-rect: 0;
-*/
-    
     border-width: 1px;
 /* disable workaround for treeview-headers
     color: @fg_color;
@@ -83,7 +55,7 @@
 /**********
  * states *
  **********/
- 
+
 /*
  default states settings
 */
@@ -96,7 +68,7 @@
  *:active:focus {
 	color: @fg_color;
  }
- 
+
 *:insensitive {
 /*
     color: @fg_insensitive;
@@ -121,13 +93,14 @@
     border-color: @border_selected;
 }
 
+.notebook *:selected {
+	background-color: @selected_bg_color;
+}
+
 .frame {
     border-style: solid;
-    border-radius: 2px;    
+    border-radius: 2px;
     border-color: @border_insensitive;
-/*
-    border-width: 1px;
-*/
 }
 
 GtkWindow {
@@ -166,11 +139,10 @@ GtkWindow {
     color: @selected_fg_color;
 }
 
-
 /***************
  * view, entry *
  ***************/
- 
+
 GtkViewport {
     background-color: transparent;
 }
@@ -246,7 +218,8 @@ GtkDrawingArea {
     border-width: 1px;
     border-color: @border_normal;
     border-radius: 3px;
-    padding: 2px 3px 2px 3px;
+
+    padding: 3px 3px 3px 3px;
 }
 
 .entry:insensitive,
@@ -262,7 +235,7 @@ GtkDrawingArea {
 
 .highlight {
     background-color: transparent;
-    color: @highlight;   
+    color: @highlight;
 }
 
 GtkCalendar {
@@ -297,7 +270,7 @@ GtkAssistant .sidebar {
 /***********
  * Buttons *
  ***********/
- 
+
 .button {
     -GtkWidget-focus-padding: 1;
     -GtkWidget-focus-line-width: 0;
@@ -323,11 +296,14 @@ GtkSwitch.slider,
     color: @fg_color;
 }
 
-.button:active,
-GtkSwitch.trough {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_darker, 1.1)), to(@bg_darker));
-        border-color: @button_border;
+.button:active {
+    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_prelight, 1.05)), to(shade(@bg_prelight, 0.95)));
+    border-color: @button_border;
+}
 
+GtkSwitch.trough {
+    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_darker, 1.08)), to(@bg_darker));
+    border-color: @button_border;
 }
 
 GtkSwitch:insensitive,
@@ -337,7 +313,7 @@ GtkComboBox:insensitive,
     color: @fg_insensitive;
     border-color:@border_insensitive;
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@button_bg_insensitive, 1.1)),
+                                     from (shade(@button_bg_insensitive, 1.08)),
                                      to (shade(@button_bg_insensitive, 0.95)));
     border-top-color: @border_insensitive;
     border-right-color: shade(@border_insensitive, 0.9);
@@ -346,7 +322,7 @@ GtkComboBox:insensitive,
 }
 
 /*
-buttons highlight 
+buttons highlight
 */
 
 /*
@@ -368,9 +344,9 @@ GtkSwitch:hover,
 
 .button:selected,
 GtkSwitch.trough:active {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@button_prelight, 0.95)), to(shade(@button_prelight, 1.1)));
+    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@button_prelight, 0.95)), to(shade(@button_prelight, 1.08)));
     border-color: @border_selected;
-    color: @selected_fg_color;    
+    color: @selected_fg_color;
 }
 
 .spinbutton.button:hover,
@@ -380,7 +356,7 @@ GtkSwitch.trough:active {
                 inset 0 -1px shade(@button_prelight, 0.9),
                 inset 0 1px @button_prelight;
 }
- 
+
 /*
 buttons focus
 */
@@ -392,18 +368,11 @@ buttons focus
     border-right-color: shade(@button_prelight, 0.9);
     border-bottom-color: shade(@button_prelight, 0.9);
     border-left-color: @button_prelight;
-    
+
     box-shadow: inset 1px 0 @button_prelight,
                 inset -1px 0  shade(@button_prelight, 0.9),
                 inset 0 -1px shade(@button_prelight, 0.9),
                 inset 0 1px @button_prelight;
-    
-/*
-    border-top-color: shade(@button_prelight, 0.9);
-    border-right-color: shade(@button_prelight, 0.85);
-    border-bottom-color: shade(@button_prelight, 0.85);
-    border-left-color: shade(@button_prelight, 0.9);
-*/
 }
 
 .combobox-entry .entry:focus {
@@ -412,15 +381,15 @@ buttons focus
 }
 
 GtkComboBox {
-/*
-    padding: 0px;
-*/
+	padding: 1px;
 }
 
-GtkComboBox .button {
-/*
-    padding: 3px;
-*/
+GtkComboBox>.button {
+	padding: 1px;
+}
+
+GtkComboBox .menuitem  {
+	padding: 1px 3px;
 }
 
 .combobox-entry .entry {
@@ -432,10 +401,14 @@ GtkComboBox .button {
     border-radius: 0px 3px 3px 0px;
 }
 
+.spinbutton {
+	padding: 2px;
+}
+
 .spinbutton.button {
     border-radius: 0 ;
     border-width: 0px 0px 0px 1px;
-    color : mix(@fg_color, @bg_color, 0.3); 
+    color : mix(@fg_color, @bg_color, 0.3);
 }
 
 .spinbutton.button:focus {
@@ -449,8 +422,6 @@ GtkComboBox .button {
 .spinbutton.entry {
     border-radius: 3px 1px 1px 3px;
 }
-
-
 
 GtkSwitch {
     -GtkWidget-focus-padding: 1;
@@ -481,7 +452,6 @@ header .button:hover:focus,
 header .button:hover:selected {
     color: @text_color;
 }
-
 
 column-header .button {
 /*
@@ -549,13 +519,13 @@ column-header:last-child .button {
     background-color: @base_color;
     color: @text_color;
     border-color: @button_border;
-    
+
     -GtkWidget-focus-line-pattern: "\1\1";
 }
 
 .check:active, .radio:active {
     color : @text_color;
-    background-color: @selected_bg_color;    
+    background-color: @selected_bg_color;
 }
 
 .check:insensitive, .radio:insensitive {
@@ -597,7 +567,6 @@ column-header:last-child .button {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@bg_color, 0.8)),
                                      to (shade(@bg_color, 0.9)));
-                                    
 }
 
 .scale.highlight.bottom:insensitive,
@@ -622,21 +591,21 @@ column-header:last-child .button {
 }
 
 .scrollbar.button.vertical.top {
-    border-radius: 0 2px 0 0;   
+    border-radius: 0 2px 0 0;
 }
 
 .scrollbar.button.horizontal.right,
 .scrollbar.button.vertical.bottom {
-    border-radius: 0 0 2px 0;   
+    border-radius: 0 0 2px 0;
 }
 
 .scrollbar.button.horizontal.left {
-    border-radius: 0 0 0 2px;   
+    border-radius: 0 0 0 2px;
 }
 
 .scrollbar.slider.horizontal, .scrollbar.button.horizontal {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(mix (#FFF, @bg_color, 0.9), 1.1)),
+                                     from (shade(mix (#FFF, @bg_color, 0.9), 1.08)),
                                      to (shade(mix (#FFF, @bg_color, 0.9), 0.9)));
     border-color: @border_normal;
 }
@@ -644,34 +613,34 @@ column-header:last-child .button {
 .scrollbar.button.horizontal:insensitive,
 .slider.horizontal:insensitive {
 
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_color, 1.1)), to(shade(@bg_color, 0.9)));
+    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_color, 1.08)), to(shade(@bg_color, 0.9)));
     color: @fg_insensitive;
     border-color: @border_insensitive;
 }
 
 .scrollbar.button.horizontal:selected,
 .slider.horizontal:selected {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@button_prelight, 1.1)), to(shade(@button_prelight, 0.9)));
+    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@button_prelight, 1.08)), to(shade(@button_prelight, 0.9)));
     border-color: @border_selected;
 }
 
 .scrollbar.button.vertical, .scrollbar.slider.vertical {
-    background-image: -gtk-gradient(linear, left top, right top, 
-                                     from (shade(mix (#FFF, @bg_color, 0.9), 1.1)),
+    background-image: -gtk-gradient(linear, left top, right top,
+                                     from (shade(mix (#FFF, @bg_color, 0.9), 1.08)),
                                      to (shade(mix (#FFF, @bg_color, 0.9), 0.9)));
     border-color: @border_normal;
 }
 
 .scrollbar.button.vertical:insensitive,
 .slider.vertical:insensitive {
-    background-image: -gtk-gradient(linear, left top, right top, from(shade(@bg_color, 1.1)), to(shade(@bg_color, 0.9)));
+    background-image: -gtk-gradient(linear, left top, right top, from(shade(@bg_color, 1.08)), to(shade(@bg_color, 0.9)));
     color: @fg_insensitive;
     border-color: @border_insensitive;
 }
 
 .scrollbar.button.vertical:selected,
 .slider.vertical:selected {
-    background-image: -gtk-gradient(linear, left top, right top, from(shade(@button_prelight, 1.1)), to(shade(@button_prelight, 0.9)));
+    background-image: -gtk-gradient(linear, left top, right top, from(shade(@button_prelight, 1.08)), to(shade(@button_prelight, 0.9)));
     border-color: @border_selected;
 }
 
@@ -680,7 +649,7 @@ GtkProgressBar {
     border-style: solid;
     border-width: 1px;
     padding: 0;
-    
+
 }
 GtkProgressBar {
     border-radius: 7px;
@@ -696,55 +665,55 @@ GtkScale {
 
 GtkScale.slider {
     border-radius: 2px;
-    border-width: 1px 1px 1px 0;   
+    border-width: 1px 1px 1px 0;
 }
 
 GtkScale.slider.vertical {
     border-width: 1px 1px 1px 0;
-    border-width: 1px 1px 0 1px;      
+    border-width: 1px 1px 0 1px;
 }
 
 .progressbar,
 GtkScale.slider {
     background-image: -gtk-gradient(linear, left top, right top,
                                      from (@button_prelight),
-                                     to (mix(#CC0000, @button_prelight, 0.7)));  
-    border-top-color: mix(@border_normal, @border_selected, 0.5);          
-    border-bottom-color: mix(@border_normal, @border_selected, 0.5);                                         
-    border-right-color: shade(mix(#C00, @button_prelight, 0.7),0.8);                                     
-    color: shade(mix(#C00, @button_prelight, 0.7),0.9);    
+                                     to (mix(#CC0000, @button_prelight, 0.7)));
+    border-top-color: mix(@border_normal, @border_selected, 0.5);
+    border-bottom-color: mix(@border_normal, @border_selected, 0.5);
+    border-right-color: shade(mix(#C00, @button_prelight, 0.7),0.8);
+    color: shade(mix(#C00, @button_prelight, 0.7),0.9);
 }
 
 GtkScale.slider:hover {
     background-image: -gtk-gradient(linear, left top, right top,
                                      from (shade(@button_prelight, 1.1)),
                                      to (shade(mix(#C00, @button_prelight, 0.7), 1.1)));
-    color: mix(#C00, @button_prelight, 0.7);    
+    color: mix(#C00, @button_prelight, 0.7);
 }
 .progressbar.vertical,
 GtkScale.slider.vertical {
     background-image: -gtk-gradient(linear, left bottom, left top,
                                      from (@button_prelight),
-                                     to (mix(#C00, @button_prelight, 0.7)));  
-    
-    border-left-color: mix(@border_normal, @border_selected, 0.5);          
-    border-right-color: mix(@border_normal, @border_selected, 0.5);                                     
-    border-top-color: shade(mix(#C00, @button_prelight, 0.7),0.8);                                     
-    color: shade(mix(#C00, @button_prelight, 0.7),0.9);    
+                                     to (mix(#C00, @button_prelight, 0.7)));
+
+    border-left-color: mix(@border_normal, @border_selected, 0.5);
+    border-right-color: mix(@border_normal, @border_selected, 0.5);
+    border-top-color: shade(mix(#C00, @button_prelight, 0.7),0.8);
+    color: shade(mix(#C00, @button_prelight, 0.7),0.9);
 }
 
 GtkScale.slider.vertical:hover {
     background-image: -gtk-gradient(linear, left bottom, left top,
                                      from (shade(@button_prelight, 1.1)),
                                      to (shade(mix(#C00, @button_prelight, 0.7), 1.1)));
-    color: mix(#C00, @button_prelight, 0.7);                             
+    color: mix(#C00, @button_prelight, 0.7);
 }
 
 GtkScale.mark {
 }
 
 .scale.highlight.left {
-    background-image: -gtk-gradient(linear, left top, right top,  
+    background-image: -gtk-gradient(linear, left top, right top,
                                      from (mix(@bg_color, @button_prelight, 0.2)),
                                      to (@button_prelight));
     border-color: mix(@border_normal, @border_selected, 0.5);
@@ -752,7 +721,7 @@ GtkScale.mark {
 }
 
 .scale.highlight.bottom {
-    background-image: -gtk-gradient(linear, left bottom, left top, 
+    background-image: -gtk-gradient(linear, left bottom, left top,
                                      from (mix(@bg_color, @button_prelight, 0.2)),
                                      to (@button_prelight));
     border-color: mix(@border_normal, @border_selected, 0.5);
@@ -768,7 +737,7 @@ GtkScale.mark {
     color: @fg_color;
 */
 
-    background-color: @bg_lighter;
+    background-color: @notebook_active;
     border-color: @border_normal;
     border-style: solid;
     border-width: 1px;
@@ -779,24 +748,18 @@ tab * {
 }
 
 .notebook tab {
-/*
-    color: @fg_color;
-*/
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (mix (#FFF, @bg_color, 0.9)),
-                                     to (mix (#FFF, shade(@bg_color, 0.88), 0.9)));
+                                     to (shade(@bg_color, 0.92)));
     border-color: @border_normal;
 }
 
 .notebook tab:active, .notebook tab *:active {
     padding: 3px 2px 1px 2px;
-/*
-    color: @text_color;
-*/
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (mix(shade (@button_prelight, 1.05), @bg_color, 0.7)),
-                                     to (@bg_lighter));
-    border-color: @border_selected;                                     
+                                     from (mix(@button_prelight, @notebook_active, 0.9)),
+                                     to (@notebook_active));
+    border-color: @button_prelight;
 }
 
 GtkNotebook tab:active {
@@ -812,65 +775,53 @@ GtkNotebook tab:active {
     border-left-width: 0;
     background-image: -gtk-gradient(linear, right top, left top,
                                      from (mix (#FFF, @bg_color, 0.9)),
-                                     to (mix (#FFF, shade(@bg_color, 0.88), 0.9)));    
-/*
-    background-color: mix (#FFF, shade(@bg_color, 0.88), 0.9);
-*/
+                                     to (shade(@bg_color, 0.92)));
     border-radius: 0 3px 3px 0;
 }
 
 .notebook tab.right:active {
     background-image: none;
     background-image: -gtk-gradient(linear, right top, left top,
-                                     from (mix(shade (@button_prelight, 1.05), @bg_color, 0.7)),
-                                     to (@bg_lighter));
-/*
-    background-color: mix (#FFF, @bg_color, 0.95);
-*/
+                                     from (mix(@button_prelight, @notebook_active, 0.9)),
+                                     to (@notebook_active));
     border-width: 1px 1px 1px 0;
 }
 
 .notebook tab.bottom {
     border-top-width: 0;
-    background-image: -gtk-gradient(linear, left bottom, left top,    
+    background-image: -gtk-gradient(linear, left bottom, left top,
                                      from (mix (#FFF, @bg_color, 0.9)),
-                                     to (mix (#FFF, shade(@bg_color, 0.88), 0.9)));    
+                                     to (shade(@bg_color, 0.92)));
     border-radius: 0 0 3px 3px;
 }
 
 .notebook tab.bottom:active {
-    border-width: 0 1px 1px 1px;    
+    border-width: 0 1px 1px 1px;
     background-image: -gtk-gradient(linear, left bottom, left top,
-                                     from (mix(shade (@button_prelight, 1.05), @bg_color, 0.7)),
-                                     to (@bg_lighter));   
+                                     from (mix(@button_prelight, @notebook_active, 0.9)),
+                                     to (@notebook_active));
 }
 
 .notebook tab.left {
     border-right-width: 0;
-    background-image: -gtk-gradient(linear, left top, right top,    
+    background-image: -gtk-gradient(linear, left top, right top,
                                      from (mix (#FFF, @bg_color, 0.9)),
-                                     to (mix (#FFF, shade(@bg_color, 0.88), 0.9)));    
-/*
-    background-color: mix (#FFF, shade(@bg_color, 0.88), 0.9);
-*/
+                                     to (shade(@bg_color, 0.92)));
     border-radius: 3px 0 0 3px;
 }
 
 .notebook tab.left:active {
     background-image: none;
     background-image: -gtk-gradient(linear, left top, right top,
-                                     from (mix(shade (@button_prelight, 1.05), @bg_color, 0.7)),
-                                     to (@bg_lighter));    
-/*
-    background-color: mix (#FFF, @bg_color, 0.95);
-*/
+                                     from (mix(@button_prelight, @notebook_active, 0.9)),
+                                     to (@notebook_active));
     border-width: 1px 0 1px 1px;
 }
 
 /*********
  * Menus *
  *********/
- 
+
 .menu {
     background-color: @bg_lighter;
     border: solid;
@@ -885,7 +836,7 @@ GtkNotebook tab:active {
  }
 
 .menuitem {
-    padding: 3px 0px;
+    padding: 3px;
     border-width: 1px 1px 1px 1px;
 }
 
@@ -907,13 +858,6 @@ GtkNotebook tab:active {
     color: mix(@text_color, darker(@bg_lighter), 0.7);
     border-color: shade(@bg_lighter, 0.9);
 }
-
-/*
-.menu:hover {
-    background-color: shade(@selected_bg_color, 1.1);
-    border-color: @border_selected;
-}
-*/
 
 .menuitem:hover,
 .menu:hover {
@@ -938,7 +882,7 @@ GtkNotebook tab:active {
 .separator {
     border-style: solid;
     color: @border_insensitive;
-    border-color: @border_insenstive;  
+    border-color: @border_insenstive;
 }
 
 .menuitem.separator {
@@ -960,7 +904,7 @@ GtkNotebook tab:active {
 /***********
  * Menubar *
  ***********/
- 
+
 .menubar {
 /*
     background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_color, 1.0)), to(shade(@bg_color, 0.95)));
@@ -973,7 +917,6 @@ GtkNotebook tab:active {
 .menubar:active {
     color: @fg_color;
 }
-
 
 .menubar:insensitive {
     color: @fg_insensitive;
@@ -991,15 +934,15 @@ GtkNotebook tab:active {
 
 .menubar>.menuitem:hover {
     background-color: @button_prelight ;
-    border-color: shade(@button_prelight, 0.9);   
+    border-color: shade(@button_prelight, 0.9);
 }
 
 /***********
  * Toolbar *
  ***********/
- 
+
 .toolbar {
-    background-color: @bg_color;    
+    background-color: @bg_color;
     border-style: solid;
     border-width: 1px 0px 0px 0px;
     border-color: @border_insensitive;
