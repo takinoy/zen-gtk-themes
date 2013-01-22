@@ -341,12 +341,24 @@ widget_class "*.<GtkCList>.<GtkButton>" style "treeview_header"
 # notebook #
 ############
 
-style "notebook" = "default"
+style "notebook-bg" = "default"
+{
+    bg[ACTIVE]   = shade(0.95,@bg_color)  # Unfocused tab background.
+	bg[NORMAL]   = shade(1.05,@bg_color) # Tab background.
+}
+
+widget_class "*<GtkNotebook>*<GtkEventBox>"		style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>"		style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkLayout>"		style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkViewport>"		style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkToolbar>"	style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkLabel>"		style "notebook-bg"
+
+style "notebook" = "notebook-bg"
 {
 	xthickness = 3 # Width of tabs and notebook borders.
 	ythickness = 1 # Height of tabs and notebook borders.
-    bg[ACTIVE]   = shade(0.95,@bg_color)  # Unfocused tab background.
-	bg[NORMAL]   = shade(1.05,@bg_color) # Tab background.
 
 	engine "clearlooks"
 	{
