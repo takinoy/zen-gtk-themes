@@ -299,7 +299,7 @@ style "comboboxentry" = "button" {
 
 style "combobox" = "button" {
 #don't work
-#fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
+	#fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
 }
 
 #widget_class "*<GtkCombo>*" style "combobox"
