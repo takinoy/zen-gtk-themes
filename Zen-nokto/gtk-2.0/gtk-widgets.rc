@@ -141,6 +141,9 @@ style "menu"
 	fg[INSENSITIVE]   = mix(0.7, darker(mix (0.6, @base_color, @bg_color)), @text_color)
 
     	engine "clearlooks" {
+		style = CLASSIC
+		contrast = 0.8
+		radius = 1.0
 		}
 }
 
@@ -342,6 +345,7 @@ widget_class "*.<GtkCList>.<GtkButton>" style "treeview_header"
 style "notebook-bg" = "default"
 {
 	bg[SELECTED] = @button_prelight
+	bg[ACTIVE]   = shade(0.98,@bg_color) # Tab background.
 	bg[NORMAL]   = shade(1.05,@bg_color) # Tab background.
 }
 
@@ -361,7 +365,7 @@ style "notebook" = "notebook-bg"
 	engine "clearlooks"
 	{
 		radius = 2.0 # Roundness of menu items.
-		style = GLOSSY
+		style = CLASSIC
 		contrast = 1.0
 	}
 }
