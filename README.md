@@ -21,7 +21,7 @@ Extras :
 
 Specific settings for libreoffice :
 Using small scrollbars in libreoffice 3.* cause sheet tabs too small. You can fix scrollbar width for LibreOffice two ways :
-- run the script libreoffice-patch.sh (use it with care). This script will add customs application launchers for libreoffice in .local/share/applications to run the patch "libreoffice.rc" when libreoffice is launched. The folowing command will be added in the application lancher :
+- run the script libreoffice-patch.sh (use it with care). This script will add customs application launchers for libreoffice in .local/share/applications to run the patch "libreoffice.rc" when libreoffice is launched. The following command will be added in the application launcher :
 # bash -c 'GTK2_RC_FILES=$HOME/.themes/Zen/gtk-2.0/apps/libreoffice.rc application-command'
 You can remove the generated files libreoffice-* safely.
 - edit Zen/gtk-2.0/gtkrc and change value of "GtkScrollbar::slider-width" from "11" to "14" for example.
@@ -33,19 +33,19 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 Changelog:
 ----------
 
-0.3.7
-- Last gtk2 version with the clearlook engine.
-- Updates from 0.7 branch (gtk2).
+0.3.8
+ - Last gtk2 version with the clearlook engine.
+ - Updates from 0.8 branch (gtk2).
 
 0.3.2
-- New color schemes and preconfigured settings.
-- Add notify theme for xfce.
+ - New color schemes and preconfigured settings.
+ - Add notify theme for xfce.
 
 0.2.2
-- Panels, menu and treeviews settings can be edited in a separate GtkRC file.
-- Adjustments of color setting and widget proprieties for light and dark color schemes.
+ - Panels, menu and treeviews settings can be edited in a separate GtkRC file.
+ - Adjustments of color setting and widget proprieties for light and dark color schemes.
 
 0.1.1
-- Patch to set scrollbars width in libreoffice.
+ - Patch to set scrollbars width in libreoffice.
 
 note : versions 0.2 to 0.3 uses the clearlooks engine
