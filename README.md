@@ -26,7 +26,7 @@ Extras :
 
 Specific settings for libreoffice :
 Using small scrollbars in libreoffice 3.* cause sheet tabs too small. You can fix scrollbar width for LibreOffice two ways :
-- run the script libreoffice-patch.sh (use it with care). This script will add customs application launchers for libreoffice in .local/share/applications to run the patch "libreoffice.rc" when libreoffice is launched. The folowing command will be added in the application lancher :
+- run the script libreoffice-patch.sh (use it with care). This script will add customs application launchers for libreoffice in .local/share/applications to run the patch "libreoffice.rc" when libreoffice is launched. The following command will be added in the application launcher :
 # bash -c 'GTK2_RC_FILES=$HOME/.themes/Zen/gtk-2.0/apps/libreoffice.rc application-command'
 You can remove the generated files libreoffice-* safely.
 - edit Zen/gtk-2.0/gtkrc and change value of "GtkScrollbar::slider-width" from "11" to "14" for example.
@@ -51,7 +51,7 @@ Changelog:
 
 0.6.2
  - Remove shadow on menubar.
- - Update color scheme for panel, menu, menubar, scroolbar and prelight state.
+ - Update color scheme for panel, menu, menubar, scrollbar and prelight state.
  - Sources availables in git repository.
  - Package "zen-gtk-themes" in "AUR" for archlinux users.
 
