@@ -68,7 +68,7 @@ style "default"
 	####################
 	bg[NORMAL]        = @bg_color
 	bg[PRELIGHT]      = mix(0.4, @button_prelight, shade(1.0, @bg_color))
-	bg[SELECTED]      = @selected_bg_color # Color for selected items.
+	bg[SELECTED] = @button_prelight
 	bg[INSENSITIVE]   = @bg_color
 	bg[ACTIVE]        = shade (0.9, @bg_color)
 
@@ -184,7 +184,6 @@ style "menubar" = "menu"
     ythickness = 3
 	GtkMenuBar :: shadow-type = GTK_SHADOW_NONE
 	bg[SELECTED]	= shade (1.05, @button_prelight)
-    #bg[SELECTED]      = @button_prelight
 	bg[NORMAL]      = @bg_color  # Color of menu background.
 	fg[NORMAL]      = @fg_color
 	fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
@@ -237,7 +236,6 @@ style "button" = "default"
 	ythickness = 3
 
     bg[NORMAL]        = mix (0.9, @bg_color, @base_color) # Color for buttons.
-    bg[SELECTED]      = @button_prelight
 	bg[INSENSITIVE]   = shade (1.04, @bg_color)
 	bg[ACTIVE]        = mix (0.15, @button_prelight, @bg_color)
 
@@ -420,7 +418,7 @@ style "scale"="scrollbar"
 	#ythickness = 3
 	GtkWidget	::focus-line-width	= 0
 	GtkWidget	::focus-padding		= 2
-	bg[SELECTED] = @button_prelight
+
 	engine "clearlooks" {
 		hint = "scale"
 	}
@@ -503,7 +501,6 @@ widget_class "*.Collection"        style "rox"
 
 style "titlebar" = "default"
 {
-    bg[SELECTED] = @button_prelight
     fg[SELECTED] = mix(0.26, @bg_color, @selected_fg_color)
     fg[INSENSITIVE] = mix(0.5, @bg_color, @fg_color)
 	#bg[SELECTED] = mix(0.2, @button_prelight, "#3C3C3C")
