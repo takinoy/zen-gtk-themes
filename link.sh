@@ -2,9 +2,8 @@
 
 # links
 
-# package.name
-pkgname=${PWD##*/}
-name=${pkgname%%-*}
+# package name
+name=ZenX
 
 # directory
 theme_dir="$HOME/.themes"

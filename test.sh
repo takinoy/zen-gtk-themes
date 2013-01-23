@@ -3,9 +3,8 @@
 # sleep
 t=5
 
-# package.name
-pkgname=${PWD##*/}
-name=${pkgname%%-*}
+# package name
+name=ZenX
 
 # test les themes
 themes=$(ls -1 | grep "$name-")

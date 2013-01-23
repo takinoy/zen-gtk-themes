@@ -13,9 +13,8 @@ set -e
 # Create directories
 #target directories
 
-# package.name
-pkgname=${PWD##*/}
-name=${pkgname%%-*}X
+# package name
+name=ZenX
 
 target_dir=$(ls -1 | grep "$name-")
 
