@@ -67,7 +67,7 @@ style "default"
 	# Color Definitions
 	####################
 	bg[NORMAL]        = @bg_color
-	bg[PRELIGHT]      = mix(0.4, @button_prelight, shade(1.0, @bg_color))
+	bg[PRELIGHT]      = shade (1.02, @bg_color)
 	bg[SELECTED] = @button_prelight
 	bg[INSENSITIVE]   = @bg_color
 	bg[ACTIVE]        = shade (0.9, @bg_color)
@@ -236,14 +236,12 @@ style "button" = "default"
 	ythickness = 3
 
     bg[NORMAL]        = mix (0.9, @bg_color, @base_color) # Color for buttons.
+	bg[PRELIGHT]      = mix(0.4, @button_prelight, @bg_color)
 	bg[INSENSITIVE]   = shade (1.04, @bg_color)
 	bg[ACTIVE]        = mix (0.15, @button_prelight, @bg_color)
 
 	engine "clearlooks" {
 		focus_color = @selected_bg_color
-	}
-	bg[ACTIVE]	= shade (0.9, @bg_color) # Color for pressed-buttons.
-	engine "clearlooks"{
 		style = GUMMY
 		contrast = 0.8
 		#radius = 2.0
@@ -256,6 +254,7 @@ widget_class "*button*"            style "button"
 class "*button*"                   style "button"
 widget_class "*OptionMenu*"        style "button"
 class "*OptionMenu*"               style "button"
+widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest  "button"
 
 style "comboboxentry" = "button" {
 }
