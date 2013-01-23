@@ -13,9 +13,11 @@ set -e
 # Create directories
 #target directories
 
-# package.name
-pkgname=${PWD##*/}
+# package name
+pkgname=$(grep -m 1 'pkgname=' cache/PKGBUILD | cut -d= -f2)
 name=${pkgname%%-*}
+# first letter in uppercase
+name=$(echo ${name:0:1}|tr a-z A-Z)${name:1}
 
 target_dir=$(ls -1 | grep "$name-")
 
