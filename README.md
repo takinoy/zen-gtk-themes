@@ -3,7 +3,7 @@ zenx-gtk-themes version 0.8.0
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : January 22, 2013
+Date : January 23, 2013
 Sources : https://github.com/cedl38/zen-gtk-themes/tree/zenx
 
 This is a variant of "zen-gtk-themes" with the xfce engine.
