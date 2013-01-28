@@ -62,7 +62,6 @@ Changelog:
 0.3.8
  - Last gtk2 version with the clearlook engine.
  - Updates from 0.8 branch (gtk2).
-
 0.3.2
  - New color schemes and preconfigured settings.
  - Add notify theme for xfce.
