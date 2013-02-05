@@ -450,12 +450,13 @@ style "scale"="scrollbar"
 
 	engine "murrine"
 	{
-		roundness 		= 7
-		gradient_shades		= {1.05,1.0,1.0,0.95}
-		trough_shades	= { 0.95, 1.05 }
+		roundness				= 7
+		gradient_shades			= {1.05,1.0,1.0,0.9}
+		trough_shades			= { 0.95, 1.05 }
 		trough_border_shades	= { 0.95,1.0 }
-		contrast		= 1.0
-		roundness = 2
+		border_shades			= { 0.9,0.85 }
+		#contrast				= 0.8
+		roundness				= 2
 	}
 }
 
@@ -481,15 +482,15 @@ style "progress"
     bg[PRELIGHT]      = @button_prelight
 
 	engine "murrine" {
-		gradient_shades = {1.0,1.0,1.0,0.9}
-		trough_shades	= { 0.95, 1.05 }
+		gradient_shades			= {1.0,1.0,1.0,0.9}
+		trough_shades			= { 0.95, 1.05 }
 		trough_border_shades	= { 0.95,1.0 }
-		roundness 	= 7
-		contrast	= 0.6
-		#border_shades	= { 0.9, 0.9 }
-		#lightborder_shade   = 1.0
-		#glowstyle	= 0
-		#glow_shade	= 1.0
+		roundness 				= 7
+		contrast				= 0.6
+		#border_shades			= { 0.9, 0.9 }
+		#lightborder_shade		= 1.0
+		#glowstyle				= 0
+		#glow_shade				= 1.0
 	}
 }
 
