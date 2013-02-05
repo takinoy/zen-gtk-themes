@@ -67,11 +67,10 @@
  }
 
 *:insensitive {
-/*
     color: @fg_insensitive;
-    border-color:@border_insensitive
-
-    text-shadow: 1 1 @base_color;
+    border-color:@border_insensitive;
+/*
+    text-shadow: 1 1 alpha(@light_shadow, 0.4);
 */
 }
 
@@ -180,8 +179,6 @@ GtkDrawingArea {
 }
 
 .view:insensitive {
-    color: mix(@text_color, darker(@bg_color), 0.7);
-    border-color:@border_insensitive;
     background-color: @button_bg_insensitive;
 }
 
@@ -221,9 +218,8 @@ GtkDrawingArea {
 
 .entry:insensitive,
 .check:insensitive, .radio:insensitive {
-    color: mix(@text_color, darker(@bg_color), 0.7);
-    border-color:@border_insensitive;
-    background-color: @bg_color;
+    color: @fg_insensitive;
+    background-color: @button_bg_insensitive;
 }
 
 .cell {
@@ -281,7 +277,7 @@ GtkAssistant .sidebar {
 GtkSwitch.slider,
 .button {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@button_bg_normal, 1.1)),
+                                     from (shade(@button_bg_normal, 1.08)),
                                      to (shade(@button_bg_normal, 0.95)));
     border-color: @button_border;
     border-style: solid;
@@ -307,9 +303,8 @@ GtkSwitch:insensitive,
 GtkComboBox:insensitive,
 .button:insensitive{
     color: @fg_insensitive;
-    border-color:@border_insensitive;
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@button_bg_insensitive, 1.08)),
+                                     from (shade(@button_bg_insensitive, 1.05)),
                                      to (shade(@button_bg_insensitive, 0.95)));
     border-top-color: @border_insensitive;
     border-right-color: shade(@border_insensitive, 0.9);
@@ -525,7 +520,7 @@ column-header:last-child .button {
 }
 
 .check:insensitive, .radio:insensitive {
-    color : @fg_insensitive;
+    color: @fg_insensitive;
     background-color: @bg_color;
 }
 
@@ -558,18 +553,25 @@ column-header:last-child .button {
     border-color: darker(@bg_color);
 }
 
-.scale.highlight.left:insensitive,
 .trough {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@bg_color, 0.8)),
                                      to (shade(@bg_color, 0.9)));
 }
 
-.scale.highlight.bottom:insensitive,
 .trough.vertical {
     background-image: -gtk-gradient(linear, left top, right top,
                                      from (shade(@bg_color, 0.8)),
                                      to (shade(@bg_color, 0.9)));
+}
+
+GtkProgressBar.trough,
+GtkProgressBar.vertical.trough,
+GtkScale.trough,
+GtkScale.vertical.trough {
+    border-color: @border_normal;
+    background-color: shade(@bg_color, 0.9);
+    background-image: none;
 }
 
 .grip {
@@ -604,10 +606,8 @@ column-header:last-child .button {
 
 .scrollbar.button.horizontal:insensitive,
 .slider.horizontal:insensitive {
-
     background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_color, 1.08)), to(shade(@bg_color, 0.9)));
     color: @fg_insensitive;
-    border-color: @border_insensitive;
 }
 
 .scrollbar.button.horizontal:selected,
@@ -627,7 +627,6 @@ column-header:last-child .button {
 .slider.vertical:insensitive {
     background-image: -gtk-gradient(linear, left top, right top, from(shade(@bg_color, 1.08)), to(shade(@bg_color, 0.9)));
     color: @fg_insensitive;
-    border-color: @border_insensitive;
 }
 
 .scrollbar.button.vertical:selected,
@@ -669,36 +668,56 @@ GtkScale.slider.vertical {
 GtkScale.slider {
     background-image: -gtk-gradient(linear, left top, right top,
                                      from (@button_prelight),
-                                     to (mix(#CC0000, @button_prelight, 0.7)));
+                                     to (mix(#CC0000, @button_prelight, 0.75)));
     border-top-color: mix(@border_normal, @border_selected, 0.5);
     border-bottom-color: mix(@border_normal, @border_selected, 0.5);
-    border-right-color: shade(mix(#C00, @button_prelight, 0.7),0.8);
-    color: shade(mix(#C00, @button_prelight, 0.7),0.9);
+    border-right-color: shade(mix(#C00, @button_prelight, 0.75),0.8);
+    color: shade(mix(#C00, @button_prelight, 0.75),0.9);
+}
+
+.progressbar.horizontal:insensitive,
+GtkScale.slider.horizontal:insensitive {
+    background-image: -gtk-gradient(linear, left top, right top,
+                                     from (@bg_darker),
+                                     to (shade(@bg_darker, 0.9)));
+    border-top-color: mix(@border_normal, @border_insensitive, 0.5);
+    border-bottom-color: mix(@border_normal, @border_insensitive, 0.5);
+    border-right-color: shade(shade(@bg_darker, 0.9),0.8);
 }
 
 GtkScale.slider:hover {
     background-image: -gtk-gradient(linear, left top, right top,
                                      from (shade(@button_prelight, 1.1)),
-                                     to (shade(mix(#C00, @button_prelight, 0.7), 1.1)));
-    color: mix(#C00, @button_prelight, 0.7);
+                                     to (shade(mix(#CC0000, @button_prelight, 0.75), 1.1)));
+    color: mix(#CC0000, @button_prelight, 0.75);
 }
+
 .progressbar.vertical,
 GtkScale.slider.vertical {
     background-image: -gtk-gradient(linear, left bottom, left top,
                                      from (@button_prelight),
-                                     to (mix(#C00, @button_prelight, 0.7)));
-
+                                     to (mix(#CC0000, @button_prelight, 0.75)));
     border-left-color: mix(@border_normal, @border_selected, 0.5);
     border-right-color: mix(@border_normal, @border_selected, 0.5);
-    border-top-color: shade(mix(#C00, @button_prelight, 0.7),0.8);
-    color: shade(mix(#C00, @button_prelight, 0.7),0.9);
+    border-top-color: shade(mix(#CC0000, @button_prelight, 0.75),0.8);
+    color: shade(mix(#CC0000, @button_prelight, 0.75),0.9);
+}
+
+.progressbar.vertical:insensitive,
+GtkScale.slider.vertical:insensitive {
+    background-image: -gtk-gradient(linear, left bottom, left top,
+                                     from (@bg_darker),
+                                     to (shade(@bg_darker, 0.9)));
+    border-left-color: mix(@border_normal, @border_insensitive, 0.5);
+    border-right-color: mix(@border_normal, @border_insensitive, 0.5);
+    border-top-color: shade(shade(@bg_darker, 0.9),0.8);
 }
 
 GtkScale.slider.vertical:hover {
     background-image: -gtk-gradient(linear, left bottom, left top,
                                      from (shade(@button_prelight, 1.1)),
-                                     to (shade(mix(#C00, @button_prelight, 0.7), 1.1)));
-    color: mix(#C00, @button_prelight, 0.7);
+                                     to (shade(mix(#CC0000, @button_prelight, 0.75), 1.1)));
+    color: mix(#CC0000, @button_prelight, 0.75);
 }
 
 GtkScale.mark {
@@ -717,6 +736,20 @@ GtkScale.mark {
                                      from (mix(@bg_color, @button_prelight, 0.2)),
                                      to (@button_prelight));
     border-color: mix(@border_normal, @border_selected, 0.5);
+}
+
+.scale.highlight.left:insensitive {
+    background-image: -gtk-gradient(linear, left top, right top,
+                                     from (@bg_color),
+                                     to (@bg_darker));
+    border-color: mix(@border_normal, @border_insensitive, 0.5);
+}
+
+.scale.highlight.bottom:insensitive {
+    background-image: -gtk-gradient(linear, left bottom, left top,
+                                     from (@bg_color),
+                                     to (@bg_darker));
+    border-color: mix(@border_normal, @border_insensitive, 0.5);
 }
 
 /*****************
@@ -908,11 +941,6 @@ GtkNotebook tab:active {
 
 .menubar:active {
     color: @fg_color;
-}
-
-.menubar:insensitive {
-    color: @fg_insensitive;
-    border-color: @border_insensitive;
 }
 
 .menubar:selected {
