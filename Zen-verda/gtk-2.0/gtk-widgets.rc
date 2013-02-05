@@ -309,6 +309,7 @@ class "GtkSpinButton" style "spinbutton"
 
 style "radiocheck" = "button"
 {
+	bg[SELECTED]	= @selected_bg_color
 	bg[PRELIGHT]	= shade(1.03,@bg_color)
 }
 
