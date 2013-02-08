@@ -1,9 +1,9 @@
-zen-gtk-themes version 0.8.0
+zen-gtk-themes version 0.8.1
 ----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : January 22, 2013
+Date : February 08, 2013
 Sources : https://github.com/cedl38/zen-gtk-themes
 
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
@@ -37,7 +37,7 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 
 Changelog:
 ----------
-
+0.8.1 : Adjust insensitive widgets color, minor others changes.
 0.8.0
  - Adjust button, notebook, radiocheck colors.
  - Change fg_color and text_color for dark themes.
