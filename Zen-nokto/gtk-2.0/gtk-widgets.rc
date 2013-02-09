@@ -105,7 +105,7 @@ style "default"
 		glowstyle           = 0                 # 0,1,2,3,4
 		glow_shade          = 1.1
 		highlight_shade     = 1.0               # set highlight amount for buttons or widgets
-		lightborder_shade   = 1.0               # sets lightborder amount for buttons or widgets
+		lightborder_shade   = 1.02               # sets lightborder amount for buttons or widgets
 		lightborderstyle    = 0                # 0 = lightborder on top side, 1 = lightborder on all sides
 		listviewheaderstyle = 1                 # 0 = flat, 1 = glassy, 2 = raised
 		listviewstyle       = 0                 # 0 = nothing, 1 = dotted
