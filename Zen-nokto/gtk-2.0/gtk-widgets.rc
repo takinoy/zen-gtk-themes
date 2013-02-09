@@ -277,8 +277,7 @@ class "GtkSpinButton" style "spinbutton"
 ##########
 
 style "view" {
-	base[NORMAL] = shade (0.93,@base_color)
-
+	base[NORMAL] = shade (0.94,@base_color)
 }
 
 style "iconview" = "view" {
