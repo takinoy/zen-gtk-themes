@@ -193,15 +193,15 @@ GtkDrawingArea {
 }
 
 .view row:nth-child(odd) {
-    background-color: shade(@base_color, 0.865);
+    background-color: shade(@base_color, 0.875);
 }
 
 .view row:nth-child(even) {
-    background-color: shade(@base_color, 0.93);
+    background-color: shade(@base_color, 0.94);
 }
 
 .view row:nth-child(odd):selected {
-    background-color: shade(@selected_bg_color, 0.93);
+    background-color: shade(@selected_bg_color, 0.94);
 }
 
 .view row:nth-child(even):selected {
