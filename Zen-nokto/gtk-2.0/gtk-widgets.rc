@@ -98,7 +98,7 @@ style "default"
 	engine "murrine"
 	{
 		animation           = FALSE
-		contrast            = 0.7               # 0.8 for less contrast, more than 1.0 for more contrast on borders
+		contrast            = 0.5               # 0.8 for less contrast, more than 1.0 for more contrast on borders
 		focus_color         = @button_prelight
 		glazestyle          = 0                 # 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved highlight, 4 = beryl highlight
 		gradient_shades     = {1.0,1.0,1.0,1.0} #{1.1,1.0,1.0,0.87}
@@ -178,7 +178,6 @@ style "menu"
 		border_shades = { 1.1, 1.1 }
 		#roundness = 0
 		#lightborderstyle        = 1
-
 	}
 }
 
@@ -281,10 +280,9 @@ style "button" = "default"
 	
 	engine "murrine"
 	{
-		gradient_shades     = {1.05,1.02,1.02,0.95}
-		contrast            = 0.8
-		#reliefstyle         = 0
-		border_shades = { 0.95, 0.9 }
+		gradient_shades     = {1.02,1.0,1.0,0.95}
+		contrast            = 0.9
+		border_shades       = { 1.1, 0.9 }
 	}
 }
 
@@ -376,6 +374,7 @@ style "treeview_header" = "default" {
 	{
 		roundness = 0
 		gradient_shades     = {1.0,1.0,1.0,0.95}
+		border_shades			= { 1.2,0.8 }
 	}
 }
 # Treeview headers (and similar stock GTK+ widgets)
@@ -459,7 +458,7 @@ style "scale"="scrollbar"
 		gradient_shades			= {1.05,1.0,1.0,0.9}
 		trough_shades			= { 0.95, 1.05 }
 		trough_border_shades	= { 0.95,1.0 }
-		border_shades			= { 0.9,0.85 }
+		border_shades			= { 1.05,0.85 }
 		#contrast				= 0.8
 		roundness				= 2
 	}
@@ -492,10 +491,6 @@ style "progress"
 		trough_border_shades	= { 0.95,1.0 }
 		roundness 				= 7
 		contrast				= 0.6
-		#border_shades			= { 0.9, 0.9 }
-		#lightborder_shade		= 1.0
-		#glowstyle				= 0
-		#glow_shade				= 1.0
 	}
 }
 

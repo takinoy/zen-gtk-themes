@@ -12,14 +12,12 @@ style "light-panel" = "default" {
 	bg[NORMAL] = "#CCCCCC"
 	bg[PRELIGHT] = mix(0.6, @button_prelight, "#CCCCCC")
 	bg[ACTIVE] = @button_prelight
-
 }
 
 style "adaptive-panel" = "default" {
 	bg[NORMAL] = shade(0.9,@bg_color)
 	bg[PRELIGHT] = mix(0.4, @button_prelight, shade(1.0, @bg_color))
 	bg[ACTIVE]   = @button_prelight
-
 	}
 
 
@@ -33,7 +31,7 @@ style "panel_button" = "default"
 {
 		engine "murrine" {
 		#border_shades	= { 1.0, 1.0 }
-		contrast        = 0.6
+		contrast        = 0.9
 		#gradient_shades     = {0.9,1.0,1.0,1.0}
 		roundness	= 0
 	}
