@@ -2,12 +2,20 @@
 # Style Properties
 #######################
 
+gtk_color_scheme = "link_color:#1f4299" # Hyperlinks
 gtk-icon-sizes	= "gtk-large-toolbar=24,24:gtk-small-toolbar=16,16:gtk-button=16,16:gtk-dialog=16,16" # This enables "compact-mode".
 
 style "default"
 {
 	xthickness = 2
 	ythickness = 2
+
+	GnomeHRef		::link_color  				= @link_color
+	GtkHTML			::link-color				= @link_color
+	GtkIMHtmlr		::hyperlink-color 			= @link_color
+	GtkIMHtml		::hyperlink-color			= @link_color
+	GtkWidget		::link-color				= @link_color
+	GtkWidget		::visited-link-color			= @text_color
 
 	GtkButton::child-displacement-x = 1 # Pressed button icon displacement.
 	GtkButton::child-displacement-y = 1 # Pressed button icon displacement.
