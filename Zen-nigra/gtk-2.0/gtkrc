@@ -31,6 +31,15 @@ style "notebook-nigra" = "notebook"
 widget_class "*.GtkNotebook"       style "notebook-nigra"
 class "*.GtkNotebook"              style "notebook-nigra"
 
+style "treeview_header" = "default" {
+	bg[PRELIGHT] = shade (1.4, @bg_color)
+	bg[NORMAL] = shade (1.3, @bg_color)
+}
+widget_class "*.<GtkTreeView>.<GtkButton>" style "treeview_header"
+widget_class "*.<GtkCTree>.<GtkButton>" style "treeview_header"
+widget_class "*.<GtkList>.<GtkButton>" style "treeview_header"
+widget_class "*.<GtkCList>.<GtkButton>" style "treeview_header"
+
 style "scrollbar-nigra" = "scrollbar"
 {
 	bg[SELECTED]        = shade(1.6, @bg_color)

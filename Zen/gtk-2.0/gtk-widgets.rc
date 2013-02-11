@@ -105,7 +105,7 @@ style "default"
 		glowstyle           = 0                 # 0,1,2,3,4
 		glow_shade          = 1.1
 		highlight_shade     = 1.0               # set highlight amount for buttons or widgets
-		lightborder_shade   = 1.02               # sets lightborder amount for buttons or widgets
+		lightborder_shade   = 1.001               # sets lightborder amount for buttons or widgets (workaround for libreoffice)
 		lightborderstyle    = 0                # 0 = lightborder on top side, 1 = lightborder on all sides
 		listviewheaderstyle = 1                 # 0 = flat, 1 = glassy, 2 = raised
 		listviewstyle       = 0                 # 0 = nothing, 1 = dotted
@@ -339,6 +339,7 @@ style "iconview" = "view" {
 
 style "treeview" = "iconview"
 {
+
 	# Enable color variation for odd and even rows.
 	engine "pixmap"
 	{
@@ -368,13 +369,15 @@ widget_class "*GtkFileChooserWidget.GtkFileChooserDefault.GtkVBox.GtkHPaned.GtkV
 style "treeview_header" = "default" {
 	xthickness = 2
 	ythickness = 1
-	bg[PRELIGHT] = shade (1.04,@bg_color)
 
-  	engine "murrine"
+	bg[PRELIGHT]	= shade (1.06, @bg_color)
+	bg[NORMAL]		= mix (0.8, @bg_color, @base_color)
+
+	engine "murrine"
 	{
-		roundness = 0
-		gradient_shades     = {1.0,1.0,1.0,0.95}
-		border_shades			= { 1.2,0.8 }
+		roundness		= 0
+		gradient_shades	= {1.0,1.0,1.0,0.97}
+		border_shades	= { 1.2,0.9 }
 	}
 }
 # Treeview headers (and similar stock GTK+ widgets)
@@ -389,8 +392,8 @@ widget_class "*.<GtkCList>.<GtkButton>" style "treeview_header"
 
 style "notebook-bg" = "default"
 {
-    bg[ACTIVE]   = shade(0.95,@bg_color)  # Unfocused tab background.
-	bg[NORMAL]   = shade(1.05,@bg_color) # Tab background.
+	bg[ACTIVE]	= shade (0.95, @bg_color)			# Unfocused tab background.
+	bg[NORMAL]	= mix (0.8, @bg_color, @base_color)	# Tab background.
 }
 
 widget_class "*<GtkNotebook>*<GtkEventBox>"		style "notebook-bg"
