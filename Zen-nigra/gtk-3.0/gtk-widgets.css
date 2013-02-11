@@ -1,6 +1,6 @@
-/**********
-* default *
-***********/
+/***********
+ * default *
+ ***********/
 
 * {
     engine: none;
@@ -21,14 +21,13 @@
     -GtkPaned-handle-size: 3;
     -GtkProgressBar-min-horizontal-bar-height: 12;
     -GtkProgressBar-min-vertical-bar-width: 12;
-    -GtkRange-slider-width: 11;
+    -GtkRange-slider-width: 12;
     -GtkRange-stepper-size: 20;
     -GtkRange-stepper-spacing: 0;
     -GtkRange-trough-border: 0;
     -GtkScale-slider-length : 24;
-    -GtkScrollbar-min-slider-length: 25;
-    -GtkScrolledWindow-scrollbar-spacing: 0;
-    -GtkScrolledWindow-scrollbars-within-bevel : 1;
+    -GtkScrollbar-min-slider-length: 30;
+    -GtkScrolledWindow-scrollbar-spacing: 1;
     -GtkSeparatorMenuItem-horizontal-padding: 0;
     -GtkStatusbar-shadow-type: none;
     -GtkToolbar-internal-padding: 0;
@@ -244,7 +243,6 @@ TerminalScreen {
 /*
     -TerminalScreen-background-darkness: 0.9;
 */
-
     background-color: #262626;
     color: #E6E6E6;
 }
@@ -308,63 +306,11 @@ GtkComboBox:insensitive,
     border-left-color: @border_insensitive;
 }
 
-/*
-buttons highlight
-*/
-
-/*
-.slider:hover,
-*/
-.check:hover, .check:hover:focus, .radio:hover, .radio:hover:focus,
-.entry:active, .entry:active:focus, .entry:focus, .entry:hover, .entry:hover:focus,
-GtkSwitch:hover,
-.scrollbar.slider:hover, .scrollbar.slider.horizontal:hover, .scrollbar.slider.vertical:hover,
-.button:hover, .button:hover:focus  {
-/*
-    color : @text_color;
-*/
-    border-top-color: shade(@button_prelight, 1.12);
-    border-right-color: @button_prelight;
-    border-bottom-color: shade(@button_prelight, 0.9);
-    border-left-color: @button_prelight;
-}
-
 .button:selected,
 GtkSwitch.trough:active {
     background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@button_prelight, 0.95)), to(shade(@button_prelight, 1.05)));
     border-color: @border_selected;
     color: @selected_fg_color;
-}
-
-.spinbutton.button:hover,
-.spinbutton.button:hover:focus {
-    box-shadow: inset 1px 0 @button_prelight,
-                inset -1px 0  shade(@button_prelight, 0.9),
-                inset 0 -1px shade(@button_prelight, 0.9),
-                inset 0 1px @button_prelight;
-}
-
-/*
-buttons focus
-*/
-
-.check:focus, .radio:focus,
-.scrollbar.slider:focus, .scrollbar.slider.horizontal:focus, .scrollbar.slider.vertical:focus,
-.button:focus, GtkSwitch:focus {
-    border-top-color: shade(@button_prelight, 1.12);
-    border-right-color: @button_prelight;
-    border-bottom-color: shade(@button_prelight, 0.9);
-    border-left-color: @button_prelight;
-
-    box-shadow: inset 1px 0 @button_prelight,
-                inset -1px 0  shade(@button_prelight, 0.9),
-                inset 0 -1px shade(@button_prelight, 0.9),
-                inset 0 1px @button_prelight;
-}
-
-.combobox-entry .entry:focus {
-    padding: 0px;
-    box-shadow: inset -1px 0  shade(@button_prelight, 0.9);
 }
 
 GtkComboBox {
@@ -539,9 +485,9 @@ column-header:last-child .button {
     color : @text_color;
 }
 
-/********************
-* scrollbar & scale *
-*********************/
+/*********************
+ * scrollbar & scale *
+ *********************/
 
 .trough {
     border-style: solid;
@@ -570,65 +516,42 @@ GtkScale.vertical.trough {
     background-image: none;
 }
 
-.grip {
-}
-
 .scrollbar.button,
-.scrollbar.slider {
+.scrollbar.trough {
     border-style: solid;
     border-width: 1px;
-    border-color: @button_border;
+    border-color: @bg_color;
+    background-color: @bg_color;
+    background-image: none;
 }
 
-.scrollbar.button.vertical.top {
-    border-radius: 0 2px 0 0;
+.scrollbar.button:hover  {
+    background-color: shade(@bg_color, 1.1);
 }
 
-.scrollbar.button.horizontal.right,
-.scrollbar.button.vertical.bottom {
-    border-radius: 0 0 2px 0;
+.scrollbar.button:selected  {
+    background-color: @button_prelight;
 }
 
-.scrollbar.button.horizontal.left {
-    border-radius: 0 0 0 2px;
+.scrollbar.slider
+ {
+    border-style: solid;
+    border-width: 2px;
+    border-color: @bg_color;
+    border-radius: 10px;
+    background-color: @scrollbar_slider;
 }
 
-.scrollbar.slider.horizontal, .scrollbar.button.horizontal {
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(mix (#FFF, @bg_color, 0.9), 1.05)),
-                                     to (shade(mix (#FFF, @bg_color, 0.9), 0.9)));
-    border-color: @border_normal;
+.scrollbar.slider:hover  {
+    border-width: 1px;
+    box-shadow: inset 1px 0 @button_prelight,
+                inset -1px 0  @button_prelight,
+                inset 0 -1px @button_prelight,
+                inset 0 1px @button_prelight;
+    background-color: mix (@fg_color, shade(@bg_color, 0.85), 0.75 );
 }
 
-.scrollbar.button.horizontal:insensitive,
-.slider.horizontal:insensitive {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_color, 1.05)), to(@bg_darker));
-    color: @fg_insensitive;
-}
-
-.scrollbar.button.horizontal:selected,
-.slider.horizontal:selected {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@button_prelight, 1.05)), to(shade(@button_prelight, 0.9)));
-    border-color: @border_selected;
-}
-
-.scrollbar.button.vertical, .scrollbar.slider.vertical {
-    background-image: -gtk-gradient(linear, left top, right top,
-                                     from (shade(mix (#FFF, @bg_color, 0.9), 1.05)),
-                                     to (shade(mix (#FFF, @bg_color, 0.9), 0.9)));
-    border-color: @border_normal;
-}
-
-.scrollbar.button.vertical:insensitive,
-.slider.vertical:insensitive {
-    background-image: -gtk-gradient(linear, left top, right top, from(shade(@bg_color, 1.05)), to(@bg_darker));
-    color: @fg_insensitive;
-}
-
-.scrollbar.button.vertical:selected,
-.slider.vertical:selected {
-    background-image: -gtk-gradient(linear, left top, right top, from(shade(@button_prelight, 1.05)), to(shade(@button_prelight, 0.9)));
-    border-color: @border_selected;
+.grip {
 }
 
 GtkScale,
@@ -748,9 +671,9 @@ GtkScale.mark {
     border-color: mix(@border_normal, @border_insensitive, 0.5);
 }
 
-/*****************
-* notebook & tab *
-******************/
+/******************
+ * notebook & tab *
+ ******************/
 
 .notebook {
     -GtkWidget-focus-line-width: 0;
@@ -837,6 +760,50 @@ GtkNotebook tab:active {
                                      from (mix(@button_prelight, @notebook_active, 0.9)),
                                      to (@notebook_active));
     border-width: 1px 0 1px 1px;
+}
+
+/******************************
+ * Buttons hightlight & focus *
+ ******************************/
+
+.check:hover, .check:hover:focus, .radio:hover, .radio:hover:focus,
+.entry:active, .entry:active:focus, .entry:focus, .entry:hover, .entry:hover:focus,
+GtkSwitch:hover,
+.button:hover, .button:hover:focus  {
+/*
+    color : @text_color;
+*/
+    border-top-color: shade(@button_prelight, 1.12);
+    border-right-color: @button_prelight;
+    border-bottom-color: shade(@button_prelight, 0.9);
+    border-left-color: @button_prelight;
+}
+
+.slider:focus,
+.check:focus, .radio:focus,
+.button:focus, GtkSwitch:focus {
+    border-top-color: shade(@button_prelight, 1.12);
+    border-right-color: @button_prelight;
+    border-bottom-color: shade(@button_prelight, 0.9);
+    border-left-color: @button_prelight;
+
+    box-shadow: inset 1px 0 @button_prelight,
+                inset -1px 0  shade(@button_prelight, 0.9),
+                inset 0 -1px shade(@button_prelight, 0.9),
+                inset 0 1px @button_prelight;
+}
+
+.spinbutton.button:hover,
+.spinbutton.button:hover:focus {
+    box-shadow: inset 1px 0 @button_prelight,
+                inset -1px 0  shade(@button_prelight, 0.9),
+                inset 0 -1px shade(@button_prelight, 0.9),
+                inset 0 1px @button_prelight;
+}
+
+.combobox-entry .entry:focus {
+    padding: 0px;
+    box-shadow: inset -1px 0  shade(@button_prelight, 0.9);
 }
 
 /*********

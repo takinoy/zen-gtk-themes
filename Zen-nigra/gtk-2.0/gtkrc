@@ -30,3 +30,15 @@ style "notebook-nigra" = "notebook"
 
 widget_class "*.GtkNotebook"       style "notebook-nigra"
 class "*.GtkNotebook"              style "notebook-nigra"
+
+style "scrollbar-nigra" = "scrollbar"
+{
+	bg[SELECTED]        = shade(1.6, @bg_color)
+}
+
+widget_class "*GtkScrollbar*"     style "scrollbar-nigra"
+class "*GtkScrollbar*"            style "scrollbar-nigra"
+widget_class "*GtkVScrollbar*"     style "scrollbar-nigra"
+class "*GtkVScrollbar*"            style "scrollbar-nigra"
+widget_class "*GtkHScrollbar*"     style "scrollbar-nigra"
+class "*GtkHScrollbar*"            style "scrollbar-nigra"

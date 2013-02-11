@@ -50,6 +50,7 @@
 @define-color button_bg_insensitive mix(@button_bg_normal, @bg_color, 0.6);
 @define-color button_border darker(@button_bg_normal);
 @define-color notebook_active shade(@bg_color, 0.8);
+@define-color scrollbar_slider shade(@bg_color, 1.5);
 
 /* window manager colors */
 @define-color wm_bg @bg_color;

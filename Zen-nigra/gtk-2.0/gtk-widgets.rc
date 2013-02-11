@@ -49,12 +49,12 @@ style "default"
 	GtkScale::trough-side-details = 1
 	GtkScale::slider-width  = 12
 
-	GtkScrollbar::min-slider-length = 20 # Min. length of scrollbars.
-	GtkScrollbar::slider-width = 11
+	GtkScrollbar::min-slider-length = 30 # Min. length of scrollbars.
+	GtkScrollbar::slider-width = 9
 	GtkScrollbar::stepper-size = 20
+	GtkScrollbar::trough-border = 1
 
 	GtkScrolledWindow::scrollbar-spacing = 0 # This sets the spacing between scrollbars.
-
 	GtkToolbar::internal-padding = 0 # Toolbar padding.
 	GtkToolbar::shadow_type = none
 	GtkTreeView::expander-size = 12
@@ -117,7 +117,7 @@ style "default"
 		reliefstyle         = 0                 # 0 = flat, 1 = inset, 2 = shadow
 		rgba                = FALSE             # FALSE = disabled, TRUE = enabled
 		roundness           = 2                 # 0 = squared, 1 = old default, more will increase roundness
-		scrollbarstyle      = 2                 # 0 = nothing, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
+		scrollbarstyle      = 0                 # 0 = nothing, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
 		sliderstyle         = 1                 # 0 = nothing added, 1 = handles
 		stepperstyle        = 0                 # 0 = standard, 1 = integrated stepper handles, 2 = unknown			
 		toolbarstyle        = 0                 # 0 = flat, 1 = glassy, 2 = gradient		
@@ -126,7 +126,7 @@ style "default"
 		arrowstyle          = 2                 # 0 = normal arrows, 1 = filled arrows, 2 = triangular arrows	
 		border_shades       = { 1.2, 1.0 }      # gradient to draw on border
 		cellstyle	    = 0
-		colorize_scrollbar  = FALSE		
+		colorize_scrollbar  = TRUE
 		comboboxstyle       = 0                 # 0 = normal combobox, 1 = colorized combobox below arrow		
 		expanderstyle	    = 0
 		focusstyle	    = 3
@@ -428,12 +428,17 @@ include "panel.rc"
 
 style "scrollbar" = "default"
 {
-	bg[NORMAL]        = mix (0.9, @bg_color,"#FFFFFF")
-    bg[PRELIGHT]      = mix (0.15, @button_prelight, @bg_color)
+	bg[NORMAL]		= @bg_color
+	bg[SELECTED]	= mix (0.8, shade(0.85, @bg_color), @fg_color)
+	bg[PRELIGHT]	= mix (0.25, @button_prelight, @bg_color)
 
 	engine "murrine" {
-		gradient_shades	= {1.05,1.0,1.0,0.9}
-		border_shades	= {0.9, 0.9}			
+		gradient_shades	= {1.0,1.0,1.0,1.0}
+		roundness	= 10
+		border_shades	= {1.05, 1.05}
+		trough_shades	= {1.02, 1.02}
+		contrast	= 0.0
+		trough_border_shades = { 1.0, 1.0 }
 	}
 }
 
@@ -444,13 +449,14 @@ class "*GtkVScrollbar*"            style "scrollbar"
 widget_class "*GtkHScrollbar*"     style "scrollbar"
 class "*GtkHScrollbar*"            style "scrollbar"
 
-style "scale"="scrollbar"
+style "scale"="default"
 {
-	#xthickness = 3
-	#ythickness = 3
 	GtkWidget	::focus-line-width	= 0
 	GtkWidget	::focus-padding		= 2
 	bg[SELECTED] = @button_prelight
+
+	bg[PRELIGHT]	= mix (0.25, @button_prelight, @bg_color)
+	bg[INSENSITIVE]   = shade (1.02, @bg_color)
 
 	engine "murrine"
 	{
@@ -459,7 +465,6 @@ style "scale"="scrollbar"
 		trough_shades			= { 0.95, 1.05 }
 		trough_border_shades	= { 0.95,1.0 }
 		border_shades			= { 1.05,0.85 }
-		#contrast				= 0.8
 		roundness				= 2
 	}
 }
