@@ -80,7 +80,7 @@ style "default"
 	fg[NORMAL]        = @fg_color
 	fg[PRELIGHT]      = @fg_color
 	fg[SELECTED]      = @selected_fg_color
-	fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
+	fg[INSENSITIVE]   = mix (0.6, darker(@bg_color), @fg_color)
 	fg[ACTIVE]        = @fg_color
 
 	text[NORMAL]      = @text_color
@@ -223,8 +223,8 @@ style "menubar" = "menu"
 	bg[SELECTED]	= shade (1.05, @button_prelight)
 	bg[NORMAL]      = @bg_color  # Color of menu background.
 	fg[NORMAL]      = @fg_color
-	fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
-	
+	fg[INSENSITIVE]   = mix(0.5, darker(@bg_color), @fg_color)
+
 	engine "murrine"
 	{
 		roundness = 0
@@ -244,7 +244,7 @@ style "menuitem_text_is_fg_color_workaround" {
 	text[PRELIGHT]    = @selected_fg_color
 	text[SELECTED]    = @selected_fg_color
 	text[ACTIVE]      = @fg_color
-	text[INSENSITIVE] = mix(0.7, darker(@bg_color), @fg_color)
+	text[INSENSITIVE] = mix(0.5, darker(@bg_color), @fg_color)
 }
 
 # Work around for http://bugzilla.gnome.org/show_bug.cgi?id=382646
@@ -300,10 +300,10 @@ style "comboboxentry" = "button" {
 
 style "combobox" = "button" {
 #don't work
-	#fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
+	#fg[INSENSITIVE]   = mix(0.5, darker(@bg_color), @fg_color)
 }
 
-#widget_class "*<GtkCombo>*" style "combobox"
+#class "GtkComboBox" style "combobox"
 
 style "spinbutton" = "button" {
 }
@@ -554,7 +554,7 @@ style "text_is_fg_color_workaround" {
 	text[PRELIGHT]    = @fg_color
 	text[SELECTED]    = @selected_fg_color
 	text[ACTIVE]      = @fg_color
-	text[INSENSITIVE] = mix(0.7, darker(@bg_color), @fg_color)
+	text[INSENSITIVE] = mix(0.5, darker(@bg_color), @fg_color)
 }
 
 # Work around for http://bugzilla.gnome.org/show_bug.cgi?id=382646

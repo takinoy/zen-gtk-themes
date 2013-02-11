@@ -69,9 +69,7 @@
 *:insensitive {
     color: @fg_insensitive;
     border-color:@border_insensitive;
-/*
-    text-shadow: 1 1 alpha(@light_shadow, 0.4);
-*/
+    text-shadow: 1px 1px @light_shadow;
 }
 
 *:hover {
@@ -841,8 +839,7 @@ GtkSwitch:hover,
     border-color: @border_normal;
 }
 
-.menuitem.separator,
-.menu:insensitive, .menuitem:insensitive {
+.menu>*:insensitive, .menuitem>*:insensitive {
     color: mix(@text_color, darker(@bg_lighter), 0.7);
     border-color: shade(@bg_lighter, 0.9);
 }

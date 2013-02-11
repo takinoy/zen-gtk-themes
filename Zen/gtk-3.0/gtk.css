@@ -20,9 +20,10 @@
 @define-color theme_selected_fg_color @selected_fg_color;
 @define-color theme_tooltip_bg_color @tooltip_bg_color;
 @define-color theme_tooltip_fg_color @tooltip_fg_color;
+@define-color light_shadow @alpha(@base_color, 0.4);
 
 /* shadow effects */
-@define-color light_shadow #fff;
+@define-color light_shadow alpha(@base_color, 0.4);
 @define-color dark_shadow #000;
 
 /* misc colors used by gtk+ */
@@ -38,7 +39,7 @@
 @define-color error_color #cc0000;
 
 /* theme common colors */
-@define-color fg_insensitive mix(@fg_color, darker(@bg_color), 0.7);
+@define-color fg_insensitive mix(@fg_color, darker(@bg_color), 0.6);
 @define-color bg_darker shade(@bg_color, 0.9);
 @define-color bg_prelight mix (@bg_color, @button_prelight, 0.2);
 @define-color bg_lighter mix (@bg_color, @base_color, 0.6);
