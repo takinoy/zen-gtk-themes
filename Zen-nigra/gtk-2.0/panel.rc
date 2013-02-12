@@ -1,25 +1,24 @@
 style "dark-panel" = "default"
 {
-	font_name = "Bold"
-	bg[NORMAL]   = "#3C3C3C"
-	fg[NORMAL]	= "#E6E6E6" # Makes panel text light.
-	bg[ACTIVE]   = @button_prelight
-	bg[PRELIGHT] = mix(0.9, @button_prelight, "#3C3C3C")
-	bg[SELECTED]	= @button_prelight
+	font_name			= "Bold"
+	bg[NORMAL]			= "#3C3C3C"
+	fg[NORMAL]			= "#E6E6E6" # Makes panel text light.
+	bg[ACTIVE]			= @button_prelight
+	bg[PRELIGHT]		= mix(0.9, @button_prelight, "#3C3C3C")
+	bg[SELECTED]		= @button_prelight
 }
 
 style "light-panel" = "default" {
-	bg[NORMAL] = "#CCCCCC"
-	bg[PRELIGHT] = mix(0.6, @button_prelight, "#CCCCCC")
-	bg[ACTIVE]   = @button_prelight
+	bg[NORMAL]			= "#CCCCCC"
+	bg[PRELIGHT]		= mix(0.6, @button_prelight, "#CCCCCC")
+	bg[ACTIVE]			= @button_prelight
 }
 
 style "adaptive-panel" = "default" {
-	bg[NORMAL] = shade(0.9,@bg_color)
-	bg[PRELIGHT] = mix(0.4, @button_prelight, shade(1.0, @bg_color))
-	bg[ACTIVE]   = @button_prelight
+	bg[NORMAL]			= shade(0.9,@bg_color)
+	bg[PRELIGHT]		= mix(0.4, @button_prelight, shade(1.0, @bg_color))
+	bg[ACTIVE]			= @button_prelight
 	}
-
 
 style "panel" = "adaptive-panel"
 {
@@ -30,10 +29,8 @@ style "panel" = "adaptive-panel"
 style "panel_button" = "default"
 {
 		engine "murrine" {
-		#border_shades	= { 1.0, 1.0 }
-		contrast        = 0.9
-		#gradient_shades     = {0.9,1.0,1.0,1.0}
-		roundness	= 0
+		contrast			= 0.9
+		roundness			= 0
 	}
 }
 
@@ -41,18 +38,18 @@ style "panel_button" = "default"
 #class "*Panel*" style "panel"
 
 #widget_class "*Mail*" style "panel" # Change bg of evolution widget...
-widget "*PanelWidget*" style "panel"
-widget "*PanelApplet*" style "panel"
-widget "*fast-user-switch*"				style "panel" # workaround for Fast User Switch applet
-class "PanelApp*" 					style "panel"
-class "PanelToplevel*" 					style "panel"
+widget "*PanelWidget*"			style "panel"
+widget "*PanelApplet*"			style "panel"
+widget "*fast-user-switch*"		style "panel" # workaround for Fast User Switch applet
+class "PanelApp*" 				style "panel"
+class "PanelToplevel*" 			style "panel"
 
 #XFCE panel
-widget_class "*notif*"		style "panel"
-widget_class "*Notif*"		style "panel"
-widget_class "*Tray*"		style "panel"
-widget_class "*tray*"		style "panel"
-widget "*Xfce*Panel*"		style "panel"
-class "*Xfce*Panel*"		style "panel"
+widget_class "*notif*"			style "panel"
+widget_class "*Notif*"			style "panel"
+widget_class "*Tray*"			style "panel"
+widget_class "*tray*"			style "panel"
+widget "*Xfce*Panel*"			style "panel"
+class "*Xfce*Panel*"			style "panel"
 
-widget_class "*Panel*Button*" style "panel_button"
+widget_class "*Panel*Button*"	style "panel_button"
