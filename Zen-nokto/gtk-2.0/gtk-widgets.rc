@@ -90,48 +90,17 @@ style "default"
 	base[INSENSITIVE] = @bg_color
 	base[ACTIVE]      = @button_prelight
 
-	engine "murrine"
-	{
-		animation           = FALSE
-		contrast            = 0.7               # 0.8 for less contrast, more than 1.0 for more contrast on borders
-		focus_color         = @button_prelight
-		glazestyle          = 0                 # 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved highlight, 4 = beryl highlight
-		gradient_shades     = {1.0,1.0,1.0,1.0} #{1.1,1.0,1.0,0.87}
-		glowstyle           = 0                 # 0,1,2,3,4
-		glow_shade          = 1.1
-		highlight_shade     = 1.0               # set highlight amount for buttons or widgets
-		lightborder_shade   = 1.0               # sets lightborder amount for buttons or widgets
-		lightborderstyle    = 0                # 0 = lightborder on top side, 1 = lightborder on all sides
-		listviewheaderstyle = 1                 # 0 = flat, 1 = glassy, 2 = raised
-		listviewstyle       = 0                 # 0 = nothing, 1 = dotted
-		menubaritemstyle    = 0                 # 0 = menuitem look, 1 = button look
-		menubarstyle        = 0                 # 0 = flat, 1 = glassy, 2 = gradient, 3 = striped
-		#menuitemstyle       = 0                 # 0 = flat, 1 = glassy, 2 = striped
-		menustyle           = 0                 # 0 = no vertical menu stripe, 1 = display vertical menu stripe
-		progressbarstyle    = 1                 # 0 = nothing, 1 = stripes, 2 = lines
-		reliefstyle         = 0                 # 0 = flat, 1 = inset, 2 = shadow
-		rgba                = FALSE             # FALSE = disabled, TRUE = enabled
-		roundness           = 2                 # 0 = squared, 1 = old default, more will increase roundness
-		scrollbarstyle      = 2                 # 0 = nothing, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
-		sliderstyle         = 1                 # 0 = nothing added, 1 = handles
-		stepperstyle        = 0                 # 0 = standard, 1 = integrated stepper handles, 2 = unknown			
-		toolbarstyle        = 0                 # 0 = flat, 1 = glassy, 2 = gradient		
+	engine "clearlooks" {
+		reliefstyle = 0  # 0 makes buttons/widgets less raised.
+		menubarstyle = 2
+		toolbarstyle = 0 # 0 makes toolbars flat.
+		animation = TRUE # FALSE disables progressbar animations.
+		radius = 2.0
+		style = GUMMY # Could also be set to GLOSSY.
 
-		# Murrine version >=0.98
-		arrowstyle          = 2                 # 0 = normal arrows, 1 = filled arrows, 2 = triangular arrows	
-		border_shades       = { 1.2, 1.0 }      # gradient to draw on border
-		cellstyle	    = 0
-		colorize_scrollbar  = FALSE		
-		comboboxstyle       = 0                 # 0 = normal combobox, 1 = colorized combobox below arrow		
-		expanderstyle	    = 0
-		focusstyle	    = 3
-		prelight_shade      = .95               # shade level for scrollbar's slider, comboboxstyle(1), and prelight state with gradient_colors		
-		separatorstyle      = 1                 # 0 = Hard seperators 1 = Smooth seperators
-		#shadow_shades       = { 0.8, 2.2 }       gradient for shadows.
-		textstyle           = 0                 # 0 = normal text, 1 = inset		
-		trough_shades	    = { 0.85, 0.95 }	# draw gradient on trough of GtkScrollbar and GtkProgressbar
-		trough_border_shades = { 0.9, 0.9 }
-		}
+		hint = "use-hints" # Set a hint to disable backward compatibility fallbacks.
+		contrast = 0.92
+	}
 }
 
 class "GtkWidget"                  style "default"
@@ -143,6 +112,11 @@ style "entry" {
 
 	bg[SELECTED] = @button_prelight
 	fg[SELECTED] = @text_color
+
+	engine "clearlooks" {
+		#focus_color = @selected_bg_color
+		contrast = 0.8
+	}
 }
 
 class "*Entry*"                    style "entry"
@@ -166,15 +140,11 @@ style "menu"
     bg[SELECTED]      = shade(1.1, @selected_bg_color)
 	fg[INSENSITIVE]   = mix(0.7, darker(mix (0.6, @base_color, @bg_color)), @text_color)
 
-  	engine "murrine"
-	{
-		gradient_shades     = {1.0,1.0,1.0,1.0} #{1.1,1.0,1.0,0.87}
-		#border_shades = { 0.9, 0.9 }
-		border_shades = { 1.1, 1.1 }
-		#roundness = 0
-		#lightborderstyle        = 1
-
-	}
+		engine "clearlooks" {
+		style = CLASSIC
+		contrast = 0.8
+		radius = 1.0
+		}
 }
 
 
@@ -220,10 +190,9 @@ style "menubar" = "menu"
 	bg[NORMAL]      = @bg_color  # Color of menu background.
 	fg[NORMAL]      = @fg_color
 	fg[INSENSITIVE]   = mix(0.7, darker(@bg_color), @fg_color)
-	
-	engine "murrine"
-	{
-		roundness = 0
+
+	engine "clearlooks" {
+		hint = "menubar"
 	}
 }
 
@@ -275,12 +244,11 @@ style "button" = "default"
 	bg[INSENSITIVE]   = shade (1.04, @bg_color)
 	bg[ACTIVE]        = mix (0.15, @button_prelight, @bg_color)
 
-	engine "murrine"
-	{
-		gradient_shades     = {1.05,1.02,1.02,0.95}
-		contrast            = 0.8
-		#reliefstyle         = 0
-		border_shades = { 0.95, 0.9 }
+	engine "clearlooks" {
+		focus_color = @button_prelight
+		style = GUMMY
+		contrast = 0.8
+		#radius = 2.0
 	}
 }
 
@@ -308,22 +276,13 @@ style "spinbutton" = "button" {
 
 class "GtkSpinButton" style "spinbutton"
 
-style "radiocheck" = "button"
-{
-	bg[PRELIGHT]	= shade(1.03,@bg_color)
-}
-
-class "GtkRadio*"	style "radiocheck"
-class "GtkCheck*"	style "radiocheck"
-widget_class "*<GtkRadioButton>*"		style "radiocheck"
-widget_class "*<GtkCheckButton>*"		style "radiocheck"
-
 ##########
 # views  #
 ##########
 
 style "view" {
 	base[NORMAL] = shade (0.93,@base_color)
+
 }
 
 style "iconview" = "view" {
@@ -367,10 +326,10 @@ style "treeview_header" = "default" {
 	ythickness = 1
 	bg[PRELIGHT] = shade (1.04,@bg_color)
 
-  	engine "murrine"
-	{
-		roundness = 0
-		gradient_shades     = {1.0,1.0,1.0,0.95}
+	engine "clearlooks" {
+		#radius = 1.0
+		hint = "treeview-header"
+		contrast = 1.0
 	}
 }
 # Treeview headers (and similar stock GTK+ widgets)
@@ -385,7 +344,7 @@ widget_class "*.<GtkCList>.<GtkButton>" style "treeview_header"
 
 style "notebook-bg" = "default"
 {
-    bg[ACTIVE]   = shade(0.95,@bg_color)  # Unfocused tab background.
+    bg[ACTIVE]   = shade(0.95,@bg_color) # Tab background.
 	bg[NORMAL]   = shade(1.05,@bg_color) # Tab background.
 }
 
@@ -402,10 +361,11 @@ style "notebook" = "notebook-bg"
 	xthickness = 3 # Width of tabs and notebook borders.
 	ythickness = 1 # Height of tabs and notebook borders.
 
-	engine "murrine"
+	engine "clearlooks"
 	{
-		contrast        = 1.1
-		gradient_shades     = {1.2,1.0,1.0,0.85}
+		radius = 2.0 # Roundness of menu items.
+		style = CLASSIC
+		contrast = 1.0
 	}
 }
 
@@ -427,18 +387,33 @@ style "scrollbar" = "default"
 	bg[NORMAL]        = mix (0.9, @bg_color,"#FFFFFF")
     bg[PRELIGHT]      = mix (0.15, @button_prelight, @bg_color)
 
-	engine "murrine" {
-		gradient_shades	= {1.05,1.0,1.0,0.9}
-		border_shades	= {0.9, 0.9}			
+	engine "clearlooks" {
+		hint = "scrollbar"
+		contrast = 1.0
 	}
 }
 
 widget_class "*GtkScrollbar*"     style "scrollbar"
 class "*GtkScrollbar*"            style "scrollbar"
-widget_class "*GtkVScrollbar*"     style "scrollbar"
-class "*GtkVScrollbar*"            style "scrollbar"
-widget_class "*GtkHScrollbar*"     style "scrollbar"
-class "*GtkHScrollbar*"            style "scrollbar"
+
+style "hscrollbar" {
+	engine "clearlooks" {
+		hint = "hscrollbar"
+		contrast = 1.0
+	}
+}
+
+style "vscrollbar" {
+	engine "clearlooks" {
+		hint = "vscrollbar"
+		contrast = 1.0
+	}
+}
+
+widget_class "*GtkVScrollbar*"     style "vscrollbar"
+class "*GtkVScrollbar*"            style "vscrollbar"
+widget_class "*GtkHScrollbar*"     style "hscrollbar"
+class "*GtkHScrollbar*"            style "hscrollbar"
 
 style "scale"="scrollbar"
 {
@@ -447,23 +422,41 @@ style "scale"="scrollbar"
 	GtkWidget	::focus-line-width	= 0
 	GtkWidget	::focus-padding		= 2
 
-	engine "murrine"
-	{
-		roundness 		= 7
-		gradient_shades		= {1.1,1.0,1.0,0.9}
-		contrast		= 1.0
-		roundness = 2		
+	engine "clearlooks" {
+		hint = "scale"
 	}
 }
 
-widget_class "*GtkHScale*"         style "scale"
-class "*GtkHScale*"                style "scale"
-widget_class "*GtkVScale*"         style "scale"
-class "*GtkVScale*"                style "scale"
+widget_class "*GtkScale*"         style "scale"
+class "*GtkScale*"                style "scale"
+
+style "vscale" {
+
+	engine "clearlooks" {
+		hint = "vscale"
+	}
+}
+
+style "hscale" {
+
+	engine "clearlooks" {
+		hint = "hscale"
+	}
+}
+
+widget_class "*GtkHScale*"         style "hscale"
+class "*GtkHScale*"                style "hscale"
+widget_class "*GtkVScale*"         style "vscale"
+class "*GtkVScale*"                style "vscale"
 
 style "statusbar" {
 	xthickness = 2
 	ythickness = 1
+
+	engine "clearlooks" {
+		radius = 1.0
+		hint = "statusbar"
+	}
 }
 
 widget_class "*<GtkStatusbar>*" style "statusbar"
@@ -477,16 +470,9 @@ style "progress"
 	bg[SELECTED]	  = @button_prelight
     bg[PRELIGHT]      = @button_prelight
 
-	engine "murrine" {
-		gradient_shades = {1.0,1.0,1.0,0.9}
-		#trough_shades	= {0.95, 1.15}
-		#trough_border_shades	= { 0.8, 0.7 }
-		roundness 	= 7
-		contrast	= 0.6
-		#border_shades	= { 0.9, 0.9 }
-		#lightborder_shade   = 1.0
-		#glowstyle	= 0
-		#glow_shade	= 1.0
+	engine "clearlooks" {
+		radius = 5.0
+		hint = "progressbar"
 	}
 }
 
