@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # sleep
-t=5
+t=15
 
 # package name
 pkgname=$(grep -m 1 'pkgname=' cache/PKGBUILD | cut -d= -f2)
