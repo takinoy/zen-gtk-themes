@@ -199,7 +199,7 @@ style "menubar" = "menu"
 	bg[SELECTED]		= shade (1.05, @button_prelight)
 	bg[NORMAL]			= @bg_color		# Color of menu background.
 	fg[NORMAL]			= @fg_color
-	fg[INSENSITIVE]		= mix(0.6, darker(@bg_color), @fg_color)
+	fg[INSENSITIVE]		= mix (0.6, darker(@bg_color), @fg_color)
 
 	engine "murrine"
 	{
