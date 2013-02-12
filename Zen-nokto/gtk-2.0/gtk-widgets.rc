@@ -80,13 +80,13 @@ style "default"
 	fg[NORMAL]			= @fg_color
 	fg[PRELIGHT]		= @fg_color
 	fg[SELECTED]		= @selected_fg_color
-	fg[INSENSITIVE]		= mix(0.7, darker(@bg_color), @fg_color)
+	fg[INSENSITIVE]		= mix (0.6, darker(@bg_color), @fg_color)
 	fg[ACTIVE]			= @fg_color
 
 	text[NORMAL]		= @text_color
 	text[PRELIGHT]		= @text_color
 	text[SELECTED]		= @selected_fg_color
-	text[INSENSITIVE]	= mix(0.7, darker(@bg_color), @text_color)
+	text[INSENSITIVE]	= mix (0.7, darker(@bg_color), @text_color)
 	text[ACTIVE]		= @selected_fg_color
 
 	base[NORMAL]		= @base_color
@@ -169,7 +169,7 @@ style "menubar" = "menu"
 	bg[SELECTED]		= shade (1.05, @button_prelight)
 	bg[NORMAL]			= @bg_color	 # Color of menu background.
 	fg[NORMAL]			= @fg_color
-	fg[INSENSITIVE]		= mix(0.7, darker(@bg_color), @fg_color)
+	fg[INSENSITIVE]		= mix (0.6, darker(@bg_color), @fg_color)
 
 	engine "clearlooks" {
 		hint = "menubar"
@@ -189,7 +189,7 @@ style "menuitem_text_is_fg_color_workaround" {
 	text[PRELIGHT]		= @selected_fg_color
 	text[SELECTED]		= @selected_fg_color
 	text[ACTIVE]		= @fg_color
-	text[INSENSITIVE]	= mix(0.7, darker(@bg_color), @fg_color)
+	text[INSENSITIVE]	= mix (0.6, darker(@bg_color), @fg_color)
 }
 
 # Work around for http://bugzilla.gnome.org/show_bug.cgi?id=382646
@@ -244,7 +244,7 @@ style "comboboxentry" = "button" {
 
 style "combobox" = "button" {
 #don't work
-	#fg[INSENSITIVE]	= mix(0.7, darker(@bg_color), @fg_color)
+	#fg[INSENSITIVE]	= mix (0.6, darker(@bg_color), @fg_color)
 }
 
 #widget_class "*<GtkCombo>*" style "combobox"
@@ -267,7 +267,7 @@ style "iconview" = "view" {
 	fg[PRELIGHT]		= @text_color # workaround to fix color objects for dark themes.
 	fg[SELECTED]		= @text_color # workaround to fix color objects for dark themes.
 	fg[ACTIVE]			= @text_color # workaround to fix dark objects for dark themes.
-	fg[INSENSITIVE]		= mix(0.7, darker(@bg_color), @text_color) # workaround to fix color objects for dark themes.
+	fg[INSENSITIVE]		= mix (0.7, darker(@bg_color), @text_color) # workaround to fix color objects for dark themes.
 }
 
 style "treeview" = "iconview"
@@ -505,7 +505,7 @@ style "text_is_fg_color_workaround" {
 	text[PRELIGHT]		= @fg_color
 	text[SELECTED]		= @selected_fg_color
 	text[ACTIVE]		= @fg_color
-	text[INSENSITIVE]	= mix(0.7, darker(@bg_color), @fg_color)
+	text[INSENSITIVE]	= mix (0.6, darker(@bg_color), @fg_color)
 }
 
 # Work around for http://bugzilla.gnome.org/show_bug.cgi?id=382646
@@ -520,7 +520,7 @@ style "fg_is_text_color_workaround" {
 	fg[PRELIGHT]		= @text_color
 	fg[SELECTED]		= @selected_fg_color
 	fg[ACTIVE]			= @selected_fg_color
-	fg[INSENSITIVE]		= mix(0.7, darker(@bg_color), @text_color)
+	fg[INSENSITIVE]		= mix (0.7, darker(@bg_color), @text_color)
 }
 
 # Work around the usage of GtkLabel inside GtkListItems to display text.
