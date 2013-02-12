@@ -26,7 +26,6 @@ cp_source=$name
 path_copy='
 gtk-2.0/gtk-widgets.rc
 gtk-2.0/apps/libreoffice.rc
-gtk-3.0/gtk-widgets.css
 '
 
 echo "path copy = $path_copy"

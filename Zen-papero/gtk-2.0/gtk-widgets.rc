@@ -240,7 +240,6 @@ style "button" = "default"
 
 	bg[NORMAL]        = mix (0.9, @bg_color, @base_color) # Color for buttons.
 	bg[PRELIGHT]      = mix(0.4, @button_prelight, @bg_color)
-	bg[SELECTED]      = @button_prelight
 	bg[INSENSITIVE]   = shade (1.04, @bg_color)
 	bg[ACTIVE]        = mix (0.15, @button_prelight, @bg_color)
 
