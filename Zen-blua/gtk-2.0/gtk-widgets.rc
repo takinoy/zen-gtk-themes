@@ -153,9 +153,9 @@ style "entry" {
 class "*Entry*"				style "entry"
 widget_class "*Entry*"		style "entry"
 
-#############
-#   Menus   #
-#############
+#########
+# Menus #
+#########
 
 style "menu"
 {
@@ -164,10 +164,8 @@ style "menu"
 
 	bg[NORMAL]			= mix (0.6, @base_color, @bg_color)	# Color of menu background.
 	fg[NORMAL]			= @text_color
-	#bg[INSENSITIVE]	= shade (1.04, @bg_color)
 	fg[PRELIGHT]		= @selected_fg_color		# Color of prelight menu item text.
 	base[NORMAL]		= @base_color	# Color for menu-item radio/checks background.
-	#bg[PRELIGHT]		= shade(1.1, @selected_bg_color)
 	bg[SELECTED]		= shade(1.1, @selected_bg_color)
 	fg[INSENSITIVE]		= mix(0.7, darker(mix (0.6, @base_color, @bg_color)), @text_color)
 
@@ -296,9 +294,9 @@ class "GtkCheck*"	style "radiocheck"
 widget_class "*<GtkRadioButton>*"		style "radiocheck"
 widget_class "*<GtkCheckButton>*"		style "radiocheck"
 
-##########
-# views		#
-##########
+#########
+# views #
+#########
 
 style "view" {
 	base[NORMAL]	= shade (0.94,@base_color)
@@ -429,8 +427,7 @@ style "scale"="default"
 {
 	GtkWidget	::focus-line-width	= 0
 	GtkWidget	::focus-padding		= 2
-	
-	bg[SELECTED]		= @button_prelight
+
 	bg[PRELIGHT]		= mix (0.25, @button_prelight, @bg_color)
 	bg[INSENSITIVE]		= shade (1.02, @bg_color)
 
