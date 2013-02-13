@@ -1,11 +1,16 @@
 style "dark-panel" = "default"
 {
-	font_name			= "Bold"
-	bg[NORMAL]			= "#3C3C3C"
 	fg[NORMAL]			= "#E6E6E6" # Makes panel text light.
-	bg[ACTIVE]			= @button_prelight
-	bg[PRELIGHT]		= mix(0.9, @button_prelight, "#3C3C3C")
-	bg[SELECTED]		= @button_prelight
+	fg[ACTIVE]			= "#E6E6E6"
+	fg[PRELIGHT]		= "#E6E6E6"
+	fg[SELECTED]		= "#E6E6E6"
+	bg[NORMAL]			= "#3C3C3C"
+	bg[ACTIVE]			= shade(0.5, @button_prelight)
+	bg[PRELIGHT]		= mix(0.2, @button_prelight, "#3C3C3C")
+	bg[SELECTED]		= shade(0.5, @button_prelight)
+	base[NORMAL]		= "#3C3C3C"
+	bg[INSENSITIVE]		= "#3C3C3C"
+	bg[ACTIVE]			= "#3C3C3C"
 }
 
 style "light-panel" = "default" {
@@ -16,7 +21,7 @@ style "light-panel" = "default" {
 
 style "adaptive-panel" = "default" {
 	bg[NORMAL]			= shade(0.9,@bg_color)
-	bg[PRELIGHT]		= mix(0.4, @button_prelight, shade(1.0, @bg_color))
+	bg[PRELIGHT]		= mix(0.4, @button_prelight, @bg_color)
 	bg[ACTIVE]			= @button_prelight
 	}
 
