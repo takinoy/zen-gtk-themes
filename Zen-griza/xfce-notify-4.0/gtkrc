@@ -19,7 +19,7 @@ style "notify-button"
 style "notify-text"
 {
     fg[NORMAL] = "#ffffff"
-    GtkWidget::link-color = "#a7a7a7"
+    GtkWidget::link-color = "#1f4299"
 }
 
 widget_class "XfceNotifyWindow.*.GtkButton*" style "notify-button"
