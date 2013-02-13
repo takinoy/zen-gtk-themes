@@ -484,6 +484,9 @@ widget_class "*HandleBox*"			style "handlebox"
 
 style "tooltips" = "default"
 {
+	xthickness = 8
+	ythickness = 5
+	
 	bg[NORMAL]			= @tooltip_bg_color
 	fg[NORMAL]			= @tooltip_fg_color
 }
