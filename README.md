@@ -3,7 +3,7 @@ zen-gtk-themes version 0.3.8
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : February 08, 2013
+Date : February 13, 2013
 Sources : https://github.com/cedl38/zen-gtk-themes
 
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
@@ -35,9 +35,9 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 Changelog:
 ----------
 
-0.3.8
+0.3.9
  - Last gtk2 version with the clearlook engine.
- - Updates from 0.8 branch (gtk2).
+ - Updates from 0.9 branch (gtk2).
 
 0.3.2
  - New color schemes and preconfigured settings.
