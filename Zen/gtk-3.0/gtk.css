@@ -20,7 +20,6 @@
 @define-color theme_selected_fg_color @selected_fg_color;
 @define-color theme_tooltip_bg_color @tooltip_bg_color;
 @define-color theme_tooltip_fg_color @tooltip_fg_color;
-@define-color light_shadow @alpha(@base_color, 0.4);
 
 /* shadow effects */
 @define-color light_shadow alpha(@base_color, 0.4);
