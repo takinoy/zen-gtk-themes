@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # sleep
-t=5
+t=15
 
 # package name
 pkgname=$(grep -m 1 'pkgname=' cache/PKGBUILD | cut -d= -f2)
@@ -10,7 +10,7 @@ name=${pkgname%%-*}
 name=$(echo ${name:0:1}|tr a-z A-Z)${name:1}
 
 # test les themes
-themes=$(ls -1 | grep "$name-")
+themes=$(ls -1 | grep "$name")
 
 # run "A Widget Factory"
 		awf-gtk2  &
@@ -20,7 +20,7 @@ set $themes
 	then
 		until [ $# = 0 ]
 		do
-		xfconf-query -c xsettings -p /Net/ThemeName -s "$1"
+		xfconf-query -c xsettings -p /Net/ThemeName -s "$1-dev"
 		xfconf-query -c xsettings -p /Net/IconThemeName -s "Foxtrot"
 		echo "theme $1 tested, sleep for $t sec, $# restants"
 		sleep $t
