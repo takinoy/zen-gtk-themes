@@ -1,15 +1,15 @@
 /* color scheme */
-@define-color bg_color #DFDEDD;
+@define-color bg_color #CECECE;
 @define-color fg_color #000;
 @define-color base_color #FCFCFC;
 
 @define-color text_color #101010;
-@define-color selected_bg_color #B5DDDB;
+@define-color selected_bg_color #A9BED4;
 @define-color selected_fg_color #000;
 @define-color tooltip_fg_color #000;
-@define-color tooltip_bg_color #FFF7BF;
+@define-color tooltip_bg_color #CECECE;
 
-@define-color button_prelight #86BFBD;
+@define-color button_prelight #B8C1CC;
 
 /* colormap actually used by the theme, to be overridden in other css files */
 @define-color theme_bg_color @bg_color;

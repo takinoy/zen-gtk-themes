@@ -25,7 +25,7 @@ style "adaptive-panel" = "default" {
 	bg[ACTIVE]			= @button_prelight
 	}
 
-style "panel" = "adaptive-panel"
+style "panel" = "dark-panel"
 {
 	xthickness = 2
 	ythickness = 2
