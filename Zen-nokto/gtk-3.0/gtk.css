@@ -6,8 +6,8 @@
 @define-color text_color #D0D0D0;
 @define-color selected_bg_color #246662;
 @define-color selected_fg_color #000;
-@define-color tooltip_fg_color #000;
-@define-color tooltip_bg_color #FFF7BF;
+@define-color tooltip_fg_color #DDDDDD;
+@define-color tooltip_bg_color #333333;
 
 @define-color button_prelight @selected_bg_color;
 
