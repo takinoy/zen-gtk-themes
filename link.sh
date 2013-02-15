@@ -16,6 +16,14 @@ path=$(ls -1 | grep "$name")
 set $path
 until [ $# = 0 ]
 do
-ln -s -r -v $1 $theme_dir/$1-dev
+	if [ -e "$theme_dir/$1-dev" ]
+	then
+		if [ -h !"$theme_dir/$1-dev" ]
+		then
+		echo "$theme_dir/$1-dev is not a link"
+		fi
+	else
+	ln -s -r -v $1 $theme_dir/$1-dev
+	fi
 shift
 done

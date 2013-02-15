@@ -3,4 +3,16 @@ gtk-color-scheme = "base_color:#FCFCFC\nfg_color:#000000\ntooltip_fg_color:#0000
 gtk-color-scheme = "button_prelight:#BFBBAB"
 
 include "gtk-widgets.rc"
-include "papero.rc"
+
+# bg pixmap
+style "colors_papero"
+{
+	bg_pixmap[NORMAL] 	= "window-bg.png"
+}
+
+class "GtkWidget"                  style "colors_papero"
+
+widget_class "*GtkTree*"           style "sidepane"
+class "*GtkTree*"                  style "sidepane"
+widget_class "*GtkCTree*"          style "sidepane"
+class "*GtkCTree*"                 style "sidepane"

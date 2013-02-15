@@ -1,5 +1,5 @@
 # Dark gtk-color-scheme:
-gtk-color-scheme = "base_color:#EEEEEE\nfg_color:#D0C9B1\ntooltip_fg_color:#000000\nselected_bg_color:#4ED9D2\nselected_fg_color:#000000\ntext_color:#101010\nbg_color:#3C3C3C\ntooltip_bg_color:#FFF7BF"
+gtk-color-scheme = "base_color:#EEEEEE\nfg_color:#D0C9B1\ntooltip_fg_color:#000000\nselected_bg_color:#4ED9D2\nselected_fg_color:#000000\ntext_color:#101010\nbg_color:#3C3C3C\ntooltip_bg_color:#F7EFBA"
 gtk-color-scheme = "button_prelight:#246662"
 
 include "gtk-widgets.rc"
@@ -32,8 +32,8 @@ widget_class "*.GtkNotebook"       style "notebook-nigra"
 class "*.GtkNotebook"              style "notebook-nigra"
 
 style "treeview_header" = "default" {
-	bg[PRELIGHT] = shade (1.4, @bg_color)
-	bg[NORMAL] = shade (1.3, @bg_color)
+	bg[PRELIGHT] = shade(1.4, @bg_color)
+	bg[NORMAL] = shade(1.3, @bg_color)
 }
 widget_class "*.<GtkTreeView>.<GtkButton>" style "treeview_header"
 widget_class "*.<GtkCTree>.<GtkButton>" style "treeview_header"

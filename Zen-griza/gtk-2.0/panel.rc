@@ -24,7 +24,7 @@ style "adaptive-panel" = "default" {
 	bg[ACTIVE]			= @button_prelight
 	}
 
-style "panel" = "light-panel"
+style "panel" = "dark-panel"
 {
 	xthickness = 2
 	ythickness = 2
@@ -32,10 +32,10 @@ style "panel" = "light-panel"
 
 style "panel_button" = "default"
 {
-engine "clearlooks"{
-		radius			= 0.0
-		contrast		= 0.9
-		reliefstyle		= 0
+		engine "murrine" {
+		contrast			= 0.9
+		roundness			= 0
+		border_shades		= { 1.2, 0.8 }
 	}
 }
 
