@@ -3,8 +3,11 @@
 ***********/
 
 * {
-   engine: none;
+   engine: xfce;
 
+    -xfce-smooth-edge: true;
+    -xfce-grip-style: disabled;
+    
    -GtkButton-child-displacement-x: 1;
    -GtkButton-child-displacement-y: 1;
    -GtkButton-default-border: 0;
@@ -265,6 +268,7 @@ GtkAssistant .sidebar {
    border-style: solid;
    border-width: 1px;
    border-radius: 3px;
+    -xfce-smooth-edge: true;
 }
 
 GtkSwitch.slider,
@@ -537,7 +541,6 @@ GtkProgressBar {
    border-style: solid;
    border-width: 1px;
    padding: 0;
-
 }
 GtkProgressBar {
    border-radius: 7px;
