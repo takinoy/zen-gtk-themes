@@ -99,7 +99,7 @@ style "default"
 	{
 		animation			= FALSE
 		contrast			= 0.5				# 0.8 for less contrast, more than 1.0 for more contrast on borders
-		focus_color			= @button_prelight
+		focus_color			= shade(0.9, @button_prelight)
 		glazestyle			= 0					# 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved highlight, 4 = beryl highlight
 		gradient_shades		= {1.0,1.0,1.0,1.0}	#{1.1,1.0,1.0,0.87}
 		glowstyle			= 0					# 0,1,2,3,4
@@ -130,7 +130,7 @@ style "default"
 		comboboxstyle		= 0					# 0 = normal combobox, 1 = colorized combobox below arrow
 		expanderstyle		= 0
 		focusstyle			= 3
-		prelight_shade		= .95				# shade level for scrollbar's slider, comboboxstyle(1), and prelight state with gradient_colors
+		prelight_shade		= .8				# shade level for scrollbar's slider, comboboxstyle(1), and prelight state with gradient_colors
 		separatorstyle		= 1					# 0 = Hard seperators 1 = Smooth seperators
 		#shadow_shades		= { 0.8, 2.2 }		# gradient for shadows.
 		textstyle			= 0					# 0 = normal text, 1 = inset
@@ -247,7 +247,7 @@ style "button" = "default"
 	ythickness = 3
 
 	bg[NORMAL]			= mix (0.9, @bg_color, @base_color)	# Color for buttons.
-	bg[PRELIGHT]		= mix(0.25, @button_prelight, @bg_color)
+	bg[PRELIGHT]		= mix (0.6, @bg_color, @base_color)
 	bg[INSENSITIVE]		= shade (1.02, @bg_color)
 	bg[ACTIVE]			= mix (0.15, @button_prelight, @bg_color)
 

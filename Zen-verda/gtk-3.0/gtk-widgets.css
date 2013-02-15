@@ -137,6 +137,10 @@ GtkWindow {
 * view, entry *
 ***************/
 
+GtkTextView {
+   background-color: @base_color;
+}
+
 GtkViewport {
    background-color: transparent;
 }
@@ -173,15 +177,10 @@ GtkDrawingArea {
 
 .view:active, .entry:active {
    background-color: @base_color;
-
 }
 
 .view:insensitive {
    background-color: @button_bg_insensitive;
-}
-
-.view:hover, .entry:hover {
-
 }
 
 .view:selected, .entry:selected {
@@ -301,6 +300,13 @@ GtkComboBox:insensitive,
    border-right-color: @border_insensitive;
    border-bottom-color: shade(@border_insensitive, 0.9);
    border-left-color: @border_insensitive;
+}
+
+GtkSwitch:hover,
+.button:hover, .button:hover:focus  {
+   background-image: -gtk-gradient(linear, left top, left bottom,
+                                    from (shade(mix(@base_color, @bg_color, 0.7), 1.05)),
+                                    to (shade(mix(@base_color, @bg_color, 0.7), 0.95)));
 }
 
 .button:selected,
@@ -437,17 +443,12 @@ column-header:last-child .button {
 }
 
 .check:active, .radio:active {
-   color : @text_color;
    background-color: @selected_bg_color;
 }
 
 .check:insensitive, .radio:insensitive {
    color: @fg_insensitive;
    background-color: @bg_color;
-}
-
-.check:hover, .radio:hover {
-   color : @text_color;
 }
 
 .check:selected, .radio:selected {
@@ -459,10 +460,6 @@ column-header:last-child .button {
 }
 
 .check:insensitive:inconsistent, .radio:insensitive:inconsistent {
-}
-
-.check:focus, .radio:focus {
-   color : @text_color;
 }
 
 /********************
@@ -683,7 +680,7 @@ tab * {
    background-image: -gtk-gradient(linear, left top, left bottom,
                                     from (mix(@button_prelight, @notebook_active, 0.9)),
                                     to (@notebook_active));
-   border-color: @button_prelight;
+   border-color: shade (@button_prelight, 0.9);
 }
 
 GtkNotebook tab:active {
@@ -742,48 +739,41 @@ GtkNotebook tab:active {
    border-width: 1px 0 1px 1px;
 }
 
-/*****************************
-* Buttons hightlight & focus *
-******************************/
+/*****************
+ * hover & focus *
+ *****************/
 
 .check:hover, .check:hover:focus, .radio:hover, .radio:hover:focus,
 .entry:active, .entry:active:focus, .entry:focus, .entry:hover, .entry:hover:focus,
 GtkSwitch:hover,
 .button:hover, .button:hover:focus  {
-/*
-   color : @text_color;
-*/
-   border-top-color: shade(@button_prelight, 1.12);
-   border-right-color: @button_prelight;
-   border-bottom-color: shade(@button_prelight, 0.9);
-   border-left-color: @button_prelight;
+   border-top-color: @button_prelight;
+   border-right-color: shade(@button_prelight,0.9);
+   border-bottom-color: shade(@button_prelight,0.85);
+   border-left-color: shade(@button_prelight,0.9);
 }
 
 .slider:focus,
-.check:focus, .radio:focus,
+.entry:focus,
 .button:focus, GtkSwitch:focus {
-   border-top-color: shade(@button_prelight, 1.12);
-   border-right-color: @button_prelight;
-   border-bottom-color: shade(@button_prelight, 0.9);
-   border-left-color: @button_prelight;
-
-   box-shadow: inset 1px 0 @button_prelight,
-               inset -1px 0  shade(@button_prelight, 0.9),
+   border-top-color: mix(@button_prelight, shade(@button_border, 1.12), 0.8);
+   border-right-color: mix(@button_prelight, @button_border, 0.8);
+   border-bottom-color: mix(@button_prelight, shade(@button_border, 0.9), 0.8);
+   border-left-color: mix(@button_prelight, @button_border, 0.8);
+   
+   box-shadow: inset 0 1px shade(@button_prelight, 1.12),
+               inset -1px 0  @button_prelight,
                inset 0 -1px shade(@button_prelight, 0.9),
-               inset 0 1px @button_prelight;
+               inset 1px 0 @button_prelight;
 }
 
-.spinbutton.button:hover,
-.spinbutton.button:hover:focus {
-   box-shadow: inset 1px 0 @button_prelight,
-               inset -1px 0  shade(@button_prelight, 0.9),
-               inset 0 -1px shade(@button_prelight, 0.9),
-               inset 0 1px @button_prelight;
-}
-
-.combobox-entry .entry:focus {
-   padding: 0px;
-   box-shadow: inset -1px 0  shade(@button_prelight, 0.9);
+.spinbutton.button:hover, .spinbutton.button:hover:focus {
+   border-left-color: @button_border;
+   
+   box-shadow: inset 0 1px @button_prelight,
+               inset -1px 0  shade(@button_prelight,0.9),
+               inset 0 -1px shade(@button_prelight, 0.85),
+               inset 1px 0 shade(@button_prelight,0.9);
 }
 
 header .button:hover, header .button:hover:focus, header .button:focus,
@@ -880,9 +870,6 @@ column-header .button:hover, column-header .button:focus, column-header .button:
 ***********/
 
 .menubar {
-/*
-   background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_color, 1.0)), to(shade(@bg_color, 0.95)));
-*/
    border-style: none;
    border-color: @border_insensitive;
    color: @fg_color;
@@ -929,13 +916,6 @@ column-header .button:hover, column-header .button:focus, column-header .button:
 GtkHandleBox {
 }
 
-/***********
-* textview *
-************/
-GtkTextView {
-   background-color: @base_color;
-}
-
 /**********
 * sidebar *
 ***********/
@@ -949,6 +929,12 @@ GtkTextView {
 }
 
 .pane-separator {
+}
+
+/************
+* statusbar *
+*************/
+GtkStatusbar {
 }
 
 /*****************************
@@ -967,12 +953,6 @@ GtkLabel:hover,
 GtkLabel:insensitive
 GtkLabel {
    background-color: transparent;
-}
-
-/************
-* statusbar *
-*************/
-GtkStatusbar {
 }
 
 /**********
