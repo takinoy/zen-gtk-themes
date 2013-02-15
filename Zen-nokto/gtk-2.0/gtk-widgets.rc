@@ -72,25 +72,25 @@ style "default"
 	# Color Definitions
 	####################
 	bg[NORMAL]			= @bg_color
-	bg[PRELIGHT]		= shade (1.02, @bg_color)
+	bg[PRELIGHT]		= shade(1.02, @bg_color)
 	bg[SELECTED]		= @button_prelight
 	bg[INSENSITIVE]		= @bg_color
-	bg[ACTIVE]			= shade (0.9, @bg_color)
+	bg[ACTIVE]			= shade(0.9, @bg_color)
 
 	fg[NORMAL]			= @fg_color
 	fg[PRELIGHT]		= @fg_color
 	fg[SELECTED]		= @selected_fg_color
-	fg[INSENSITIVE]		= mix (0.6, darker(@bg_color), @fg_color)
+	fg[INSENSITIVE]		= mix(0.6, darker(@bg_color), @fg_color)
 	fg[ACTIVE]			= @fg_color
 
 	text[NORMAL]		= @text_color
 	text[PRELIGHT]		= @text_color
 	text[SELECTED]		= @selected_fg_color
-	text[INSENSITIVE]	= mix (0.7, darker(@bg_color), @text_color)
+	text[INSENSITIVE]	= mix(0.7, darker(@bg_color), @text_color)
 	text[ACTIVE]		= @selected_fg_color
 
 	base[NORMAL]		= @base_color
-	base[PRELIGHT]		= shade (0.95, @bg_color)
+	base[PRELIGHT]		= shade(0.95, @bg_color)
 	base[SELECTED]		= @selected_bg_color	# Color for selected base items.
 	base[INSENSITIVE]	= @bg_color
 	base[ACTIVE]		= @button_prelight
@@ -162,12 +162,12 @@ style "menu"
 	xthickness = 0
 	ythickness = 0
 
-	bg[NORMAL]			= mix (0.6, @base_color, @bg_color)	# Color of menu background.
+	bg[NORMAL]			= mix(0.6, @base_color, @bg_color)	# Color of menu background.
 	fg[NORMAL]			= @text_color
 	fg[PRELIGHT]		= @selected_fg_color		# Color of prelight menu item text.
 	base[NORMAL]		= @base_color	# Color for menu-item radio/checks background.
 	bg[SELECTED]		= shade(1.1, @selected_bg_color)
-	fg[INSENSITIVE]		= mix(0.7, darker(mix (0.6, @base_color, @bg_color)), @text_color)
+	fg[INSENSITIVE]		= mix(0.7, darker(mix(0.6, @base_color, @bg_color)), @text_color)
 
 	engine "murrine"
 	{
@@ -194,10 +194,10 @@ style "menubar" = "menu"
 	ythickness = 3
 
 	GtkMenuBar :: shadow-type = GTK_SHADOW_NONE
-	bg[SELECTED]		= shade (1.05, @button_prelight)
+	bg[SELECTED]		= shade(1.05, @button_prelight)
 	bg[NORMAL]			= @bg_color		# Color of menu background.
 	fg[NORMAL]			= @fg_color
-	fg[INSENSITIVE]		= mix (0.6, darker(@bg_color), @fg_color)
+	fg[INSENSITIVE]		= mix(0.6, darker(@bg_color), @fg_color)
 
 	engine "murrine"
 	{
@@ -217,7 +217,7 @@ style "menuitem_text_is_fg_color_workaround" {
 	text[PRELIGHT]		= @selected_fg_color
 	text[SELECTED]		= @selected_fg_color
 	text[ACTIVE]		= @fg_color
-	text[INSENSITIVE]	= mix (0.6, darker(@bg_color), @fg_color)
+	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
 
 # Work around for http://bugzilla.gnome.org/show_bug.cgi?id=382646
@@ -246,10 +246,10 @@ style "button" = "default"
 	xthickness = 3
 	ythickness = 3
 
-	bg[NORMAL]			= mix (0.9, @bg_color, @base_color)	# Color for buttons.
-	bg[PRELIGHT]		= mix (0.6, @bg_color, @base_color)
-	bg[INSENSITIVE]		= shade (1.02, @bg_color)
-	bg[ACTIVE]			= mix (0.15, @button_prelight, @bg_color)
+	bg[NORMAL]			= mix(0.9, @bg_color, @base_color)	# Color for buttons.
+	bg[PRELIGHT]		= mix(0.6, @bg_color, @base_color)
+	bg[INSENSITIVE]		= shade(1.02, @bg_color)
+	bg[ACTIVE]			= mix(0.15, @button_prelight, @bg_color)
 
 	engine "murrine"
 	{
@@ -273,7 +273,7 @@ style "comboboxentry" = "button" {
 
 style "combobox" = "button" {
 #don't work
-	#fg[INSENSITIVE]	= mix (0.6, darker(@bg_color), @fg_color)
+	#fg[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
 
 #class "GtkComboBox" style "combobox"
@@ -299,7 +299,7 @@ widget_class "*<GtkCheckButton>*"		style "radiocheck"
 #########
 
 style "view" {
-	base[NORMAL]	= shade (0.94,@base_color)
+	base[NORMAL]	= shade(0.94,@base_color)
 }
 
 style "iconview" = "view" {
@@ -320,7 +320,7 @@ style "treeview" = "iconview"
 
 style "sidepane"
 {
-	base[NORMAL]	= mix (0.6, @base_color, @bg_color)
+	base[NORMAL]	= mix(0.6, @base_color, @bg_color)
 }
 
 widget_class "*GtkTree*"			style "treeview"
@@ -341,8 +341,8 @@ style "treeview_header" = "default" {
 	xthickness = 2
 	ythickness = 1
 
-	bg[PRELIGHT]	= shade (1.06, @bg_color)
-	bg[NORMAL]		= mix (0.8, @bg_color, @base_color)
+	bg[PRELIGHT]	= shade(1.06, @bg_color)
+	bg[NORMAL]		= mix(0.8, @bg_color, @base_color)
 
 	engine "murrine"
 	{
@@ -363,8 +363,8 @@ widget_class "*.<GtkCList>.<GtkButton>"		style "treeview_header"
 
 style "notebook-bg" = "default"
 {
-	bg[ACTIVE]	= shade (0.95, @bg_color)			# Unfocused tab background.
-	bg[NORMAL]	= mix (0.8, @bg_color, @base_color)	# Tab background.
+	bg[ACTIVE]	= shade(0.95, @bg_color)			# Unfocused tab background.
+	bg[NORMAL]	= mix(0.8, @bg_color, @base_color)	# Tab background.
 }
 
 widget_class "*<GtkNotebook>*<GtkEventBox>"			style "notebook-bg"
@@ -403,8 +403,8 @@ include "panel.rc"
 style "scrollbar" = "default"
 {
 	bg[NORMAL]		= @bg_color
-	bg[SELECTED]	= mix (0.8, shade(0.85, @bg_color), @fg_color)
-	bg[PRELIGHT]	= mix (0.25, @button_prelight, @bg_color)
+	bg[SELECTED]	= mix(0.8, shade(0.85, @bg_color), @fg_color)
+	bg[PRELIGHT]	= mix(0.25, @button_prelight, @bg_color)
 
 	engine "murrine" {
 		gradient_shades	= {1.0,1.0,1.0,1.0}
@@ -428,8 +428,8 @@ style "scale"="default"
 	GtkWidget	::focus-line-width	= 0
 	GtkWidget	::focus-padding		= 2
 
-	bg[PRELIGHT]		= mix (0.25, @button_prelight, @bg_color)
-	bg[INSENSITIVE]		= shade (1.02, @bg_color)
+	bg[PRELIGHT]		= mix(0.25, @button_prelight, @bg_color)
+	bg[INSENSITIVE]		= shade(1.02, @bg_color)
 
 	engine "murrine"
 	{
@@ -459,7 +459,7 @@ style "progress"
 	xthickness = 1
 	ythickness = 1
 
-	bg[NORMAL]			= shade (0.9, @bg_color)
+	bg[NORMAL]			= shade(0.9, @bg_color)
 	bg[SELECTED]		= @button_prelight
 	bg[PRELIGHT]		= @button_prelight
 
@@ -529,7 +529,7 @@ style "text_is_fg_color_workaround" {
 	text[PRELIGHT]		= @fg_color
 	text[SELECTED]		= @selected_fg_color
 	text[ACTIVE]		= @fg_color
-	text[INSENSITIVE]	= mix (0.6, darker(@bg_color), @fg_color)
+	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
 
 # Work around for http://bugzilla.gnome.org/show_bug.cgi?id=382646
@@ -543,7 +543,7 @@ style "fg_is_text_color_workaround" {
 	fg[PRELIGHT]		= @text_color
 	fg[SELECTED]		= @selected_fg_color
 	fg[ACTIVE]			= @selected_fg_color
-	fg[INSENSITIVE]		= mix (0.7, darker(@bg_color), @text_color)
+	fg[INSENSITIVE]		= mix(0.7, darker(@bg_color), @text_color)
 }
 
 # Work around the usage of GtkLabel inside GtkListItems to display text.

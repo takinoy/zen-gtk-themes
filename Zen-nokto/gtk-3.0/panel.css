@@ -3,7 +3,7 @@
 PanelApplet,
 PanelSeparator {
    background-image: none;
-   background-color: shade (@bg_color, 0.9);
+   background-color: shade(@bg_color, 0.9);
 }
 
 PanelApplet .button {

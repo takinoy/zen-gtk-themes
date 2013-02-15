@@ -32,8 +32,8 @@ widget_class "*.GtkNotebook"       style "notebook-nigra"
 class "*.GtkNotebook"              style "notebook-nigra"
 
 style "treeview_header" = "default" {
-	bg[PRELIGHT] = shade (1.4, @bg_color)
-	bg[NORMAL] = shade (1.3, @bg_color)
+	bg[PRELIGHT] = shade(1.4, @bg_color)
+	bg[NORMAL] = shade(1.3, @bg_color)
 }
 widget_class "*.<GtkTreeView>.<GtkButton>" style "treeview_header"
 widget_class "*.<GtkCTree>.<GtkButton>" style "treeview_header"

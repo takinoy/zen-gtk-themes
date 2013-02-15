@@ -40,13 +40,13 @@
 /* theme common colors */
 @define-color fg_insensitive mix(@fg_color, darker(@bg_color), 0.6);
 @define-color bg_darker shade(@bg_color, 0.9);
-@define-color bg_prelight mix (@bg_color, @button_prelight, 0.2);
-@define-color bg_lighter mix (@bg_color, @base_color, 0.6);
+@define-color bg_prelight mix(@bg_color, @button_prelight, 0.2);
+@define-color bg_lighter mix(@bg_color, @base_color, 0.6);
 @define-color border_normal shade(@bg_color, 0.8);
 @define-color border_insensitive shade(@bg_color, 0.9);
 @define-color border_selected darker(@button_prelight);
 @define-color highlight #0CFF06;
-@define-color button_bg_normal mix (@base_color, @bg_color, 0.9);
+@define-color button_bg_normal mix(@base_color, @bg_color, 0.9);
 @define-color button_bg_insensitive mix(@button_bg_normal, @bg_color, 0.6);
 @define-color button_border darker(@button_bg_normal);
 @define-color notebook_active shade(@bg_color, 0.8);
