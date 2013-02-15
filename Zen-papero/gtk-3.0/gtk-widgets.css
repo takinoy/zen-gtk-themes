@@ -284,7 +284,9 @@ GtkSwitch.slider,
 }
 
 .button:active {
-   background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_prelight, 1.05)), to(shade(@bg_prelight, 0.95)));
+   background-image: -gtk-gradient(linear, left top, left bottom,
+                                    from(shade(@bg_prelight,  0.95)),
+                                    to(shade(@bg_prelight, 1.05)));
    border-color: @button_border;
 }
 
@@ -309,7 +311,12 @@ GtkSwitch:hover,
                                     to (shade(mix(@base_color, @bg_color, 0.7), 0.95)));
 }
 
-.button:selected,
+.button.default, .button.default:hover {
+   background-image: -gtk-gradient(linear, left top, left bottom,
+                                    from(shade(@bg_prelight, 1.05)),
+                                    to(shade(@bg_prelight, 0.92)));
+}
+
 GtkSwitch.trough:active {
    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@button_prelight, 0.95)), to(shade(@button_prelight, 1.05)));
    border-color: @border_selected;
