@@ -3,7 +3,7 @@
 # patch for libre-office
 # This script will add customs application launchers for libreoffice in .local/share/applications to run the patch "libreoffice.rc" when libreoffice is launched.
 # The folowing command will be added in the application lancher :
-# bash -c 'GTK2_RC_FILES=$HOME/.themes/Zen/gtk-2.0/apps/libreoffice.rc application-command'
+# bash -c 'GTK2_RC_FILES=$HOME/.themes/ZenX/gtk-2.0/apps/libreoffice.rc application-command'
 # You can remove the generated files libreoffice-* safely.
 #see also :
 #http://urukrama.wordpress.com/2008/07/13/setting-a-custom-gtk-theme-for-specific-applications/
@@ -14,16 +14,16 @@ lo_exec='calc.desktop draw.desktop startcenter.desktop writer.desktop'
 # find the installation directory of the theme.
 theme_dir=""
 cd /usr/share/themes
-if find Zen* > /dev/null
+if find ZenX* > /dev/null
 then
-theme_dir=$(pwd)/$(find Zen* | head -1)
+theme_dir=$(pwd)/$(find ZenX* | head -1)
 else
 cd $HOME/.themes
-	if find Zen* > /dev/null
+	if find ZenX* > /dev/null
 	then
-	theme_dir=$(pwd)/$(find Zen* | head -1)
+	theme_dir=$(pwd)/$(find ZenX* | head -1)
 	else
-	echo "Theme Zen* not installed, aborded"
+	echo "Theme ZenX* not installed, aborded"
 	exit 1
 	fi
 fi

@@ -1,21 +1,21 @@
 # Maintainer: Ced <cedl38@gmail.com>
 
-pkgname=zen-gtk-themes
+pkgname=zenx-gtk-themes
 pkgver=0.8.0
-pkgrel=1
-pkgdesc="A gtk2/gtk3 theme for Xfce and gnome that attempt to keep it simple, consistent and being visually appealing."
+pkgrel=2
+pkgdesc="A variant of "zen-gtk-themes" with the xfce engine."
 arch=('any')
-url="http://opendesktop.org/content/show.php/Zen+suite?content=149883"
+url="http://xfce-look.org/content/show.php/Zen+suite?content=149883"
 license=('GPL3')
 groups=('xfce')
-depends=('gtk-engines' 'gtk-engine-murrine')
-optdepends=('alinea-themes' 'mini-xfwm4-theme' 'gnome-themes-extras: Foxtrot icons' 'xfce4-notifyd' 'gtk3>=3.4.1' 'libreoffice-patch.sh: script to increase sheet tabs for LibreOffice. See README.md or http://xfce-look.org/content/show.php/Zen+suite?content=149883 for more infos')
+depends=('gtk-engines' 'gtk2-xfce-engine')
+optdepends=('alinea-themes' 'mini-xfwm4-theme' 'gnome-themes-extras: Foxtrot icons' 'xfce4-notifyd' 'gtk3-xfce-engine' 'libreoffice-patch.sh: script to increase sheet tabs for LibreOffice. See README.md or http://xfce-look.org/content/show.php/Zen+suite?content=149883 for more infos')
 
-source=("$pkgname-$pkgver.tar.gz::https://github.com/cedl38/$pkgname/archive/v$pkgver.tar.gz")
-sha256sums=('187b3423c7c5009188612dd796c13cb9a4ff73c85640fd7a57caf5b12f5e8027')
+source=("zen-gtk-themes-$pkgver.tar.gz::https://github.com/cedl38/zen-gtk-themes/archive/xv$pkgver.tar.gz")
+sha256sums=('c2d7de84cb05fb34b2a478a6770e5428ea27dbc23a7b1e88b985a382ca868d4f')
 
 build() {
-  cd $srcdir/$pkgname'-'$pkgver
+  cd $srcdir/zen-gtk-themes-xv$pkgver
   install -d -m755 $pkgdir/usr/share/themes
   cp -r Zen* $pkgdir/usr/share/themes || return 1
 }
