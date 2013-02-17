@@ -1,4 +1,4 @@
-zen-gtk-themes version 0.3.9
+zen-gtk-themes version 0.3.10
 ----------------------------
 
 Author : Cédric Leporcq
@@ -11,7 +11,7 @@ The main goal of this theme is to keep it simple, consistent and being visually 
 Features :
  - thin menubar, toolbar and icons
  - compatibility with Xfce widgets, Xfce notify theme
- - six pre-configured color schemes compatibles with gnome and Xfce : Zen, Zen-blua, Zen-nigra, Zen-nokto, Zen-verda, Zen-papero.
+ - seven pre-configured color schemes compatibles with gnome and Xfce : Zen, Zen-blua, Zen-griza, Zen-nigra, Zen-nokto, Zen-verda, Zen-papero.
 
 This version use only the clearlook engine.
 
@@ -23,10 +23,11 @@ Extras :
 
 Specific settings for libreoffice :
 Using small scrollbars in libreoffice 3.* cause sheet tabs too small. You can fix scrollbar width for LibreOffice two ways :
-- run the script libreoffice-patch.sh (use it with care). This script will add customs application launchers for libreoffice in .local/share/applications to run the patch "libreoffice.rc" when libreoffice is launched. The following command will be added in the application launcher :
+- run the script libreoffice-patch.sh. This script will add customs application launchers for libreoffice in .local/share/applications. The following command will be added in the application launcher :
 # bash -c 'GTK2_RC_FILES=$HOME/.themes/Zen/gtk-2.0/apps/libreoffice.rc application-command'
-You can remove the generated files libreoffice-* safely.
-- edit Zen/gtk-2.0/gtkrc and change value of "GtkScrollbar::slider-width" from "11" to "14" for example.
+to uninstall and restore original files (if exist) run :
+# ./libreoffice-patch.sh --uninstall
+- edit Zen/gtk-2.0/gtkrc and change value of "GtkScrollbar::trough-border" from "2" to "3" for example.
 see also :
 http://urukrama.wordpress.com/2008/07/13/setting-a-custom-gtk-theme-for-specific-applications/
 
@@ -35,7 +36,7 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 Changelog:
 ----------
 
-0.3.9
+0.3.10
  - Last gtk2 version with the clearlook engine.
  - Updates from 0.9 branch (gtk2).
 
