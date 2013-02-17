@@ -1,9 +1,9 @@
-zen-gtk-themes version 0.9.0
+zen-gtk-themes version 0.9.1
 ----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : February 16, 2013
+Date : February 17, 2013
 Sources : https://github.com/cedl38/zen-gtk-themes
 
 http://opendesktop.org/ content :
@@ -30,15 +30,17 @@ Arch users : "zen-gtk-themes" is available in AUR.
 
 [b]Specific settings for libreoffice :[/b]
 Using small scrollbars in libreoffice 3.* cause sheet tabs too small. You can fix scrollbar width for LibreOffice two ways :
-- run the script libreoffice-patch.sh (use it with care). This script will add customs application launchers for libreoffice in .local/share/applications to run the patch "libreoffice.rc" when libreoffice is launched. The following command will be added in the application launcher :
+- run the script libreoffice-patch.sh. This script will add customs application launchers for libreoffice in .local/share/applications. The following command will be added in the application launcher :
 # bash -c 'GTK2_RC_FILES=$HOME/.themes/Zen/gtk-2.0/apps/libreoffice.rc application-command'
-You can remove the generated files libreoffice-* safely.
-- edit Zen/gtk-2.0/gtkrc and change value of "GtkScrollbar::slider-width" from "11" to "14" for example.
+to uninstall and restore original files (if exist) run :
+# ./libreoffice-patch.sh --uninstall
+- edit Zen/gtk-2.0/gtkrc and change value of "GtkScrollbar::trough-border" from "2" to "3" for example.
 
 [b]Suggest for firefox users :[/b] install the add-on "GTK+ Native".
 
 Changelog:
 ----------
+0.9.1 : fix libreoffice.sh script and adjust scrollbar size.
 0.9.0
 - add zen-griza variant
 - change column headers and scrollbar style
@@ -47,10 +49,7 @@ Changelog:
 0.8.1
  - Adjust button, notebook, radiocheck colors.
  - Change fg_color and text_color for dark themes.
- - Change active button color.
- - Fix gtk2 combobox-menu text color in zen-nigra.
 0.7.3
- - Fix bug for notebook selected items
  - Improve gtk2/gtk3 consistency : menubar, arrows, combobox.
  - Add libreoffice-patch.sh script.
 0.6.2
