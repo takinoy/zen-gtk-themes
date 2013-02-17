@@ -4,7 +4,8 @@
 
 		style "large_scrollbar"
 		{
-		GtkScrollbar::slider-width = 14
+		GtkScrollbar::slider-width = 10
+		GtkScrollbar::trough-border = 3
 		}
 		widget_class "*" style "large_scrollbar"
 

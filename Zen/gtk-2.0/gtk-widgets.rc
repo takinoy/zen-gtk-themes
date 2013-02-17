@@ -52,7 +52,7 @@ style "default"
 	GtkScrollbar::min-slider-length = 30	# Min. length of scrollbars.
 	GtkScrollbar::slider-width = 9
 	GtkScrollbar::stepper-size = 20
-	GtkScrollbar::trough-border = 1
+	GtkScrollbar::trough-border = 2
 
 	GtkScrolledWindow::scrollbar-spacing = 0	# This sets the spacing between scrollbars.
 	GtkToolbar::internal-padding = 0	# Toolbar padding.
