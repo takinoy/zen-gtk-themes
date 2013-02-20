@@ -30,12 +30,22 @@ class "GtkCheck*"	style "radiocheck"
 widget_class "*<GtkRadioButton>*"		style "radiocheck"
 widget_class "*<GtkCheckButton>*"		style "radiocheck"
 
-style "notebook-nigra"
+style "notebook-bg-nigra"
 {
 	bg[ACTIVE]			= shade(1.1, @bg_color) # Unfocused tab background.
 	bg[NORMAL]			= shade(1.3, @bg_color) # Tab background.
-	bg[SELECTED]		= @button_prelight
+}
 
+widget_class "*<GtkNotebook>*<GtkEventBox>"			style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>"		style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>*<GtkLayout>"			style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>*<GtkViewport>"			style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>*<GtkToolbar>"			style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>*<GtkLabel>"			style "notebook-bg-nigra"
+
+style "notebook-nigra" = "notebook-bg-nigra"
+{
 	engine "clearlooks"
 	{
 		radius = 2.0 # Roundness of menu items.

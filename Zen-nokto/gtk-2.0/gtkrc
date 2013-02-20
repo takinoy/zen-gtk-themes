@@ -4,11 +4,22 @@ gtk-color-scheme = "button_prelight:#246662"
 
 include "gtk-widgets.rc"
 
-style "notebook-nokto"
+style "notebook-bg-nokto"
 {
 	bg[ACTIVE]   = shade(1.1, @bg_color) # Unfocused tab background.
 	bg[NORMAL]   = shade(0.8, @bg_color) # Tab background.
+}
 
+widget_class "*<GtkNotebook>*<GtkEventBox>"			style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>"		style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkLayout>"			style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkViewport>"			style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkToolbar>"			style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkLabel>"			style "notebook-bg-nokto"
+
+style "notebook-nokto" = "notebook-bg-nokto"
+{
 	engine "clearlooks"
 	{
 		radius = 2.0 # Roundness of menu items.
