@@ -305,8 +305,8 @@ GtkComboBox:insensitive,
 GtkSwitch:hover,
 .button:hover, .button:hover:focus  {
    background-image: -gtk-gradient(linear, left top, left bottom,
-                                    from (shade(mix(@base_color, @bg_color, 0.7), 1.05)),
-                                    to (shade(mix(@base_color, @bg_color, 0.7), 0.95)));
+                                    from (shade(@bg_hover, 1.05)),
+                                    to (shade(@bg_hover, 0.95)));
 }
 
 .button.default, .button.default:hover {

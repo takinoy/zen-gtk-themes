@@ -16,7 +16,9 @@ widget_class "MetaFrames"			style "titlebar-nigra"
 
 style "button-nigra"
 {
-	bg[SELECTED]		= shade(1.2,@button_prelight)
+	bg[NORMAL]			= shade(1.15, @bg_color)
+	bg[PRELIGHT]		= shade(1.25, @bg_color)
+	bg[SELECTED]		= shade(1.2, @button_prelight)
 }
 
 widget_class "*<GtkButton>"			style "button-nigra"
@@ -33,8 +35,8 @@ widget_class "*<GtkCheckButton>*"		style "radiocheck"
 style "notebook-bg-nigra"
 {
 	bg[ACTIVE]			= shade(1.1, @bg_color) # Unfocused tab background.
-	bg[NORMAL]			= shade(1.3, @bg_color) # Tab background.
-	bg[PRELIGHT]		= shade(1.3, @bg_color)
+	bg[NORMAL]			= shade(1.2, @bg_color) # Tab background.
+	bg[PRELIGHT]		= shade(1.2, @bg_color)
 }
 
 widget_class "*<GtkNotebook>*<GtkEventBox>"			style "notebook-bg-nigra"
