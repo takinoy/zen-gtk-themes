@@ -278,10 +278,10 @@ style "spinbutton" = "button" {
 }
 class "GtkSpinButton"  style "spinbutton"
 
-style "radiocheck" = "button"
+style "radiocheck"
 {
 	bg[SELECTED]	= @selected_bg_color
-	bg[PRELIGHT]	= shade(1.03,@bg_color)
+	bg[PRELIGHT]	= @bg_color
 }
 
 class "GtkRadio*"	style "radiocheck"
@@ -355,10 +355,11 @@ widget_class "*.<GtkCList>.<GtkButton>"		style "treeview_header"
 # notebook #
 ############
 
-style "notebook-bg" = "default"
+style "notebook-bg"
 {
-	bg[ACTIVE]	= shade(0.95, @bg_color)			# Unfocused tab background.
-	bg[NORMAL]	= mix(0.8, @bg_color, @base_color)	# Tab background.
+	bg[ACTIVE]		= shade(0.95, @bg_color)			# Unfocused tab background.
+	bg[NORMAL]		= mix(0.8, @bg_color, @base_color)	# Tab background.
+	bg[PRELIGHT]	= mix(0.8, @bg_color, @base_color)
 }
 
 widget_class "*<GtkNotebook>*<GtkEventBox>"			style "notebook-bg"
@@ -368,6 +369,8 @@ widget_class "*<GtkNotebook>*<GtkViewport>"			style "notebook-bg"
 widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "notebook-bg"
 widget_class "*<GtkNotebook>*<GtkToolbar>"			style "notebook-bg"
 widget_class "*<GtkNotebook>*<GtkLabel>"			style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkRadioButton>"		style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkCheckButton>"		style "notebook-bg"
 
 style "notebook" = "notebook-bg"
 {

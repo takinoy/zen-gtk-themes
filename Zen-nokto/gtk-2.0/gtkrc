@@ -6,8 +6,9 @@ include "gtk-widgets.rc"
 
 style "notebook-bg-nokto"
 {
-	bg[ACTIVE]   = shade(1.1, @bg_color) # Unfocused tab background.
-	bg[NORMAL]   = shade(0.8, @bg_color) # Tab background.
+	bg[ACTIVE]			= shade(1.1, @bg_color) # Unfocused tab background.
+	bg[NORMAL]			= shade(0.8, @bg_color) # Tab background.
+	bg[PRELIGHT]		= shade(1.3, @bg_color)
 }
 
 widget_class "*<GtkNotebook>*<GtkEventBox>"			style "notebook-bg-nokto"
@@ -17,6 +18,8 @@ widget_class "*<GtkNotebook>*<GtkViewport>"			style "notebook-bg-nokto"
 widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "notebook-bg-nokto"
 widget_class "*<GtkNotebook>*<GtkToolbar>"			style "notebook-bg-nokto"
 widget_class "*<GtkNotebook>*<GtkLabel>"			style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkRadioButton>"		style "notebook-bg-nokto"
+widget_class "*<GtkNotebook>*<GtkCheckButton>"		style "notebook-bg-nokto"
 
 style "notebook-nokto" = "notebook-bg-nokto"
 {
