@@ -923,7 +923,7 @@ GtkHandleBox {
 ***********/
 .sidebar {
 -GtkWidget-focus-padding: 3;
-   background-color: mix(@bg_color, @base_color, 0.6);
+   background-color: @bg_lighter;
 }
 
 .sidebar .separator,
