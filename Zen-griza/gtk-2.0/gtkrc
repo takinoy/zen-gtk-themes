@@ -3,3 +3,13 @@ gtk-color-scheme = "base_color:#FCFCFC\nfg_color:#000000\ntooltip_fg_color:#0000
 gtk-color-scheme = "button_prelight:#B8C1CC"
 
 include "gtk-widgets.rc"
+
+style "button-griza"
+{
+	bg[ACTIVE]			= mix(0.5, @button_prelight, @bg_color)
+}
+
+widget_class "*<GtkButton>"			style "button-griza"
+widget_class "*OptionMenu*"			style "button-griza"
+class "*OptionMenu*"				style "button-griza"
+widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button-griza"
