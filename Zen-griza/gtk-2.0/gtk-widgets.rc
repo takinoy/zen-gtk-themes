@@ -103,7 +103,7 @@ style "default"
 		glazestyle			= 0					# 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved highlight, 4 = beryl highlight
 		gradient_shades		= {1.0,1.0,1.0,1.0}	#{1.1,1.0,1.0,0.87}
 		glowstyle			= 0					# 0,1,2,3,4
-		glow_shade			= 1.1
+		glow_shade			= 1.0
 		highlight_shade		= 1.0				# set highlight amount for buttons or widgets
 		lightborder_shade	= 1.001				# sets lightborder amount for buttons or widgets (workaround for libreoffice)
 		lightborderstyle	= 0					# 0 = lightborder on top side, 1 = lightborder on all sides
@@ -249,12 +249,12 @@ style "button" = "default"
 	bg[NORMAL]			= mix(0.9, @bg_color, @base_color)	# Color for buttons.
 	bg[PRELIGHT]		= mix(0.6, @bg_color, @base_color)
 	bg[INSENSITIVE]		= shade(1.02, @bg_color)
-	bg[ACTIVE]			= mix(0.15, @button_prelight, @bg_color)
+	bg[ACTIVE]			= mix(0.2, @button_prelight, @bg_color)
 
 	engine "murrine"
 	{
-		gradient_shades		= {1.02,1.0,1.0,0.95}
-		contrast			= 0.9
+		gradient_shades		= {1.05,1.0,1.0,0.95}
+		contrast			= 1.0
 		border_shades		= { 1.1, 0.9 }
 	}
 }
