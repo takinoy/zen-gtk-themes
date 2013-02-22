@@ -100,7 +100,7 @@ style "default"
 		animation			= FALSE
 		contrast			= 0.5				# 0.8 for less contrast, more than 1.0 for more contrast on borders
 		focus_color			= shade(0.9, @button_prelight)
-		glazestyle			= 0					# 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved highlight, 4 = beryl highlight
+		glazestyle			= 1					# 0 = flat highlight, 1 = curved highlight, 2 = concave style, 3 = top curved highlight, 4 = beryl highlight
 		gradient_shades		= {1.0,1.0,1.0,1.0}	#{1.1,1.0,1.0,0.87}
 		glowstyle			= 0					# 0,1,2,3,4
 		glow_shade			= 1.0
@@ -333,16 +333,18 @@ widget_class "*GtkFileChooserWidget.GtkFileChooserDefault.GtkVBox.GtkHPaned.GtkV
 
 style "treeview_header" = "default" {
 	xthickness = 2
-	ythickness = 1
+	ythickness = 0
 
-	bg[PRELIGHT]	= shade(1.06, @bg_color)
 	bg[NORMAL]		= mix(0.8, @bg_color, @base_color)
+	bg[ACTIVE]		= mix(0.8, @bg_color, @base_color)
+	bg[PRELIGHT]	= mix(0.7, @bg_color, @base_color)
 
 	engine "murrine"
 	{
-		roundness		= 0
-		gradient_shades	= {1.0,1.0,1.0,0.97}
-		border_shades	= { 1.2,0.9 }
+		roundness			= 0
+		contrast			=1.0
+		gradient_shades		= {1.0,1.0,1.0,1.0}
+		border_shades		= { 1.1, 1.0 }
 	}
 }
 # Treeview headers (and similar stock GTK+ widgets)

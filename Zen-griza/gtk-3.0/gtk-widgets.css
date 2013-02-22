@@ -382,18 +382,20 @@ GtkSwitch.trough {
 
 column-header .button {
    color: @fg_color;
-   padding: 2px 1px 1px 5px;
+   padding: 2px 1px 0px 5px;
    border-radius: 0;
    border-width: 0px 1px 1px 0px;
-   box-shadow: inset 1px 0 shade(@notebook_active, 1.02),
-               inset 0 1px shade(@notebook_active, 1.02),
-               inset -1px 0  shade(@notebook_active, 1.02);
-   border-right-color: mix(@fg_color, @bg_color, 0.92);
+   border-right-color: mix(@fg_color, @notebook_active, 0.88);
    border-bottom-color: @border_normal;
 
-   background-image: -gtk-gradient(linear, left top, left bottom,
-                                    from (shade(@notebook_active, 1.03)),
-                                    to (shade(@notebook_active, 0.98)));
+   background-color: @notebook_active;
+   background-image: none;
+}
+
+column-header .button:hover, column-header .button:hover:focus {
+   color: @text_color;
+   background-color: @bg_hover;
+   background-image: none;
 }
 
 column-header:last-child .button {
@@ -770,11 +772,9 @@ GtkSwitch:hover,
                inset 1px 0 shade(@button_prelight,0.9);
 }
 
-header .button:hover, header .button:hover:focus, header .button:focus,
-column-header .button:hover, column-header .button:focus, column-header .button:focus {
-   color: @text_color;
-   border-right-color: mix(@fg_color, @bg_color, 0.92);
-   border-bottom-color: @button_border;
+column-header .button:hover, column-header .button:hover:focus {
+   border-right-color: mix(@fg_color, @notebook_active, 0.88);
+   border-bottom-color: @border_normal;
 }
 
 /********

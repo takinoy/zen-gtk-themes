@@ -62,8 +62,11 @@ style "notebook-nigra" = "notebook-bg-nigra"
 widget_class "*<GtkNotebook>"		style "notebook-nigra"
 
 style "treeview_header-nigra" {
-	bg[PRELIGHT]		= shade(1.4, @bg_color)
-	bg[NORMAL]			= shade(1.3, @bg_color)
+	bg[NORMAL]			= shade(1.2, @bg_color)
+	bg[ACTIVE]			= shade(1.2, @bg_color)
+	bg[PRELIGHT]		= shade(1.3, @bg_color)
+
+	engine "murrine"	{	border_shades	= { 1.5, 1.0 }	}
 }
 
 widget_class "*.<GtkTreeView>.<GtkButton>"	style "treeview_header-nigra"
