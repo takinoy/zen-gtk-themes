@@ -207,10 +207,9 @@ style "menubar" = "menu"
 
 widget_class "*BonoboDockItem"		style "menubar"
 class "*BonoboDockItem"				style "menubar"
-widget_class "*MenuBar*"			style "menubar"
-class "*MenuBar*"					style "menubar"
-widget_class "*ToolBar"				style "menubar"
-class "*ToolBar"					style "menubar"
+widget_class "*<GtkMenuBar>*"		style "menubar"
+class "GtkToolbar"					style "menubar"
+class "GtkHandleBox*"				style "menubar"
 
 style "menuitem_text_is_fg_color_workaround" {
 	text[NORMAL]		= @fg_color
@@ -235,7 +234,6 @@ style "pager"
 }
 
 widget_class "*Pager*"			style "pager"
-class "*Pager*"					style "pager"
 
 ###########
 # Buttons #
@@ -260,29 +258,25 @@ style "button" = "default"
 	}
 }
 
-widget_class "*Button*"				style "button"
 class "*Button*"					style "button"
-widget_class "*button*"				style "button"
-class "*button*"					style "button"
+widget_class "*<GtkButton>"			style "button"
 widget_class "*OptionMenu*"			style "button"
 class "*OptionMenu*"				style "button"
-widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	 "button"
+widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button"
 
 style "comboboxentry" = "button" {
 }
-#widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
+widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
 
 style "combobox" = "button" {
 #don't work
 	#fg[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
-
-#class "GtkComboBox" style "combobox"
+class "GtkComboBox" style "combobox"
 
 style "spinbutton" = "button" {
 }
-
-class "GtkSpinButton" style "spinbutton"
+class "GtkSpinButton"  style "spinbutton"
 
 style "radiocheck" = "button"
 {
@@ -324,12 +318,11 @@ style "sidepane"
 	base[NORMAL]	= mix(0.6, @base_color, @bg_color)
 }
 
-widget_class "*GtkTree*"			style "treeview"
-class "*GtkTree*"					style "treeview"
-widget_class "*GtkCTree*"			style "treeview"
-class "*GtkCTree*"					style "treeview"
+widget_class "*GtkTree*"				style "treeview"
+class "*GtkTree*"						style "treeview"
+widget_class "*GtkCTree*"				style "treeview"
+class "*GtkCTree*"						style "treeview"
 
-#widget_class "GtkTreeView"				style "treeview"
 widget_class "*Nautilus*IconView*"		style "iconview"
 widget_class "*ThunarIconView*"			style "iconview"
 widget_class "*Nautilus*Side*"			style "sidepane"
@@ -388,8 +381,7 @@ style "notebook" = "notebook-bg"
 	}
 }
 
-widget_class "*.GtkNotebook"		style "notebook"
-class "*.GtkNotebook"				style "notebook"
+widget_class "*<GtkNotebook>"		style "notebook"
 
 ##########
 # Panels #
@@ -417,12 +409,9 @@ style "scrollbar" = "default"
 	}
 }
 
-widget_class "*GtkScrollbar*"		style "scrollbar"
-class "*GtkScrollbar*"				style "scrollbar"
-widget_class "*GtkVScrollbar*"		style "scrollbar"
-class "*GtkVScrollbar*"				style "scrollbar"
-widget_class "*GtkHScrollbar*"		style "scrollbar"
-class "*GtkHScrollbar*"				style "scrollbar"
+class "GtkScrollbar"				style "scrollbar"
+class "GtkVScrollbar"				style "scrollbar"
+class "GtkHScrollbar"				style "scrollbar"
 
 style "scale"="default"
 {
@@ -443,17 +432,15 @@ style "scale"="default"
 	}
 }
 
-widget_class "*GtkHScale*"			style "scale"
-class "*GtkHScale*"					style "scale"
-widget_class "*GtkVScale*"			style "scale"
-class "*GtkVScale*"					style "scale"
+class "GtkHScale"					style "scale"
+class "GtkVScale"					style "scale"
 
 style "statusbar" {
 	xthickness = 2
 	ythickness = 1
 }
 
-widget_class "*<GtkStatusbar>*" style "statusbar"
+widget_class "*<GtkStatusbar>*"	style "statusbar"
 
 style "progress"
 {
@@ -474,14 +461,6 @@ style "progress"
 }
 
 widget_class "*GtkProgress*"		style "progress"
-class "*GtkProgress*"				style "progress"
-
-style "handlebox" = "default"
-{
-
-}
-
-widget_class "*HandleBox*"			style "handlebox"
 
 style "tooltips" = "default"
 {

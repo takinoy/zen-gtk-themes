@@ -4,15 +4,15 @@ gtk-color-scheme = "button_prelight:#246662"
 
 include "gtk-widgets.rc"
 
-style "titlebar-nigra" = "titlebar"
+style "titlebar-nigra"
 {
     fg[SELECTED] = mix(0.26, @bg_color, "#FFFFFF")
 }
 
-widget "xfwm"                      style "titlebar-nigra"
-widget "xfwm4-tabwin*"             style "titlebar-nigra"
-class "MetaFrames"                 style "titlebar-nigra"
-widget_class "MetaFrames"          style "titlebar-nigra"
+widget "xfwm"						style "titlebar-nigra"
+widget "xfwm4-tabwin*"				style "titlebar-nigra"
+class "MetaFrames"					style "titlebar-nigra"
+widget_class "MetaFrames"			style "titlebar-nigra"
 
 style "button-nigra"
 {
@@ -30,11 +30,11 @@ class "GtkCheck*"	style "radiocheck"
 widget_class "*<GtkRadioButton>*"		style "radiocheck"
 widget_class "*<GtkCheckButton>*"		style "radiocheck"
 
-style "notebook-nigra" = "notebook"
+style "notebook-nigra"
 {
-	bg[ACTIVE]   = shade(1.1, @bg_color) # Unfocused tab background.
-	bg[NORMAL]   = shade(1.3, @bg_color) # Tab background.
-	bg[SELECTED]   = @button_prelight
+	bg[ACTIVE]			= shade(1.1, @bg_color) # Unfocused tab background.
+	bg[NORMAL]			= shade(1.3, @bg_color) # Tab background.
+	bg[SELECTED]		= @button_prelight
 
 	engine "clearlooks"
 	{
@@ -44,26 +44,23 @@ style "notebook-nigra" = "notebook"
 	}
 }
 
-widget_class "*.GtkNotebook"       style "notebook-nigra"
-class "*.GtkNotebook"              style "notebook-nigra"
+widget_class "*<GtkNotebook>"		style "notebook-nigra"
 
-style "treeview_header" = "default" {
-	bg[PRELIGHT] = shade(1.4, @bg_color)
-	bg[NORMAL] = shade(1.3, @bg_color)
+style "treeview_header-nigra" {
+	bg[PRELIGHT]		= shade(1.4, @bg_color)
+	bg[NORMAL]			= shade(1.3, @bg_color)
 }
-widget_class "*.<GtkTreeView>.<GtkButton>" style "treeview_header"
-widget_class "*.<GtkCTree>.<GtkButton>" style "treeview_header"
-widget_class "*.<GtkList>.<GtkButton>" style "treeview_header"
-widget_class "*.<GtkCList>.<GtkButton>" style "treeview_header"
 
-style "scrollbar-nigra" = "scrollbar"
+widget_class "*.<GtkTreeView>.<GtkButton>"	style "treeview_header-nigra"
+widget_class "*.<GtkCTree>.<GtkButton>"		style "treeview_header-nigra"
+widget_class "*.<GtkList>.<GtkButton>"		style "treeview_header-nigra"
+widget_class "*.<GtkCList>.<GtkButton>"		style "treeview_header-nigra"
+
+style "scrollbar-nigra"
 {
 	bg[SELECTED]        = shade(1.6, @bg_color)
 }
 
-widget_class "*GtkScrollbar*"     style "scrollbar-nigra"
-class "*GtkScrollbar*"            style "scrollbar-nigra"
-widget_class "*GtkVScrollbar*"     style "scrollbar-nigra"
-class "*GtkVScrollbar*"            style "scrollbar-nigra"
-widget_class "*GtkHScrollbar*"     style "scrollbar-nigra"
-class "*GtkHScrollbar*"            style "scrollbar-nigra"
+class "GtkScrollbar"				style "scrollbar-nigra"
+class "GtkVScrollbar"				style "scrollbar-nigra"
+class "GtkHScrollbar"				style "scrollbar-nigra"

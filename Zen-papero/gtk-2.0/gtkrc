@@ -7,12 +7,12 @@ include "gtk-widgets.rc"
 # bg pixmap
 style "colors_papero"
 {
-	bg_pixmap[NORMAL] 	= "window-bg.png"
+	bg_pixmap[NORMAL]		= "window-bg.png"
 }
 
-class "GtkWidget"                  style "colors_papero"
+class "GtkWidget"					style "colors_papero"
 
-widget_class "*GtkTree*"           style "sidepane"
-class "*GtkTree*"                  style "sidepane"
-widget_class "*GtkCTree*"          style "sidepane"
-class "*GtkCTree*"                 style "sidepane"
+widget_class "*GtkTree*"			style "sidepane"
+class "*GtkTree*"					style "sidepane"
+widget_class "*GtkCTree*"			style "sidepane"
+class "*GtkCTree*"					style "sidepane"

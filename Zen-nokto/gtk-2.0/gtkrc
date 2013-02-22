@@ -4,7 +4,7 @@ gtk-color-scheme = "button_prelight:#246662"
 
 include "gtk-widgets.rc"
 
-style "notebook-nokto" = "notebook"
+style "notebook-nokto"
 {
 	bg[ACTIVE]   = shade(1.1, @bg_color) # Unfocused tab background.
 	bg[NORMAL]   = shade(0.8, @bg_color) # Tab background.
@@ -17,8 +17,7 @@ style "notebook-nokto" = "notebook"
 	}
 }
 
-widget_class "*.GtkNotebook"       style "notebook-nokto"
-class "*.GtkNotebook"              style "notebook-nokto"
+widget_class "*<GtkNotebook>"		style "notebook-nokto"
 
 style "button-nokto"
 {
@@ -36,14 +35,11 @@ class "GtkCheck*"	style "radiocheck"
 widget_class "*<GtkRadioButton>*"		style "radiocheck"
 widget_class "*<GtkCheckButton>*"		style "radiocheck"
 
-style "scrollbar-nokto" = "scrollbar"
+style "scrollbar-nokto"
 {
 	bg[SELECTED]        = shade(1.5, @bg_color)
 }
 
-widget_class "*GtkScrollbar*"     style "scrollbar-nokto"
-class "*GtkScrollbar*"            style "scrollbar-nokto"
-widget_class "*GtkVScrollbar*"     style "scrollbar-nokto"
-class "*GtkVScrollbar*"            style "scrollbar-nokto"
-widget_class "*GtkHScrollbar*"     style "scrollbar-nokto"
-class "*GtkHScrollbar*"            style "scrollbar-nokto"
+class "GtkScrollbar"				style "scrollbar-nokto"
+class "GtkVScrollbar"				style "scrollbar-nokto"
+class "GtkHScrollbar"				style "scrollbar-nokto"
