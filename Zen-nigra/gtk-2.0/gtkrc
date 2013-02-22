@@ -76,7 +76,7 @@ widget_class "*.<GtkCList>.<GtkButton>"		style "treeview_header-nigra"
 
 style "scrollbar-nigra"
 {
-	bg[SELECTED]        = shade(1.6, @bg_color)
+	bg[NORMAL]        = shade(1.6, @bg_color)
 }
 
 class "GtkScrollbar"				style "scrollbar-nigra"

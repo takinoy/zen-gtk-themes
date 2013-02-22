@@ -52,9 +52,10 @@ style "default"
 	GtkScrollbar::min-slider-length = 30	# Min. length of scrollbars.
 	GtkScrollbar::slider-width = 9
 	GtkScrollbar::stepper-size = 20
-	GtkScrollbar::trough-border = 2
-
+	GtkScrollbar::trough-border = 1
 	GtkScrolledWindow::scrollbar-spacing = 0	# This sets the spacing between scrollbars.
+	GtkScrolledWindow ::scrollbars-within-bevel	= 0
+
 	GtkToolbar::internal-padding = 0	# Toolbar padding.
 	GtkToolbar::shadow_type = none
 	GtkTreeView::expander-size = 12
@@ -119,14 +120,14 @@ style "default"
 		roundness			= 2					# 0 = squared, 1 = old default, more will increase roundness
 		scrollbarstyle		= 0					# 0 = nothing, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
 		sliderstyle			= 1					# 0 = nothing added, 1 = handles
-		stepperstyle		= 0					# 0 = standard, 1 = integrated stepper handles, 2 = unknown
+		stepperstyle		= 1					# 0 = standard, 1 = integrated stepper handles, 2 = unknown
 		toolbarstyle		= 0					# 0 = flat, 1 = glassy, 2 = gradient
 
 		# Murrine version >=0.98
 		arrowstyle			= 2					# 0 = normal arrows, 1 = filled arrows, 2 = triangular arrows
 		border_shades		= { 1.2, 1.0 }		# gradient to draw on border
 		cellstyle			= 0
-		colorize_scrollbar	= TRUE
+		colorize_scrollbar	= FALSE
 		comboboxstyle		= 0					# 0 = normal combobox, 1 = colorized combobox below arrow
 		expanderstyle		= 0
 		focusstyle			= 3
@@ -400,17 +401,19 @@ include "panel.rc"
 
 style "scrollbar" = "default"
 {
-	bg[NORMAL]		= @bg_color
-	bg[SELECTED]	= mix(0.8, shade(0.85, @bg_color), @fg_color)
-	bg[PRELIGHT]	= mix(0.25, @button_prelight, @bg_color)
+	bg[NORMAL]		= mix(0.8, shade(0.9, @bg_color), @fg_color)
+	bg[PRELIGHT]	= mix(0.6, shade(0.9, @bg_color), @fg_color)
+	bg[ACTIVE]		= mix(0.6, shade(0.9, @bg_color), @fg_color)
 
 	engine "murrine" {
-		gradient_shades	= {1.0,1.0,1.0,1.0}
-		roundness	= 10
-		border_shades	= {1.05, 1.05}
-		trough_shades	= {1.02, 1.02}
-		contrast	= 0.0
-		trough_border_shades = { 1.0, 1.0 }
+		arrowstyle				= 1
+		gradient_shades			= {1.0,1.0,1.0,1.0}
+		roundness				= 10
+		border_shades			= {1.0, 1.0}
+		border_colors 			= {@bg_color, @bg_color}
+		trough_shades			= {0.975, 0.975}
+		contrast				= 0.0
+		trough_border_shades	= {1.025, 1.025}
 	}
 }
 

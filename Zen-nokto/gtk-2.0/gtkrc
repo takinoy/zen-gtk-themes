@@ -51,7 +51,7 @@ widget_class "*<GtkCheckButton>*"		style "radiocheck"
 
 style "scrollbar-nokto"
 {
-	bg[SELECTED]        = shade(1.5, @bg_color)
+	bg[NORMAL]        = shade(1.5, @bg_color)
 }
 
 class "GtkScrollbar"				style "scrollbar-nokto"

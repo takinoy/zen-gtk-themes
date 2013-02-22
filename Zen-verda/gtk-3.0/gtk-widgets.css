@@ -21,13 +21,16 @@
    -GtkPaned-handle-size: 3;
    -GtkProgressBar-min-horizontal-bar-height: 12;
    -GtkProgressBar-min-vertical-bar-width: 12;
-   -GtkRange-slider-width: 12;
+   -GtkRange-arrow-scaling : 0.6;
+   -GtkRange-slider-width: 11;
    -GtkRange-stepper-size: 20;
    -GtkRange-stepper-spacing: 0;
    -GtkRange-trough-border: 0;
    -GtkScale-slider-length : 24;
    -GtkScrollbar-min-slider-length: 30;
-   -GtkScrolledWindow-scrollbar-spacing: 1;
+   -GtkScrolledWindow-scrollbar-spacing: 0;
+   -GtkScrollbar-trough-border : 1;
+   -GtkScrolledWindow-scrollbars-within-bevel : 0;
    -GtkSeparatorMenuItem-horizontal-padding: 0;
    -GtkStatusbar-shadow-type: none;
    -GtkToolbar-internal-padding: 0;
@@ -498,18 +501,21 @@ GtkScale.vertical.trough {
 
 .scrollbar.button,
 .scrollbar.trough {
-   border-style: solid;
-   border-width: 1px;
-   border-color: @bg_color;
+   border-style: none;
    background-color: @bg_color;
    background-image: none;
+}
+
+.notebook .scrollbar.button,
+.notebook .scrollbar.trough {
+   background-color: @notebook_active;
 }
 
 .scrollbar.button:hover  {
    background-color: shade(@bg_color, 1.1);
 }
 
-.scrollbar.button:selected  {
+.scrollbar.button:selected {
    background-color: @button_prelight;
 }
 
@@ -522,13 +528,14 @@ GtkScale.vertical.trough {
    background-color: @scrollbar_slider;
 }
 
-.scrollbar.slider:hover  {
-   border-width: 1px;
-   box-shadow: inset 1px 0 @button_prelight,
-               inset -1px 0  @button_prelight,
-               inset 0 -1px @button_prelight,
-               inset 0 1px @button_prelight;
-   background-color: mix(@fg_color, shade(@bg_color, 0.85), 0.75 );
+.notebook .scrollbar.slider {
+   border-color: @notebook_active;
+}
+
+.scrollbar.slider:hover {
+   border-width: 2px;
+   border-color: @button_prelight;
+   background-color: mix(@fg_color, @scrollbar_slider, 0.8);
 }
 
 .grip {
