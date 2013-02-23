@@ -891,7 +891,7 @@ column-header .button:hover, column-header .button:hover:focus {
 }
 
 .menubar>.menuitem:hover {
-   background-color: @button_prelight ;
+   background-color: shade(@button_prelight, 1.05) ;
    border-color: shade(@button_prelight, 0.9);
 }
 
