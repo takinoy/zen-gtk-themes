@@ -77,21 +77,12 @@ default states settings
 
 *:hover {
    color: @fg_color;
-/* workaround for .radio and .check */
-   background-color: transparent;
 }
 
 *:selected {
    color: @selected_fg_color;
-/*
-workaround : need to be desactivated for radio and .check active state.
    background-color: @selected_bg_color;
-*/
    border-color: @border_selected;
-}
-
-.notebook *:selected {
-   background-color: @selected_bg_color;
 }
 
 .frame {
@@ -215,8 +206,7 @@ GtkDrawingArea {
    padding: 3px 3px 3px 3px;
 }
 
-.entry:insensitive,
-.check:insensitive, .radio:insensitive {
+.entry:insensitive {
    color: @fg_insensitive;
    background-color: @button_bg_insensitive;
 }
@@ -442,22 +432,30 @@ column-header:last-child .button {
    border:solid ;
    border-width: 1px;
    background-color: @base_color;
-   color: @text_color;
    border-color: @button_border;
 
    -GtkWidget-focus-line-pattern: "\1\1";
 }
 
+GtkCheckButton:active:hover, GtkCheckButton:hover,
+GtkCheckButton:selected, GtkCheckButton:selected:focus {
+   background-color: transparent;
+}
+
 .check:active, .radio:active {
+   color: @text_color;
    background-color: @selected_bg_color;
 }
 
 .check:insensitive, .radio:insensitive {
    color: @fg_insensitive;
-   background-color: @bg_color;
+   background-color: transparent;
 }
 
-.check:selected, .radio:selected {
+.check:hover, .check:hover:focus, .check:active:hover,
+.radio:hover, .radio:hover:focus, .radio:active:hover,
+.check:selected, .check:selected:focus,
+.radio:selected, .radio:selected:focus {
    color : @selected_fg_color;
    background-color: @selected_bg_color;
 }
