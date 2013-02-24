@@ -15,7 +15,7 @@ style "default"
 	GtkIMHtmlr		::hyperlink-color			= @link_color
 	GtkIMHtml		::hyperlink-color			= @link_color
 	GtkWidget		::link-color				= @link_color
-	GtkWidget		::visited-link-color			= @text_color
+	GtkWidget		::visited-link-color		= @text_color
 
 	GtkButton::child-displacement-x = 1	# Pressed button icon displacement.
 	GtkButton::child-displacement-y = 1	# Pressed button icon displacement.
@@ -80,15 +80,15 @@ style "default"
 
 	fg[NORMAL]			= @fg_color
 	fg[PRELIGHT]		= @fg_color
-	fg[SELECTED]		= @selected_fg_color
+	fg[SELECTED]		= @selected_text_color
 	fg[INSENSITIVE]		= mix(0.6, darker(@bg_color), @fg_color)
 	fg[ACTIVE]			= @fg_color
 
 	text[NORMAL]		= @text_color
 	text[PRELIGHT]		= @text_color
-	text[SELECTED]		= @selected_fg_color
+	text[SELECTED]		= @selected_text_color
 	text[INSENSITIVE]	= mix(0.7, darker(@bg_color), @text_color)
-	text[ACTIVE]		= @selected_fg_color
+	text[ACTIVE]		= @selected_text_color
 
 	base[NORMAL]		= @base_color
 	base[PRELIGHT]		= shade(0.95, @bg_color)
@@ -166,7 +166,7 @@ style "menu"
 
 	bg[NORMAL]			= mix(0.6, @base_color, @bg_color)	# Color of menu background.
 	fg[NORMAL]			= @text_color
-	fg[PRELIGHT]		= @selected_fg_color		# Color of prelight menu item text.
+	fg[PRELIGHT]		= @selected_text_color		# Color of prelight menu item text.
 	base[NORMAL]		= @base_color	# Color for menu-item radio/checks background.
 	bg[SELECTED]		= shade(1.1, @selected_bg_color)
 	fg[INSENSITIVE]		= mix(0.7, darker(mix(0.6, @base_color, @bg_color)), @text_color)
@@ -200,6 +200,7 @@ style "menubar" = "menu"
 	bg[NORMAL]			= @bg_color		# Color of menu background.
 	fg[NORMAL]			= @fg_color
 	fg[INSENSITIVE]		= mix(0.6, darker(@bg_color), @fg_color)
+	fg[PRELIGHT]		= @selected_fg_color
 
 	engine "murrine"
 	{
@@ -215,8 +216,8 @@ class "GtkHandleBox*"				style "menubar"
 
 style "menuitem_text_is_fg_color_workaround" {
 	text[NORMAL]		= @fg_color
-	text[PRELIGHT]		= @selected_fg_color
-	text[SELECTED]		= @selected_fg_color
+	text[PRELIGHT]		= @selected_text_color
+	text[SELECTED]		= @selected_text_color
 	text[ACTIVE]		= @fg_color
 	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
@@ -491,7 +492,7 @@ widget_class "*.Collection"			style "rox"
 
 style "titlebar" = "default"
 {
-	fg[SELECTED]		= mix(0.26, @bg_color, @selected_fg_color)
+	fg[SELECTED]		= mix(0.26, @bg_color, @selected_text_color)
 	fg[INSENSITIVE]		= mix(0.5, @bg_color, @fg_color)
 	bg[SELECTED]		= shade(0.9, @button_prelight)
 }
@@ -513,7 +514,7 @@ class"*XfceHeading*"	style"xfceheaders"
 style "text_is_fg_color_workaround" {
 	text[NORMAL]		= @fg_color
 	text[PRELIGHT]		= @fg_color
-	text[SELECTED]		= @selected_fg_color
+	text[SELECTED]		= @selected_text_color
 	text[ACTIVE]		= @fg_color
 	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
@@ -527,8 +528,8 @@ widget_class "*.<GtkComboBox>.<GtkCellView>" style "text_is_fg_color_workaround"
 style "fg_is_text_color_workaround" {
 	fg[NORMAL]			= @text_color
 	fg[PRELIGHT]		= @text_color
-	fg[SELECTED]		= @selected_fg_color
-	fg[ACTIVE]			= @selected_fg_color
+	fg[SELECTED]		= @selected_text_color
+	fg[ACTIVE]			= @selected_text_color
 	fg[INSENSITIVE]		= mix(0.7, darker(@bg_color), @text_color)
 }
 
