@@ -5,11 +5,12 @@
 
 @define-color text_color #101010;
 @define-color selected_bg_color #4ED9D2;
-@define-color selected_fg_color #000;
+@define-color selected_fg_color #D0D0D0;
 @define-color tooltip_fg_color #000;
 @define-color tooltip_bg_color #F7EFBA;
 
 @define-color button_prelight #246662;
+@define-color selected_text_color #000;
 
 /* colormap actually used by the theme, to be overridden in other css files */
 @define-color theme_bg_color @bg_color;
