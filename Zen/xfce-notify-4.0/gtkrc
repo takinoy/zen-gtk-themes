@@ -2,7 +2,7 @@ style "notify-window"
 {
     XfceNotifyWindow::summary-bold = 1
     bg[NORMAL] = "#111"
-    XfceNotifyWindow::border-color = "#F5D36E"
+    XfceNotifyWindow::border-color = "#E4CB7F"
     XfceNotifyWindow::border-radius = 10.0
     XfceNotifyWindow::border-width = 3.0
 }
