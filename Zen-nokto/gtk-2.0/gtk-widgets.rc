@@ -404,6 +404,9 @@ style "scrollbar" = "default"
 {
 	bg[NORMAL]		= mix(0.8, shade(0.9, @bg_color), @fg_color)
 	bg[PRELIGHT]	= mix(0.6, shade(0.9, @bg_color), @fg_color)
+	fg[PRELIGHT]	= "#C00"
+	fg[ACTIVE]		= darker(@selected_bg_color)
+
 	bg[ACTIVE]		= mix(0.6, shade(0.9, @bg_color), @fg_color)
 
 	engine "murrine" {
