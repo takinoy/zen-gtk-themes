@@ -11,8 +11,8 @@ PanelApplet .button {
 
 PanelApplet .button:active{
    background-image: -gtk-gradient(linear, left top, left bottom,
-                                    from (shade(@button_prelight, 1.1)),
-                                    to (shade(@button_prelight, 0.95)));
+                                    from (shade(@selected_bg_color, 1.1)),
+                                    to (shade(@selected_bg_color, 0.95)));
    border-color: @border_selected;
 }
 
