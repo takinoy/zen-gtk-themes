@@ -37,17 +37,17 @@ style "default"
 
 	GtkPaned::handle-size = 3	# Width of handles.
 
-	GtkProgressBar::min-vertical-bar-width= 12
-	GtkProgressBar::min-horizontal-bar-height = 12
+	GtkProgressBar::min-vertical-bar-width = 11
+	GtkProgressBar::min-horizontal-bar-height = 11
 
 	GtkRange::trough-border = 0
 	GtkRange::slider-width = 11
 	GtkRange::stepper-size = 12
 	GtkRange::stepper_spacing = 0
 
-	GtkScale::slider-length = 24	# Length of sliders.
+	GtkScale::slider-length = 20	# Length of sliders.
 	GtkScale::trough-side-details = 1
-	GtkScale::slider-width = 12
+	GtkScale::slider-width = 10
 
 	GtkScrollbar::min-slider-length = 30	# Min. length of scrollbars.
 	GtkScrollbar::slider-width = 9
@@ -424,15 +424,15 @@ class "GtkHScrollbar"				style "scrollbar"
 
 style "scale"="default"
 {
-	GtkWidget	::focus-line-width	= 0
-	GtkWidget	::focus-padding		= 2
+	GtkWidget::focus-line-width = 0
+	GtkWidget::focus-padding = 3
 
-	bg[PRELIGHT]		= mix(0.25, @selected_bg_color, @bg_color)
+	bg[NORMAL]			= mix(0.85, shade(0.95, @bg_color), @fg_color)
+	bg[PRELIGHT]		= mix(0.75, shade(0.95, @bg_color), @fg_color)
 	bg[INSENSITIVE]		= shade(1.02, @bg_color)
 
 	engine "murrine"
 	{
-		roundness				= 7
 		gradient_shades			= {1.05,1.0,1.0,0.9}
 		trough_shades			= { 0.95, 1.05 }
 		trough_border_shades	= { 0.95,1.0 }

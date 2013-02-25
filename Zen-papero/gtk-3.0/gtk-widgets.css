@@ -19,8 +19,8 @@
     -GtkMenuBar-internal-padding: 0;
     -GtkMenuItem-arrow-scaling: 0.5;
     -GtkPaned-handle-size: 3;
-    -GtkProgressBar-min-horizontal-bar-height: 12;
-    -GtkProgressBar-min-vertical-bar-width: 12;
+    -GtkProgressBar-min-horizontal-bar-height: 11;
+    -GtkProgressBar-min-vertical-bar-width: 11;
     -GtkRange-arrow-scaling : 0.6;
     -GtkRange-slider-width: 11;
     -GtkRange-stepper-size: 20;
@@ -540,17 +540,19 @@ GtkProgressBar {
     border-style: solid;
     border-width: 1px;
     padding: 0;
-
 }
+
 GtkProgressBar {
     border-radius: 7px;
     border-color: @border_normal;
 }
 
 GtkScale {
-    border-radius: 2px;
-    -GtkRange-slider-width: 12;
+    -GtkRange-slider-width: 10;
     -GtkScale-slider-length: 20;
+    -GtkWidget-focus-line-width: 0;
+    -GtkWidget-focus-padding: 3;
+    border-radius: 2px;
 }
 
 GtkScale.slider {
@@ -565,13 +567,13 @@ GtkScale.slider.vertical {
 
 .progressbar,
 GtkScale.slider {
+    color: shade(mix(#BF3939, @selected_bg_color, 0.6),0.9);
     background-image: -gtk-gradient(linear, left top, right top,
                                      from (@selected_bg_color),
-                                     to (mix(#CC0000, @selected_bg_color, 0.75)));
+                                     to (mix(#BF3939, @selected_bg_color, 0.6)));
     border-top-color: mix(@border_normal, @border_selected, 0.5);
     border-bottom-color: mix(@border_normal, @border_selected, 0.5);
-    border-right-color: shade(mix(#C00, @selected_bg_color, 0.75),0.8);
-    color: shade(mix(#C00, @selected_bg_color, 0.75),0.9);
+    border-right-color: shade(mix(#BF3939, @selected_bg_color, 0.6),0.8);
 }
 
 .progressbar.horizontal:insensitive,
@@ -584,22 +586,25 @@ GtkScale.slider.horizontal:insensitive {
     border-right-color: shade(shade(@bg_darker, 0.9),0.8);
 }
 
-GtkScale.slider:hover {
+GtkScale.slider:hover, GtkScale.slider:focus  {
+    color: mix(#BF3939, @selected_bg_color, 0.6);
     background-image: -gtk-gradient(linear, left top, right top,
-                                     from (shade(@selected_bg_color, 1.1)),
-                                     to (shade(mix(#CC0000, @selected_bg_color, 0.75), 1.1)));
-    color: mix(#CC0000, @selected_bg_color, 0.75);
+                                     from (@selected_bg_color),
+                                     to (#BF3939));
+    border-top-color: mix(@border_normal, #BF3939, 0.5);
+    border-bottom-color: mix(@border_normal, #BF3939, 0.5);
+    border-right-color: shade(#BF3939, 0.8);
 }
 
 .progressbar.vertical,
 GtkScale.slider.vertical {
+    color: shade(mix(#BF3939, @selected_bg_color, 0.6),0.9);
     background-image: -gtk-gradient(linear, left bottom, left top,
                                      from (@selected_bg_color),
-                                     to (mix(#CC0000, @selected_bg_color, 0.75)));
+                                     to (mix(#BF3939, @selected_bg_color, 0.6)));
     border-left-color: mix(@border_normal, @border_selected, 0.5);
     border-right-color: mix(@border_normal, @border_selected, 0.5);
-    border-top-color: shade(mix(#CC0000, @selected_bg_color, 0.75),0.8);
-    color: shade(mix(#CC0000, @selected_bg_color, 0.75),0.9);
+    border-top-color: shade(mix(#BF3939, @selected_bg_color, 0.6),0.8);
 }
 
 .progressbar.vertical:insensitive,
@@ -612,11 +617,14 @@ GtkScale.slider.vertical:insensitive {
     border-top-color: shade(shade(@bg_darker, 0.9),0.8);
 }
 
-GtkScale.slider.vertical:hover {
+GtkScale.slider.vertical:hover, GtkScale.slider.vertical:focus {
+    color: mix(#BF3939, @selected_bg_color, 0.6);
     background-image: -gtk-gradient(linear, left bottom, left top,
-                                     from (shade(@selected_bg_color, 1.1)),
-                                     to (shade(mix(#CC0000, @selected_bg_color, 0.75), 1.1)));
-    color: mix(#CC0000, @selected_bg_color, 0.75);
+                                     from (@selected_bg_color),
+                                     to (#BF3939));
+    border-left-color: mix(@border_normal, #BF3939, 0.5);
+    border-right-color: mix(@border_normal, #BF3939, 0.5);
+    border-top-color: shade(#BF3939, 0.8);
 }
 
 GtkScale.mark {
@@ -750,7 +758,7 @@ GtkSwitch:hover,
     border-left-color: shade(@selected_bg_color,0.9);
 }
 
-.slider:focus,
+.scrollbar.slider:focus,
 .entry:focus,
 .button:focus, GtkSwitch:focus {
     border-top-color: mix(@selected_bg_color, shade(@button_border, 1.12), 0.8);
@@ -776,6 +784,10 @@ GtkSwitch:hover,
 column-header .button:hover, column-header .button:hover:focus {
     border-right-color: mix(@fg_color, @notebook_active, 0.88);
     border-bottom-color: @border_normal;
+}
+
+.scale.highlight:focus {
+    border-color: mix(@border_normal, #BF3939, 0.5);
 }
 
 /***********
