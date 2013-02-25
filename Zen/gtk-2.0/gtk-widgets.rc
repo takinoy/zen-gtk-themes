@@ -493,9 +493,7 @@ style "titlebar" = "default"
 {
 	fg[SELECTED]		= mix(0.26, @bg_color, @selected_fg_color)
 	fg[INSENSITIVE]		= mix(0.5, @bg_color, @fg_color)
-	#bg[SELECTED]		= mix(0.2, @button_prelight, "#3C3C3C")
-	#fg[SELECTED]		= "#FFFFFF"
-	#fg[INSENSITIVE]	= "#E6E6E6"
+	bg[SELECTED]		= shade(0.9, @button_prelight)
 }
 
 widget "xfwm"						style "titlebar"
