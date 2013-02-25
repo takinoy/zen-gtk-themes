@@ -1,4 +1,4 @@
-zen-gtk-themes version 0.9.1
+zen-gtk-themes version 0.10.0
 ----------------------------
 
 Author : Cédric Leporcq
@@ -38,12 +38,18 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 
 Changelog:
 ----------
-0.9.1 : fix libreoffice.sh script and adjust scrollbar size.
-0.9.0
-- add zen-griza variant
-- change column headers and scrollbar style
-- adjust gtk2/3 style and contrast for button and widgets ...
-- workaround to improve rendering in libreoffice
+0.10.0
+ - Modify column headers to flat style.
+ - Improve scrollbar style, scale.
+ - Adjust colors, button contrast and shadow for Zen-nigra ...
+ - Fix CheckButton background, Zen-griza/index.theme, minor others issues.
+
+0.9.1
+ - Fix libreoffice.sh script and adjust scrollbar size.
+ - Add zen-griza variant
+ - Change column headers and scrollbar style
+ - Adjust gtk2/3 style and contrast for button and widgets ...
+ - Workaround to improve rendering in libreoffice
 
 0.8.1
  - Adjust button, notebook, radiocheck colors.
@@ -67,9 +73,9 @@ Changelog:
  - Use the murrine engine for gtk-2 version.
  - Theme ported to gtk3 >=3.4.
 
-0.3.8
+0.3.11
  - Last gtk2 version with the clearlook engine.
- - Updates from 0.8 branch (gtk2).
+ - Updates from 0.10 branch (gtk2).
 
 0.3.2
  - New color schemes and preconfigured settings.
