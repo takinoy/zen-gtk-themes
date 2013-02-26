@@ -120,7 +120,6 @@ style "entry" {
 	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 
 	engine "clearlooks" {
-		#focus_color = @selected_bg_color
 		contrast = 0.8
 	}
 }
@@ -229,7 +228,6 @@ style "button" = "default"
 		focus_color = @selected_bg_color
 		style = GUMMY
 		contrast = 0.8
-		#radius = 2.0
 	}
 }
 
@@ -242,15 +240,15 @@ widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button"
 style "comboboxentry" = "button" {
 	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
-widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
+widget_class "*<GtkComboBoxEntry>*"		style "comboboxentry"
 
 style "combobox" = "button" {
 }
-class "GtkComboBox" style "combobox"
+class "GtkComboBox"		style "combobox"
 
 style "spinbutton" = "button" {
 }
-class "GtkSpinButton"  style "spinbutton"
+class "GtkSpinButton"	style "spinbutton"
 
 #########
 # views #
@@ -304,6 +302,7 @@ style "treeview_header" = "default" {
 
 	engine "clearlooks" {
 		hint		= "treeview-header"
+		style = CLASSIC
 		contrast	= 1.0
 
 	}
