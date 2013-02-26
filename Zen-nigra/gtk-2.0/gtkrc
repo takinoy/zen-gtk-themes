@@ -26,6 +26,7 @@ style "button-nigra"
 {
 	bg[NORMAL]			= shade(1.15, @bg_color)
 	bg[PRELIGHT]		= shade(1.25, @bg_color)
+	bg[ACTIVE]			= mix(0.5, shade(0.8, @selected_bg_color), @bg_color)
 	bg[SELECTED]		= shade(1.2, @selected_bg_color)
 }
 

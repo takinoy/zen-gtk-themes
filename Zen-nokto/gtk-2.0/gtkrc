@@ -5,6 +5,16 @@ gtk-color-scheme = "selected_text_color:#FFFFFF"
 
 include "gtk-widgets.rc"
 
+style "button-nokto"
+{
+	bg[ACTIVE]			= mix(0.5, shade(0.8, @selected_bg_color), @bg_color)
+}
+
+widget_class "*<GtkButton>"			style "button-nokto"
+widget_class "*OptionMenu*"			style "button-nokto"
+class "*OptionMenu*"				style "button-nokto"
+widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button-nokto"
+
 style "notebook-bg-nokto"
 {
 	bg[ACTIVE]			= shade(1.1, @bg_color) # Unfocused tab background.

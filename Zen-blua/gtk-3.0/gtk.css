@@ -41,7 +41,7 @@
 /* theme common colors */
 @define-color fg_insensitive mix(@fg_color, darker(@bg_color), 0.6);
 @define-color bg_darker shade(@bg_color, 0.9);
-@define-color bg_active mix(@bg_color, @selected_bg_color, 0.2);
+@define-color bg_active mix(@bg_color, shade(@selected_bg_color, 0.8), 0.25);
 @define-color bg_hover mix(@base_color, @bg_color, 0.7);
 @define-color bg_lighter mix(@bg_color, @base_color, 0.6);
 @define-color border_normal shade(@bg_color, 0.8);
