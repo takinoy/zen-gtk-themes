@@ -68,7 +68,7 @@ default states settings
 
 *:insensitive {
    color: @fg_insensitive;
-   border-color:@border_insensitive;
+   border-color: @border_insensitive;
    text-shadow: 1px 1px @light_shadow;
 }
 
@@ -815,6 +815,7 @@ column-header .button:hover, column-header .button:focus, column-header .button:
 .menu>*:insensitive, .menuitem>*:insensitive {
    color: mix(@text_color, darker(@bg_lighter), 0.7);
    border-color: shade(@bg_lighter, 0.9);
+   text-shadow: 1px 1px shade(@bg_lighter, 1.05);
 }
 
 .menuitem:hover,

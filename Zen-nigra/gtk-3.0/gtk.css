@@ -22,7 +22,7 @@
 @define-color theme_tooltip_fg_color @tooltip_fg_color;
 
 /* shadow effects */
-@define-color light_shadow alpha(@base_color, 0.4);
+@define-color light_shadow alpha(#262626, 0.4);
 @define-color dark_shadow #000;
 
 /* misc colors used by gtk+ */
