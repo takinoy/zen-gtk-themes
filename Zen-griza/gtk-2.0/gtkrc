@@ -7,7 +7,7 @@ include "gtk-widgets.rc"
 
 style "button-griza"
 {
-	bg[ACTIVE]			= mix(0.5, @selected_bg_color, @bg_color)
+	bg[ACTIVE]			= mix(0.5, shade(0.8, @selected_bg_color), @bg_color)
 	bg[SELECTED]		= shade(0.7,@selected_bg_color)
 }
 
