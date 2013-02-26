@@ -148,6 +148,7 @@ style "entry" {
 
 	bg[SELECTED]		= @button_prelight
 	fg[SELECTED]		= @text_color
+	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
 
 class "*Entry*"				style "entry"
@@ -265,12 +266,11 @@ class "*OptionMenu*"				style "button"
 widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button"
 
 style "comboboxentry" = "button" {
+	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
 widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
 
 style "combobox" = "button" {
-#don't work
-	#fg[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
 class "GtkComboBox" style "combobox"
 
