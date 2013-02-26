@@ -15,7 +15,7 @@ style "default"
 	GtkIMHtmlr		::hyperlink-color			= @link_color
 	GtkIMHtml		::hyperlink-color			= @link_color
 	GtkWidget		::link-color				= @link_color
-	GtkWidget		::visited-link-color			= @text_color
+	GtkWidget		::visited-link-color		= @text_color
 
 	GtkButton::child-displacement-x = 1	# Pressed button icon displacement.
 	GtkButton::child-displacement-y = 1	# Pressed button icon displacement.
@@ -52,8 +52,9 @@ style "default"
 	GtkScrollbar::min-slider-length = 24	# Min. length of scrollbars.
 	GtkScrollbar::slider-width = 11
 	GtkScrollbar::stepper-size = 20
-
 	GtkScrolledWindow::scrollbar-spacing = 0	# This sets the spacing between scrollbars.
+	GtkScrolledWindow ::scrollbars-within-bevel	= 0
+
 	GtkToolbar::internal-padding = 0	# Toolbar padding.
 	GtkToolbar::shadow_type = none
 	GtkTreeView::expander-size = 12
@@ -78,15 +79,15 @@ style "default"
 
 	fg[NORMAL]			= @fg_color
 	fg[PRELIGHT]		= @fg_color
-	fg[SELECTED]		= @selected_fg_color
+	fg[SELECTED]		= @selected_text_color
 	fg[INSENSITIVE]		= mix(0.6, darker(@bg_color), @fg_color)
 	fg[ACTIVE]			= @fg_color
 
 	text[NORMAL]		= @text_color
 	text[PRELIGHT]		= @text_color
-	text[SELECTED]		= @selected_fg_color
+	text[SELECTED]		= @selected_text_color
 	text[INSENSITIVE]	= mix(0.7, darker(@bg_color), @text_color)
-	text[ACTIVE]		= @selected_fg_color
+	text[ACTIVE]		= @selected_text_color
 
 	base[NORMAL]		= @base_color
 	base[PRELIGHT]		= shade(0.95, @bg_color)
@@ -116,6 +117,7 @@ style "entry" {
 
 	bg[SELECTED]		= @button_prelight
 	fg[SELECTED]		= @text_color
+	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 
 	engine "clearlooks" {
 		#focus_color = @selected_bg_color
@@ -137,7 +139,7 @@ style "menu"
 
 	bg[NORMAL]			= mix(0.6, @base_color, @bg_color)	# Color of menu background.
 	fg[NORMAL]			= @text_color
-	fg[PRELIGHT]		= @selected_fg_color		# Color of prelight menu item text.
+	fg[PRELIGHT]		= @selected_text_color		# Color of prelight menu item text.
 	base[NORMAL]		= @base_color	# Color for menu-item radio/checks background.
 	bg[SELECTED]		= shade(1.1, @selected_bg_color)
 	fg[INSENSITIVE]		= mix(0.7, darker(mix(0.6, @base_color, @bg_color)), @text_color)
@@ -171,6 +173,7 @@ style "menubar" = "menu"
 	bg[NORMAL]			= @bg_color		# Color of menu background.
 	fg[NORMAL]			= @fg_color
 	fg[INSENSITIVE]		= mix(0.6, darker(@bg_color), @fg_color)
+	fg[PRELIGHT]		= @selected_fg_color
 
 	engine "clearlooks" {
 		hint = "menubar"
@@ -179,15 +182,14 @@ style "menubar" = "menu"
 
 widget_class "*BonoboDockItem"		style "menubar"
 class "*BonoboDockItem"				style "menubar"
-widget_class "*MenuBar*"			style "menubar"
-class "*MenuBar*"					style "menubar"
-widget_class "*ToolBar"				style "menubar"
-class "*ToolBar"					style "menubar"
+widget_class "*<GtkMenuBar>*"		style "menubar"
+class "GtkToolbar"					style "menubar"
+class "GtkHandleBox*"				style "menubar"
 
 style "menuitem_text_is_fg_color_workaround" {
 	text[NORMAL]		= @fg_color
-	text[PRELIGHT]		= @selected_fg_color
-	text[SELECTED]		= @selected_fg_color
+	text[PRELIGHT]		= @selected_text_color
+	text[SELECTED]		= @selected_text_color
 	text[ACTIVE]		= @fg_color
 	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
@@ -207,7 +209,6 @@ style "pager"
 }
 
 widget_class "*Pager*"			style "pager"
-class "*Pager*"					style "pager"
 
 ###########
 # Buttons #
@@ -221,7 +222,8 @@ style "button" = "default"
 	bg[NORMAL]			= mix(0.95, @bg_color, @base_color)	# Color for buttons.
 	bg[PRELIGHT]		= mix(0.6, @bg_color, @base_color)
 	bg[INSENSITIVE]		= shade(1.02, @bg_color)
-	bg[ACTIVE]			= mix(0.15, @button_prelight, @bg_color)
+	bg[ACTIVE]			= mix(0.2, @button_prelight, @bg_color)
+	bg[SELECTED]		= shade(0.8,@button_prelight)
 
 	engine "clearlooks" {
 		focus_color = @button_prelight
@@ -231,33 +233,28 @@ style "button" = "default"
 	}
 }
 
-widget_class "*Button*"				style "button"
 class "*Button*"					style "button"
-widget_class "*button*"				style "button"
-class "*button*"					style "button"
+widget_class "*<GtkButton>"			style "button"
 widget_class "*OptionMenu*"			style "button"
 class "*OptionMenu*"				style "button"
-widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	 "button"
+widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button"
 
 style "comboboxentry" = "button" {
+	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
-#widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
+widget_class "*<GtkComboBoxEntry>*" style "comboboxentry"
 
 style "combobox" = "button" {
-#don't work
-	#fg[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
-
-#class "GtkComboBox" style "combobox"
+class "GtkComboBox" style "combobox"
 
 style "spinbutton" = "button" {
 }
+class "GtkSpinButton"  style "spinbutton"
 
-class "GtkSpinButton" style "spinbutton"
-
-##########
-# views  #
-##########
+#########
+# views #
+#########
 
 style "view" {
 	base[NORMAL]	= shade(0.94,@base_color)
@@ -284,12 +281,11 @@ style "sidepane"
 	base[NORMAL]	= mix(0.6, @base_color, @bg_color)
 }
 
-widget_class "*GtkTree*"			style "treeview"
-class "*GtkTree*"					style "treeview"
-widget_class "*GtkCTree*"			style "treeview"
-class "*GtkCTree*"					style "treeview"
+widget_class "*GtkTree*"				style "treeview"
+class "*GtkTree*"						style "treeview"
+widget_class "*GtkCTree*"				style "treeview"
+class "*GtkCTree*"						style "treeview"
 
-#widget_class "GtkTreeView"				style "treeview"
 widget_class "*Nautilus*IconView*"		style "iconview"
 widget_class "*ThunarIconView*"			style "iconview"
 widget_class "*Nautilus*Side*"			style "sidepane"
@@ -300,13 +296,16 @@ widget_class "*GtkFileChooserWidget.GtkFileChooserDefault.GtkVBox.GtkHPaned.GtkV
 
 style "treeview_header" = "default" {
 	xthickness = 2
-	ythickness = 1
+	ythickness = 0
 
-	bg[PRELIGHT]	= shade (1.04, @bg_color)
+	bg[NORMAL]		= mix(0.8, @bg_color, @base_color)
+	bg[ACTIVE]		= mix(0.8, @bg_color, @base_color)
+	bg[PRELIGHT]	= mix(0.7, @bg_color, @base_color)
 
 	engine "clearlooks" {
 		hint		= "treeview-header"
 		contrast	= 1.0
+
 	}
 }
 # Treeview headers (and similar stock GTK+ widgets)
@@ -319,10 +318,11 @@ widget_class "*.<GtkCList>.<GtkButton>"		style "treeview_header"
 # notebook #
 ############
 
-style "notebook-bg" = "default"
+style "notebook-bg"
 {
-	bg[ACTIVE]	= shade (0.98, @bg_color)			# Unfocused tab background.
-	bg[NORMAL]	= mix (0.8, @bg_color, @base_color)	# Tab background.
+	bg[ACTIVE]		= shade (0.98, @bg_color)			# Unfocused tab background.
+	bg[NORMAL]		= mix(0.8, @bg_color, @base_color)	# Tab background.
+	bg[PRELIGHT]	= mix(0.8, @bg_color, @base_color)
 }
 
 widget_class "*<GtkNotebook>*<GtkEventBox>"			style "notebook-bg"
@@ -332,6 +332,8 @@ widget_class "*<GtkNotebook>*<GtkViewport>"			style "notebook-bg"
 widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "notebook-bg"
 widget_class "*<GtkNotebook>*<GtkToolbar>"			style "notebook-bg"
 widget_class "*<GtkNotebook>*<GtkLabel>"			style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkRadioButton>"		style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkCheckButton>"		style "notebook-bg"
 
 style "notebook" = "notebook-bg"
 {
@@ -346,8 +348,7 @@ style "notebook" = "notebook-bg"
 	}
 }
 
-widget_class "*.GtkNotebook"		style "notebook"
-class "*.GtkNotebook"				style "notebook"
+widget_class "*<GtkNotebook>"		style "notebook"
 
 ##########
 # Panels #
@@ -399,8 +400,8 @@ style "scale" {
 	}
 }
 
-widget_class "*GtkScale*"         style "scale"
-class "*GtkScale*"                style "scale"
+widget_class "*GtkScale*"		style "scale"
+class "*GtkScale*"				style "scale"
 
 style "vscale" = "scale"{
 
@@ -416,10 +417,10 @@ style "hscale" = "scale"{
 	}
 }
 
-widget_class "*GtkHScale*"         style "hscale"
-class "*GtkHScale*"                style "hscale"
-widget_class "*GtkVScale*"         style "vscale"
-class "*GtkVScale*"                style "vscale"
+widget_class "*GtkHScale*"		style "hscale"
+class "*GtkHScale*"				style "hscale"
+widget_class "*GtkVScale*"		style "vscale"
+class "*GtkVScale*"				style "vscale"
 
 style "statusbar" {
 	xthickness = 2
@@ -431,7 +432,7 @@ style "statusbar" {
 	}
 }
 
-widget_class "*<GtkStatusbar>*" style "statusbar"
+widget_class "*<GtkStatusbar>*"	style "statusbar"
 
 style "progress"
 {
@@ -449,14 +450,6 @@ style "progress"
 }
 
 widget_class "*GtkProgress*"		style "progress"
-class "*GtkProgress*"				style "progress"
-
-style "handlebox" = "default"
-{
-
-}
-
-widget_class "*HandleBox*"			style "handlebox"
 
 style "tooltips" = "default"
 {
@@ -479,11 +472,9 @@ widget_class "*.Collection"			style "rox"
 
 style "titlebar" = "default"
 {
-	fg[SELECTED]		= mix(0.26, @bg_color, @selected_fg_color)
+	fg[SELECTED]		= mix(0.26, @bg_color, @selected_text_color)
 	fg[INSENSITIVE]		= mix(0.5, @bg_color, @fg_color)
-	#bg[SELECTED]		= mix(0.2, @button_prelight, "#3C3C3C")
-	#fg[SELECTED]		= "#FFFFFF"
-	#fg[INSENSITIVE]	= "#E6E6E6"
+	bg[SELECTED]		= shade(0.9, @button_prelight)
 }
 
 widget "xfwm"						style "titlebar"
@@ -503,7 +494,7 @@ class"*XfceHeading*"	style"xfceheaders"
 style "text_is_fg_color_workaround" {
 	text[NORMAL]		= @fg_color
 	text[PRELIGHT]		= @fg_color
-	text[SELECTED]		= @selected_fg_color
+	text[SELECTED]		= @selected_text_color
 	text[ACTIVE]		= @fg_color
 	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
@@ -517,8 +508,8 @@ widget_class "*.<GtkComboBox>.<GtkCellView>" style "text_is_fg_color_workaround"
 style "fg_is_text_color_workaround" {
 	fg[NORMAL]			= @text_color
 	fg[PRELIGHT]		= @text_color
-	fg[SELECTED]		= @selected_fg_color
-	fg[ACTIVE]			= @selected_fg_color
+	fg[SELECTED]		= @selected_text_color
+	fg[ACTIVE]			= @selected_text_color
 	fg[INSENSITIVE]		= mix(0.7, darker(@bg_color), @text_color)
 }
 

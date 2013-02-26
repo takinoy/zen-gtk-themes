@@ -1,5 +1,28 @@
-# Grey/blue gtk-color-scheme: #9DB6CD
-gtk-color-scheme = "base_color:#FCFCFC\nfg_color:#000000\ntooltip_fg_color:#000000\nselected_bg_color:#A9BED4\nselected_fg_color:#000000\ntext_color:#101010\nbg_color:#CECECE\ntooltip_bg_color:#F7EFBA"
+# Grey/blue gtk-color-scheme:
+gtk-color-scheme = "base_color:#FCFCFC\nfg_color:#000000\ntooltip_fg_color:#000000\nselected_bg_color:#A9BCD4\nselected_fg_color:#000000\ntext_color:#101010\nbg_color:#CECECE\ntooltip_bg_color:#F7EFBA"
 gtk-color-scheme = "button_prelight:#B8C1CC"
+gtk-color-scheme = "selected_text_color:#000000"
 
 include "gtk-widgets.rc"
+
+style "button-griza"
+{
+	bg[ACTIVE]			= mix(0.5, @button_prelight, @bg_color)
+	bg[SELECTED]		= shade(0.7,@button_prelight)
+}
+
+widget_class "*<GtkButton>"			style "button-griza"
+widget_class "*OptionMenu*"			style "button-griza"
+class "*OptionMenu*"				style "button-griza"
+widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button-griza"
+
+# this prevent overwriting others widgets style
+widget_class "*.<GtkTreeView>.<GtkButton>"	style "treeview_header"
+widget_class "*.<GtkCTree>.<GtkButton>"		style "treeview_header"
+widget_class "*.<GtkList>.<GtkButton>"		style "treeview_header"
+widget_class "*.<GtkCList>.<GtkButton>"		style "treeview_header"
+
+class "GtkRadio*"	style "radiocheck"
+class "GtkCheck*"	style "radiocheck"
+widget_class "*<GtkRadioButton>*"		style "radiocheck"
+widget_class "*<GtkCheckButton>*"		style "radiocheck"
