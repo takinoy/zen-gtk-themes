@@ -260,13 +260,6 @@ GtkSwitch.slider,
     border-left-color: @button_border;
 }
 
-.button:active {
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from(shade(@bg_active,  0.95)),
-                                     to(shade(@bg_active, 1.05)));
-    border-color: @button_border;
-}
-
 GtkSwitch:insensitive,
 .spinbutton.button:insensitive,
 GtkComboBox:insensitive,
@@ -281,7 +274,8 @@ GtkComboBox:insensitive,
 }
 
 GtkSwitch:hover,
-.button:hover, .button:hover:focus  {
+.button:hover, .button:hover:focus, .button:hover:active,
+.toolbar .button:hover:active {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@bg_hover, 1.05)),
                                      to (shade(@bg_hover, 0.95)));
@@ -291,6 +285,12 @@ GtkSwitch:hover,
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from(shade(@bg_active, 1.05)),
                                      to(shade(@bg_active, 0.92)));
+}
+
+.button:active, .toolbar .button:active, .button.default:active {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from(shade(@bg_active,  0.95)),
+                                     to(shade(@bg_active, 1.05)));
 }
 
 GtkSwitch.trough:active {
