@@ -42,14 +42,15 @@
     -GtkTextView-error-underline-color: @error_color;
 
     border-width: 1px;
-/* disable workaround for treeview headers
-    color: @fg_color;
-*/
-/* disable since gtk 3.6 (make menuitem darker)
-    background-color: @bg_color;
-*/
+    color: inherit;
+/* arrows border...
     border-color: @border_normal;
+*/
+}
 
+GtkWindow {
+    color: @fg_color;
+    background-color: @bg_color;
 }
 
 /*********
@@ -57,12 +58,7 @@
  **********/
 
 *:active {
-    color: @fg_color;
     background-color: @bg_darker;
-}
-
-*:active:focus {
-    color: @fg_color;
 }
 
 *:insensitive {
@@ -72,7 +68,6 @@
 }
 
 *:hover {
-    color: @fg_color;
 }
 
 *:selected {
@@ -87,12 +82,7 @@
     border-color: @border_insensitive;
 }
 
-GtkWindow {
-    color: @fg_color;
-}
-
 .background {
-    background-color: @bg_color;
 }
 
 /************
@@ -259,7 +249,6 @@ GtkAssistant .sidebar {
 
 GtkSwitch.slider,
 .button {
-    color: @fg_color;
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@button_bg_normal, 1.05)),
                                      to (shade(@button_bg_normal, 0.95)));
@@ -282,7 +271,6 @@ GtkSwitch:insensitive,
 .spinbutton.button:insensitive,
 GtkComboBox:insensitive,
 .button:insensitive{
-    color: @fg_insensitive;
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@button_bg_insensitive, 1.06)),
                                      to (shade(@button_bg_insensitive, 0.95)));
@@ -371,7 +359,6 @@ GtkSwitch.trough {
 }
 
 column-header .button {
-    color: @fg_color;
     padding: 2px 1px 0px 5px;
     border-radius: 0;
     border-width: 0px 1px 1px 0px;
@@ -445,7 +432,6 @@ GtkCheckButton:selected, GtkCheckButton:selected:focus {
 }
 
 .check:insensitive, .radio:insensitive {
-    color: @fg_insensitive;
     background-color: transparent;
 }
 
@@ -497,7 +483,6 @@ GtkScale.vertical.trough {
 .scrollbar.button,
 .scrollbar.trough {
     border-style: none;
-    background-color: @bg_color;
     background-image: none;
 }
 
@@ -665,7 +650,6 @@ GtkScale.mark {
 
 .notebook {
     -GtkWidget-focus-line-width: 0;
-    color: @fg_color;
     background-color: @notebook_active;
     border-color: @border_normal;
     border-style: solid;
@@ -797,11 +781,6 @@ column-header .button:hover, column-header .button:hover:focus {
 .menubar {
     border-style: none;
     border-color: @border_insensitive;
-    color: @fg_color;
-}
-
-.menubar:active {
-    color: @fg_color;
 }
 
 .menubar>.menuitem {
@@ -899,7 +878,6 @@ column-header .button:hover, column-header .button:hover:focus {
  ***********/
 
 .toolbar {
-    background-color: @bg_color;
     border-style: solid;
     border-width: 1px 0px 0px 0px;
     border-color: @border_insensitive;
