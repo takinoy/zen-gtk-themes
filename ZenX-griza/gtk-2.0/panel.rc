@@ -32,11 +32,15 @@ style "panel" = "dark-panel"
 
 style "panel_button" = "default"
 {
-		engine "murrine" {
-		contrast			= 0.9
-		roundness			= 0
-		border_shades		= { 1.2, 0.8 }
-	}
+    engine "xfce"
+    {
+	smooth_edge = true
+	#grip_style = slide
+        boxfill
+        {
+            fill_style = plain
+        }
+    }
 }
 
 # Theme panel elements
