@@ -801,12 +801,16 @@ column-header .button:hover, column-header .button:hover:focus {
  *********/
 
 .menu {
+    color: @text_color;
     background-color: @bg_lighter;
     border: solid;
     border-width: 1px;
     border-color: shade(@bg_lighter, 0.8);
     padding: 0;
-    color: @text_color;
+}
+
+.menu *:hover, .menu *:active:hover, .menu *:selected {
+    color: @selected_text_color;
 }
 
 .menuitem {
@@ -817,14 +821,8 @@ column-header .button:hover, column-header .button:hover:focus {
 .menuitem .check, .menuitem .radio,
 .menuitem .check:hover, .menuitem .radio:hover,
 .menuitem .check:insensitive, .menuitem .radio:insensitive {
-    color: @text_color;
     border-color: transparent;
     background-color: transparent;
-}
-
-.menu:active, .memuitem:active {
-    color: @text_color;
-    border-color: @border_normal;
 }
 
 .menu>*:insensitive, .menuitem>*:insensitive {
@@ -841,10 +839,6 @@ column-header .button:hover, column-header .button:hover:focus {
     border-color: shade(@selected_base_color, 0.9);
 }
 
-.menu *:hover, .menu *:selected, .menuitem:hover {
-    color: @selected_text_color;
-}
-
 .menu:selected, .menuitem:selected {
     color: @selected_text_color;
     background-color: @selected_base_color;
@@ -858,8 +852,8 @@ column-header .button:hover, column-header .button:hover:focus {
 }
 
 .menuitem.separator {
-    border-style: solid;
     color: shade(@bg_lighter, 0.9);
+    border-style: solid;
     border-color: shade(@bg_lighter, 0.9);
 }
 
