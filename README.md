@@ -1,4 +1,4 @@
-zen-gtk-themes version 0.3.10
+zen-gtk-themes version 0.3.11
 ----------------------------
 
 Author : Cédric Leporcq
@@ -36,7 +36,7 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 Changelog:
 ----------
 
-0.3.10
+0.3.11
  - Last gtk2 version with the clearlook engine.
  - Updates from 0.9 branch (gtk2).
 

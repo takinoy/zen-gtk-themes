@@ -37,17 +37,17 @@ style "default"
 
 	GtkPaned::handle-size = 3	# Width of handles.
 
-	GtkProgressBar::min-vertical-bar-width= 12
-	GtkProgressBar::min-horizontal-bar-height = 12
+	GtkProgressBar::min-vertical-bar-width = 11
+	GtkProgressBar::min-horizontal-bar-height = 11
 
 	GtkRange::trough-border = 0
 	GtkRange::slider-width = 11
 	GtkRange::stepper-size = 12
 	GtkRange::stepper_spacing = 0
 
-	GtkScale::slider-length = 24	# Length of sliders.
+	GtkScale::slider-length = 20	# Length of sliders.
 	GtkScale::trough-side-details = 1
-	GtkScale::slider-width = 12
+	GtkScale::slider-width = 10
 
 	GtkScrollbar::min-slider-length = 24	# Min. length of scrollbars.
 	GtkScrollbar::slider-width = 11
@@ -73,7 +73,7 @@ style "default"
 	####################
 	bg[NORMAL]			= @bg_color
 	bg[PRELIGHT]		= shade(1.02, @bg_color)
-	bg[SELECTED]		= @button_prelight
+	bg[SELECTED]		= @selected_bg_color
 	bg[INSENSITIVE]		= @bg_color
 	bg[ACTIVE]			= shade(0.9, @bg_color)
 
@@ -91,9 +91,9 @@ style "default"
 
 	base[NORMAL]		= @base_color
 	base[PRELIGHT]		= shade(0.95, @bg_color)
-	base[SELECTED]		= @selected_bg_color	# Color for selected base items.
+	base[SELECTED]		= @selected_base_color	# Color for selected base items.
 	base[INSENSITIVE]	= @bg_color
-	base[ACTIVE]		= @button_prelight
+	base[ACTIVE]		= @selected_bg_color
 
 	engine "clearlooks" {
 		reliefstyle = 0  # 0 makes buttons/widgets less raised.
@@ -115,7 +115,7 @@ style "entry" {
 	xthickness = 3
 	ythickness = 3
 
-	bg[SELECTED]		= @button_prelight
+	bg[SELECTED]		= @selected_bg_color
 	fg[SELECTED]		= @text_color
 	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 
@@ -141,7 +141,7 @@ style "menu"
 	fg[NORMAL]			= @text_color
 	fg[PRELIGHT]		= @selected_text_color		# Color of prelight menu item text.
 	base[NORMAL]		= @base_color	# Color for menu-item radio/checks background.
-	bg[SELECTED]		= shade(1.1, @selected_bg_color)
+	bg[SELECTED]		= shade(1.1, @selected_base_color)
 	fg[INSENSITIVE]		= mix(0.7, darker(mix(0.6, @base_color, @bg_color)), @text_color)
 
 		engine "clearlooks" {
@@ -169,7 +169,7 @@ style "menubar" = "menu"
 	ythickness = 3
 
 	GtkMenuBar :: shadow-type = GTK_SHADOW_NONE
-	bg[SELECTED]		= shade(1.05, @button_prelight)
+	bg[SELECTED]		= shade(1.05, @selected_bg_color)
 	bg[NORMAL]			= @bg_color		# Color of menu background.
 	fg[NORMAL]			= @fg_color
 	fg[INSENSITIVE]		= mix(0.6, darker(@bg_color), @fg_color)
@@ -222,11 +222,11 @@ style "button" = "default"
 	bg[NORMAL]			= mix(0.95, @bg_color, @base_color)	# Color for buttons.
 	bg[PRELIGHT]		= mix(0.6, @bg_color, @base_color)
 	bg[INSENSITIVE]		= shade(1.02, @bg_color)
-	bg[ACTIVE]			= mix(0.2, @button_prelight, @bg_color)
-	bg[SELECTED]		= shade(0.8,@button_prelight)
+	bg[ACTIVE]			= mix(0.2, @selected_bg_color, @bg_color)
+	bg[SELECTED]		= shade(0.8,@selected_bg_color)
 
 	engine "clearlooks" {
-		focus_color = @button_prelight
+		focus_color = @selected_bg_color
 		style = GUMMY
 		contrast = 0.8
 		#radius = 2.0
@@ -363,7 +363,7 @@ include "panel.rc"
 style "scrollbar" = "default"
 {
 	bg[NORMAL]		= mix (0.9, @bg_color,"#FFFFFF")
-	bg[PRELIGHT]	= mix (0.25, @button_prelight, @bg_color)
+	bg[PRELIGHT]	= mix (0.25, @selected_bg_color, @bg_color)
 
 	engine "clearlooks" {
 		hint = "scrollbar"
@@ -439,8 +439,8 @@ style "progress"
 	xthickness = 1
 	ythickness = 1
 
-	bg[SELECTED]		= @button_prelight
-	bg[PRELIGHT]		= @button_prelight
+	bg[SELECTED]		= @selected_bg_color
+	bg[PRELIGHT]		= @selected_bg_color
 
 	engine "clearlooks" {
 		radius = 5.0
@@ -474,7 +474,7 @@ style "titlebar" = "default"
 {
 	fg[SELECTED]		= mix(0.26, @bg_color, @selected_text_color)
 	fg[INSENSITIVE]		= mix(0.5, @bg_color, @fg_color)
-	bg[SELECTED]		= shade(0.9, @button_prelight)
+	bg[SELECTED]		= shade(0.9, @selected_bg_color)
 }
 
 widget "xfwm"						style "titlebar"

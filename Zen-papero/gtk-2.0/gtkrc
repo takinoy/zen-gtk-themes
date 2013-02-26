@@ -1,6 +1,6 @@
 # Papero gtk-color-scheme:
-gtk-color-scheme = "base_color:#FCFCFC\nfg_color:#000000\ntooltip_fg_color:#000000\nselected_bg_color:#BFBFBF\nselected_fg_color:#000000\ntext_color:#101010\nbg_color:#EDE8D4\ntooltip_bg_color:#FFF7BF"
-gtk-color-scheme = "button_prelight:#BFBBAB"
+gtk-color-scheme = "base_color:#FCFCFC\nfg_color:#000000\ntooltip_fg_color:#000000\nselected_bg_color:#BFBBAB\nselected_fg_color:#000000\ntext_color:#101010\nbg_color:#EDE8D4\ntooltip_bg_color:#FFF7BF"
+gtk-color-scheme = "selected_base_color:#BFBFBF"
 gtk-color-scheme = "selected_text_color:#000000"
 
 include "gtk-widgets.rc"

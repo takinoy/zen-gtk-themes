@@ -5,23 +5,23 @@ style "dark-panel" = "default"
 	fg[PRELIGHT]		= "#FFFFFF"
 	fg[SELECTED]		= "#E6E6E6"
 	bg[NORMAL]			= "#212121"
-	bg[ACTIVE]			= shade(0.4, @button_prelight)
-	bg[PRELIGHT]		= mix(0.2, @button_prelight, "#212121")
-	bg[SELECTED]		= shade(0.5, @button_prelight)
+	bg[ACTIVE]			= shade(0.4, @selected_bg_color)
+	bg[PRELIGHT]		= mix(0.2, @selected_bg_color, "#212121")
+	bg[SELECTED]		= shade(0.5, @selected_bg_color)
 	base[NORMAL]		= "#212121"
 	bg[INSENSITIVE]		= "#000000"
 }
 
 style "light-panel" = "default" {
 	bg[NORMAL]			= "#CCCCCC"
-	bg[PRELIGHT]		= mix(0.6, @button_prelight, "#CCCCCC")
-	bg[ACTIVE]			= @button_prelight
+	bg[PRELIGHT]		= mix(0.6, @selected_bg_color, "#CCCCCC")
+	bg[ACTIVE]			= @selected_bg_color
 }
 
 style "adaptive-panel" = "default" {
 	bg[NORMAL]			= shade(0.9,@bg_color)
-	bg[PRELIGHT]		= mix(0.6, @button_prelight, shade(0.9,@bg_color))
-	bg[ACTIVE]			= @button_prelight
+	bg[PRELIGHT]		= mix(0.6, @selected_bg_color, shade(0.9,@bg_color))
+	bg[ACTIVE]			= @selected_bg_color
 	}
 
 style "panel" = "light-panel"
