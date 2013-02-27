@@ -38,6 +38,8 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 
 Changelog:
 ----------
+
+0.10.1 : workaround to fix scrollbar border color in firefox and thunderbird.
 0.10.0
  - Modify column headers to flat style.
  - Improve scrollbar style, scale.

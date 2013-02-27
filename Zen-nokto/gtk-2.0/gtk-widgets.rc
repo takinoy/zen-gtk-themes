@@ -127,7 +127,7 @@ style "default"
 		arrowstyle			= 2					# 0 = normal arrows, 1 = filled arrows, 2 = triangular arrows
 		border_shades		= { 1.0, 1.0 }		# gradient to draw on border
 		cellstyle			= 0
-		colorize_scrollbar	= FALSE
+		colorize_scrollbar	= TRUE
 		comboboxstyle		= 0					# 0 = normal combobox, 1 = colorized combobox below arrow
 		expanderstyle		= 0
 		focusstyle			= 3
@@ -402,12 +402,11 @@ include "panel.rc"
 
 style "scrollbar" = "default"
 {
-	bg[NORMAL]		= mix(0.8, shade(0.9, @bg_color), @fg_color)
-	bg[PRELIGHT]	= mix(0.6, shade(0.9, @bg_color), @fg_color)
-	fg[PRELIGHT]	= "#C00"
-	fg[ACTIVE]		= darker(@selected_bg_color)
-
-	bg[ACTIVE]		= mix(0.6, shade(0.9, @bg_color), @fg_color)
+	bg[SELECTED]		= mix(0.8, shade(0.9, @bg_color), @fg_color)
+	bg[PRELIGHT]		= mix(0.6, shade(0.9, @bg_color), @fg_color)
+	fg[PRELIGHT]		= "#C00"
+	fg[ACTIVE]			= "#F00"
+	bg[ACTIVE]			= @bg_color
 
 	engine "murrine" {
 		arrowstyle				= 1

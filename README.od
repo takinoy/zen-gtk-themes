@@ -40,6 +40,8 @@ to uninstall and restore original files (if exist) run :
 
 Changelog:
 ----------
+
+0.10.1 : workaround to fix scrollbar border color in firefox and thunderbird.
 0.10.0
  - Modify column headers to flat style.
  - Improve scrollbar style, scale.
