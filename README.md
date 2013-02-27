@@ -34,7 +34,6 @@ http://urukrama.wordpress.com/2008/07/13/setting-a-custom-gtk-theme-for-specific
 Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox applied your theme.
 
 Changelog:
-----------
 
 0.3.11
  - Last gtk2 version with the clearlook engine.
