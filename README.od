@@ -46,7 +46,7 @@ Changelog:
  - Improve scrollbar style, scale.
  - Adjust colors, button contrast and shadow for Zen-nigra ...
  - Fix CheckButton background, Zen-griza/index.theme, minor others issues.
-0.9.1 
+0.9.1
  - Fix libreoffice.sh script and adjust scrollbar size.
  - Add zen-griza variant
  - Change column headers and scrollbar style
