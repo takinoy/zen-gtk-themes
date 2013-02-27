@@ -22,7 +22,7 @@ pkgname=$(grep -m 1 "pkgname=" PKGBUILD | cut -d= -f2)
 name=${pkgname%%-*}
 
 # check old package version
-lastpkgver=$(git tag -l v* | sort -V | tail -n 1 | cut -dv -f2)
+lastpkgver=$(git tag -l xv* | sort -V | tail -n 1 | cut -dv -f2)
 
 # check new package version
 pkgver=$(head -1 ../README.md |  cut -d' ' -f3)
@@ -86,7 +86,7 @@ push() {
 	files=PKGBUILD
 	message="update PKGBUILD to v$pkgver-$pkgrel"
 	commit PKGBUILD
-	git push $force
+	git push origin $f'zenx'
 }
 
 case $opt in
