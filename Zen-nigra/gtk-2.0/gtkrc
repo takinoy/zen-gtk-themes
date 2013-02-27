@@ -35,12 +35,6 @@ widget_class "*OptionMenu*"			style "button-nigra"
 class "*OptionMenu*"				style "button-nigra"
 widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button-nigra"
 
-# this prevent overwriting others widgets style
-class "GtkRadio*"	style "radiocheck"
-class "GtkCheck*"	style "radiocheck"
-widget_class "*<GtkRadioButton>*"		style "radiocheck"
-widget_class "*<GtkCheckButton>*"		style "radiocheck"
-
 style "notebook-bg-nigra"
 {
 	bg[ACTIVE]			= shade(1.1, @bg_color) # Unfocused tab background.
