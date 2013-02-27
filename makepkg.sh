@@ -84,7 +84,7 @@ push() {
 	files=PKGBUILD
 	message="update PKGBUILD to v$pkgver-$pkgrel"
 	commit PKGBUILD
-	git push $force
+	#git push $force
 }
 
 case $opt in
