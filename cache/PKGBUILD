@@ -2,7 +2,7 @@
 
 pkgname=zenx-gtk-themes
 pkgver=0.10.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A variant of 'zen-gtk-themes' with the xfce engine."
 arch=('any')
 url="http://xfce-look.org/content/show.php/Zen+suite?content=149883"
