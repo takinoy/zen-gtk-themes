@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# To update README, PKGBUILD and push tag into the remote repository. 
+
 set -e
 
 LANG=C
@@ -33,9 +35,6 @@ pkgrel=$(grep -m 1 "pkgrel=" PKGBUILD | cut -d= -f2)
 cntdate=$(date +%B' '%d,' '%Y)
 
 update_readme() {
-	# update readme
-	readme=$(ls -1 README*)
-	
 	set $readme
 	until [ $# = 0 ]
 	do
@@ -80,6 +79,7 @@ push() {
 	echo "update PKGBUILD to v$pkgver-$pkgrel..."
 	rm -f $pkgname-$pkgver.tar.gz
 	sha=$(makepkg -g)
+	rm $pkgname-$pkgver.tar.gz
 	echo $sha
 	sed -i "s/^sha256sums.*$/$sha/" PKGBUILD
 	makepkg $force --source
@@ -91,7 +91,7 @@ push() {
 
 case $opt in
 -f|-u|"")
-	if [ "$pkgver" == "$lastpkgver" ]
+	if [ "$pkgver" == "$lastpkgver" ] && [ "$f" == "" ]
 	then
 	echo "enter new version number (last package version =  $lastpkgver) :"
 	read pkgver
@@ -104,8 +104,10 @@ case $opt in
 		*) pkgver=$answer;;
 		esac
 	fi
-	echo "update $readme to version $pkgver..."
 	cd ..
+	# update readme
+	readme=$(ls -1 README*)
+	echo "update $readme to version $pkgver..."
 	update_readme
 	message="update README* to v$pkgver"
 	commit $readme

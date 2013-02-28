@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# test the themes
+# dependencies : awf
+
 # sleep
 t=15
 
@@ -7,7 +10,7 @@ t=15
 pkgname=$(grep -m 1 'pkgname=' cache/PKGBUILD | cut -d= -f2)
 name=ZenX
 
-# test les themes
+# themes to test
 themes=$(ls -1 | grep "$name")
 
 # run "A Widget Factory"
@@ -26,7 +29,7 @@ set $themes
 		done
 	fi
 
-# Theme de l'utilisateur
+# User theme
 xfconf-query -c xsettings -p /Net/ThemeName -s "Zen"
 xfconf-query -c xsettings -p /Net/IconThemeName -s "Foxtrot"
 

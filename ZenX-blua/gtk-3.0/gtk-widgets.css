@@ -45,8 +45,10 @@
     -GtkTextView-error-underline-color: @error_color;
 
     border-width: 1px;
+/* inherit the color from parent by default */
     color: inherit;
-/* arrows border...
+/* borders for arrows...*/
+/*
     border-color: @border_normal;
 */
 }
