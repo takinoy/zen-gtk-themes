@@ -1,9 +1,9 @@
-zen-gtk-themes version 0.10.1
+zen-gtk-themes version 0.10.2
 ----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : February 27, 2013
+Date : March 02, 2013
 Sources : https://github.com/cedl38/zen-gtk-themes
 
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
@@ -39,7 +39,10 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 Changelog:
 ----------
 
-0.10.1 : workaround to fix scrollbar border color in firefox and thunderbird.
+0.10.2
+ - Fix treeview colors for claws-mail.
+ - Fix treeview-headers fg color for some widgets with Zen-nigra.
+0.10.1 : Workaround to fix scrollbar border color in firefox and thunderbird.
 0.10.0
  - Modify column headers to flat style.
  - Improve scrollbar style, scale.
