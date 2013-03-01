@@ -1,7 +1,7 @@
 # Maintainer: Ced <cedl38@gmail.com>
 
 pkgname=zen-gtk-themes
-pkgver=0.3.11
+pkgver=0.3.12
 pkgrel=1
 pkgdesc="A gtk2 theme for Xfce and gnome that attempt to keep it simple, consistent and being visually appealing. Version with the clearlooks engine."
 arch=('any')
@@ -10,7 +10,7 @@ license=('GPL3')
 depends=('gtk-engines')
 optdepends=('alinea-themes' 'mini-xfwm4-theme' 'gnome-themes-extras: Foxtrot icons' 'xfce4-notifyd' 'libreoffice-patch.sh: script to increase sheet tabs for LibreOffice. See README.md or http://opendesktop.org/content/show.php/Zen+suite?content=149883 for more infos')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/cedl38/$pkgname/archive/v$pkgver.tar.gz")
-sha256sums=('bd7065c148cfb35046bc5636f12f159e86b6b7b5566c2af6d9fd985d0323d451')
+sha256sums=('eb49fd3310d205b20c17a2eeb851813b8b2e1b12af28a142522d369817929f55')
 
 build() {
   cd $srcdir/$pkgname'-'$pkgver
