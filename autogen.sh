@@ -2,16 +2,7 @@
 
 set -e
 
-# How to build :
-
-# merge shared stuff
-# git merge shared
-
-# replace symbolic links with source file :
-
-###### CONFIG########
-# Create directories
-#target directories
+# script to refresh hard links before committing changes
 
 # package name
 pkgname=$(grep -m 1 'pkgname=' cache/PKGBUILD | cut -d= -f2)
@@ -20,15 +11,13 @@ name=${pkgname%%-*}
 name=$(echo ${name:0:1}|tr a-z A-Z)${name:1}
 
 target_dir=$(ls -1 | grep "$name-")
-
-cp_source=$name
 # files or dir to copy
-path_copy='
+path='
 gtk-2.0/gtk-widgets.rc
 gtk-2.0/apps/libreoffice.rc
 '
 
-echo "path copy = $path_copy"
+echo "path hard links = $path"
 
 function copy {
 	if [ "$1" == "" ]
@@ -50,19 +39,12 @@ do
 	# target directory
 	var=$1
 	# action
-	copy $path_copy
+	copy $path
 	shift
 done
 else echo "no target directories for copying, aborded."
 fi
 }
 
-cd $cp_source
+cd $name
 make $target_dir
-
-# make a commit
-# git commit -a -m "vx.x.x"
-# git tag vx.x.x
-# git push origin vx.x.x
-
-# Update pkgbuild

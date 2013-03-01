@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# To update README, PKGBUILD and push tag into the remote repository. 
+
 set -e
 
 LANG=C

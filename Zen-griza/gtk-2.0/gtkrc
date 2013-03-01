@@ -15,3 +15,11 @@ widget_class "*<GtkButton>"			style "button-griza"
 widget_class "*OptionMenu*"			style "button-griza"
 class "*OptionMenu*"				style "button-griza"
 widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button-griza"
+
+# this prevent overwriting others widgets style
+widget_class "*.<GtkTreeView>.<GtkButton>*"		style "treeview_header"
+widget_class "*.<GtkCTree>.<GtkButton>*"		style "treeview_header"
+widget_class "*.<GtkList>.<GtkButton>*"			style "treeview_header"
+widget_class "*.<GtkCList>.<GtkButton>*"		style "treeview_header"
+widget_class "*.<GtkCMCTree>.<GtkButton>*"		style "treeview_header"
+widget_class "*.<GtkCMCList>.<GtkButton>*"		style "treeview_header"

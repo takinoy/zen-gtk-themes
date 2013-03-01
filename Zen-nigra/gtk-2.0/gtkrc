@@ -72,10 +72,12 @@ style "treeview_header-nigra" {
 	engine "murrine"	{	border_shades	= { 1.5, 1.0 }	}
 }
 
-widget_class "*.<GtkTreeView>.<GtkButton>"	style "treeview_header-nigra"
-widget_class "*.<GtkCTree>.<GtkButton>"		style "treeview_header-nigra"
-widget_class "*.<GtkList>.<GtkButton>"		style "treeview_header-nigra"
-widget_class "*.<GtkCList>.<GtkButton>"		style "treeview_header-nigra"
+widget_class "*.<GtkTreeView>.<GtkButton>*"		style "treeview_header-nigra"
+widget_class "*.<GtkCTree>.<GtkButton>*"		style "treeview_header-nigra"
+widget_class "*.<GtkList>.<GtkButton>*"			style "treeview_header-nigra"
+widget_class "*.<GtkCList>.<GtkButton>*"		style "treeview_header-nigra"
+widget_class "*.<GtkCMCTree>.<GtkButton>*"		style "treeview_header-nigra"
+widget_class "*.<GtkCMCList>.<GtkButton>*"		style "treeview_header-nigra"
 
 style "scrollbar-nigra"
 {

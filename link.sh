@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# links
+# link themes into theme directory
 
 # package name
 pkgname=$(grep -m 1 'pkgname=' cache/PKGBUILD | cut -d= -f2)
