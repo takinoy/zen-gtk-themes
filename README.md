@@ -1,4 +1,4 @@
-zenx-gtk-themes version 0.10.0
+zenx-gtk-themes version 0.10.2
 ----------------------------
 
 Author : Cédric Leporcq
@@ -39,7 +39,9 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 Changelog:
 ----------
 
-0.10.1 : workaround to fix scrollbar border color in firefox and thunderbird.
+0.10.2
+ - Fix treeview colors for claws-mail.
+ - Fix treeview-headers fg color for some widgets with Zen-nigra.
 0.10.0
  - Modify column headers to flat style.
  - Improve scrollbar style, scale.
