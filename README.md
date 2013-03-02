@@ -3,7 +3,7 @@ zenx-gtk-themes version 0.10.2
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : February 27, 2013
+Date : March 02, 2013
 Sources : https://github.com/cedl38/zen-gtk-themes/tree/zenx
 
 This is a variant of "zen-gtk-themes" with the xfce engine.
@@ -42,6 +42,7 @@ Changelog:
 0.10.2
  - Fix treeview colors for claws-mail.
  - Fix treeview-headers fg color for some widgets with Zen-nigra.
+ - Fix XfceHeaders to bg color.
 0.10.0
  - Modify column headers to flat style.
  - Improve scrollbar style, scale.
