@@ -561,7 +561,8 @@ style"xfceheaders"
 	base[NORMAL]	=@bg_color
 }
 
-class"*XfceHeading*"	style"xfceheaders"
+widget_class "*XfceHeading*"		style"xfceheaders"
+class "*XfceHeading*"				style"xfceheaders"
 
 # Workaround style for places where the text color is used instead of the fg color.
 style "text_is_fg_color_workaround" {
