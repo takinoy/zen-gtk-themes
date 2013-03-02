@@ -69,14 +69,14 @@ push() {
 	# make and push a tag
 		if [ "$f" == "+" ]
 		then
-		set +e; git tag -d "${name:3}v$pkgver"; set  -e
+		set +e; git tag -d "xv$pkgver"; set  -e
 		fi
-	git tag "${name:3}v$pkgver"
-	git push origin $f${name:3}v$pkgver
+	git tag "xv$pkgver"
+	git push origin $f'xv'$pkgver
 	sed -i "s/pkgrel=.*$/pkgrel=1/" PKGBUILD
 	fi
 	# update PKGBUILD checksum
-	echo "update PKGBUILD to v$pkgver-$pkgrel..."
+	echo "update PKGBUILD to xv$pkgver-$pkgrel..."
 	rm -f $pkgname-$pkgver.tar.gz
 	sha=$(makepkg -g)
 	rm $pkgname-$pkgver.tar.gz
@@ -84,7 +84,7 @@ push() {
 	sed -i "s/^sha256sums.*$/$sha/" PKGBUILD
 	makepkg $force --source
 	files=PKGBUILD
-	message="update PKGBUILD to v$pkgver-$pkgrel"
+	message="update PKGBUILD to xv$pkgver-$pkgrel"
 	commit PKGBUILD
 	git push origin $f'zenx'
 }
@@ -96,7 +96,7 @@ case $opt in
 	echo "enter new version number (last package version =  $lastpkgver) :"
 	read pkgver
 	else
-	echo "update README to v$pkgver ? Y/n/<package_version>"
+	echo "update README to xv$pkgver ? Y/n/<package_version>"
 	read answer
 		case $answer in
 		Y|y|"") ;;
@@ -109,7 +109,7 @@ case $opt in
 	readme=$(ls -1 README*)
 	echo "update $readme to version $pkgver..."
 	update_readme
-	message="update README* to v$pkgver"
+	message="update README* to xv$pkgver"
 	commit $readme
 	cd cache
 	;;
