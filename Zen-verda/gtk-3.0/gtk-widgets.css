@@ -265,7 +265,10 @@ GtkSwitch.slider,
 GtkSwitch:insensitive,
 .spinbutton.button:insensitive,
 GtkComboBox:insensitive,
-.button:insensitive{
+.button:insensitive {
+    /* workaround for spinbutton */
+    color: @fg_insensitive;
+
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@button_bg_insensitive, 1.06)),
                                      to (shade(@button_bg_insensitive, 0.95)));
