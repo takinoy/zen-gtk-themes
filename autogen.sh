@@ -16,6 +16,7 @@ path='
 gtk-2.0/gtk-widgets.rc
 gtk-2.0/apps/libreoffice.rc
 gtk-3.0/gtk-widgets.css
+gtk-3.0/panel.css
 '
 
 echo "path hard links = $path"
