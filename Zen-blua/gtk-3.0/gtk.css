@@ -49,7 +49,7 @@
 @define-color border_selected darker(@selected_bg_color);
 @define-color highlight #0CFF06;
 @define-color button_bg_normal mix(@base_color, @bg_color, 0.9);
-@define-color button_bg_insensitive mix(@button_bg_normal, @bg_color, 0.6);
+@define-color button_bg_insensitive @bg_color;
 @define-color button_border darker(@button_bg_normal);
 @define-color notebook_active mix(@base_color, @bg_color, 0.8);
 @define-color scrollbar_slider mix(@fg_color, shade(@bg_color, 0.9), 0.8);

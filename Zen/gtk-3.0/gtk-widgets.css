@@ -254,7 +254,6 @@ GtkSwitch.slider,
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@button_bg_normal, 1.05)),
                                      to (shade(@button_bg_normal, 0.95)));
-    border-color: @button_border;
     border-style: solid;
     border-top-color: shade(@button_border, 1.12);
     border-right-color: @button_border;
@@ -270,12 +269,12 @@ GtkComboBox:insensitive,
     color: @fg_insensitive;
 
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@button_bg_insensitive, 1.06)),
+                                     from (shade(@button_bg_insensitive, 1.05)),
                                      to (shade(@button_bg_insensitive, 0.95)));
-    border-top-color: shade(@border_insensitive, 1.12);
-    border-right-color: @border_insensitive;
+    border-top-color: @border_insensitive;
+    border-right-color: shade(@border_insensitive, 0.95);
     border-bottom-color: shade(@border_insensitive, 0.9);
-    border-left-color: @border_insensitive;
+    border-left-color: shade(@border_insensitive, 0.95);
 }
 
 GtkSwitch:hover,
