@@ -257,7 +257,7 @@ style "button" = "default"
 	{
 		gradient_shades		= {1.05,1.0,1.0,0.95}
 		contrast			= 1.0
-		border_shades		= { 1.1, 0.9 }
+		border_shades		= { 1.12, 0.9 }
 	}
 }
 
