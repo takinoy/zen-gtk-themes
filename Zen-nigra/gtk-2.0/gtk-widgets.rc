@@ -45,9 +45,9 @@ style "default"
 	GtkRange::stepper-size = 12
 	GtkRange::stepper_spacing = 0
 
-	GtkScale::slider-length = 20	# Length of sliders.
+	GtkScale::slider-length = 22	# Length of sliders.
 	GtkScale::trough-side-details = 1
-	GtkScale::slider-width = 10
+	GtkScale::slider-width = 13
 
 	GtkScrollbar::min-slider-length = 24	# Min. length of scrollbars.
 	GtkScrollbar::slider-width = 11
