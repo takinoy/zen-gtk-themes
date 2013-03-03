@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # To update README, PKGBUILD and push tag into the remote repository. 
-
+# dependencies : git, burp, base-devel group, yaourt.
 set -e
 
 LANG=C
@@ -82,7 +82,12 @@ push() {
 	rm $pkgname-$pkgver.tar.gz
 	echo $sha
 	sed -i "s/^sha256sums.*$/$sha/" PKGBUILD
+	# create package source
 	makepkg $force --source
+	# update aur package and install it 
+	burp --category=xfce $pkgname-$pkgver-$pkgrel.src.tar.gz
+	sudo yaourt -S $pkgname
+	# commit PKGBUILD and push the repository
 	files=PKGBUILD
 	message="update PKGBUILD to v$pkgver-$pkgrel"
 	commit PKGBUILD
