@@ -11,7 +11,8 @@ set -e
 #http://urukrama.wordpress.com/2008/07/13/setting-a-custom-gtk-theme-for-specific-applications/
 
 # applications to patch
-lo_exec='calc.desktop draw.desktop startcenter.desktop writer.desktop'
+execs='calc.desktop draw.desktop startcenter.desktop writer.desktop'
+opt=$1
 
 install() {
 # find the installation directory of the theme.
@@ -31,51 +32,49 @@ cd $HOME/.themes
 	fi
 fi
 
-set $lo_exec
-until [ $# = 0 ]
+set $execs
+for exec
 do
-	exec=$(echo $1 | cut -f1 -d.)
+	exec_=$(echo $exec | cut -f1 -d.)
 	# Backup existing libreoffice-*.desktop files to libreoffice-*.desktop.orig
-	if [ -f $HOME/.local/share/applications/libreoffice-$1 ]
+	if [ -f $HOME/.local/share/applications/libreoffice-$exec ]
 	then
-	mv -v $HOME/.local/share/applications/libreoffice-$1 $HOME/.local/share/applications/libreoffice-$1.orig
+	mv -v $HOME/.local/share/applications/libreoffice-$exec $HOME/.local/share/applications/libreoffice-$exec.orig
 	fi
 
-	if [ -f /usr/lib/libreoffice/share/xdg/$1 ]
+	if [ -f /usr/lib/libreoffice/share/xdg/$exec ]
 	then
 	# copy libreoffice exec to .local/share/applications
-	cp -v /usr/lib/libreoffice/share/xdg/$1 $HOME/.local/share/applications/libreoffice-$1
+	cp -v /usr/lib/libreoffice/share/xdg/$exec $HOME/.local/share/applications/libreoffice-$exec
 	else
-	echo "libreoffice-$1 is not installed, aborded" | exit 0
+	echo "libreoffice-$exec is not installed, aborded" | exit 0
 	fi
 
 	# replace exec lines in files
-	if [ "$1" == "startcenter.desktop" ]
+	if [ "$exec" == "startcenter.desktop" ]
 	then
-	sed -i "s|Exec=libreoffice %U|Exec=bash -c \"GTK2_RC_FILES=$theme_dir/gtk-2.0/apps/libreoffice.rc libreoffice %U\"|g" "$HOME/.local/share/applications/libreoffice-$1"
+	sed -i "s|Exec=libreoffice %U|Exec=bash -c \"GTK2_RC_FILES=$theme_dir/gtk-2.0/apps/libreoffice.rc libreoffice %U\"|g" "$HOME/.local/share/applications/libreoffice-$exec"
 	else
-	sed -i "s|Exec=libreoffice --$exec %U|Exec=bash -c \"GTK2_RC_FILES=$theme_dir/gtk-2.0/apps/libreoffice.rc libreoffice --$exec %U\"|g" "$HOME/.local/share/applications/libreoffice-$1"
+	sed -i "s|Exec=libreoffice --$exec_ %U|Exec=bash -c \"GTK2_RC_FILES=$theme_dir/gtk-2.0/apps/libreoffice.rc libreoffice --$exec_ %U\"|g" "$HOME/.local/share/applications/libreoffice-$exec"
 	fi
-shift
 done
 }
 
 uninstall() {
-set $lo_exec
-until [ $# = 0 ]
+set $execs
+for exec
 do
-	if [ -f $HOME/.local/share/applications/libreoffice-$1.orig ]
+	if [ -f $HOME/.local/share/applications/libreoffice-$exec.orig ]
 	then
-	mv -v $HOME/.local/share/applications/libreoffice-$1.orig $HOME/.local/share/applications/libreoffice-$1
-	elif [ -f $HOME/.local/share/applications/libreoffice-$1 ]
+	mv -v $HOME/.local/share/applications/libreoffice-$exec.orig $HOME/.local/share/applications/libreoffice-$exec
+	elif [ -f $HOME/.local/share/applications/libreoffice-$exec ]
 	then
-	rm -v $HOME/.local/share/applications/libreoffice-$1
+	rm -v $HOME/.local/share/applications/libreoffice-$exec
 	fi
-shift
 done
 }
 
-case $1 in
+case $opt in
 --install|"") install ;;
 --uninstall) uninstall ;;
 *)	echo "options : --install to install the patch (default) "
