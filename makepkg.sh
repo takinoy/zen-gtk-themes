@@ -86,7 +86,7 @@ push() {
 	makepkg $force --source
 	# update aur package and install it 
 	burp --category=xfce $pkgname-$pkgver-$pkgrel.src.tar.gz
-	sudo yaourt -S $pkgname
+	yaourt -S $pkgname
 	# commit PKGBUILD and push the repository
 	files=PKGBUILD
 	message="update PKGBUILD to v$pkgver-$pkgrel"
