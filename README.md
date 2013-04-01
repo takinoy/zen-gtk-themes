@@ -1,9 +1,9 @@
-zen-gtk-themes version 0.3.12
-----------------------------
+zen-gtk-themes version 0.3.13
+-----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : March 02, 2013
+Date : April 01, 2013
 Sources : https://github.com/cedl38/zen-gtk-themes
 
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
@@ -17,14 +17,12 @@ This version use only the clearlook engine.
 
 Install : extract the archive and copy the theme folders you want into ~/.theme.
 
-Extras :
- - xfwm4 and metacity-1 windows decorator (see my others artworks)
- - Foxtrox icons. Install the package gnome-themes-extras if available or download the sources. Extract it and copy the folder icon-themes/Foxtrot/ into ~/.icons.
+Extra : xfwm4 and metacity-1 windows decorator (see my others artworks)
 
 Specific settings for libreoffice :
 Using small scrollbars in libreoffice 3.* cause sheet tabs too small. You can fix scrollbar width for LibreOffice two ways :
 - run the script libreoffice-patch.sh. This script will add customs application launchers for libreoffice in .local/share/applications. The following command will be added in the application launcher :
-# bash -c 'GTK2_RC_FILES=$HOME/.themes/Zen/gtk-2.0/apps/libreoffice.rc application-command'
+# bash -c "GTK2_RC_FILES=$HOME/.themes/Zen/gtk-2.0/apps/libreoffice.rc application-command"
 to uninstall and restore original files (if exist) run :
 # ./libreoffice-patch.sh --uninstall
 - edit Zen/gtk-2.0/gtkrc and change value of "GtkScrollbar::trough-border" from "2" to "3" for example.
@@ -36,7 +34,7 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 Changelog:
 ----------
 
-0.3.12
+0.3.13
  - Last gtk2 version with the clearlook engine.
  - Updates from 0.10 branch (gtk2).
 
