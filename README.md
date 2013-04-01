@@ -1,5 +1,5 @@
-zenx-gtk-themes version 0.10.2
-----------------------------
+zenx-gtk-themes version 0.10.3
+------------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
@@ -20,14 +20,12 @@ The gtk-3 version is mostly tested on few applications under Xfce. Do not hesita
 Install : extract the archive and copy the theme folders you want into ~/.theme.
 Arch users : "zenx-gtk-themes" is available in AUR.
 
-Extras :
- - xfwm4 and metacity-1 windows decorator (see my others artworks)
- - Foxtrox icons. Install the package gnome-themes-extras if available or download the sources. Extract it and copy the folder icon-themes/Foxtrot/ into ~/.icons.
+Extra : xfwm4 and metacity-1 windows decorator (see my others artworks)
 
 Specific settings for libreoffice :
 Using small scrollbars in libreoffice 3.* cause sheet tabs too small. You can fix scrollbar width for LibreOffice two ways :
 - run the script libreoffice-patch.sh. This script will add customs application launchers for libreoffice in .local/share/applications. The following command will be added in the application launcher :
-# bash -c 'GTK2_RC_FILES=$HOME/.themes/ZenX/gtk-2.0/apps/libreoffice.rc application-command'
+# bash -c "GTK2_RC_FILES=$HOME/.themes/Zen/gtk-2.0/apps/libreoffice.rc application-command"
 to uninstall and restore original files (if exist) run :
 # ./libreoffice-patch.sh --uninstall
 - edit ZenX/gtk-2.0/gtkrc and change value of "GtkScrollbar::trough-border" from "2" to "3" for example.
@@ -39,6 +37,11 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 Changelog:
 ----------
 
+0.10.3
+ - Adjust button insensitive and border colors.
+ - Adjust gtk3 panel settings (not tested).
+ - Fix gtk3 spinbutton fg insensitive color.
+ - Fix bug in libreoffice.sh for reading files with spaces.
 0.10.2
  - Fix treeview colors for claws-mail.
  - Fix treeview-headers fg color for some widgets with Zen-nigra.

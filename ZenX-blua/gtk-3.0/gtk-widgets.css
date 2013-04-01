@@ -190,7 +190,7 @@ GtkDrawingArea {
 }
 
 .entry {
-    border:solid ;
+    border:solid;
     border-width: 1px;
     border-color: @border_normal;
     border-radius: 3px;
@@ -258,7 +258,6 @@ GtkSwitch.slider,
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@button_bg_normal, 1.05)),
                                      to (shade(@button_bg_normal, 0.95)));
-    border-color: @button_border;
     border-style: solid;
     border-top-color: shade(@button_border, 1.12);
     border-right-color: @button_border;
@@ -269,14 +268,17 @@ GtkSwitch.slider,
 GtkSwitch:insensitive,
 .spinbutton.button:insensitive,
 GtkComboBox:insensitive,
-.button:insensitive{
+.button:insensitive {
+    /* workaround for spinbutton */
+    color: @fg_insensitive;
+
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@button_bg_insensitive, 1.06)),
+                                     from (shade(@button_bg_insensitive, 1.05)),
                                      to (shade(@button_bg_insensitive, 0.95)));
-    border-top-color: shade(@border_insensitive, 1.12);
-    border-right-color: @border_insensitive;
+    border-top-color: @border_insensitive;
+    border-right-color: shade(@border_insensitive, 0.95);
     border-bottom-color: shade(@border_insensitive, 0.9);
-    border-left-color: @border_insensitive;
+    border-left-color: shade(@border_insensitive, 0.95);
 }
 
 GtkSwitch:hover,
@@ -309,7 +311,7 @@ GtkComboBox, GtkComboBox>.button {
     padding: 1px;
 }
 
-GtkComboBox .menuitem  {
+GtkComboBox .menuitem {
     padding: 1px 3px;
 }
 
@@ -327,7 +329,7 @@ GtkComboBox .menuitem  {
 }
 
 .spinbutton.button {
-    border-radius: 0 ;
+    border-radius: 0;
     border-width: 0px 0px 0px 1px;
     color : mix(@fg_color, @bg_color, 0.3);
 }
@@ -337,7 +339,7 @@ GtkComboBox .menuitem  {
 }
 
 .spinbutton.button:last-child {
-    border-radius: 0 ;
+    border-radius: 0;
 }
 
 .spinbutton.entry {
@@ -360,7 +362,7 @@ GtkSwitch.trough {
     border-radius: 3px;
 }
 
-.header .button{
+.header .button {
     font: bold;
 }
 
@@ -419,7 +421,7 @@ column-header:last-child .button {
 }
 
 .check, .radio {
-    border:solid ;
+    border: solid;
     border-width: 1px;
     background-color: @base_color;
     border-color: @button_border;
@@ -497,7 +499,7 @@ GtkScale.vertical.trough {
     background-color: @notebook_active;
 }
 
-.scrollbar.button:hover  {
+.scrollbar.button:hover {
     background-color: shade(@bg_color, 1.1);
 }
 
@@ -577,7 +579,7 @@ GtkScale.slider.horizontal:insensitive {
     border-right-color: shade(shade(@bg_darker, 0.9),0.8);
 }
 
-GtkScale.slider:hover, GtkScale.slider:focus  {
+GtkScale.slider:hover, GtkScale.slider:focus {
     color: mix(#BF3939, @selected_bg_color, 0.6);
     background-image: -gtk-gradient(linear, left top, right top,
                                      from (@selected_bg_color),
@@ -740,7 +742,7 @@ tab * {
 
 .check:hover, .check:hover:focus, .radio:hover, .radio:hover:focus,
 GtkSwitch:hover,
-.button:hover, .button:hover:focus  {
+.button:hover, .button:hover:focus {
     border-top-color: @selected_bg_color;
     border-right-color: shade(@selected_bg_color,0.9);
     border-bottom-color: shade(@selected_bg_color,0.85);
@@ -802,7 +804,7 @@ column-header .button:hover, column-header .button:hover:focus {
 }
  .menubar>.menuitem:hover {
     color: @selected_fg_color;
-    background-color: shade(@selected_bg_color, 1.05) ;
+    background-color: shade(@selected_bg_color, 1.05);
     border-color: shade(@selected_bg_color, 0.9);
 }
 
@@ -908,7 +910,7 @@ GtkHandleBox {
 }
 
 .sidebar .separator,
-.sidebar.view .separator{
+.sidebar.view .separator {
 }
 
 .pane-separator {

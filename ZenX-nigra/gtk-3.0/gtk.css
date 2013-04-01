@@ -49,10 +49,12 @@
 @define-color border_selected darker(@selected_bg_color);
 @define-color highlight #0CFF06;
 @define-color button_bg_normal shade(@bg_color, 1.15);
-@define-color button_bg_insensitive mix(@button_bg_normal, @bg_color, 0.6);
+@define-color button_bg_insensitive @bg_color;
 @define-color button_border darker(@button_bg_normal);
 @define-color notebook_active shade(@bg_color, 1.2);
 @define-color scrollbar_slider shade(@bg_color, 1.6);
+@define-color panel_bg_normal shade(@bg_color, 0.9);
+@define-color panel_bg_active mix(@panel_bg_normal, @selected_bg_color, 0.6);
 
 /* window manager colors */
 @define-color wm_bg @bg_color;
