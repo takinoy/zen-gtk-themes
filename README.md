@@ -1,9 +1,9 @@
-zen-gtk-themes version 0.10.2
+zen-gtk-themes version 0.10.3
 ----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : March 02, 2013
+Date : April 01, 2013
 Sources : https://github.com/cedl38/zen-gtk-themes
 
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
@@ -20,14 +20,12 @@ The Murrine engine version >=0.98 is needed for the gtk2 version of this theme. 
 Install : extract the archive and copy the theme folders you want into ~/.theme.
 Arch users : "zen-gtk-themes" is available in AUR.
 
-Extras :
- - xfwm4 and metacity-1 windows decorator (see my others artworks)
- - Foxtrox icons. Install the package gnome-themes-extras if available or download the sources. Extract it and copy the folder icon-themes/Foxtrot/ into ~/.icons.
+Extra : xfwm4 and metacity-1 windows decorator (see my others artworks)
 
 Specific settings for libreoffice :
 Using small scrollbars in libreoffice 3.* cause sheet tabs too small. You can fix scrollbar width for LibreOffice two ways :
 - run the script libreoffice-patch.sh. This script will add customs application launchers for libreoffice in .local/share/applications. The following command will be added in the application launcher :
-# bash -c 'GTK2_RC_FILES=$HOME/.themes/Zen/gtk-2.0/apps/libreoffice.rc application-command'
+# bash -c "GTK2_RC_FILES=$HOME/.themes/Zen/gtk-2.0/apps/libreoffice.rc application-command"
 to uninstall and restore original files (if exist) run :
 # ./libreoffice-patch.sh --uninstall
 - edit Zen/gtk-2.0/gtkrc and change value of "GtkScrollbar::trough-border" from "2" to "3" for example.
@@ -39,6 +37,11 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 Changelog:
 ----------
 
+0.10.3
+ - Adjust button insensitive and border colors.
+ - Adjust gtk3 panel settings (not tested).
+ - Fix gtk3 spinbutton fg insensitive color.
+ - Fix bug in libreoffice.sh for reading files with spaces.
 0.10.2
  - Fix treeview colors for claws-mail.
  - Fix treeview-headers fg color for some widgets with Zen-nigra.
@@ -78,7 +81,7 @@ Changelog:
  - Use the murrine engine for gtk-2 version.
  - Theme ported to gtk3 >=3.4.
 
-0.3.11
+0.3.13
  - Last gtk2 version with the clearlook engine.
  - Updates from 0.10 branch (gtk2).
 
