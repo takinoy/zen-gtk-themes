@@ -13,7 +13,4 @@ style "colors_papero"
 
 class "GtkWidget"					style "colors_papero"
 
-widget_class "*GtkTree*"			style "sidepane"
-class "*GtkTree*"					style "sidepane"
-widget_class "*GtkCTree*"			style "sidepane"
-class "*GtkCTree*"					style "sidepane"
+widget_class "*View*"			    style "sidepane"

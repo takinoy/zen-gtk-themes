@@ -1,4 +1,4 @@
-zen-gtk-themes version 0.10.3
+zen-gtk-themes version 0.10.4
 ----------------------------
 
 Author : Cédric Leporcq
@@ -36,7 +36,8 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 
 Changelog:
 ----------
-
+0.10.4
+ - adjust view/treeview background color.
 0.10.3
  - Adjust button insensitive and border colors.
  - Adjust gtk3 panel settings (not tested).

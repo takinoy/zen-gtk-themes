@@ -119,18 +119,6 @@ GtkWindow {
  * view, entry *
  ***************/
 
-GtkTextView {
-    background-color: @base_color;
-}
-
-GtkViewport {
-    background-color: transparent;
-}
-
-GtkViewport.frame {
-    border-width: 0;
-}
-
 .expander {
     color: alpha(@fg_color, 0.7);
 }
@@ -147,18 +135,14 @@ GtkViewport.frame {
     border-color: darker(@tooltip_bg_color);
 }
 
-GtkDrawingArea {
-}
-
 .view, .entry {
-    padding: 2px;
     color: @text_color;
-    background-color: @base_color;
     -GtkWidget-focus-line-pattern: "\1";
 }
 
-.view:active, .entry:active {
-    background-color: @base_color;
+.view {
+    padding: 2px;
+    background-color: shade(@base_color, 0.97);
 }
 
 .view:insensitive {
@@ -171,11 +155,11 @@ GtkDrawingArea {
 }
 
 .view row:nth-child(odd) {
-    background-color: shade(@base_color, 0.875);
+    background-color: shade(@base_color, 0.905);
 }
 
 .view row:nth-child(even) {
-    background-color: shade(@base_color, 0.94);
+    background-color: shade(@base_color, 0.97);
 }
 
 .view row:nth-child(odd):selected {
@@ -187,6 +171,7 @@ GtkDrawingArea {
 }
 
 .entry {
+    background-color: @base_color;
     border:solid;
     border-width: 1px;
     border-color: @border_normal;
@@ -206,6 +191,21 @@ GtkDrawingArea {
 .highlight {
     background-color: transparent;
     color: @highlight;
+}
+
+GtkTextView {
+    background-color: @base_color;
+}
+
+GtkViewport {
+    background-color: transparent;
+}
+
+GtkViewport.frame {
+    border-width: 0;
+}
+
+GtkDrawingArea {
 }
 
 GtkCalendar {
