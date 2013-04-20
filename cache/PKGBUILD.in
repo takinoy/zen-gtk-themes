@@ -1,7 +1,7 @@
-# Maintainer: Ced <cedl38@gmail.com>
+# Maintainer: Cedric Leporcq <cedl38 at gmail dot com>
 
-pkgname=zen-gtk-themes
-pkgver=0.10.3
+pkgname=@PACKAGE_NAME@
+pkgver=@PACKAGE_VERSION@
 pkgrel=1
 pkgdesc="A gtk2/gtk3 theme for Xfce and gnome that attempt to keep it simple, consistent and being visually appealing."
 arch=('any')
@@ -14,7 +14,12 @@ source=("$pkgname-$pkgver.tar.gz::https://github.com/cedl38/$pkgname/archive/v$p
 sha256sums=('05f89ba7731d309c76ef702cbdbc18461e2b672532055325e52370e67b2168c6')
 
 build() {
-  cd $srcdir/$pkgname'-'$pkgver
-  install -d -m755 $pkgdir/usr/share/themes
-  cp -r Zen* $pkgdir/usr/share/themes || return 1
+  cd $srcdir/${pkgname}-${pkgver}
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd $srcdir/${pkgname}-${pkgver}
+  make DESTDIR="${pkgdir}" install
 }

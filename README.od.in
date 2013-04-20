@@ -1,8 +1,8 @@
-zen-gtk-themes version 0.11.0
+@PACKAGE_NAME@ version @PACKAGE_VERSION@
 ----------------------------
 
 Released under the GPL license
-Sources : https://github.com/cedl38/zen-gtk-themes
+Sources : @PACKAGE_BUGREPORT@
 
 http://opendesktop.org/ content :
 ---------------------------------
@@ -21,7 +21,7 @@ The main goal of this theme is to keep it simple, consistent and being visually 
 The Murrine engine version >=0.98 is needed for the gtk2 version of this theme. A gtk2 version with the clearlooks engine is available on the Zen-0.3.x package.
 
 [b]Install :[/b] extract the archive and copy the theme folders you want into ~/.theme.
-Arch users : "zen-gtk-themes" is available in AUR.
+Arch users : "@PACKAGE_NAME@" is available in AUR.
 
 [b]Extra :[/b] xfwm4 and metacity-1 windows decorator (see my others artworks)
 
