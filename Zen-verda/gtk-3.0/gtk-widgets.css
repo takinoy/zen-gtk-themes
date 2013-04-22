@@ -878,7 +878,7 @@ column-header .button:hover, column-header .button:hover:focus {
 .menuitem.separator {
     color: shade(@bg_lighter, 0.9);
     border-style: solid;
-    border-color: shade(@bg_lighter, 0.9);
+    border-color: transparent;
 }
 
 .menu.button:hover,
