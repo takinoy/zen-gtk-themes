@@ -184,7 +184,7 @@ GtkWindow {
     border-width: 1px;
     border-color: @border_normal;
     border-radius: 3px;
-    padding: 3px 3px 3px 3px;
+    padding: 4px;
 }
 
 .entry:insensitive {
@@ -255,6 +255,14 @@ GtkAssistant .sidebar {
     border-radius: 3px;
 }
 
+.button.text-button {
+	padding: 2px 6px;
+}
+
+.button.image-button {
+	padding: 6px;
+}
+
 GtkSwitch.slider,
 .button {
     background-image: -gtk-gradient(linear, left top, left bottom,
@@ -310,7 +318,7 @@ GtkSwitch.trough:active {
 }
 
 GtkComboBox, GtkComboBox>.button {
-    padding: 1px;
+    padding: 1px 2px;
 }
 
 GtkComboBox .menuitem {
@@ -327,10 +335,11 @@ GtkComboBox .menuitem {
 }
 
 .spinbutton {
-    padding: 2px;
+    padding: 2px 4px;
 }
 
 .spinbutton.button {
+    padding: 2px;
     border-radius: 0;
     border-width: 0px 0px 0px 1px;
     color : mix(@fg_color, @bg_color, 0.3);
@@ -368,8 +377,8 @@ GtkSwitch.trough {
     font: bold;
 }
 
-column-header .button {
-    padding: 2px 1px 0px 5px;
+column-header>.button {
+    padding: 1px 3px 0px 5px;
     border-radius: 0;
     border-width: 0px 1px 1px 0px;
     border-right-color: mix(@fg_color, @notebook_active, 0.88);
@@ -379,7 +388,7 @@ column-header .button {
     background-image: none;
 }
 
-column-header>.button*:hover, column-header>.button:hover*:focus {
+column-header>.button:hover, column-header>.button:hover:focus {
     color: @selected_fg_color;
     background-color: @bg_hover;
     background-image: none;
@@ -808,7 +817,7 @@ column-header .button:hover, column-header .button:hover:focus {
 }
 
 .menubar>.menuitem {
-    padding: 3px 2px 3px 2px;
+    padding: 3px 6px 3px 6px;
 }
 
 .menubar *:hover {
@@ -838,7 +847,7 @@ column-header .button:hover, column-header .button:hover:focus {
 }
 
 .menuitem {
-    padding: 3px;
+    padding: 3px 4px;
     border-width: 1px 1px 1px 1px;
 }
 
