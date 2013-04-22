@@ -161,8 +161,8 @@ widget_class "*Entry*"		style "entry"
 
 style "menu"
 {
-	xthickness = 0
-	ythickness = 0
+	xthickness = 1
+	ythickness = 1
 
 	bg[NORMAL]			= mix(0.6, @base_color, @bg_color)	# Color of menu background.
 	fg[NORMAL]			= @text_color
@@ -175,6 +175,7 @@ style "menu"
 	{
 		gradient_shades		= {1.0,1.0,1.0,1.0}	#{1.1,1.0,1.0,0.87}
 		border_shades		= { 1.1, 1.1 }
+		roundness = 0
 	}
 }
 
@@ -184,7 +185,7 @@ widget_class "*Menu*"		style "menu"
 style "menuitem" = "menu"
 {
 	xthickness = 1
-	ythickness = 2
+	ythickness = 3
 }
 
 widget_class "*MenuItem*"	style "menuitem"
@@ -201,11 +202,6 @@ style "menubar" = "menu"
 	fg[NORMAL]			= @fg_color
 	fg[INSENSITIVE]		= mix(0.6, darker(@bg_color), @fg_color)
 	fg[PRELIGHT]		= @selected_fg_color
-
-	engine "murrine"
-	{
-		roundness = 0
-	}
 }
 
 widget_class "*BonoboDockItem"		style "menubar"
@@ -226,6 +222,12 @@ style "menuitem_text_is_fg_color_workaround" {
 # Note that this work around assumes that the combobox is _not_ in appears-as-list mode.
 # This is the part of the workaround that fixes the menus
 # widget "*.gtk-combobox-popup-menu.*" style "menuitem_text_is_fg_color_workaround"
+
+style "separator_menu_item" {
+	ythickness = 2
+}
+
+widget_class "*<GtkSeparatorMenuItem>*"		style "separator_menu_item"
 
 style "pager"
 {

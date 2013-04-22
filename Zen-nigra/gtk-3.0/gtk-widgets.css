@@ -814,7 +814,7 @@ column-header .button:hover, column-header .button:hover:focus {
     border: solid;
     border-width: 1px;
     border-color: shade(@bg_lighter, 0.8);
-    padding: 0;
+    padding: 1px;
 }
 
 .menu *:hover, .menu *:active:hover, .menu *:selected {
