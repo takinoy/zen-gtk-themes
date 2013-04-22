@@ -31,7 +31,8 @@ style "default"
 	# The following line hints to gecko (and possibly other appliations)
 	# that the entry should be drawn transparently on the canvas.
 	# Without this, gecko will fill in the background of the entry.
-	GtkMenuBar::internal-padding = 0
+	GtkMenuBar::internal-padding = 2
+	# GtkMenuBar::shadow-type = none	# Makes menus flat and unified.
 
 	GtkMenuItem::selected_shadow_type = etched-in
 
@@ -54,10 +55,10 @@ style "default"
 	GtkScrollbar::stepper-size = 20
 	GtkScrollbar::trough-border = 1
 	GtkScrolledWindow::scrollbar-spacing = 0	# This sets the spacing between scrollbars.
-	GtkScrolledWindow ::scrollbars-within-bevel	= 0
+	GtkScrolledWindow::scrollbars-within-bevel	= 0
 
 	GtkToolbar::internal-padding = 0	# Toolbar padding.
-	GtkToolbar::shadow_type = none
+	# GtkToolbar::shadow_type = none	# Makes toolbars flat and unified.
 	GtkTreeView::expander-size = 12
 	GtkTreeView::vertical-separator = 0
 
@@ -194,9 +195,8 @@ class "*MenuItem*"			style "menuitem"
 style "menubar" = "menu"
 {
 	xthickness = 1
-	ythickness = 3
+	ythickness = 1
 
-	GtkMenuBar :: shadow-type = GTK_SHADOW_NONE
 	bg[SELECTED]		= shade(1.05, @selected_bg_color)
 	bg[NORMAL]			= @bg_color		# Color of menu background.
 	fg[NORMAL]			= @fg_color
@@ -207,8 +207,15 @@ style "menubar" = "menu"
 widget_class "*BonoboDockItem"		style "menubar"
 class "*BonoboDockItem"				style "menubar"
 widget_class "*<GtkMenuBar>*"		style "menubar"
-class "GtkToolbar"					style "menubar"
-class "GtkHandleBox*"				style "menubar"
+
+style "toolbar" = "menubar"
+{
+	xthickness = 1
+	ythickness = 0
+}
+class "GtkHandleBox*"				style "toolbar"
+class "GtkToolbar"					style "toolbar"
+class "GtkWindow"					style "toolbar"
 
 style "menuitem_text_is_fg_color_workaround" {
 	text[NORMAL]		= @fg_color

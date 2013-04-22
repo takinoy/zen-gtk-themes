@@ -793,8 +793,11 @@ column-header .button:hover, column-header .button:hover:focus {
  ***********/
 
 .menubar {
-    border-style: none;
-    border-color: @border_insensitive;
+    padding: 0px 3px 0px 3px;
+    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@bg_color, 1.0)), to(shade(@bg_color, 0.95)));
+    border-style: solid;
+    border-width: 0px 0px 0px 1px;
+    border-bottom-color: @border_insensitive;
 }
 
 .menubar>.menuitem {
