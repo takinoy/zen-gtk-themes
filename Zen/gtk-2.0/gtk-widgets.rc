@@ -112,7 +112,7 @@ style "default"
 		listviewheaderstyle = 1					# 0 = flat, 1 = glassy, 2 = raised
 		listviewstyle		= 0					# 0 = nothing, 1 = dotted
 		menubaritemstyle	= 0					# 0 = menuitem look, 1 = button look
-		menubarstyle		= 0					# 0 = flat, 1 = glassy, 2 = gradient, 3 = striped
+		menubarstyle		= 1					# 0 = flat, 1 = glassy, 2 = gradient, 3 = striped
 		#menuitemstyle		= 0					# 0 = flat, 1 = glassy, 2 = striped
 		menustyle			= 0					# 0 = no vertical menu stripe, 1 = display vertical menu stripe
 		progressbarstyle	= 1					# 0 = nothing, 1 = stripes, 2 = lines
@@ -122,7 +122,7 @@ style "default"
 		scrollbarstyle		= 0					# 0 = nothing, 1 = circles, 2 = handles, 3 = diagonal stripes, 4 = diagonal stripes and handles, 5 = horizontal stripes, 6 = horizontal stripes and handles
 		sliderstyle			= 1					# 0 = nothing added, 1 = handles
 		stepperstyle		= 1					# 0 = standard, 1 = integrated stepper handles, 2 = unknown
-		toolbarstyle		= 0					# 0 = flat, 1 = glassy, 2 = gradient
+		toolbarstyle		= 1					# 0 = flat, 1 = glassy, 2 = gradient
 
 		# Murrine version >=0.98
 		arrowstyle			= 2					# 0 = normal arrows, 1 = filled arrows, 2 = triangular arrows
@@ -202,6 +202,11 @@ style "menubar" = "menu"
 	fg[NORMAL]			= @fg_color
 	fg[INSENSITIVE]		= mix(0.6, darker(@bg_color), @fg_color)
 	fg[PRELIGHT]		= @selected_fg_color
+
+	engine "murrine"
+	{
+		gradient_shades		= {1.0,1.01,1.01,0.98}
+	}
 }
 
 widget_class "*BonoboDockItem"		style "menubar"
@@ -212,10 +217,14 @@ style "toolbar" = "menubar"
 {
 	xthickness = 1
 	ythickness = 0
+
+	engine "murrine"
+	{
+		gradient_shades		= {0.985,1.0,1.0,0.98}
+	}
 }
 class "GtkHandleBox*"				style "toolbar"
 class "GtkToolbar"					style "toolbar"
-class "GtkWindow"					style "toolbar"
 
 style "menuitem_text_is_fg_color_workaround" {
 	text[NORMAL]		= @fg_color
@@ -374,6 +383,7 @@ widget_class "*.<GtkCMCList>.<GtkButton>*"		style "treeview_header"
 
 style "notebook-bg"
 {
+	GtkToolbar::shadow_type = none
 	bg[ACTIVE]		= shade(0.95, @bg_color)			# Unfocused tab background.
 	bg[NORMAL]		= mix(0.8, @bg_color, @base_color)	# Tab background.
 	bg[PRELIGHT]	= mix(0.8, @bg_color, @base_color)
