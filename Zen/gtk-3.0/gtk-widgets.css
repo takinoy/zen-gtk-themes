@@ -802,18 +802,18 @@ column-header .button:hover, column-header .button:hover:focus {
  ***********/
 
 .menubar {
-    border-style: solid;
-    border-width: 0px 0px 1px 0px;
-    border-color: @border_insensitive;
 	background-image: -gtk-gradient (linear,
                0 0, 0 1,
                color-stop(0.75, alpha(@border_insensitive, 0.06)),
                color-stop(1, alpha(@border_insensitive, 0.2)));
-/*
-    box-shadow: inset 0 -3px alpha(@border_insensitive, 0.14),
-                inset 0 -2px alpha(@border_insensitive, 0.14),
-                inset 0 -1px alpha(@border_insensitive, 0.14);
-*/
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-image-source: -gtk-gradient (linear,
+               0 0, 1 0,
+               color-stop(0, @border_insensitive),
+               color-stop(0.9, @border_insensitive),
+               color-stop(1, @bg_color));
+    border-image-slice: 1;
 }
 
 .menubar>.menuitem {
@@ -879,15 +879,26 @@ column-header .button:hover, column-header .button:hover:focus {
 }
 
 .separator {
-    border-style: solid;
-    color: @border_insensitive;
-    border-color: @border_insenstive;
+    color: mix(@text_color, @bg_color, 0.9);
 }
 
 .menuitem.separator {
-    color: shade(@bg_lighter, 0.9);
+    padding: 1px;
+    color: transparent;
+    background-image: -gtk-gradient (linear,
+               0 0, 1 0,
+               color-stop(0, @bg_lighter),
+               color-stop(0.3, mix(@text_color, @bg_lighter, 0.9)),
+               color-stop(0.7, mix(@text_color, @bg_lighter, 0.9)),
+               color-stop(1, @bg_lighter));
     border-style: solid;
-    border-color: transparent;
+    border-image-source: -gtk-gradient (linear,
+               0 0, 1 0,
+               color-stop(0, @bg_lighter),
+               color-stop(0.3, shade(@bg_lighter, 1.05)),
+               color-stop(0.7, shade(@bg_lighter, 1.05)),
+               color-stop(1, @bg_lighter));
+    border-image-slice: 0 0 1 0;
 }
 
 .menu.button:hover,
@@ -905,30 +916,30 @@ column-header .button:hover, column-header .button:hover:focus {
  ***********/
 
 .toolbar {
-    border-style: solid;
-    border-width: 0px 0px 1px 0px;
-    border-color: @border_insensitive;
     background-image: -gtk-gradient (linear,
                0 0, 0 1,
                color-stop(0, alpha(@border_insensitive, 0.2)),
                color-stop(0.25, alpha(@border_insensitive, 0.06)),
                color-stop(0.75, alpha(@border_insensitive, 0.06)),
                color-stop(1, alpha(@border_insensitive, 0.2)));
-/*
-    box-shadow: inset 0 3px alpha(@border_insensitive, 0.12),
-                inset 0 2px alpha(@border_insensitive, 0.12),
-                inset 0 1px alpha(@border_insensitive, 0.12);
-*/
+    border-style: solid;
+    border-width: 0px 0px 1px 0px;
+    border-image-source: -gtk-gradient (linear,
+               0 0, 1 0,
+               color-stop(0, @bg_color),
+               color-stop(0.1, @border_insensitive),
+               color-stop(0.9, @border_insensitive),
+               color-stop(1, @bg_color));
+    border-image-slice: 1;
 }
 
 .primary-toolbar {
 }
 
 .inline-toolbar.toolbar {
-/*  box-shadow: none; */
     border-style: none;
     background-color: transparent;
-    border-width: 0px;
+    border-width: 0;
 }
 
 GtkHandleBox {
@@ -942,8 +953,8 @@ GtkHandleBox {
     background-color: @bg_lighter;
 }
 
-.sidebar .separator,
-.sidebar.view .separator {
+.sidebar .separator, .sidebar.view .separator {
+    color: mix(@text_color, @bg_lighter, 0.9);
 }
 
 .pane-separator {
