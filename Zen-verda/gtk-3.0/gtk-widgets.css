@@ -931,7 +931,7 @@ GtkImage:insensitive {
 
 GtkLabel:active,
 GtkLabel:hover,
-GtkLabel:insensitive
+GtkLabel:insensitive,
 GtkLabel {
     background-color: transparent;
 }
