@@ -55,29 +55,6 @@ GtkWindow {
     background-color: @bg_color;
 }
 
-/*********
- * states *
- **********/
-
-*:active {
-    background-color: @bg_darker;
-}
-
-*:insensitive {
-    color: @fg_insensitive;
-    border-color: @border_insensitive;
-    text-shadow: 1px 1px @light_shadow;
-}
-
-*:hover {
-}
-
-*:selected {
-    color: @selected_fg_color;
-    background-color: @selected_bg_color;
-    border-color: @border_selected;
-}
-
 .frame {
     border-style: solid;
     border-radius: 2px;
@@ -87,9 +64,26 @@ GtkWindow {
 .background {
 }
 
+/*********
+ * states *
+ **********/
+
+*:insensitive {
+    color: @fg_insensitive;
+    border-color: @border_insensitive;
+    text-shadow: 1px 1px @light_shadow;
+}
+
+*:selected {
+    color: @selected_fg_color;
+    background-color: @selected_bg_color;
+    border-color: @border_selected;
+}
+
 /************
  * gtkstyle *
  ************/
+
 .gtkstyle-fallback {
     background-color: @bg_color;
     color: @fg_color;
@@ -431,7 +425,7 @@ column-header:last-child .button {
     border-radius: 3px;
 }
 
-.check, .radio {
+GtkCheckButton.check, GtkCheckButton.radio {
     border: solid;
     border-width: 1px;
     background-color: @base_color;
@@ -440,33 +434,30 @@ column-header:last-child .button {
     -GtkWidget-focus-line-pattern: "\1\1";
 }
 
-GtkCheckButton:active:hover, GtkCheckButton:hover,
-GtkCheckButton:selected, GtkCheckButton:selected:focus {
-    background-color: transparent;
-}
-
-.check:active, .radio:active {
+GtkCheckButton.check:active, GtkCheckButton.radio:active {
     color: @text_color;
-    background-color: @selected_base_color;
+    background-color: @selected_bg_color;
 }
 
-.check:insensitive, .radio:insensitive {
-    background-color: transparent;
+GtkCheckButton:hover, GtkCheckButton:active:hover {
+color: @selected_text_color;
 }
 
-.check:hover, .check:hover:focus, .check:active:hover,
-.radio:hover, .radio:hover:focus, .radio:active:hover,
-.check:selected, .check:selected:focus,
-.radio:selected, .radio:selected:focus {
-    color: @selected_text_color;
-    background-color: @selected_base_color;
+GtkCheckButton.check:hover, GtkCheckButton.check:active:hover,
+GtkCheckButton.radio:hover, GtkCheckButton.radio:active:hover,
+GtkCheckButton.check:selected, GtkCheckButton.check:selected:focus,
+GtkCheckButton.radio:selected, GtkCheckButton.radio:selected:focus {
+color: @selected_text_color;
+background-color: @selected_base_color;
 }
 
-.check:inconsistent, .radio:inconsistent {
+GtkCheckButton.check:insensitive, GtkCheckButton.radio:insensitive,
+GtkCheckButton.check:inconsistent:insensitive,
+GtkCheckButton.radio:inconsistent:insensitive,
+GtkCheckButton.check:inconsistent, GtkCheckButton.radio:inconsistent{
+background-color: transparent;
 }
 
-.check:insensitive:inconsistent, .radio:insensitive:inconsistent {
-}
 
 /*********************
  * scrollbar & scale *
@@ -970,17 +961,7 @@ GtkStatusbar {
  * image & label transparency *
  ******************************/
 
-GtkImage,
-GtkImage:active,
-GtkImage:hover,
-GtkImage:insensitive {
-    background-color: transparent;
-}
-
-GtkLabel:active,
-GtkLabel:hover,
-GtkLabel:insensitive,
-GtkLabel {
+GtkImage, GtkLabel {
     background-color: transparent;
 }
 
