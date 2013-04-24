@@ -965,6 +965,11 @@ GtkImage, GtkLabel {
     background-color: transparent;
 }
 
+/* workaround for gnumeric frame label : */
+GtkFrame GtkLabel {
+    background-color: @bg_color;
+}
+
 /***********
  * infobar *
  ***********/
