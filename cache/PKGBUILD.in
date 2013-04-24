@@ -8,7 +8,7 @@ arch=('any')
 url="http://opendesktop.org/content/show.php/Zen+suite?content=149883"
 license=('GPL3')
 depends=('gtk-engines' 'gtk-engine-murrine')
-optdepends=('alinea-themes' 'mini-xfwm4-theme' 'xfce4-notifyd' 'gtk3>=3.4.1' 'libreoffice-patch.sh: script to increase sheet tabs for LibreOffice. See README.md or http://opendesktop.org/content/show.php/Zen+suite?content=149883 for more infos')
+optdepends=('alinea-themes' 'mini-xfwm4-theme' 'xfce4-notifyd' 'gtk3>=3.4.1' 'libreoffice-patch.sh: script to increase sheet tabs for LibreOffice. See README or http://opendesktop.org/content/show.php/Zen+suite?content=149883 for more infos')
 
 source=("$pkgname-$pkgver.tar.gz::https://github.com/cedl38/$pkgname/archive/v$pkgver.tar.gz")
 sha256sums=('05f89ba7731d309c76ef702cbdbc18461e2b672532055325e52370e67b2168c6')
