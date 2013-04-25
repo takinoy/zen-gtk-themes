@@ -861,14 +861,14 @@ column-header .button:hover, column-header .button:hover:focus {
 
 .separator {
     border-style: solid;
-    color: @border_insensitive;
-    border-color: @border_insenstive;
+    color: mix(@text_color, @bg_color, 0.9);
+    border-color: mix(@text_color, @bg_color, 0.9);
 }
 
 .menuitem.separator {
-    color: shade(@bg_lighter, 0.9);
+    color: mix(@text_color, @bg_lighter, 0.9);
     border-style: solid;
-    border-color: shade(@bg_lighter, 0.9);
+    border-color: mix(@text_color, @bg_lighter, 0.9);
 }
 
 .menu.button:hover,
@@ -913,6 +913,7 @@ GtkHandleBox {
 
 .sidebar .separator,
 .sidebar.view .separator {
+    color: mix(@text_color, @bg_lighter, 0.9);
 }
 
 .pane-separator {
