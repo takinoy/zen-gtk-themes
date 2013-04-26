@@ -169,6 +169,14 @@ GtkWindow {
 .view row:nth-child(even):selected {
     background-color: @selected_base_color;
 }
+ 
+.view.rubberband, .rubberband {
+    background-color: alpha(@selected_base_color, 0.3);
+    border-style: solid;
+    border-width: 1px;
+    border-color: @selected_base_color;
+    border-radius: 0;
+}
 
 .entry {
     background-color: @base_color;
@@ -218,9 +226,7 @@ GtkCalendar:selected {
 }
 
 TerminalScreen {
-/*
-    -TerminalScreen-background-darkness: 0.9;
-*/
+/* -TerminalScreen-background-darkness: 0.9; */
     background-color: #262626;
     color: #E6E6E6;
 }
