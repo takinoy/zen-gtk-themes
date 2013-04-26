@@ -181,7 +181,7 @@ widget_class "*Menu*"		style "menu"
 style "menuitem" = "menu"
 {
 	xthickness = 1
-	ythickness = 2
+	ythickness = 3
 
 	engine "xfce"
 	{
@@ -230,6 +230,12 @@ style "menuitem_text_is_fg_color_workaround" {
 # Note that this work around assumes that the combobox is _not_ in appears-as-list mode.
 # This is the part of the workaround that fixes the menus
 # widget "*.gtk-combobox-popup-menu.*" style "menuitem_text_is_fg_color_workaround"
+
+style "separator_menu_item" {
+	ythickness = 2
+}
+
+widget_class "*<GtkSeparatorMenuItem>*"		style "separator_menu_item"
 
 style "pager" = "gradient"
 {
@@ -311,15 +317,16 @@ widget_class "*<GtkCheckButton>*"		style "radiocheck"
 #########
 
 style "view" {
-	base[NORMAL]	= shade(0.94,@base_color)
+	base[NORMAL]	= shade(0.97,@base_color)
 }
 
 style "iconview" = "view" {
-	fg[NORMAL]			= @text_color	# workaround to fix color objects for dark themes.
-	fg[PRELIGHT]		= @text_color	# workaround to fix color objects for dark themes.
-	fg[SELECTED]		= @text_color	# workaround to fix color objects for dark themes.
-	fg[ACTIVE]			= @text_color	# workaround to fix dark objects for dark themes.
-	fg[INSENSITIVE]		= mix(0.7, darker(@bg_color), @text_color)	# workaround to fix color objects for dark themes.
+	# workaround to fix objects color for dark themes.
+	fg[NORMAL]			= @text_color
+	fg[PRELIGHT]		= @text_color
+	fg[SELECTED]		= @text_color
+	fg[ACTIVE]			= @text_color
+	fg[INSENSITIVE]		= mix(0.7, darker(@bg_color), @text_color)
 }
 
 style "treeview" = "iconview"
@@ -332,6 +339,7 @@ style "sidepane"
 	base[NORMAL]	= mix(0.6, @base_color, @bg_color)
 }
 
+widget_class "*View*"					style "view"
 widget_class "*GtkTree*"				style "treeview"
 class "*GtkTree*"						style "treeview"
 widget_class "*GtkCTree*"				style "treeview"

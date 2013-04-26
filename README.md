@@ -1,9 +1,9 @@
-zenx-gtk-themes version 0.10.3
+zenx-gtk-themes version 0.10.4
 ------------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : April 01, 2013
+Date : April 26, 2013
 Sources : https://github.com/cedl38/zen-gtk-themes/tree/zenx
 
 This is a variant of "zen-gtk-themes" with the xfce engine.
@@ -37,6 +37,9 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 Changelog:
 ----------
 
+0.10.4
+ - Fix gtk3 rubberband selection color.
+ - Adjust view/treeview background color.
 0.10.3
  - Adjust button insensitive and border colors.
  - Adjust gtk3 panel settings (not tested).

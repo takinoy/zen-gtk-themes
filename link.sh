@@ -2,26 +2,39 @@
 
 # link themes into theme directory
 
+# options
+opt=$1
+
 # package name
 pkgname=$(grep -m 1 'pkgname=' cache/PKGBUILD | cut -d= -f2)
 name=ZenX
 
 # directory
 theme_dir="$HOME/.themes"
-path=$(ls -1 | grep "$name")
 
 # link files to directory
-set $path
-until [ $# = 0 ]
+links() {
+for path in $(ls -1 | grep "$name")
 do
-	if [ -e "$theme_dir/$1-dev" ]
+	if [ -e "$theme_dir/${path}-dev" ]
 	then
-		if [ -h !"$theme_dir/$1-dev" ]
+		if [ -h !"$theme_dir/${path}-dev" ]
 		then
-		echo "$theme_dir/$1-dev is not a link"
+		echo "$theme_dir/${path}-dev is not a link"
 		fi
 	else
-	ln -s -r -v $1 $theme_dir/$1-dev
+	ln -s -r -v ${path} $theme_dir/${path}-dev
 	fi
-shift
 done
+}
+
+# remove links from theme directory
+remove_links() {
+cd $theme_dir
+rm -v $(ls -1 | grep "^$name-.*dev")
+}
+
+case $opt in
+-r) remove_links;;
+*) links;;
+esac

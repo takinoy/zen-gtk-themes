@@ -122,18 +122,6 @@ GtkWindow {
  * view, entry *
  ***************/
 
-GtkTextView {
-    background-color: @base_color;
-}
-
-GtkViewport {
-    background-color: transparent;
-}
-
-GtkViewport.frame {
-    border-width: 0;
-}
-
 .expander {
     color: alpha(@fg_color, 0.7);
 }
@@ -142,7 +130,7 @@ GtkViewport.frame {
     color: alpha(@fg_color, 0.8);
 }
 
-.tooltip {
+.tooltip, .floating-bar {
     border:solid;
     border-width: 1px;
     color: @tooltip_fg_color;
@@ -150,18 +138,14 @@ GtkViewport.frame {
     border-color: darker(@tooltip_bg_color);
 }
 
-GtkDrawingArea {
-}
-
 .view, .entry {
-    padding: 2px;
     color: @text_color;
-    background-color: @base_color;
     -GtkWidget-focus-line-pattern: "\1";
 }
 
-.view:active, .entry:active {
-    background-color: @base_color;
+.view {
+    padding: 2px;
+    background-color: shade(@base_color, 0.97);
 }
 
 .view:insensitive {
@@ -174,11 +158,11 @@ GtkDrawingArea {
 }
 
 .view row:nth-child(odd) {
-    background-color: shade(@base_color, 0.875);
+    background-color: shade(@base_color, 0.905);
 }
 
 .view row:nth-child(even) {
-    background-color: shade(@base_color, 0.94);
+    background-color: shade(@base_color, 0.97);
 }
 
 .view row:nth-child(odd):selected {
@@ -188,8 +172,17 @@ GtkDrawingArea {
 .view row:nth-child(even):selected {
     background-color: @selected_base_color;
 }
+ 
+.view.rubberband, .rubberband {
+    background-color: alpha(@selected_base_color, 0.3);
+    border-style: solid;
+    border-width: 1px;
+    border-color: @selected_base_color;
+    border-radius: 0;
+}
 
 .entry {
+    background-color: @base_color;
     border:solid;
     border-width: 1px;
     border-color: @border_normal;
@@ -211,6 +204,21 @@ GtkDrawingArea {
     color: @highlight;
 }
 
+GtkTextView {
+    background-color: @base_color;
+}
+
+GtkViewport {
+    background-color: transparent;
+}
+
+GtkViewport.frame {
+    border-width: 0;
+}
+
+GtkDrawingArea {
+}
+
 GtkCalendar {
     color: @text_color;
 }
@@ -221,9 +229,7 @@ GtkCalendar:selected {
 }
 
 TerminalScreen {
-/*
-    -TerminalScreen-background-darkness: 0.9;
-*/
+/* -TerminalScreen-background-darkness: 0.9; */
     background-color: #262626;
     color: #E6E6E6;
 }
@@ -818,7 +824,7 @@ column-header .button:hover, column-header .button:hover:focus {
     border: solid;
     border-width: 1px;
     border-color: shade(@bg_lighter, 0.8);
-    padding: 0;
+    padding: 1px;
 }
 
 .menu *:hover, .menu *:active:hover, .menu *:selected {
@@ -859,14 +865,14 @@ column-header .button:hover, column-header .button:hover:focus {
 
 .separator {
     border-style: solid;
-    color: @border_insensitive;
-    border-color: @border_insenstive;
+    color: mix(@text_color, @bg_color, 0.9);
+    border-color: mix(@text_color, @bg_color, 0.9);
 }
 
 .menuitem.separator {
-    color: shade(@bg_lighter, 0.9);
+    color: mix(@text_color, @bg_lighter, 0.9);
     border-style: solid;
-    border-color: shade(@bg_lighter, 0.9);
+    border-color: mix(@text_color, @bg_lighter, 0.9);
 }
 
 .menu.button:hover,
@@ -911,6 +917,7 @@ GtkHandleBox {
 
 .sidebar .separator,
 .sidebar.view .separator {
+    color: mix(@text_color, @bg_lighter, 0.9);
 }
 
 .pane-separator {
@@ -935,7 +942,7 @@ GtkImage:insensitive {
 
 GtkLabel:active,
 GtkLabel:hover,
-GtkLabel:insensitive
+GtkLabel:insensitive,
 GtkLabel {
     background-color: transparent;
 }
