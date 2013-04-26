@@ -127,7 +127,7 @@ GtkWindow {
     color: alpha(@fg_color, 0.8);
 }
 
-.tooltip {
+.tooltip, .floating-bar {
     border:solid;
     border-width: 1px;
     color: @tooltip_fg_color;
