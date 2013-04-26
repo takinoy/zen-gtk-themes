@@ -2,65 +2,47 @@
 
 # To update README, PKGBUILD and push tag into the remote repository. 
 # dependencies : git, burp, base-devel group, yaourt.
+
 set -e
 
 LANG=C
 
-# force
-opt=$1
-case $opt in
--f|-pf|-fp) force="-f"; f="+" ;;
--u|-p|"") f="" ;;
-*)	echo "use -f|-pf to force update PKGBUILD"
-	echo "    -u to update package source without pushing it"
-	echo "    -p to push the package without updating it"
-	exit 1
-esac
-
-cd cache
-
-# package name
-pkgname=$(grep -m 1 "pkgname=" PKGBUILD | cut -d= -f2)
+# package variables
+source cache/PKGBUILD
 name=${pkgname%%-*}
 
 # check old package version
 lastpkgver=$(git tag -l xv* | sort -V | tail -n 1 | cut -dv -f2)
 
 # check new package version
-pkgver=$(head -1 ../README.md |  cut -d' ' -f3)
-#pkgver=$(grep -m 1 "pkgver=" PKGBUILD | cut -d= -f2)
-pkgrel=$(grep -m 1 "pkgrel=" PKGBUILD | cut -d= -f2)
+pkgrel=$(grep -m 1 "pkgrel=" cache/PKGBUILD | cut -d= -f2)
 
-# current date
-cntdate=$(date +%B' '%d,' '%Y)
+headpkg() {
+# use -f to force update
+git archive --prefix=$pkgname-$pkgver/ -o cache/$pkgname-$pkgver.tar.gz HEAD
 
-update_readme() {
-	set $readme
-	until [ $# = 0 ]
-	do
-		sed -i "1 s/^.*$/$pkgname version $pkgver/" $1
-		sed -i "s/Date :.*$/Date : $cntdate/" $1
-	shift
-	done
+cd cache
+rm -rf src
+makepkg $force --source --skipchecksums
+makepkg $force -c --skipchecksums
 }
 
-	commit() {
-		git status -s
-		if git status -s | grep '^[A-Z]'
-		then
-		echo "files staged for commit, aborded"
-		exit 1
-		fi
-		git add $@
-		if git status -s | grep '^M' > /dev/null
-		then
-		git commit -m "$message"
-		fi
-	}
+commit() {
+	git status -s
+	if git status -s | grep '^[A-Z]'
+	then
+	echo "files staged for commit, aborded"
+	exit 1
+	fi
+	git add $@
+	if git status -s | grep '^M' > /dev/null
+	then
+	git commit -m "$message"
+	fi
+}
 
 push() {
-	# update package version to PKGBUILD
-	sed -i "s/^pkgver=.*$/pkgver=$pkgver/" PKGBUILD
+	# update package relase to PKGBUILD
 	if [ "$pkgver" == "$lastpkgver" ] && [ "$f" == "" ]
 	then
 	(( pkgrel += 1 ))
@@ -83,7 +65,10 @@ push() {
 	echo $sha
 	sed -i "s/^sha256sums.*$/$sha/" PKGBUILD
 	# create package source
-	makepkg $force --source
+	makepkg $force -c --source
+}
+
+install() {
 	# update aur package and install it 
 	burp --category=xfce $pkgname-$pkgver-$pkgrel.src.tar.gz
 	yaourt -S $pkgname
@@ -94,8 +79,26 @@ push() {
 	git push origin $f'zenx'
 }
 
-case $opt in
--f|-u|"")
+
+# options
+f=''; force=''; arg=''
+while  getopts FHPU opt
+do
+	case $opt in
+	F)	force="-f"; f="+" ;;
+	H)	arg=H ;;
+	P)	arg=P ;;
+	U)	arg=U ;;
+	\?)	echo "use -F to force update PKGBUILD"
+		echo "    -H build head package localy"
+		echo "    -P to push the package without updating it"
+		echo "    -U to update package source without pushing it"
+		exit 1
+	esac
+done
+
+case $arg in
+U|'')
 	if [ "$pkgver" == "$lastpkgver" ] && [ "$f" == "" ]
 	then
 	echo "enter new version number (last package version =  $lastpkgver) :"
@@ -109,19 +112,25 @@ case $opt in
 		*) pkgver=$answer;;
 		esac
 	fi
-	cd ..
+
+	# update configure
+	subst='AC_INIT(\[[a-z-]*\],.*\[[0-9.]*\]'
+	sed -i "s/AC_INIT(\[[a-z-]*\],.*\[[0-9.]*\] \
+	/AC_INIT([$pkgname], [$pkgver]/" configure.ac
+
 	# update readme
 	readme=$(ls -1 README*)
 	echo "update $readme to version $pkgver..."
-	update_readme
+	./configure
 	message="update README* to xv$pkgver"
 	commit $readme
-	cd cache
 	;;
+H)	headpkg ;;
 esac
 
-case $opt in
--p|-pf|-fp|-f|"")
-	push
+case $arg in
+P|'')
+	cd cache
+	push; install
 	;;
 esac

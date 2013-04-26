@@ -1,24 +1,25 @@
-zenx-gtk-themes version 0.10.4
-------------------------------
+@PACKAGE_NAME@ version @PACKAGE_VERSION@
+----------------------------
 
-Author : Cédric Leporcq
 Released under the GPL license
-Date : April 26, 2013
-Sources : https://github.com/cedl38/zen-gtk-themes/tree/zenx
+Sources : @PACKAGE_BUGREPORT@
 
-This is a variant of "zen-gtk-themes" with the xfce engine.
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
 
 Features :
  - thin menubar, toolbar and icons
- - gtk2 and gtk3 (version >=3.4)
+ - available for both gtk2 and gtk3
  - compatibility with Xfce widgets, Xfce notify theme
  - seven pre-configured color schemes compatibles with gnome and Xfce : ZenX, ZenX-blua, Zen-griza, ZenX-nigra, ZenX-nokto, ZenX-verda, ZenX-papero.
+
+dependencies :
+- Xfce engine for gtk2 and gtk3.
+- gtk-3.8.x for gtk3. If you have gtk-3.4.x or gtk-3.6.x you should install version 0.10.x of this theme.
 
 The gtk-3 version is mostly tested on few applications under Xfce. Do not hesitate to try it in full gtk-3 environnement and report any issues.
 
 Install : extract the archive and copy the theme folders you want into ~/.theme.
-Arch users : "zenx-gtk-themes" is available in AUR.
+Arch users : "@PACKAGE_NAME@" is available in AUR.
 
 Extra : xfwm4 and metacity-1 windows decorator (see my others artworks)
 
@@ -33,33 +34,3 @@ see also :
 http://urukrama.wordpress.com/2008/07/13/setting-a-custom-gtk-theme-for-specific-applications/
 
 Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox applied your theme.
-
-Changelog:
-----------
-
-0.10.4
- - Fix gtk3 rubberband selection color.
- - Adjust view/treeview background color.
-0.10.3
- - Adjust button insensitive and border colors.
- - Adjust gtk3 panel settings (not tested).
- - Fix gtk3 spinbutton fg insensitive color.
- - Fix bug in libreoffice.sh for reading files with spaces.
-0.10.2
- - Fix treeview colors for claws-mail.
- - Fix treeview-headers fg color for some widgets with Zen-nigra.
- - Fix XfceHeaders to bg color.
-0.10.0
- - Modify column headers to flat style.
- - Improve scrollbar style, scale.
- - Adjust colors, button contrast and shadow for Zen-nigra ...
- - Fix CheckButton background, Zen-griza/index.theme, minor others issues.
-
-0.9.1
- - Fix libreoffice.sh script and adjust scrollbar size.
- - Add zen-griza variant
- - Change column headers and scrollbar style
- - Adjust gtk2/3 style and contrast for button and widgets ...
- - Workaround to improve rendering in libreoffice
-
-0.8.0 : build "ZenX" from "zen-gtk-themes" v0.8

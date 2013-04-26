@@ -1,0 +1,63 @@
+Changelog:
+----------
+0.11.0
+ - Change gtk2/3 menubar and toolbar style
+ - Updated to gtk3.8 (menuitem separator, paddings...)
+ - Add standard build tools
+
+0.10.4
+ - Fix gtk3 rubberband selection color.
+ - Adjust view/treeview background color.
+0.10.3
+ - Adjust button insensitive and border colors.
+ - Adjust gtk3 panel settings (not tested).
+ - Fix bug in libreoffice.sh for reading files with spaces.
+ - Modify column headers to flat style.
+ - Improve scrollbar style, scale.
+ - Adjust colors, button contrast and shadow for Zen-nigra ...
+
+0.9.1
+ - Fix libreoffice.sh script and adjust scrollbar size.
+ - Add zen-griza variant
+ - Change column headers and scrollbar style
+ - Adjust gtk2/3 style and contrast for button and widgets ...
+ - Workaround to improve rendering in libreoffice
+
+0.8.1
+ - Adjust button, notebook, radiocheck colors.
+ - Change fg_color and text_color for dark themes.
+
+0.7.3
+ - Improve gtk2/gtk3 consistency : menubar, arrows, combobox.
+ - Add libreoffice-patch.sh script.
+
+0.6.2
+ - Remove shadow on menubar.
+ - Update color scheme for panel, menu, menubar, scrollbar and prelight state.
+ - Sources availables in git repository.
+ - Package "zen-gtk-themes" in "AUR" for archlinux users.
+
+0.5
+ - Improve theme rendering and consistency for gtk2 and gtk3 versions.
+ - Themes can be installed independently.
+
+0.4.4
+ - Use the murrine engine for gtk-2 version.
+ - Theme ported to gtk3 >=3.4.
+
+0.3.13
+ - Last gtk2 version with the clearlook engine.
+ - Updates from 0.10 branch (gtk2).
+
+0.3.2
+ - New color schemes and preconfigured settings.
+ - Add notify theme for xfce.
+
+0.2.2
+ - Panels, menu and treeviews settings can be edited in a separate GtkRC file.
+ - Adjustments of color setting and widget proprieties for light and dark color schemes.
+
+0.1.1
+ - Patch to set scrollbars width in libreoffice.
+
+Note : versions 0.2 to 0.3 uses the clearlooks engine.
