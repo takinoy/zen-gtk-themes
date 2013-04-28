@@ -40,14 +40,12 @@
     -GtkWidget-link-color: @link_color;
     -GtkWidget-visited-link-color: @link_color;
     -GtkTextView-error-underline-color: @error_color;
+    -GtkWindow-resize-grip-height: 13;
+    -GtkWindow-resize-grip-width: 13;
 
     border-width: 1px;
 /* inherit the color from parent by default */
     color: inherit;
-/* borders for arrows...*/
-/*
-    border-color: @border_normal;
-*/
 }
 
 GtkWindow {
@@ -62,6 +60,11 @@ GtkWindow {
 }
 
 .background {
+}
+
+.grip {
+    background-color: transparent;
+    background-image: url("resize-grip.png");
 }
 
 /*********
@@ -508,9 +511,6 @@ GtkScale.vertical.trough {
     border-width: 2px;
     border-color: @selected_bg_color;
     background-color: mix(@fg_color, @scrollbar_slider, 0.8);
-}
-
-.grip {
 }
 
 GtkScale, GtkProgressBar {

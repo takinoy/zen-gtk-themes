@@ -144,6 +144,22 @@ style "default"
 class "GtkWidget"			style "default"
 #widget_class "*"			style "default"
 
+style "resize-grip"
+{
+	engine "pixmap"	{
+		image {
+			function	= RESIZE_GRIP
+			recolorable	= FALSE
+			detail		= "statusbar"
+			overlay_file	= "resize-grip.png"
+			overlay_border	= {0,0,0,0 }
+			overlay_stretch	= FALSE
+		}
+        }
+}
+
+class "GtkStatusbar" style "resize-grip"
+
 style "entry" {
 	xthickness = 3
 	ythickness = 3
