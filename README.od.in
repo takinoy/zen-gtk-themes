@@ -7,8 +7,6 @@ Sources : @PACKAGE_BUGREPORT@
 http://opendesktop.org/ content :
 ---------------------------------
 
-[b]recomanded update :[/b] If you use libreoffice-patch.sh you should update it to the last version to fix a bug for reading files with spaces in filenames.
-
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
 
 [b]Features :[/b]
