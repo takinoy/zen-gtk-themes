@@ -488,7 +488,15 @@ GtkScale.vertical.trough {
 }
 
 .scrollbar.button:hover {
-    background-color: shade(@bg_color, 1.1);
+    background-image: none;
+    background-color: @bg_hover;
+    border-style: solid;
+}
+
+.scrollbar.button:active {
+    background-image: none;
+    background-color: @bg_active;
+    border-style: solid;
 }
 
 .scrollbar.button:selected {
