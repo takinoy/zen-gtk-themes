@@ -58,7 +58,7 @@ GtkWindow {
 .frame {
     border-style: solid;
     border-radius: 2px;
-    border-color: @border_insensitive;
+    border-color: @border_normal;
 }
 
 .background {

@@ -7,8 +7,8 @@ gtk-icon-sizes		= "gtk-large-toolbar=24,24:gtk-small-toolbar=16,16:gtk-button=16
 
 style "default"
 {
-	xthickness = 2
-	ythickness = 2
+	xthickness = 1
+	ythickness = 1
 
 	GnomeHRef		::link_color				= @link_color
 	GtkHTML			::link-color				= @link_color
@@ -194,9 +194,6 @@ class "*MenuItem*"			style "menuitem"
 
 style "menubar" = "menu"
 {
-	xthickness = 1
-	ythickness = 1
-
 	bg[SELECTED]		= shade(1.05, @selected_bg_color)
 	bg[NORMAL]			= @bg_color		# Color of menu background.
 	fg[NORMAL]			= @fg_color
@@ -313,6 +310,13 @@ widget_class "*<GtkCheckButton>*"		style "radiocheck"
 # views #
 #########
 
+style "scrolled_window" {
+	engine "murrine" {
+		contrast				= 0.7
+	}
+}
+class "GtkScrolledWindow"		style "scrolled_window"
+
 style "view" {
 	base[NORMAL]	= shade(0.97,@base_color)
 }
@@ -329,9 +333,7 @@ style "iconview" = "view" {
 style "treeview" = "iconview"
 {
 	# Enable color variation for odd and even rows.
-	engine "pixmap"
-	{
-	}
+	engine "pixmap" {}
 }
 
 style "sidepane"
