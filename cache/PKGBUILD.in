@@ -9,16 +9,16 @@ url="http://xfce-look.org/content/show.php/Zen+suite?content=149883"
 license=('GPL3')
 depends=('gtk-engines' 'gtk2-xfce-engine')
 optdepends=('alinea-themes' 'mini-xfwm4-theme' 'xfce4-notifyd' 'gtk3-xfce-engine' 'libreoffice-patch.sh: script to increase sheet tabs for LibreOffice. See README.md or http://xfce-look.org/content/show.php/Zen+suite?content=149883 for more infos')
-source=("zenx-gtk-themes-$pkgver.tar.gz::https://github.com/cedl38/zen-gtk-themes/archive/xv$pkgver.tar.gz")
+source=("$pkgname-$pkgver.tar.gz::https://github.com/cedl38/zen-gtk-themes/archive/xv$pkgver.tar.gz")
 sha256sums=('11da226e700af3620b28f2498337634f9249ab2e65b183428569dcd83873e794')
 
 build() {
-  cd $srcdir/${pkgname}-xv${pkgver}
+  cd $srcdir/zen-gtk-themes-xv$pkgver
   ./configure --prefix=/usr
   make
 }
 
 package() {
-  cd $srcdir/${pkgname}-${pkgver}
+  cd $srcdir/zen-gtk-themes-xv$pkgver
   make DESTDIR="${pkgdir}" install
 }

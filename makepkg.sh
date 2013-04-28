@@ -19,7 +19,8 @@ pkgrel=$(grep -m 1 "pkgrel=" cache/PKGBUILD | cut -d= -f2)
 
 headpkg() {
 # use -f to force update
-git archive --prefix=$pkgname-$pkgver/ -o cache/$pkgname-$pkgver.tar.gz HEAD
+git archive --prefix=zen-gtk-themes-xv$pkgver/ \
+-o cache/zen-gtk-themes-xv$pkgver HEAD
 
 cd cache
 rm -rf src
@@ -82,23 +83,23 @@ install() {
 
 # options
 f=''; force=''; arg=''
-while  getopts FHPU opt
+while  getopts fhpu opt
 do
 	case $opt in
-	F)	force="-f"; f="+" ;;
-	H)	arg=H ;;
-	P)	arg=P ;;
-	U)	arg=U ;;
-	\?)	echo "use -F to force update PKGBUILD"
-		echo "    -H build head package localy"
-		echo "    -P to push the package without updating it"
-		echo "    -U to update package source without pushing it"
+	f)	force="-f"; f="+" ;;
+	h)	arg=h ;;
+	p)	arg=p ;;
+	u)	arg=u ;;
+	\?)	echo "use -f to force update PKGBUILD"
+		echo "    -h build head package localy"
+		echo "    -p to push the package without updating it"
+		echo "    -u to update package source without pushing it"
 		exit 1
 	esac
 done
 
 case $arg in
-U|'')
+u|'')
 	if [ "$pkgver" == "$lastpkgver" ] && [ "$f" == "" ]
 	then
 	echo "enter new version number (last package version =  $lastpkgver) :"
@@ -125,11 +126,11 @@ U|'')
 	message="update README* to xv$pkgver"
 	commit $readme
 	;;
-H)	headpkg ;;
+h)	headpkg ;;
 esac
 
 case $arg in
-P|'')
+p|'')
 	cd cache
 	push; install
 	;;
