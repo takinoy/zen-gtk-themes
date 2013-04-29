@@ -332,11 +332,13 @@ widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button"
 
 style "dark-button"
 {
-	bg[NORMAL]			= shade(1.15, @dark_bg_color)
-	bg[PRELIGHT]		= shade(1.25, @dark_bg_color)
+	bg[NORMAL]			= shade(1.6, @dark_bg_color)
+	bg[PRELIGHT]		= shade(1.8, @dark_bg_color)
 	bg[ACTIVE]			= mix(0.5, shade(0.8, @selected_bg_color), @dark_bg_color)
 	bg[SELECTED]		= shade(1.2, @selected_bg_color)
 	bg[INSENSITIVE]		= shade(1.01, @dark_bg_color)
+
+	engine "murrine"	{	roundness = 3	}
 }
 
 style "comboboxentry" = "button" {
@@ -581,7 +583,6 @@ style "titlebar" = "default"
 }
 
 widget "xfwm"						style "titlebar"
-widget "xfwm4-tabwin*"				style "titlebar"
 class "MetaFrames"					style "titlebar"
 widget_class "MetaFrames"			style "titlebar"
 
