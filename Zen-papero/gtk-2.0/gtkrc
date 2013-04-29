@@ -11,9 +11,9 @@ style "colors_papero"
 	bg_pixmap[NORMAL]		= "window-bg.png"
 }
 
-class "GtkWidget"					style "colors_papero"
+class "GtkWindow"					style "colors_papero"
 
-widget_class "*View*"			    style "sidepane"
+widget_class "*View*"				style "sidepane"
 
 include "panel.rc"
 include "xfce.rc"
