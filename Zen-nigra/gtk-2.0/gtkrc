@@ -95,3 +95,4 @@ class "GtkVScrollbar"				style "scrollbar-nigra"
 class "GtkHScrollbar"				style "scrollbar-nigra"
 
 include "panel.rc"
+include "xfce.rc"

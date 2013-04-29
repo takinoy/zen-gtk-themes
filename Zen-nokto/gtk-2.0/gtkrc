@@ -83,3 +83,4 @@ widget_class "*.<GtkList>.<GtkButton>"		style "treeview_header-nokto"
 widget_class "*.<GtkCList>.<GtkButton>"		style "treeview_header-nokto"
 
 include "panel.rc"
+include "xfce.rc"

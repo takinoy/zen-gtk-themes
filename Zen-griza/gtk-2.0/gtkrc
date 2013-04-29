@@ -30,3 +30,4 @@ widget_class "*<GtkRadioButton>*"		style "radiocheck"
 widget_class "*<GtkCheckButton>*"		style "radiocheck"
 
 include "panel.rc"
+include "xfce.rc"
