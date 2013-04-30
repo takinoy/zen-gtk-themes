@@ -958,6 +958,10 @@ GtkFrame GtkLabel {
     background-color: @bg_color;
 }
 
+GtkNotebook GtkLabel {
+    background-color: transparent;
+}
+
 /***********
  * infobar *
  ***********/
