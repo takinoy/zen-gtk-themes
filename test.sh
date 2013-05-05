@@ -4,7 +4,7 @@
 # dependencies : awf
 
 # sleep
-t=15
+t=5
 
 # package name
 pkgname=$(grep -m 1 'pkgname=' cache/PKGBUILD | cut -d= -f2)
@@ -17,7 +17,6 @@ themes=$(ls -1 | grep "$name")
 
 # run "A Widget Factory"
 		awf-gtk2  &
-		awf-gtk3  &
 set $themes
 	if [ "$1" != "" ]
 	then

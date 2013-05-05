@@ -1,0 +1,8 @@
+# Xfce specific theming
+
+style "xfwm-tabwin"
+{
+	Xfwm4TabwinWidget::icon-size = 64
+}
+
+widget "xfwm4-tabwin*"			style "xfwm-tabwin"

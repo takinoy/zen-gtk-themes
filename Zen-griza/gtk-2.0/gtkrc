@@ -23,3 +23,6 @@ widget_class "*.<GtkList>.<GtkButton>*"			style "treeview_header"
 widget_class "*.<GtkCList>.<GtkButton>*"		style "treeview_header"
 widget_class "*.<GtkCMCTree>.<GtkButton>*"		style "treeview_header"
 widget_class "*.<GtkCMCList>.<GtkButton>*"		style "treeview_header"
+
+include "panel.rc"
+include "xfce.rc"

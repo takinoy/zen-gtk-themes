@@ -3,7 +3,7 @@ zen-gtk-themes version 0.3.14
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : April 25, 2013
+Date : May 5, 2013
 Sources : https://github.com/cedl38/zen-gtk-themes
 
 The main goal of this theme is to keep it simple, consistent and being visually appealing.

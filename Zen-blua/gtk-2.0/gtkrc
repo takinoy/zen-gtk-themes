@@ -4,3 +4,5 @@ gtk-color-scheme = "selected_base_color:#B5DDDB"
 gtk-color-scheme = "selected_text_color:#000000"
 
 include "gtk-widgets.rc"
+include "panel.rc"
+include "xfce.rc"
