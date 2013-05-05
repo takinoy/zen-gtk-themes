@@ -65,3 +65,19 @@
 @define-color wm_border_unfocused shade(@bg_color, 0.8);
 
 @import url("gtk-widgets.css");
+
+GtkWindow {
+    background-image: url("window-bg.png");
+}
+
+GtkMenuBar {
+    background-image: none;
+}
+
+.view, .view row:nth-child(even) {
+    background-color: shade(@bg_lighter, 0.97);
+}
+
+.view row:nth-child(odd) {
+    background-color: shade(@bg_lighter, 0.905);
+}

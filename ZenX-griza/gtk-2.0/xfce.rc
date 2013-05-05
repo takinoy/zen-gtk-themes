@@ -1,0 +1,13 @@
+# Xfce specific theming
+
+widget_class "*XfsmLogoutDialog*"				style "dark"
+widget_class "*XfsmLogoutDialog*Button"			style 	"dark-button"
+widget_class "*XfsmLogoutDialog*RadioButton"	style "radiocheck-dark"
+widget_class "*XfsmLogoutDialog*CheckButton"	style "radiocheck-dark"
+
+style "xfwm-tabwin" = "dark"
+{
+	Xfwm4TabwinWidget::icon-size = 64
+}
+
+widget "xfwm4-tabwin*"			style "xfwm-tabwin"

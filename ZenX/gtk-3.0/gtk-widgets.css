@@ -43,14 +43,12 @@
     -GtkWidget-link-color: @link_color;
     -GtkWidget-visited-link-color: @link_color;
     -GtkTextView-error-underline-color: @error_color;
+    -GtkWindow-resize-grip-height: 13;
+    -GtkWindow-resize-grip-width: 13;
 
     border-width: 1px;
 /* inherit the color from parent by default */
     color: inherit;
-/* borders for arrows...*/
-/*
-    border-color: @border_normal;
-*/
 }
 
 GtkWindow {
@@ -61,10 +59,15 @@ GtkWindow {
 .frame {
     border-style: solid;
     border-radius: 2px;
-    border-color: @border_insensitive;
+    border-color: @border_normal;
 }
 
 .background {
+}
+
+.grip {
+    background-color: transparent;
+    background-image: url("resize-grip.png");
 }
 
 /*********
@@ -489,7 +492,15 @@ GtkScale.vertical.trough {
 }
 
 .scrollbar.button:hover {
-    background-color: shade(@bg_color, 1.1);
+    background-image: none;
+    background-color: @bg_hover;
+    border-style: solid;
+}
+
+.scrollbar.button:active {
+    background-image: none;
+    background-color: @bg_active;
+    border-style: solid;
 }
 
 .scrollbar.button:selected {
@@ -512,9 +523,6 @@ GtkScale.vertical.trough {
     border-width: 2px;
     border-color: @selected_bg_color;
     background-color: mix(@fg_color, @scrollbar_slider, 0.8);
-}
-
-.grip {
 }
 
 GtkScale, GtkProgressBar {
@@ -952,6 +960,10 @@ GtkImage, GtkLabel {
 /* workaround for gnumeric frame label : */
 GtkFrame GtkLabel {
     background-color: @bg_color;
+}
+
+GtkNotebook GtkLabel {
+    background-color: transparent;
 }
 
 /***********

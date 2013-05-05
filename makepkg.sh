@@ -20,7 +20,7 @@ pkgrel=$(grep -m 1 "pkgrel=" cache/PKGBUILD | cut -d= -f2)
 headpkg() {
 # use -f to force update
 git archive --prefix=zen-gtk-themes-xv$pkgver/ \
--o cache/zen-gtk-themes-xv$pkgver HEAD
+-o cache/$pkgname-$pkgver.tar.gz HEAD
 
 cd cache
 rm -rf src
@@ -120,11 +120,8 @@ u|'')
 	/AC_INIT([$pkgname], [$pkgver]/" configure.ac
 
 	# update readme
-	readme=$(ls -1 README*)
 	echo "update $readme to version $pkgver..."
 	./configure
-	message="update README* to xv$pkgver"
-	commit $readme
 	;;
 h)	headpkg ;;
 esac

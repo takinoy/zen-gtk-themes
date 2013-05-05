@@ -1,14 +1,20 @@
 Changelog:
 ----------
+0.11.1
+ - adjust gtk2/3 ZenX-papero style
+ - Fix gtk3 notebook label color issue for gthumb.
+ - Fix gtk3 scrollbar hover and active button.
+ - Set xfwm-tabwin and XfsmLogoutDialog.
+
 0.11.0
  - Change gtk2/3 menubar and toolbar style
  - Updated to gtk3.8 (menuitem separator, paddings...)
  - Add standard build tools
 
+0.10.5 : Set xfwm-tabwin and XfsmLogoutDialog.
 0.10.4
  - Fix gtk3 rubberband selection color.
  - Adjust view/treeview background color.
-0.10.3
  - Adjust button insensitive and border colors.
  - Adjust gtk3 panel settings (not tested).
  - Fix bug in libreoffice.sh for reading files with spaces.

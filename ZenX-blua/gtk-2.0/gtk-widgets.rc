@@ -2,6 +2,7 @@
 # Style Properties
 #######################
 
+gtk-color-scheme 	= "dark_bg_color:#212121\ndark_text_color:#D0C9B1"
 gtk_color_scheme	= "link_color:#1f4299"	# Hyperlinks
 gtk-icon-sizes		= "gtk-large-toolbar=24,24:gtk-small-toolbar=16,16:gtk-button=16,16:gtk-dialog=16,16"	# This enables "compact-mode".
 
@@ -134,6 +135,53 @@ class "*GtkCList*"					style "gradient"
 widget_class "*Text*"				style "gradient"
 class "*Text*"						style "gradient"
 
+style "dark" {
+	fg[NORMAL]			= @dark_text_color # Makes panel text light.
+	fg[ACTIVE]			= "#FFFFFF"
+	fg[PRELIGHT]		= "#FFFFFF"
+	fg[SELECTED]		= "#E6E6E6"
+	bg[NORMAL]			= @dark_bg_color
+	bg[ACTIVE]			= shade(0.4, @selected_bg_color)
+	bg[PRELIGHT]		= mix(0.2, @selected_bg_color, @dark_bg_color)
+	bg[SELECTED]		= shade(0.5, @selected_bg_color)
+	bg[INSENSITIVE]		= "#000000"
+	base[NORMAL]		= shade(0.8, @base_color)
+}
+
+style "light" {
+	bg[NORMAL]			= "#CCCCCC"
+	bg[PRELIGHT]		= mix(0.6, @selected_bg_color, "#CCCCCC")
+	bg[ACTIVE]			= @selected_bg_color
+}
+
+style "adaptive" {
+	bg[NORMAL]			= shade(0.9,@bg_color)
+	bg[PRELIGHT]		= mix(0.6, @selected_bg_color, shade(0.9,@bg_color))
+	bg[ACTIVE]			= @selected_bg_color
+	}
+
+style "adaptive-dark" = "dark" {
+	bg[PRELIGHT]		= mix(0.6, @selected_bg_color, @dark_bg_color)
+	bg[ACTIVE]			= @selected_bg_color
+	bg[SELECTED]		= @selected_bg_color
+	}
+
+style "resize-grip"
+{
+	engine "pixmap"	{
+		image {
+			function	= RESIZE_GRIP
+			recolorable	= FALSE
+			detail		= "statusbar"
+			overlay_file	= "resize-grip.png"
+			overlay_border	= {0,0,0,0 }
+			overlay_stretch	= FALSE
+		}
+        }
+}
+
+class "GtkStatusbar" style "resize-grip"
+
 style "entry" = "gradient" {
 	xthickness = 3
 	ythickness = 3
@@ -211,11 +259,6 @@ style "menubar" = "menu"
 	fg[NORMAL]			= @fg_color
 	fg[INSENSITIVE]		= mix(0.6, darker(@bg_color), @fg_color)
 	fg[PRELIGHT]		= @selected_fg_color
-
-	engine "murrine"
-	{
-		gradient_shades		= {1.0,1.01,1.01,0.98}
-	}
 }
 
 widget_class "*BonoboDockItem"		style "menubar"
@@ -226,11 +269,6 @@ style "toolbar" = "menubar"
 {
 	xthickness = 1
 	ythickness = 0
-
-	engine "murrine"
-	{
-		gradient_shades		= {0.985,1.0,1.0,0.98}
-	}
 }
 class "GtkHandleBox*"				style "toolbar"
 class "GtkToolbar"					style "toolbar"
@@ -305,6 +343,15 @@ widget_class "*OptionMenu*"			style "button"
 class "*OptionMenu*"				style "button"
 widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button"
 
+style "dark-button"
+{
+	bg[NORMAL]			= shade(1.6, @dark_bg_color)
+	bg[PRELIGHT]		= shade(1.8, @dark_bg_color)
+	bg[ACTIVE]			= mix(0.5, shade(0.8, @selected_bg_color), @dark_bg_color)
+	bg[SELECTED]		= shade(1.2, @selected_bg_color)
+	bg[INSENSITIVE]		= shade(1.01, @dark_bg_color)
+}
+
 style "comboboxentry" = "button" {
 	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
@@ -329,6 +376,11 @@ class "GtkCheck*"	style "radiocheck"
 widget_class "*<GtkRadioButton>*"		style "radiocheck"
 widget_class "*<GtkCheckButton>*"		style "radiocheck"
 
+style "radiocheck-dark"
+{
+	bg[PRELIGHT]	= @dark_bg_color
+}
+
 #########
 # views #
 #########
@@ -348,7 +400,6 @@ style "iconview" = "view" {
 
 style "treeview" = "iconview"
 {
-	# Enable color variation for odd and even rows.
 }
 
 style "sidepane"
@@ -442,12 +493,6 @@ style "notebook" = "notebook-bg"
 }
 
 widget_class "*<GtkNotebook>"		style "notebook"
-
-##########
-# Panels #
-##########
-
-include "panel.rc"
 
 ##########
 # others #
@@ -577,7 +622,6 @@ style "titlebar" = "default"
 }
 
 widget "xfwm"						style "titlebar"
-widget "xfwm4-tabwin*"				style "titlebar"
 class "MetaFrames"					style "titlebar"
 widget_class "MetaFrames"			style "titlebar"
 
