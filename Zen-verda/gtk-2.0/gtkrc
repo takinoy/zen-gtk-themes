@@ -4,3 +4,4 @@ gtk-color-scheme = "selected_base_color:#ACD982"
 gtk-color-scheme = "selected_text_color:#000000"
 
 include "gtk-widgets.rc"
+include "panel.rc"

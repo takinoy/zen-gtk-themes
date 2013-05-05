@@ -81,3 +81,5 @@ widget_class "*.<GtkTreeView>.<GtkButton>"	style "treeview_header-nokto"
 widget_class "*.<GtkCTree>.<GtkButton>"		style "treeview_header-nokto"
 widget_class "*.<GtkList>.<GtkButton>"		style "treeview_header-nokto"
 widget_class "*.<GtkCList>.<GtkButton>"		style "treeview_header-nokto"
+
+include "panel.rc"
