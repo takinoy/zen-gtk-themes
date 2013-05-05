@@ -2,6 +2,7 @@
 # Style Properties
 #######################
 
+gtk-color-scheme 	= "dark_bg_color:#212121\ndark_text_color:#D0C9B1"
 gtk_color_scheme	= "link_color:#1f4299"	# Hyperlinks
 gtk-icon-sizes		= "gtk-large-toolbar=24,24:gtk-small-toolbar=16,16:gtk-button=16,16:gtk-dialog=16,16"	# This enables "compact-mode".
 
@@ -143,6 +144,37 @@ style "default"
 class "GtkWidget"			style "default"
 #widget_class "*"			style "default"
 
+style "dark" {
+	fg[NORMAL]			= @dark_text_color # Makes panel text light.
+	fg[ACTIVE]			= "#FFFFFF"
+	fg[PRELIGHT]		= "#FFFFFF"
+	fg[SELECTED]		= "#E6E6E6"
+	bg[NORMAL]			= @dark_bg_color
+	bg[ACTIVE]			= shade(0.4, @selected_bg_color)
+	bg[PRELIGHT]		= mix(0.2, @selected_bg_color, @dark_bg_color)
+	bg[SELECTED]		= shade(0.5, @selected_bg_color)
+	bg[INSENSITIVE]		= "#000000"
+	base[NORMAL]		= shade(0.8, @base_color)
+}
+
+style "light" {
+	bg[NORMAL]			= "#CCCCCC"
+	bg[PRELIGHT]		= mix(0.6, @selected_bg_color, "#CCCCCC")
+	bg[ACTIVE]			= @selected_bg_color
+}
+
+style "adaptive" {
+	bg[NORMAL]			= shade(0.9,@bg_color)
+	bg[PRELIGHT]		= mix(0.6, @selected_bg_color, shade(0.9,@bg_color))
+	bg[ACTIVE]			= @selected_bg_color
+	}
+
+style "adaptive-dark" = "dark" {
+	bg[PRELIGHT]		= mix(0.6, @selected_bg_color, @dark_bg_color)
+	bg[ACTIVE]			= @selected_bg_color
+	bg[SELECTED]		= @selected_bg_color
+	}
+
 style "entry" {
 	xthickness = 3
 	ythickness = 3
@@ -269,6 +301,15 @@ widget_class "*OptionMenu*"			style "button"
 class "*OptionMenu*"				style "button"
 widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button"
 
+style "dark-button"
+{
+	bg[NORMAL]			= shade(1.15, @dark_bg_color)
+	bg[PRELIGHT]		= shade(1.25, @dark_bg_color)
+	bg[ACTIVE]			= mix(0.5, shade(0.8, @selected_bg_color), @dark_bg_color)
+	bg[SELECTED]		= shade(1.2, @selected_bg_color)
+	bg[INSENSITIVE]		= shade(1.01, @dark_bg_color)
+}
+
 style "comboboxentry" = "button" {
 	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
@@ -292,6 +333,11 @@ class "GtkRadio*"	style "radiocheck"
 class "GtkCheck*"	style "radiocheck"
 widget_class "*<GtkRadioButton>*"		style "radiocheck"
 widget_class "*<GtkCheckButton>*"		style "radiocheck"
+
+style "radiocheck-dark"
+{
+	bg[PRELIGHT]	= @dark_bg_color
+}
 
 #########
 # views #
@@ -400,12 +446,6 @@ style "notebook" = "notebook-bg"
 }
 
 widget_class "*<GtkNotebook>"		style "notebook"
-
-##########
-# Panels #
-##########
-
-include "panel.rc"
 
 ##########
 # others #
