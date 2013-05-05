@@ -55,6 +55,15 @@ GtkWindow {
     background-color: @bg_color;
 }
 
+.frame {
+    border-style: solid;
+    border-radius: 2px;
+    border-color: @border_normal;
+}
+
+.background {
+}
+
 /*********
  * states *
  **********/
@@ -76,15 +85,6 @@ GtkWindow {
     color: @selected_fg_color;
     background-color: @selected_bg_color;
     border-color: @border_selected;
-}
-
-.frame {
-    border-style: solid;
-    border-radius: 2px;
-    border-color: @border_insensitive;
-}
-
-.background {
 }
 
 /************
