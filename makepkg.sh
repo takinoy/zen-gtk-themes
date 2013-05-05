@@ -120,11 +120,8 @@ u|'')
 	/AC_INIT([$pkgname], [$pkgver]/" configure.ac
 
 	# update readme
-	readme=$(ls -1 README*)
 	echo "update $readme to version $pkgver..."
 	./configure
-	message="update README* to v$pkgver"
-	commit $readme
 	;;
 h)	headpkg ;;
 esac
