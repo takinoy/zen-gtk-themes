@@ -1,17 +1,17 @@
 Changelog:
 ----------
+
+0.11.2 : Fix gtk-2 notebook radio bg. prelight for Zen-griza.
 0.11.1
  - adjust gtk2/3 ZenX-papero style
  - Fix gtk3 notebook label color issue for gthumb.
  - Fix gtk3 scrollbar hover and active button.
  - Set xfwm-tabwin and XfsmLogoutDialog.
-
-0.11.0
  - Change gtk2/3 menubar and toolbar style
  - Updated to gtk3.8 (menuitem separator, paddings...)
  - Add standard build tools
 
-0.10.5 : Set xfwm-tabwin and XfsmLogoutDialog.
+0.10.6 : Set xfwm-tabwin and XfsmLogoutDialog and minor fix.
 0.10.4
  - Fix gtk3 rubberband selection color.
  - Adjust view/treeview background color.
@@ -24,10 +24,10 @@ Changelog:
 
 0.9.1
  - Fix libreoffice.sh script and adjust scrollbar size.
- - Add zen-griza variant
- - Change column headers and scrollbar style
- - Adjust gtk2/3 style and contrast for button and widgets ...
- - Workaround to improve rendering in libreoffice
+ - Add zen-griza variant.
+ - Change column headers and scrollbar style.
+ - Adjust gtk2/3 style and contrast for button and widgets.
+ - Workaround to improve rendering in libreoffice.
 
 0.8.1
  - Adjust button, notebook, radiocheck colors.

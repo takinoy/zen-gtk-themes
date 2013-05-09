@@ -9,7 +9,7 @@ dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2012-2013 Cedric Leporcq. All rights reserved.])
-AC_INIT([zenx-gtk-themes], [0.11.1], [https://github.com/cedl38/zenx-gtk-themes])
+AC_INIT([zenx-gtk-themes], [0.11.2], [https://github.com/cedl38/zenx-gtk-themes])
 AC_PREREQ([2.50])
 AC_REVISION([zenx-gtk-themes_version_build])
 
