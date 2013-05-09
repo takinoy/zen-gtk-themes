@@ -7,8 +7,8 @@ Sources : @PACKAGE_BUGREPORT@
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
 
 Features :
- - thin menubar, toolbar and icons
- - available for both gtk2 and gtk3
+ - thin menubar and toolbar
+ - includes both gtk2 and gtk3 themes
  - compatibility with Xfce widgets, Xfce notify theme
  - seven pre-configured color schemes compatibles with gnome and Xfce : Zen, Zen-blua, Zen-griza, Zen-nigra, Zen-nokto, Zen-verda, Zen-papero.
 
