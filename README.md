@@ -1,9 +1,9 @@
-zen-gtk-themes version 0.10.5
+zen-gtk-themes version 0.10.6
 ----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : April 05, 2013
+Date : Mai 09, 2013
 Sources : https://github.com/cedl38/zen-gtk-themes
 
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
@@ -36,6 +36,7 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 
 Changelog:
 ----------
+0.10.6 : Fix gtk-2 notebook radio bg. prelight for Zen-griza.
 0.10.5
  - Set xfwm-tabwin and XfsmLogoutDialog.
  - Adjust frame borders color.
