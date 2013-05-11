@@ -201,8 +201,8 @@ style "entry" {
 	text[INSENSITIVE]	= mix(0.6, darker(@bg_color), @fg_color)
 }
 
-class "*Entry*"				style "entry"
-widget_class "*Entry*"		style "entry"
+class "GtkEntry"				style "entry"
+widget_class "*<GtkEntry>*"		style "entry"
 
 #########
 # Menus #
@@ -228,7 +228,7 @@ style "menu"
 	}
 }
 
-widget_class "*Menu*"		style "menu"
+widget_class "*<GtkMenu>*"		style "menu"
 #class "*Menu*"				style "menu"
 
 style "menuitem" = "menu"
@@ -237,8 +237,8 @@ style "menuitem" = "menu"
 	ythickness = 3
 }
 
-widget_class "*MenuItem*"	style "menuitem"
-class "*MenuItem*"			style "menuitem"
+widget_class "*<GtkMenuItem>*"	style "menuitem"
+class "GtkMenuItem"			style "menuitem"
 
 style "menubar" = "menu"
 {
@@ -251,6 +251,7 @@ style "menubar" = "menu"
 	engine "murrine"
 	{
 		gradient_shades		= {1.0,1.01,1.01,0.98}
+		roundness			= 0
 	}
 }
 
@@ -375,9 +376,7 @@ style "radiocheck-dark"
 #########
 
 style "scrolled_window" {
-	engine "murrine" {
-		contrast				= 0.7
-	}
+	engine "murrine" {	contrast = 0.7	}
 }
 class "GtkScrolledWindow"		style "scrolled_window"
 
