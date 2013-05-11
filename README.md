@@ -3,13 +3,13 @@ zen-gtk-themes version 0.10.6
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : Mai 09, 2013
+Date : Mai 11, 2013
 Sources : https://github.com/cedl38/zen-gtk-themes
 
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
 
 Features :
- - thin menubar, toolbar and icons
+ - thin menubar and toolbar
  - gtk2 and gtk3 (version >=3.4)
  - compatibility with Xfce widgets, Xfce notify theme
  - seven pre-configured color schemes compatibles with gnome and Xfce : Zen, Zen-blua, Zen-griza, Zen-nigra, Zen-nokto, Zen-verda, Zen-papero.
@@ -36,7 +36,10 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 
 Changelog:
 ----------
-0.10.6 : Fix gtk-2 notebook radio bg. prelight for Zen-griza.
+
+0.10.6
+ - Workaround for theme rendering in LibreOffice.
+ - Fix gtk-2 notebook radio background prelight for Zen-griza.
 0.10.5
  - Set xfwm-tabwin and XfsmLogoutDialog.
  - Adjust frame borders color.
@@ -55,14 +58,14 @@ Changelog:
 0.10.0
  - Modify column headers to flat style.
  - Improve scrollbar style, scale.
- - Adjust colors, button contrast and shadow for Zen-nigra ...
+ - Adjust colors, button contrast and shadow for Zen-nigra.
  - Fix CheckButton background, Zen-griza/index.theme, minor others issues.
 
 0.9.1
  - Fix libreoffice.sh script and adjust scrollbar size.
  - Add zen-griza variant
  - Change column headers and scrollbar style
- - Adjust gtk2/3 style and contrast for button and widgets ...
+ - Adjust gtk2/3 style and contrast for button and widgets.
  - Workaround to improve rendering in libreoffice
 
 0.8.1
