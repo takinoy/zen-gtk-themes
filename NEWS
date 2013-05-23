@@ -1,10 +1,12 @@
 Changelog:
 ----------
 
+0.11.3
+ - change IconTheme to default in index.theme
+ - Provide compatibility with lxde panel
 0.11.2
  - Workaround for theme rendering in LibreOffice.
  - Fix gtk-2 notebook radio background prelight for Zen-griza.
-0.11.1
  - Adjust gtk2/3 Zen-papero style.
  - Fix gtk3 notebook label color issue for gthumb.
  - Fix gtk3 scrollbar hover and active button.
