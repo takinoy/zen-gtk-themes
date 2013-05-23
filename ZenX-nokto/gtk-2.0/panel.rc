@@ -1,4 +1,4 @@
-style "panel" = "adaptive"
+style "panel" = "adaptive-dark"
 {
 	xthickness = 2
 	ythickness = 2
