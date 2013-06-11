@@ -128,6 +128,7 @@ GtkWindow {
     border:solid;
     border-width: 1px;
     color: @tooltip_fg_color;
+    background-image: none;
     background-color: @tooltip_bg_color;
     border-color: darker(@tooltip_bg_color);
 }
