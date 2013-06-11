@@ -13,7 +13,15 @@ style "colors_papero"
 
 class "GtkWidget"					style "colors_papero"
 
-widget_class "*View*"			    style "sidepane"
+style "pager-papero" {	bg_pixmap[NORMAL]	= "<none>" }
+
+widget_class "*Pager*"			style "pager-papero"
+
+style "tooltips-papero" {	bg_pixmap[NORMAL]	= "<none>" }
+
+widget "gtk-tooltip*"				style "tooltips-papero"
+
+widget_class "*View*"				style "sidepane"
 
 include "panel.rc"
 include "xfce.rc"
