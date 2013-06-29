@@ -1,8 +1,9 @@
 Changelog:
 ----------
 
-0.11.4 : Fix Zen-papero tooltip background color.
-0.11.3
+0.11.5 : Fix "add-new-items" window buttons for xfce.
+0.11.4
+ - Fix Zen-papero tooltip background color.
  - Provide compatibility with lxde panel.
  - Workaround for theme rendering in LibreOffice.
  - Fix gtk2 notebook radio background prelight for Zen-griza.
@@ -14,7 +15,7 @@ Changelog:
  - Updated to gtk3.8 (menuitem separator, paddings...).
  - Add standard build tools.
 
-0.10.8 : updates and fixes from 0.11 branch.
+0.10.9 : updates and fixes from 0.11 branch.
 0.10.4
  - Fix gtk3 rubberband selection color.
  - Adjust gtk3 panel settings (not tested).
@@ -52,7 +53,7 @@ Changelog:
  - Use the murrine engine for gtk-2 version.
  - Theme ported to gtk3 >=3.4.
 
-0.3.15
+0.3.16
  - Last gtk2 version with the clearlook engine.
  - Updates from 0.10 branch (gtk2).
 
