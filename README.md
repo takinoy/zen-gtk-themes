@@ -1,17 +1,18 @@
-zen-gtk-themes version 0.3.15
+zen-gtk-themes version 0.3.16
 -----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : June 07, 2013
+Date : June 29, 2013
+
 Sources : https://github.com/cedl38/zen-gtk-themes
 
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
 
 Features :
- - thin menubar, toolbar and icons
+ - thin menubar and toolbar
  - compatibility with Xfce widgets, Xfce notify theme
- - seven pre-configured color schemes compatibles with gnome and Xfce : Zen, Zen-blua, Zen-griza, Zen-nigra, Zen-nokto, Zen-verda, Zen-papero.
+ - seven pre-configured color schemes : Zen, Zen-blua, Zen-griza, Zen-nigra, Zen-nokto, Zen-verda, Zen-papero.
 
 This version use only the clearlook engine.
 
@@ -34,7 +35,7 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 Changelog:
 ----------
 
-0.3.15
+0.3.16
  - Last gtk2 version with the clearlook engine.
  - Updates from 0.10 branch (gtk2).
 
