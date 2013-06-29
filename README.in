@@ -10,7 +10,7 @@ Features :
  - thin menubar, toolbar and icons
  - available for both gtk2 and gtk3
  - compatibility with Xfce widgets, Xfce notify theme
- - seven pre-configured color schemes compatibles with gnome and Xfce : ZenX, ZenX-blua, Zen-griza, ZenX-nigra, ZenX-nokto, ZenX-verda, ZenX-papero.
+ - seven pre-configured color schemes : ZenX, ZenX-blua, Zen-griza, ZenX-nigra, ZenX-nokto, ZenX-verda, ZenX-papero.
 
 dependencies :
 - Xfce engine for gtk2 and gtk3.

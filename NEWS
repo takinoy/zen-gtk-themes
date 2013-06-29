@@ -1,6 +1,7 @@
 Changelog:
 ----------
 
+0.11.5 : Fix "add-new-items" window buttons for xfce.
 0.11.4 : Fix Zen-papero tooltip background color.
 0.11.3
  - Fix wrong panel color
