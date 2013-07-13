@@ -553,7 +553,6 @@ GtkScale.slider.vertical {
 
 .progressbar,
 GtkScale.slider {
-    color: shade(mix(#BF3939, @selected_bg_color, 0.6),0.9);
     background-image: -gtk-gradient(linear, left top, right top,
                                      from (@selected_bg_color),
                                      to (mix(#BF3939, @selected_bg_color, 0.6)));
@@ -573,7 +572,6 @@ GtkScale.slider.horizontal:insensitive {
 }
 
 GtkScale.slider:hover, GtkScale.slider:focus {
-    color: mix(#BF3939, @selected_bg_color, 0.6);
     background-image: -gtk-gradient(linear, left top, right top,
                                      from (@selected_bg_color),
                                      to (#BF3939));
@@ -584,7 +582,6 @@ GtkScale.slider:hover, GtkScale.slider:focus {
 
 .progressbar.vertical,
 GtkScale.slider.vertical {
-    color: shade(mix(#BF3939, @selected_bg_color, 0.6),0.9);
     background-image: -gtk-gradient(linear, left bottom, left top,
                                      from (@selected_bg_color),
                                      to (mix(#BF3939, @selected_bg_color, 0.6)));
@@ -604,7 +601,6 @@ GtkScale.slider.vertical:insensitive {
 }
 
 GtkScale.slider.vertical:hover, GtkScale.slider.vertical:focus {
-    color: mix(#BF3939, @selected_bg_color, 0.6);
     background-image: -gtk-gradient(linear, left bottom, left top,
                                      from (@selected_bg_color),
                                      to (#BF3939));
