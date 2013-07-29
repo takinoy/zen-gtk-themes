@@ -23,5 +23,15 @@ widget "gtk-tooltip*"				style "tooltips-papero"
 
 widget_class "*View*"				style "sidepane"
 
+# menu style = [adaptive, dark]
+widget_class "*<GtkMenu>*"		style "menu-adaptive"
+widget_class "*<GtkMenuItem>*"	style "menu-adaptive"
+class "GtkMenuItem"				style "menu-adaptive"
+
+# menubar style = [adaptive, dark]
+widget_class "*BonoboDockItem"		style "menubar-adaptive"
+class "*BonoboDockItem"				style "menubar-adaptive"
+widget_class "*<GtkMenuBar>*"		style "menubar-adaptive"
+
 include "panel.rc"
 include "xfce.rc"
