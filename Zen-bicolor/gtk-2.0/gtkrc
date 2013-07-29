@@ -1,0 +1,45 @@
+# Grey/blue gtk-color-scheme:
+gtk-color-scheme = "base_color:#FCFCFC\nfg_color:#000000\ntooltip_fg_color:#000000\nselected_bg_color:#B8C1CC\nselected_fg_color:#000000\ntext_color:#101010\nbg_color:#CECECE\ntooltip_bg_color:#F7EFBA"
+gtk-color-scheme = "selected_base_color:#A9BCD4"
+gtk-color-scheme = "selected_text_color:#000000"
+
+include "gtk-widgets.rc"
+
+style "button-bicolor"
+{
+	bg[ACTIVE]			= mix(0.5, shade(0.8, @selected_bg_color), @bg_color)
+	bg[SELECTED]		= shade(0.7,@selected_bg_color)
+}
+
+widget_class "*<GtkButton>"			style "button-bicolor"
+widget_class "*OptionMenu*"			style "button-bicolor"
+class "*OptionMenu*"				style "button-bicolor"
+widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button-bicolor"
+
+# this prevent overwriting others widgets style
+widget_class "*.<GtkTreeView>.<GtkButton>*"		style "treeview_header"
+widget_class "*.<GtkCTree>.<GtkButton>*"		style "treeview_header"
+widget_class "*.<GtkList>.<GtkButton>*"			style "treeview_header"
+widget_class "*.<GtkCList>.<GtkButton>*"		style "treeview_header"
+widget_class "*.<GtkCMCTree>.<GtkButton>*"		style "treeview_header"
+widget_class "*.<GtkCMCList>.<GtkButton>*"		style "treeview_header"
+
+class "GtkRadio*"	style "radiocheck"
+class "GtkCheck*"	style "radiocheck"
+widget_class "*<GtkRadioButton>*"		style "radiocheck"
+widget_class "*<GtkCheckButton>*"		style "radiocheck"
+widget_class "*<GtkNotebook>*<GtkRadioButton>"		style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkCheckButton>"		style "notebook-bg"
+
+# menu style = [adaptive, dark]
+widget_class "*<GtkMenu>*"		style "menu-dark"
+widget_class "*<GtkMenuItem>*"	style "menu-dark"
+class "GtkMenuItem"				style "menu-dark"
+
+# menubar style = [adaptive, dark]
+widget_class "*BonoboDockItem"		style "menubar-dark"
+class "*BonoboDockItem"				style "menubar-dark"
+widget_class "*<GtkMenuBar>*"		style "menubar-dark"
+
+include "panel.rc"
+include "xfce.rc"
