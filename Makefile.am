@@ -2,6 +2,7 @@
 maindir = Zen
 
 vardirs =				\
+	$(maindir)-bicolor \
 	$(maindir)-blua \
 	$(maindir)-griza \
 	$(maindir)-nigra \

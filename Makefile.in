@@ -231,6 +231,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 maindir = Zen
 vardirs = \
+	$(maindir)-bicolor \
 	$(maindir)-blua \
 	$(maindir)-griza \
 	$(maindir)-nigra \
