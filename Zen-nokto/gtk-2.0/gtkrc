@@ -2,6 +2,7 @@
 gtk-color-scheme ="base_color:#262626\nfg_color:#D0C9B1\ntooltip_fg_color:#DDDDDD\nselected_bg_color:#246662\nselected_fg_color:#D0D0D0\ntext_color:#D0D0D0\nbg_color:#3C3C3C\ntooltip_bg_color:#333333"
 gtk-color-scheme = "selected_base_color:#246662"
 gtk-color-scheme = "selected_text_color:#FFFFFF"
+gtk-color-scheme = "dark_bg_color:#212121\ndark_text_color:#D0C9B1"
 
 include "gtk-widgets.rc"
 
