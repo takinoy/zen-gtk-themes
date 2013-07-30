@@ -2,7 +2,6 @@
 # Style Properties
 #######################
 
-gtk-color-scheme 	= "dark_bg_color:#212121\ndark_text_color:#D0C9B1"
 gtk_color_scheme	= "link_color:#1f4299"	# Hyperlinks
 gtk-icon-sizes		= "gtk-large-toolbar=24,24:gtk-small-toolbar=16,16:gtk-button=16,16:gtk-dialog=16,16"	# This enables "compact-mode".
 
