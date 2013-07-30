@@ -790,6 +790,8 @@ column-header .button:hover, column-header .button:hover:focus {
  ***********/
 
 .menubar {
+    color: @menubar_fg_normal;
+    background-color: @menubar_bg_normal;
     border-style: none;
     border-color: @border_insensitive;
 }
@@ -799,12 +801,12 @@ column-header .button:hover, column-header .button:hover:focus {
 }
 
 .menubar *:hover {
-    color: @selected_fg_color;
+    color: @menubar_fg_selected;
 }
  .menubar>.menuitem:hover {
-    color: @selected_fg_color;
-    background-color: shade(@selected_bg_color, 1.05);
-    border-color: shade(@selected_bg_color, 0.9);
+    color: @menubar_fg_selected;
+    background-color: @menubar_bg_selected;
+    border-color: shade(@menubar_bg_selected, 0.8);
 }
 
 /*********
@@ -812,16 +814,16 @@ column-header .button:hover, column-header .button:hover:focus {
  *********/
 
 .menu {
-    color: @text_color;
-    background-color: @bg_lighter;
+    color: @menu_fg_normal;
+    background-color: @menu_bg_normal;
     border: solid;
     border-width: 1px;
-    border-color: shade(@bg_lighter, 0.8);
+    border-color: shade(@menu_bg_normal, 0.8);
     padding: 1px;
 }
 
 .menu *:hover, .menu *:active:hover, .menu *:selected {
-    color: @selected_text_color;
+    color: @menu_fg_selected;
 }
 
 .menuitem {
@@ -837,35 +839,29 @@ column-header .button:hover, column-header .button:hover:focus {
 }
 
 .menu>*:insensitive, .menuitem>*:insensitive {
-    color: mix(@text_color, darker(@bg_lighter), 0.7);
-    border-color: shade(@bg_lighter, 0.9);
-    text-shadow: 1px 1px shade(@bg_lighter, 1.05);
+    color: mix(@menu_fg_normal, darker(@menu_bg_normal), 0.7);
+    border-color: shade(@menu_bg_normal, 0.9);
+    text-shadow: 1px 1px shade(@menu_bg_normal, 1.05);
 }
 
 .menuitem:hover, .menu:hover {
     border: solid;
     border-width: 1px;
     background-image: none;
-    background-color: shade(@selected_base_color, 1.1);
-    border-color: shade(@selected_base_color, 0.9);
+    background-color: @menu_bg_selected;
+    border-color: shade(@menu_bg_selected, 0.8);
 }
 
 .menu:selected, .menuitem:selected {
-    color: @selected_text_color;
+    color: @menu_fg_selected;
     background-color: @selected_base_color;
     border-color: @border_selected;
 }
 
-.separator {
-    border-style: solid;
-    color: mix(@text_color, @bg_color, 0.9);
-    border-color: mix(@text_color, @bg_color, 0.9);
-}
-
 .menuitem.separator {
-    color: mix(@text_color, @bg_lighter, 0.9);
+    color: mix(@menu_fg_normal, @menu_bg_normal, 0.9);
     border-style: solid;
-    border-color: mix(@text_color, @bg_lighter, 0.9);
+    border-color: mix(@menu_fg_normal, @menu_bg_normal, 0.9);
 }
 
 .menu.button:hover,
@@ -883,6 +879,8 @@ column-header .button:hover, column-header .button:hover:focus {
  ***********/
 
 .toolbar {
+    color: @fg_color;
+    background-color: @bg_color;
     border-style: solid;
     border-width: 1px 0px 0px 0px;
     border-color: @border_insensitive;
@@ -898,6 +896,12 @@ column-header .button:hover, column-header .button:hover:focus {
 }
 
 GtkHandleBox {
+}
+
+.separator {
+    border-style: solid;
+    color: mix(@text_color, @bg_color, 0.9);
+    border-color: mix(@text_color, @bg_color, 0.9);
 }
 
 /***********
