@@ -8,21 +8,21 @@ set -e
 LANG=C
 
 # package variables
-source cache/PKGBUILD
+source arch/PKGBUILD
 name=${pkgname%%-*}
 
 # check old package version
 lastpkgver=$(git tag -l v* | sort -V | tail -n 1 | cut -dv -f2)
 
 # check new package version
-pkgrel=$(grep -m 1 "pkgrel=" cache/PKGBUILD | cut -d= -f2)
+pkgrel=$(grep -m 1 "pkgrel=" arch/PKGBUILD | cut -d= -f2)
 
 headpkg() {
 # use -f to force update
 git archive --prefix=$pkgname-$pkgver/ \
--o cache/$pkgname-$pkgver.tar.gz HEAD
+-o arch/$pkgname-$pkgver.tar.gz HEAD
 
-cd cache
+cd arch
 rm -rf src
 makepkg $force --source --skipchecksums
 makepkg $force -c --skipchecksums
@@ -125,7 +125,7 @@ esac
 
 case $arg in
 p|'')
-	cd cache
+	cd arch
 	push; install
 	;;
 esac

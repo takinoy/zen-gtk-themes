@@ -7,7 +7,7 @@
 t=15
 
 # package name
-pkgname=$(grep -m 1 'pkgname=' cache/PKGBUILD | cut -d= -f2)
+pkgname=$(grep -m 1 'pkgname=' arch/PKGBUILD | cut -d= -f2)
 name=${pkgname%%-*}
 # first letter in uppercase
 name=$(echo ${name:0:1}|tr a-z A-Z)${name:1}
