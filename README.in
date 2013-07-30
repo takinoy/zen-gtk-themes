@@ -10,11 +10,11 @@ Features :
  - thin menubar and toolbar
  - includes both gtk2 and gtk3 themes
  - compatibility with Xfce widgets, Xfce notify theme
- - seven pre-configured color schemes : Zen, Zen-blua, Zen-griza, Zen-nigra, Zen-nokto, Zen-verda, Zen-papero.
+ - height pre-configured color schemes : Zen, Zen-bicolor, Zen-blua, Zen-griza, Zen-nigra, Zen-nokto, Zen-verda, Zen-papero.
 
 dependencies :
 - Murrine engine version >=0.98 for gtk2. A gtk2 version with the clearlooks engine is available on the Zen-0.3.x package.
-- gtk-3.8.x for gtk3. If you have gtk-3.4.x or gtk-3.6.x you should install version 0.10.x of this theme.
+- gtk-3.8.x for gtk3. Compatibles versions are available for gtk-3.6.x and gtk-3.4.x (0.10.x.g36 and 0.10.x.g34 respectively).
 
 The gtk-3 version is mostly tested on few applications under Xfce. Do not hesitate to try it in full gtk-3 environnement and report any issues.
 

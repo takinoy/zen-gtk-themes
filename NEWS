@@ -1,8 +1,15 @@
 Changelog:
 ----------
+0.12.0
+ - Add Zen-bicolor variant.
+ - Change zen-nigra menu style to dark.
+ - Fix bug in scrollbars for epiphany.
+ - Fix gtk3 progressbar text color and fallback mode panel.
+ - Minor others improvements.
+ - Adjust xfwm4 titlebar and xfce-headers.
 
-0.11.5 : Fix "add-new-items" window buttons for xfce.
-0.11.4
+0.11.5
+ - Fix "add-new-items" window buttons for xfce.
  - Fix Zen-papero tooltip background color.
  - Provide compatibility with lxde panel.
  - Workaround for theme rendering in LibreOffice.
@@ -15,7 +22,7 @@ Changelog:
  - Updated to gtk3.8 (menuitem separator, paddings...).
  - Add standard build tools.
 
-0.10.9 : updates and fixes from 0.11 branch.
+0.10.10 : updates and fixes from 0.12 branch.
 0.10.4
  - Fix gtk3 rubberband selection color.
  - Adjust gtk3 panel settings (not tested).

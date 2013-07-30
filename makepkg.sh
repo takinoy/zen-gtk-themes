@@ -28,20 +28,6 @@ makepkg $force --source --skipchecksums
 makepkg $force -c --skipchecksums
 }
 
-commit() {
-	git status -s
-	if git status -s | grep '^[A-Z]'
-	then
-	echo "files staged for commit, aborded"
-	exit 1
-	fi
-	git add $@
-	if git status -s | grep '^M' > /dev/null
-	then
-	git commit -m "$message"
-	fi
-}
-
 push() {
 	# update package relase to PKGBUILD
 	if [ "$pkgver" == "$lastpkgver" ] && [ "$f" == "" ]
@@ -73,59 +59,60 @@ install() {
 	# update aur package and install it 
 	burp --category=xfce $pkgname-$pkgver-$pkgrel.src.tar.gz
 	yaourt -S $pkgname
-	# push the repository
-	git push $force
 }
 
 
 # options
-f=''; force=''; arg=''
-while  getopts fhpu opt
+f=''; force=''; h=false; p=false; i=false;
+while  getopts fhpi opt
 do
 	case $opt in
 	f)	force="-f"; f="+" ;;
-	h)	arg=h ;;
-	p)	arg=p ;;
-	u)	arg=u ;;
+	h)	h=true ;;
+	p)	p=true ;;
+	i)	i=true ;;
 	\?)	echo "use -f to force update PKGBUILD"
 		echo "    -h build head package localy"
-		echo "    -p to push the package without updating it"
-		echo "    -u to update package source without pushing it"
+		echo "    -p push a tag and create package source without installing it"
+		echo "    -i update aur package and install it"
 		exit 1
 	esac
 done
 
-case $arg in
-u|'')
+if !($h) && !($p) && !($i) ; then
+h=false; p=true; i=true;
+fi
+
+if $h; then
+	p=i=false;
+	headpkg
+	exit 0;
+fi
+
+if $p; then
 	if [ "$pkgver" == "$lastpkgver" ] && [ "$f" == "" ]
 	then
-	echo "enter new version number (last package version =  $lastpkgver) :"
-	read pkgver
+		echo "tag v$pkgver already exist, aborded"
+		exit 1;
 	else
-	echo "update README to v$pkgver ? Y/n/<package_version>"
-	read answer
+		echo "push package v$pkgver ? Y/n/<package_version>"
+		read answer
 		case $answer in
 		Y|y|"") ;;
-		N|n) exit 0 ;;
-		*) pkgver=$answer;;
+		*) exit 0 ;;
 		esac
+		cd arch
+		push
+		cd ..
 	fi
+fi
 
-	# update configure
-	subst='AC_INIT(\[[a-z-]*\],.*\[[0-9.]*\]'
-	sed -i "s/AC_INIT(\[[a-z-]*\],.*\[[0-9.]*\] \
-	/AC_INIT([$pkgname], [$pkgver]/" configure.ac
-
-	# update readme
-	echo "update $readme to version $pkgver..."
-	./configure
-	;;
-h)	headpkg ;;
-esac
-
-case $arg in
-p|'')
+if $i; then
 	cd arch
-	push; install
-	;;
-esac
+	install
+	cd ..
+	# push the repository
+	git push $force
+fi
+
+

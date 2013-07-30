@@ -79,7 +79,7 @@ subdir = .
 DIST_COMMON = INSTALL NEWS README AUTHORS ChangeLog \
 	$(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/configure $(am__configure_deps) \
-	$(top_srcdir)/cache/PKGBUILD.in $(srcdir)/README.in \
+	$(top_srcdir)/arch/PKGBUILD.in $(srcdir)/README.in \
 	$(srcdir)/README.od.in COPYING TODO compile install-sh missing
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -88,7 +88,7 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
-CONFIG_CLEAN_FILES = cache/PKGBUILD README README.od
+CONFIG_CLEAN_FILES = arch/PKGBUILD README README.od
 CONFIG_CLEAN_VPATH_FILES =
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -288,7 +288,7 @@ $(top_srcdir)/configure: @MAINTAINER_MODE_TRUE@ $(am__configure_deps)
 $(ACLOCAL_M4): @MAINTAINER_MODE_TRUE@ $(am__aclocal_m4_deps)
 	$(am__cd) $(srcdir) && $(ACLOCAL) $(ACLOCAL_AMFLAGS)
 $(am__aclocal_m4_deps):
-cache/PKGBUILD: $(top_builddir)/config.status $(top_srcdir)/cache/PKGBUILD.in
+arch/PKGBUILD: $(top_builddir)/config.status $(top_srcdir)/arch/PKGBUILD.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 README: $(top_builddir)/config.status $(srcdir)/README.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
