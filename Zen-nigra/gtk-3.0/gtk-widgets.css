@@ -417,7 +417,7 @@ column-header:last-child .button {
 GtkCheckButton.check, GtkCheckButton.radio {
     border: solid;
     border-width: 1px;
-    background-color: @base_color;
+    background-color: @radio_bg_normal;
     border-color: @button_border;
 
     -GtkWidget-focus-line-pattern: "\1\1";
