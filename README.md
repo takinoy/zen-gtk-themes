@@ -1,9 +1,9 @@
-zen-gtk-themes version 0.10.9
+zen-gtk-themes version 0.10.10
 ----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : June 29, 2013
+Date : August 10, 2013
 Sources : https://github.com/cedl38/zen-gtk-themes
 
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
@@ -12,11 +12,11 @@ Features :
  - thin menubar and toolbar
  - includes both gtk2 and gtk3 themes
  - compatibility with Xfce widgets, Xfce notify theme
- - seven pre-configured color schemes : Zen, Zen-blua, Zen-griza, Zen-nigra, Zen-nokto, Zen-verda, Zen-papero.
+ - height pre-configured color schemes : Zen, Zen-bicolor, Zen-blua, Zen-griza, Zen-nigra, Zen-nokto, Zen-verda, Zen-papero.
 
 dependencies :
 - Murrine engine version >=0.98 for gtk2. A gtk2 version with the clearlooks engine is available on the Zen-0.3.x package.
-- gtk-3.4.x or gtk-3.6.x for gtk3. If you have gtk >=3.8.x you should install version >=0.11.x of this theme.
+- gtk-3.8.x for gtk3. Compatibles versions are available for gtk-3.6.x and gtk-3.4.x (0.10.x.g36 and 0.10.x.g34 respectively).
 
 The gtk-3 version is mostly tested on few applications under Xfce. Do not hesitate to try it in full gtk-3 environnement and report any issues.
 
@@ -40,6 +40,12 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 Changelog:
 ----------
 
+0.10.10 :
+ - Add Zen-bicolor variant.
+ - Change zen-nigra menu style to dark.
+ - Fix bug in scrollbars for epiphany.
+ - Fix gtk3 progressbar text color and fallback mode panel.
+ - Adjust xfwm4 titlebar and xfce-headers.
 0.10.9 : Fix "add-new-items" window buttons for xfce.
 0.10.8 : Fix Zen-papero tooltip background color.
 0.10.7
