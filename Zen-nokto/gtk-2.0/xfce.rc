@@ -5,6 +5,10 @@ widget_class "*XfsmLogoutDialog*Button"	style 	"dark-button"
 widget_class "*XfsmLogoutDialog*RadioButton"	style "radiocheck-dark"
 widget_class "*XfsmLogoutDialog*CheckButton"	style "radiocheck-dark"
 
+# this prevent overwriting widgets style
+widget_class "*XfsmLogoutDialog*RadioButton"	style "radiocheck-nokto"
+widget_class "*XfsmLogoutDialog*CheckButton"	style "radiocheck-nokto"
+
 style "xfwm-tabwin" = "adaptive-dark"
 {
 	Xfwm4TabwinWidget::icon-size = 64
