@@ -20,7 +20,7 @@ style "notebook-bg-nokto"
 {
 	bg[ACTIVE]			= shade(1.1, @bg_color) # Unfocused tab background.
 	bg[NORMAL]			= shade(0.8, @bg_color) # Tab background.
-	bg[PRELIGHT]		= shade(1.3, @bg_color)
+	bg[PRELIGHT]		= shade(0.8, @bg_color)	# for radio and check button
 }
 
 widget_class "*<GtkNotebook>*<GtkEventBox>"			style "notebook-bg-nokto"
@@ -55,11 +55,15 @@ widget_class "*OptionMenu*"			style "button-nokto"
 class "*OptionMenu*"				style "button-nokto"
 widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button-nokto"
 
-# this prevent overwriting others widgets style
-class "GtkRadio*"	style "radiocheck"
-class "GtkCheck*"	style "radiocheck"
-widget_class "*<GtkRadioButton>*"		style "radiocheck"
-widget_class "*<GtkCheckButton>*"		style "radiocheck"
+style "radiocheck-nokto"
+{
+	base[NORMAL]	= "#000000"
+}
+
+class "GtkRadio*"									style "radiocheck-nokto"
+class "GtkCheck*"									style "radiocheck-nokto"
+widget_class "*<GtkRadioButton>*"					style "radiocheck-nokto"
+widget_class "*<GtkCheckButton>*"					style "radiocheck-nokto"
 
 style "scrollbar-nokto"
 {
