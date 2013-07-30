@@ -9,9 +9,12 @@
 @define-color tooltip_fg_color #000;
 @define-color tooltip_bg_color #FFF7BF;
 
+/* extra color scheme */
 @define-color selected_base_color #B5DDDB;
 /* workaround for radio:hover state : selected_text_color=#000001 */
 @define-color selected_text_color #000001;
+@define-color dark_bg_color #212121;
+@define-color dark_text_color #D0D0D0;
 
 /* colormap actually used by the theme, to be overridden in other css files */
 @define-color theme_bg_color @bg_color;
@@ -56,6 +59,15 @@
 @define-color scrollbar_slider mix(@fg_color, shade(@bg_color, 0.9), 0.8);
 @define-color panel_bg_normal shade(@bg_color, 0.9);
 @define-color panel_bg_active mix(@panel_bg_normal, @selected_bg_color, 0.6);
+@define-color menu_bg_normal @bg_lighter;
+@define-color menu_bg_selected shade(@selected_base_color, 1.1);
+@define-color menu_fg_normal @text_color;
+@define-color menu_fg_selected @selected_text_color;
+@define-color menubar_bg_normal @bg_color;
+@define-color menubar_bg_selected shade(@selected_bg_color, 1.05);
+@define-color menubar_fg_normal @fg_color;
+@define-color menubar_fg_selected @selected_fg_color;
+@define-color menubar_border @border_insensitive;
 
 /* window manager colors */
 @define-color wm_bg @bg_color;

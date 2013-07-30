@@ -779,17 +779,20 @@ column-header .button:hover, column-header .button:hover:focus {
  ***********/
 
 .menubar {
-	background-image: -gtk-gradient (linear,
+    color: @menubar_fg_normal;
+    background-color: @menubar_bg_normal;
+    background-image: -gtk-gradient (linear,
                0 0, 0 1,
-               color-stop(0.75, alpha(@border_insensitive, 0.06)),
-               color-stop(1, alpha(@border_insensitive, 0.2)));
+               color-stop(0, transparent),
+               color-stop(0.75, alpha(@menubar_border, 0.06)),
+               color-stop(1, alpha(@menubar_border, 0.2)));
     border-style: solid;
     border-width: 0px 0px 1px 0px;
     border-image-source: -gtk-gradient (linear,
                0 0, 1 0,
-               color-stop(0, @border_insensitive),
-               color-stop(0.9, @border_insensitive),
-               color-stop(1, @bg_color));
+               color-stop(0, @menubar_border),
+               color-stop(0.9, @menubar_border),
+               color-stop(1, @menubar_bg_normal));
     border-image-slice: 1;
 }
 
@@ -798,13 +801,13 @@ column-header .button:hover, column-header .button:hover:focus {
 }
 
 .menubar *:hover {
-    color: @selected_fg_color;
+    color: @menubar_fg_selected;
 }
 
  .menubar>.menuitem:hover {
-    color: @selected_fg_color;
-    background-color: shade(@selected_bg_color, 1.05);
-    border-color: shade(@selected_bg_color, 0.9);
+    color: @menubar_fg_selected;
+    background-color: @menubar_bg_selected;
+    border-color: shade(@menubar_bg_selected, 0.8);
 }
 
 /*********
@@ -812,16 +815,16 @@ column-header .button:hover, column-header .button:hover:focus {
  *********/
 
 .menu {
-    color: @text_color;
-    background-color: @bg_lighter;
+    color: @menu_fg_normal;
+    background-color: @menu_bg_normal;
     border: solid;
     border-width: 1px;
-    border-color: shade(@bg_lighter, 0.8);
+    border-color: shade(@menu_bg_normal, 0.8);
     padding: 1px;
 }
 
 .menu *:hover, .menu *:active:hover, .menu *:selected {
-    color: @selected_text_color;
+    color: @menu_fg_selected;
 }
 
 .menuitem {
@@ -837,27 +840,23 @@ column-header .button:hover, column-header .button:hover:focus {
 }
 
 .menu>*:insensitive, .menuitem>*:insensitive {
-    color: mix(@text_color, darker(@bg_lighter), 0.7);
-    border-color: shade(@bg_lighter, 0.9);
-    text-shadow: 1px 1px shade(@bg_lighter, 1.05);
+    color: mix(@menu_fg_normal, darker(@menu_bg_normal), 0.7);
+    border-color: shade(@menu_bg_normal, 0.9);
+    text-shadow: 1px 1px shade(@menu_bg_normal, 1.05);
 }
 
 .menuitem:hover, .menu:hover {
     border: solid;
     border-width: 1px;
     background-image: none;
-    background-color: shade(@selected_base_color, 1.1);
-    border-color: shade(@selected_base_color, 0.9);
+    background-color: @menu_bg_selected;
+    border-color: shade(@menu_bg_selected, 0.8);
 }
 
 .menu:selected, .menuitem:selected {
-    color: @selected_text_color;
+    color: @menu_fg_selected;
     background-color: @selected_base_color;
     border-color: @border_selected;
-}
-
-.separator {
-    color: mix(@text_color, @bg_color, 0.9);
 }
 
 .menuitem.separator {
@@ -865,17 +864,17 @@ column-header .button:hover, column-header .button:hover:focus {
     color: transparent;
     background-image: -gtk-gradient (linear,
                0 0, 1 0,
-               color-stop(0, @bg_lighter),
-               color-stop(0.3, mix(@text_color, @bg_lighter, 0.9)),
-               color-stop(0.7, mix(@text_color, @bg_lighter, 0.9)),
-               color-stop(1, @bg_lighter));
+               color-stop(0, @menu_bg_normal),
+               color-stop(0.3, mix(@menu_fg_normal, @menu_bg_normal, 0.9)),
+               color-stop(0.7, mix(@menu_fg_normal, @menu_bg_normal, 0.9)),
+               color-stop(1, @menu_bg_normal));
     border-style: solid;
     border-image-source: -gtk-gradient (linear,
                0 0, 1 0,
-               color-stop(0, @bg_lighter),
-               color-stop(0.3, shade(@bg_lighter, 1.05)),
-               color-stop(0.7, shade(@bg_lighter, 1.05)),
-               color-stop(1, @bg_lighter));
+               color-stop(0, @menu_bg_normal),
+               color-stop(0.3, shade(@menu_bg_normal, 1.05)),
+               color-stop(0.7, shade(@menu_bg_normal, 1.05)),
+               color-stop(1, @menu_bg_normal));
     border-image-slice: 0 0 1 0;
 }
 
@@ -892,6 +891,8 @@ column-header .button:hover, column-header .button:hover:focus {
  ***********/
 
 .toolbar {
+    color: @fg_color;
+    background-color: @bg_color;
     background-image: -gtk-gradient (linear,
                0 0, 0 1,
                color-stop(0, alpha(@border_insensitive, 0.2)),
@@ -919,6 +920,10 @@ column-header .button:hover, column-header .button:hover:focus {
 }
 
 GtkHandleBox {
+}
+
+.separator {
+    color: mix(@text_color, @bg_color, 0.9);
 }
 
 /***********
