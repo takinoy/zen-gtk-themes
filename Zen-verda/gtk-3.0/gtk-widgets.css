@@ -258,6 +258,7 @@ GtkAssistant .sidebar {
 
 GtkSwitch.slider,
 .button {
+    color: @fg_color;
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@button_bg_normal, 1.05)),
                                      to (shade(@button_bg_normal, 0.95)));
@@ -494,6 +495,7 @@ GtkScale.vertical.trough {
 .scrollbar.button,
 .scrollbar.trough {
     border-style: none;
+    background-color: @bg_color;
     background-image: none;
 }
 
