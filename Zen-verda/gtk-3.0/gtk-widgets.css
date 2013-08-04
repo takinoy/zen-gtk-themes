@@ -75,7 +75,7 @@ GtkWindow {
 *:insensitive {
     color: @fg_insensitive;
     border-color: @border_insensitive;
-    text-shadow: 1px 1px @light_shadow;
+    text-shadow: 1 1 @light_shadow;
 }
 
 *:hover {
@@ -756,26 +756,26 @@ GtkSwitch:hover,
     border-bottom-color: mix(@selected_bg_color, shade(@button_border, 0.9), 0.8);
     border-left-color: mix(@selected_bg_color, @button_border, 0.8);
 
-    box-shadow: inset 0 1px shade(@selected_bg_color, 1.12),
-                inset -1px 0  @selected_bg_color,
-                inset 0 -1px shade(@selected_bg_color, 0.9),
-                inset 1px 0 @selected_bg_color;
+    box-shadow: inset 0 1 shade(@selected_bg_color, 1.12),
+                inset -1 0  @selected_bg_color,
+                inset 0 -1 shade(@selected_bg_color, 0.9),
+                inset 1 0 @selected_bg_color;
 }
 
 .scrollbar.slider:focus, .entry:focus {
     border-color: mix(@selected_bg_color, @border_normal, 0.8);
-    box-shadow: inset 0 1px @selected_bg_color,
-                inset -1px 0  @selected_bg_color,
-                inset 0 -1px @selected_bg_color,
-                inset 1px 0 @selected_bg_color;
+    box-shadow: inset 0 1 @selected_bg_color,
+                inset -1 0  @selected_bg_color,
+                inset 0 -1 @selected_bg_color,
+                inset 1 0 @selected_bg_color;
 }
 
 .spinbutton.button:hover, .spinbutton.button:hover:focus {
     border-left-color: @button_border;
-    box-shadow: inset 0 1px @selected_bg_color,
-                inset -1px 0  shade(@selected_bg_color,0.9),
-                inset 0 -1px shade(@selected_bg_color, 0.85),
-                inset 1px 0 shade(@selected_bg_color,0.9);
+    box-shadow: inset 0 1 @selected_bg_color,
+                inset -1 0  shade(@selected_bg_color,0.9),
+                inset 0 -1 shade(@selected_bg_color, 0.85),
+                inset 1 0 shade(@selected_bg_color,0.9);
 }
 
 column-header .button:hover, column-header .button:hover:focus {
@@ -840,7 +840,7 @@ column-header .button:hover, column-header .button:hover:focus {
 .menu>*:insensitive, .menuitem>*:insensitive {
     color: mix(@menu_fg_normal, darker(@menu_bg_normal), 0.7);
     border-color: shade(@menu_bg_normal, 0.9);
-    text-shadow: 1px 1px shade(@menu_bg_normal, 1.05);
+    text-shadow: 1 1 shade(@menu_bg_normal, 1.05);
 }
 
 .menuitem:hover, .menu:hover {
