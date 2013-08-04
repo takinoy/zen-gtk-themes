@@ -148,15 +148,19 @@ class "GtkWidget"			style "default"
 #widget_class "*"			style "default"
 
 style "dark" {
-	fg[NORMAL]			= @dark_text_color # Makes panel text light.
-	fg[ACTIVE]			= "#FFFFFF"
-	fg[PRELIGHT]		= "#FFFFFF"
-	fg[SELECTED]		= "#E6E6E6"
 	bg[NORMAL]			= @dark_bg_color
 	bg[ACTIVE]			= shade(0.4, @selected_bg_color)
 	bg[PRELIGHT]		= mix(0.2, @selected_bg_color, @dark_bg_color)
 	bg[SELECTED]		= shade(0.5, @selected_bg_color)
 	bg[INSENSITIVE]		= "#000000"
+	fg[NORMAL]			= @dark_text_color # Makes panel text light.
+	fg[ACTIVE]			= "#FFFFFF"
+	fg[PRELIGHT]		= "#FFFFFF"
+	fg[SELECTED]		= "#E6E6E6"
+	fg[INSENSITIVE]		= mix(0.65, @dark_bg_color, @dark_text_color)
+	text[NORMAL]		= @dark_text_color
+	text[ACTIVE]		= @dark_text_color
+	text[PRELIGHT]		= "#FFFFFF"
 	base[NORMAL]		= shade(0.8, @base_color)
 }
 
@@ -194,15 +198,7 @@ widget_class "*<GtkEntry>*"		style "entry"
 # Menus #
 #########
 
-style "menu" = "default-thickness"
-{
-	bg[NORMAL]			= mix(0.6, @base_color, @bg_color)	# Color of menu background.
-	fg[NORMAL]			= @text_color
-	fg[PRELIGHT]		= @selected_text_color		# Color of prelight menu item text.
-	base[NORMAL]		= @base_color	# Color for menu-item radio/checks background.
-	bg[SELECTED]		= shade(1.1, @selected_base_color)
-	fg[INSENSITIVE]		= mix(0.7, darker(mix(0.6, @base_color, @bg_color)), @text_color)
-
+style "murrine-menu" = "default-thickness" {
 	engine "murrine"
 	{
 		gradient_shades		= {1.0,1.0,1.0,1.0}	#{1.1,1.0,1.0,0.87}
@@ -211,11 +207,23 @@ style "menu" = "default-thickness"
 	}
 }
 
-widget_class "*<GtkMenu>*"		style "menu"
-#class "*Menu*"				style "menu"
+widget_class "*<GtkMenu>*"		style "murrine-menu"
 
-style "menuitem" = "menu"
-{
+style "menu-adaptive" {
+	bg[NORMAL]			= mix(0.6, @base_color, @bg_color)
+	fg[NORMAL]			= @text_color
+	fg[PRELIGHT]		= @selected_text_color
+	base[NORMAL]		= @base_color	# Color for menu-item radio/checks background.
+	bg[SELECTED]		= shade(1.1, @selected_base_color)
+	fg[INSENSITIVE]		= mix(0.7, darker(mix(0.6, @base_color, @bg_color)), @text_color)
+}
+
+style "menu-dark" = "dark" {
+	bg[NORMAL]			= shade(1.4, @dark_bg_color)	# color #2E2E2E
+	bg[SELECTED]		= shade(0.7, @selected_base_color)
+}
+
+style "menuitem" = "murrine-menu" {
 	xthickness = 1
 	ythickness = 3
 }
@@ -223,27 +231,7 @@ style "menuitem" = "menu"
 widget_class "*<GtkMenuItem>*"	style "menuitem"
 class "GtkMenuItem"			style "menuitem"
 
-style "menubar"
-{
-	xthickness = 1
-	ythickness = 3
-
-	GtkMenuBar :: shadow-type = GTK_SHADOW_NONE
-	bg[SELECTED]		= shade(1.05, @selected_bg_color)
-	fg[NORMAL]			= @fg_color
-	fg[INSENSITIVE]		= mix(0.6, darker(@bg_color), @fg_color)
-	fg[PRELIGHT]		= @selected_fg_color
-
-	engine "murrine"	{	roundness = 0	}
-}
-
-widget_class "*BonoboDockItem"		style "menubar"
-class "*BonoboDockItem"				style "menubar"
-widget_class "*<GtkMenuBar>*"		style "menubar"
-class "GtkToolbar"					style "menubar"
-class "GtkHandleBox*"				style "menubar"
-
-style "menuitem_text_is_fg_color_workaround" {
+style "menuitem_text_is_fg_color_workaround-dark" {
 	text[NORMAL]		= @fg_color
 	text[PRELIGHT]		= @selected_text_color
 	text[SELECTED]		= @selected_text_color
@@ -262,8 +250,33 @@ style "separator_menu_item" {
 
 widget_class "*<GtkSeparatorMenuItem>*"		style "separator_menu_item"
 
-style "pager"
-{
+style "menubar" = "default-thickness" {
+	xthickness = 1
+	ythickness = 3
+
+	GtkMenuBar :: shadow-type = GTK_SHADOW_NONE
+	engine "murrine"	{	roundness = 0	}
+}
+
+widget_class "*BonoboDockItem"		style "menubar"
+class "*BonoboDockItem"				style "menubar"
+widget_class "*<GtkMenuBar>*"		style "menubar"
+class "GtkToolbar"					style "menubar"
+class "GtkHandleBox*"				style "menubar"
+
+style "menubar-adaptive" {
+	bg[SELECTED]		= shade(1.05, @selected_bg_color)
+	fg[NORMAL]			= @fg_color
+	fg[INSENSITIVE]		= mix(0.6, darker(@bg_color), @fg_color)
+	fg[PRELIGHT]		= @selected_fg_color
+}
+
+style "menubar-dark" = "dark" {
+	bg[NORMAL]			= shade(1.82, @dark_bg_color)	# color #3C3C3C
+	bg[SELECTED]		= shade(0.6, @selected_bg_color)
+}
+
+style "pager" {
 	xthickness = 0
 	ythickness = 0
 

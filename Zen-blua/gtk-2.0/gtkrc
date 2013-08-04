@@ -4,5 +4,16 @@ gtk-color-scheme = "selected_base_color:#B5DDDB"
 gtk-color-scheme = "selected_text_color:#000000"
 
 include "gtk-widgets.rc"
+
+# menu style = [adaptive, dark]
+widget_class "*<GtkMenu>*"		style "menu-adaptive"
+widget_class "*<GtkMenuItem>*"	style "menu-adaptive"
+class "GtkMenuItem"			style "menu-adaptive"
+
+# menubar style = [adaptive, dark]
+widget_class "*BonoboDockItem"		style "menubar-adaptive"
+class "*BonoboDockItem"				style "menubar-adaptive"
+widget_class "*<GtkMenuBar>*"		style "menubar-adaptive"
+
 include "panel.rc"
 include "xfce.rc"

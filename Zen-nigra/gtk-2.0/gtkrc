@@ -94,5 +94,19 @@ class "GtkScrollbar"				style "scrollbar-nigra"
 class "GtkVScrollbar"				style "scrollbar-nigra"
 class "GtkHScrollbar"				style "scrollbar-nigra"
 
+style "menu-nigra" = "menu-dark" {
+	bg[SELECTED]		= shade(0.6, @selected_base_color)
+}
+
+# menu style = [adaptive, nigra]
+widget_class "*<GtkMenu>*"		style "menu-nigra"
+widget_class "*<GtkMenuItem>*"	style "menu-nigra"
+class "GtkMenuItem"				style "menu-nigra"
+
+# menubar style
+widget_class "*BonoboDockItem"		style "menubar-adaptive"
+class "*BonoboDockItem"				style "menubar-adaptive"
+widget_class "*<GtkMenuBar>*"		style "menubar-adaptive"
+
 include "panel.rc"
 include "xfce.rc"
