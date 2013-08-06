@@ -282,8 +282,8 @@ GtkComboBox:insensitive,
     color: @fg_insensitive;
 
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@button_bg_insensitive, 1.05)),
-                                     to (shade(@button_bg_insensitive, 0.95)));
+                                     from (shade(@button_bg_insensitive, 1.02)),
+                                     to (shade(@button_bg_insensitive, 0.97)));
     border-top-color: @border_insensitive;
     border-right-color: shade(@border_insensitive, 0.95);
     border-bottom-color: shade(@border_insensitive, 0.9);
