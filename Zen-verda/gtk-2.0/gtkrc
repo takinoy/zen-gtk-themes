@@ -7,3 +7,9 @@ gtk-color-scheme = "dark_bg_color:#212121\ndark_text_color:#D0D0D0"
 include "gtk-widgets.rc"
 include "panel.rc"
 include "xfce.rc"
+
+# Xfce specific theming
+widget "xfwm"						style "titlebar-adaptive"
+class "MetaFrames"					style "titlebar-adaptive"
+widget_class "MetaFrames"			style "titlebar-adaptive"
+class"*XfceHeading*"	style"xfceheaders"

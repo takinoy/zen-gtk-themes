@@ -5,6 +5,8 @@ gtk-color-scheme = "selected_text_color:#FFFFFF"
 gtk-color-scheme = "dark_bg_color:#212121\ndark_text_color:#D0C9B1"
 
 include "gtk-widgets.rc"
+include "panel.rc"
+include "xfce.rc"
 
 style "button-nokto"
 {
@@ -85,5 +87,16 @@ widget_class "*.<GtkCTree>.<GtkButton>"		style "treeview_header-nokto"
 widget_class "*.<GtkList>.<GtkButton>"		style "treeview_header-nokto"
 widget_class "*.<GtkCList>.<GtkButton>"		style "treeview_header-nokto"
 
-include "panel.rc"
-include "xfce.rc"
+# Xfce specific theming
+widget_class "*XfsmLogoutDialog*"				style "adaptive-dark"
+widget_class "*XfsmLogoutDialog*Button"	style 	"dark-button"
+widget_class "*XfsmLogoutDialog*RadioButton"	style "radiocheck-dark"
+widget_class "*XfsmLogoutDialog*CheckButton"	style "radiocheck-dark"
+# this prevent overwriting widgets style
+widget_class "*XfsmLogoutDialog*RadioButton"	style "radiocheck-nokto"
+widget_class "*XfsmLogoutDialog*CheckButton"	style "radiocheck-nokto"
+widget "xfwm"									style "titlebar-adaptive"
+class "MetaFrames"								style "titlebar-adaptive"
+widget_class "MetaFrames"						style "titlebar-adaptive"
+class"*XfceHeading*"	style"xfceheaders"
+widget "xfwm4-tabwin*"			style "adaptive-dark"
