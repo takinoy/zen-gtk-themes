@@ -582,25 +582,6 @@ style "rox" = "default"
 
 widget_class "*.Collection"			style "rox"
 
-style "titlebar" = "default"
-{
-	fg[SELECTED]		= mix(0.26, @bg_color, @selected_text_color)
-	fg[INSENSITIVE]		= mix(0.5, @bg_color, @fg_color)
-	bg[SELECTED]		= shade(0.9, @selected_bg_color)
-}
-
-widget "xfwm"						style "titlebar"
-class "MetaFrames"					style "titlebar"
-widget_class "MetaFrames"			style "titlebar"
-
-style"xfceheaders"
-{
-	text[NORMAL]	=@fg_color
-	base[NORMAL]	=@bg_color
-}
-
-class"*XfceHeading*"	style"xfceheaders"
-
 # Workaround style for places where the text color is used instead of the fg color.
 style "text_is_fg_color_workaround" {
 	text[NORMAL]		= @fg_color

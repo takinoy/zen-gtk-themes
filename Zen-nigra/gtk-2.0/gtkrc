@@ -5,23 +5,14 @@ gtk-color-scheme = "selected_text_color:#000000"
 gtk-color-scheme = "dark_bg_color:#212121\ndark_text_color:#D0C9B1"
 
 include "gtk-widgets.rc"
+include "panel.rc"
+include "xfce.rc"
 
 style "default-nigra"
 {
 	base[ACTIVE]		= "#99CCC9"
 }
 class "GtkWidget"			style "default-nigra"
-
-style "titlebar-nigra"
-{
-	fg[SELECTED] = mix(0.26, @bg_color, "#FFFFFF")
-	#bg[NORMAL]			= mix(0.6, @base_color, @bg_color)
-}
-
-widget "xfwm"						style "titlebar-nigra"
-widget "xfwm4-tabwin*"				style "titlebar-nigra"
-class "MetaFrames"					style "titlebar-nigra"
-widget_class "MetaFrames"			style "titlebar-nigra"
 
 style "button-nigra"
 {
@@ -109,5 +100,23 @@ widget_class "*BonoboDockItem"		style "menubar-adaptive"
 class "*BonoboDockItem"				style "menubar-adaptive"
 widget_class "*<GtkMenuBar>*"		style "menubar-adaptive"
 
-include "panel.rc"
-include "xfce.rc"
+# Xfce specific theming
+widget_class "*XfsmLogoutDialog*"				style "adaptive-dark"
+widget_class "*XfsmLogoutDialog*Button"	style 	"dark-button"
+widget_class "*XfsmLogoutDialog*RadioButton"	style "radiocheck-dark"
+widget_class "*XfsmLogoutDialog*CheckButton"	style "radiocheck-dark"
+widget "xfwm"									style "titlebar-adaptive"
+class "MetaFrames"								style "titlebar-adaptive"
+widget_class "MetaFrames"						style "titlebar-adaptive"
+
+style "titlebar-nigra" {
+	fg[SELECTED] = mix(0.26, @bg_color, "#FFFFFF")
+}
+
+widget "xfwm"						style "titlebar-nigra"
+widget "xfwm4-tabwin*"				style "titlebar-nigra"
+class "MetaFrames"					style "titlebar-nigra"
+widget_class "MetaFrames"			style "titlebar-nigra"
+
+class"*XfceHeading*"	style"xfceheaders"
+widget "xfwm4-tabwin*"			style "adaptive-dark"
