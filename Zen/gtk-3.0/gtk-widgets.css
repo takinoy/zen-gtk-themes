@@ -802,11 +802,7 @@ column-header .button:hover, column-header .button:hover:focus {
     padding: 3px 6px 3px 6px;
 }
 
-.menubar *:hover {
-    color: @menubar_fg_selected;
-}
-
- .menubar>.menuitem:hover {
+.menubar>.menuitem:hover {
     color: @menubar_fg_selected;
     background-color: @menubar_bg_selected;
     border-color: shade(@menubar_bg_selected, 0.8);
