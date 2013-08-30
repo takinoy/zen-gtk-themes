@@ -377,7 +377,7 @@ class "GtkCheck*"	style "radiocheck"
 widget_class "*<GtkRadioButton>*"		style "radiocheck"
 widget_class "*<GtkCheckButton>*"		style "radiocheck"
 
-style "radiocheck-dark"
+style "radiocheck-dark" = "radiocheck"
 {
 	bg[PRELIGHT]	= @dark_bg_color
 }
