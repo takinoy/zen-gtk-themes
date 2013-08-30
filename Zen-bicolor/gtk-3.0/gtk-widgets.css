@@ -1006,3 +1006,4 @@ GtkNotebook GtkLabel {
 }
 
 @import url("panel.css");
+@import url("lightdm-gtk-greeter.css");
