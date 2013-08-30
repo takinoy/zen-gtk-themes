@@ -328,6 +328,13 @@ GtkComboBox .menuitem {
     border-radius: 0px 3px 3px 0px;
 }
 
+GtkComboBox .separator {
+    /* always disable separators */
+    -GtkWidget-wide-separators: true;
+    -GtkWidget-horizontal-separator: 0;
+    -GtkWidget-vertical-separator: 0;
+}
+
 .spinbutton {
     padding: 2px;
 }
