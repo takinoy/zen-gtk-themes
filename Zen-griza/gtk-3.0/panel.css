@@ -21,12 +21,11 @@ PanelAppletFrame, PanelApplet .button {
 
 PanelApplet .button {
     border-radius: 1px;
-    border-color: shade(@panel_bg_normal, 0.8);
     border-style: solid;
-    border-top-color: shade(@panel_bg_normal, 0.8);
-    border-right-color: shade(@panel_bg_normal, 0.7);
-    border-bottom-color: shade(@panel_bg_normal, 0.6);
-    border-left-color: shade(@panel_bg_normal, 0.7);
+    border-top-color: alpha(@panel_button_border, 0.8);
+    border-right-color: alpha(@panel_button_border, 0.9);
+    border-bottom-color: @panel_button_border;
+    border-left-color: alpha(@panel_button_border, 0.9);
 }
 
 PanelApplet .button:active {
