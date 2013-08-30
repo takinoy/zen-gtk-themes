@@ -12,6 +12,13 @@
     border-radius: 10px;
 }
 
+/* workaround to disable selected labels background color */
+#restart_dialog *:selected,
+#shutdown_dialog *:selected {
+    color: @panel_fg_normal;
+    background-color: @panel_bg_normal;
+}
+
 #prompt_entry {
     color: @text_color;
 }
