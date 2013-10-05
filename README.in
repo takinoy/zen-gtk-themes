@@ -21,7 +21,9 @@ The gtk-3 version is mostly tested on few applications under Xfce. Do not hesita
 Install : extract the archive and copy the theme folders you want into ~/.theme.
 Arch users : "@PACKAGE_NAME@" is available in AUR.
 
-Extra : xfwm4 and metacity-1 windows decorator (see my others artworks)
+Extras :
+- xfwm4 and metacity-1 windows decorator (see my others artworks).
+- openbox theme matching nokto provided by Mark Whittaker : http://doth-e-pin.deviantart.com/art/Openbox-nokto-401245773.
 
 Specific settings for libreoffice :
 Using small scrollbars in libreoffice 3.* cause sheet tabs too small. You can fix scrollbar width for LibreOffice two ways :

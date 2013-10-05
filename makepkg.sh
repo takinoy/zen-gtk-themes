@@ -19,13 +19,13 @@ pkgrel=$(grep -m 1 "pkgrel=" arch/PKGBUILD | cut -d= -f2)
 
 headpkg() {
 # use -f to force update
-git archive --prefix=$pkgname-$pkgver/ \
--o arch/$pkgname-$pkgver.tar.gz HEAD
 
 cd arch
 rm -rf src
+mkdir src
+ln -sr ".." "src/${pkgname}-$pkgver"
 makepkg $force --source --skipchecksums
-makepkg $force -c --skipchecksums
+makepkg $force --noextract --clean --skipchecksums
 }
 
 push() {

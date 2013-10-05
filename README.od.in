@@ -24,7 +24,9 @@ The main goal of this theme is to keep it simple, consistent and being visually 
 [b]Install :[/b] extract the archive and copy the theme folders you want into ~/.theme.
 Arch users : "@PACKAGE_NAME@" is available in AUR.
 
-[b]Extra :[/b] xfwm4 and metacity-1 windows decorator (see my others artworks)
+[b]Extras :[/b]
+- xfwm4 and metacity-1 windows decorator (see my others artworks).
+- openbox theme matching nokto provided by Mark Whittaker : [url]http://doth-e-pin.deviantart.com/art/Openbox-nokto-401245773[/url].
 
 [b]Specific settings for libreoffice :[/b]
 Using small scrollbars in libreoffice 3.* cause sheet tabs too small. You can fix scrollbar width for LibreOffice two ways :

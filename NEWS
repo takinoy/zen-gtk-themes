@@ -1,11 +1,13 @@
 Changelog:
 ----------
+0.12.1
+ - Add lightdm-gtk-greeter theming support
+ - Minors fixes and improvements.
 0.12.0
  - Add Zen-bicolor variant.
  - Change zen-nigra menu style to dark.
  - Fix bug in scrollbars for epiphany.
  - Fix gtk3 progressbar text color and fallback mode panel.
- - Minor others improvements.
  - Adjust xfwm4 titlebar and xfce-headers.
 
 0.11.5
