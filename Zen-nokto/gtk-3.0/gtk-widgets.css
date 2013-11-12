@@ -890,6 +890,15 @@ column-header .button:hover, column-header .button:hover:focus {
     border-image-slice: 0 0 1 0;
 }
 
+/* Workaround for file-roller insensitive item who behave strangely in 3.10 (should be reconsidered)... */
+FrWindow .menuitem.separator {
+    color: mix(@menu_fg_normal, @menu_bg_normal, 0.9);
+
+    background-color: @bg_normal;
+    background-image: none;
+    border-style: none;
+}
+
 .menu.button:hover, .menu.button:active, 
 .menu.button:active:insensitive, .menu.button:insensitive,
 .menu.button {
@@ -897,6 +906,23 @@ column-header .button:hover, column-header .button:hover:focus {
     background-image: none;
     border-style: none;
 }
+
+/* Workaround: disables menu color for specific applications */
+GduWindow .menubar {
+	color :@text_color;
+    background-color: @bg_normal;
+    background-image: -gtk-gradient (linear,
+               0 0, 0 1,
+               color-stop(0, transparent),
+               color-stop(0.75, alpha(@border_insensitive, 0.06)),
+               color-stop(1, alpha(@border_insensitive, 0.2)));
+    border-image-source: -gtk-gradient (linear,
+               0 0, 1 0,
+               color-stop(0, @border_insensitive),
+               color-stop(0.9, @border_insensitive),
+               color-stop(1, @border_insensitive));
+}
+
 
 /***********
  * Toolbar *
