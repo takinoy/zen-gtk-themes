@@ -70,6 +70,10 @@ widget_class "*<GtkCheckButton>*"					style "radiocheck-nokto"
 style "scrollbar-nokto"
 {
 	bg[NORMAL]        = shade(1.5, @bg_color)
+
+	engine "murrine" {
+		prelight_shade		= 1.2
+	}
 }
 
 class "GtkScrollbar"				style "scrollbar-nokto"

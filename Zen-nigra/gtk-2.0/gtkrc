@@ -80,6 +80,10 @@ widget_class "*.<GtkCMCList>.<GtkButton>*"		style "treeview_header-nigra"
 style "scrollbar-nigra"
 {
 	bg[NORMAL]        = shade(1.6, @bg_color)
+
+	engine "murrine" {
+		prelight_shade		= 1.2
+	}
 }
 
 class "GtkScrollbar"				style "scrollbar-nigra"

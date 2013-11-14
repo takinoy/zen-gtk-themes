@@ -134,7 +134,6 @@ style "default" = "default-thickness"
 		comboboxstyle		= 0					# 0 = normal combobox, 1 = colorized combobox below arrow
 		expanderstyle		= 0
 		focusstyle			= 3
-		prelight_shade		= .8				# shade level for scrollbar's slider, comboboxstyle(1), and prelight state with gradient_colors
 		separatorstyle		= 1					# 0 = Hard seperators 1 = Smooth seperators
 		#shadow_shades		= { 0.8, 2.2 }		# gradient for shadows.
 		textstyle			= 0					# 0 = normal text, 1 = inset
@@ -481,6 +480,7 @@ style "scrollbar" = "default"
 		trough_shades			= {0.975, 0.975}
 		contrast				= 0.0
 		trough_border_shades	= {1.025, 1.025}
+		prelight_shade		= .8				# shade level for scrollbar's slider, comboboxstyle(1), and prelight state with gradient_colors
 	}
 }
 
