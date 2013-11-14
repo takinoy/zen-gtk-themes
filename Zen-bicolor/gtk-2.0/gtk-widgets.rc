@@ -151,15 +151,20 @@ style "dark" {
 	bg[PRELIGHT]		= mix(0.2, @selected_bg_color, @dark_bg_color)
 	bg[SELECTED]		= shade(0.5, @selected_bg_color)
 	bg[INSENSITIVE]		= "#000000"
+
 	fg[NORMAL]			= @dark_text_color # Makes panel text light.
 	fg[ACTIVE]			= "#FFFFFF"
 	fg[PRELIGHT]		= "#FFFFFF"
 	fg[SELECTED]		= "#E6E6E6"
 	fg[INSENSITIVE]		= mix(0.65, @dark_bg_color, @dark_text_color)
+
 	text[NORMAL]		= @dark_text_color
-	text[ACTIVE]		= @dark_text_color
+	text[ACTIVE]		= "#FFFFFF"
 	text[PRELIGHT]		= "#FFFFFF"
-	base[NORMAL]		= shade(0.8, @base_color)
+
+	base[NORMAL]		= shade(1.15, @dark_bg_color)
+	base[SELECTED]		= shade(0.7, @selected_base_color)	# Color for selected base items.
+	base[ACTIVE]		= shade(0.7, @selected_base_color)	# Color for selected base items.
 }
 
 style "light" {
@@ -352,6 +357,7 @@ widget_class "*<GtkCheckButton>*"		style "radiocheck"
 style "radiocheck-dark" = "radiocheck"
 {
 	bg[PRELIGHT]	= @dark_bg_color
+	base[NORMAL]        = shade(0.8, @base_color)
 }
 
 #########
@@ -481,13 +487,25 @@ style "scrollbar" = "default"
 		trough_shades			= {0.975, 0.975}
 		contrast				= 0.0
 		trough_border_shades	= {1.025, 1.025}
-		prelight_shade		= .8				# shade level for scrollbar's slider, comboboxstyle(1), and prelight state with gradient_colors
+		prelight_shade			= .8				# shade level for scrollbar's slider, comboboxstyle(1), and prelight state with gradient_colors
 	}
 }
 
 class "GtkScrollbar"				style "scrollbar"
 class "GtkVScrollbar"				style "scrollbar"
 class "GtkHScrollbar"				style "scrollbar"
+
+style "scrollbar-dark" = "dark"
+{
+	bg[SELECTED]		= shade(0.4, @dark_text_color)
+	bg[PRELIGHT]		= shade(0.6, @dark_text_color)
+	bg[ACTIVE]			= @dark_bg_color
+
+	engine "murrine" {
+		border_colors 			= {@dark_bg_color, @dark_bg_color}
+		prelight_shade			= 1.2
+	}
+}
 
 style "scale"="default"
 {
