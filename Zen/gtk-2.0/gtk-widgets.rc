@@ -437,30 +437,23 @@ widget_class "*.<GtkCMCList>.<GtkButton>*"		style "treeview_header"
 
 style "notebook-bg"
 {
-	bg[ACTIVE]		= shade(0.95, @bg_color)			# Unfocused tab background.
+	bg[ACTIVE]		= shade(0.98, @bg_color)			# Unfocused tab background.
 	bg[NORMAL]		= mix(0.8, @bg_color, @base_color)	# Tab background.
 	bg[PRELIGHT]	= mix(0.8, @bg_color, @base_color)
 }
 
-widget_class "*<GtkNotebook>*<GtkEventBox>"			style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkDrawingArea>"		style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkLayout>"			style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkViewport>"			style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkToolbar>"			style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkLabel>"			style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkRadioButton>"		style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkCheckButton>"		style "notebook-bg"
+widget_class "*<GtkNotebook>*"		style "notebook-bg"
 
 style "notebook" = "notebook-bg"
 {
 	xthickness = 3	# Width of tabs and notebook borders.
 	ythickness = 1	# Height of tabs and notebook borders.
 
-	engine "murrine"
+	engine "clearlooks"
 	{
-		contrast			= 1.1
-		gradient_shades		= {1.2,1.0,1.0,0.85}
+		radius = 2.0 # Roundness of menu items.
+		style = CLASSIC
+		contrast = 1.0
 	}
 }
 
