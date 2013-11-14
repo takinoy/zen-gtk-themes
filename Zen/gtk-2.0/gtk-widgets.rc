@@ -49,9 +49,9 @@ style "default" = "default-thickness"
 	GtkRange::stepper-size = 12
 	GtkRange::stepper_spacing = 0
 
-	GtkScale::slider-length = 20	# Length of sliders.
+	GtkScale::slider-length = 13	# Length of sliders.
 	GtkScale::trough-side-details = 1
-	GtkScale::slider-width = 10
+	GtkScale::slider-width = 13
 
 	GtkScrollbar::min-slider-length = 30	# Min. length of scrollbars.
 	GtkScrollbar::slider-width = 9
@@ -138,7 +138,6 @@ style "default" = "default-thickness"
 		separatorstyle		= 1					# 0 = Hard seperators 1 = Smooth seperators
 		#shadow_shades		= { 0.8, 2.2 }		# gradient for shadows.
 		textstyle			= 0					# 0 = normal text, 1 = inset
-		trough_shades		= { 0.85, 0.95 }	# draw gradient on trough of GtkScrollbar and GtkProgressbar
 		trough_border_shades = { 0.9, 0.9 }
 		}
 }
@@ -541,11 +540,10 @@ style "scale"="default"
 
 	engine "murrine"
 	{
+		roundness				= 7
 		gradient_shades			= {1.05,1.0,1.0,0.9}
-		trough_shades			= { 0.95, 1.05 }
-		trough_border_shades	= { 0.95,1.0 }
+		trough_border_shades	= { 0.95,0.95 }
 		border_shades			= { 1.05,0.85 }
-		roundness				= 2
 	}
 }
 
