@@ -48,8 +48,8 @@
 @define-color bg_hover shade(@bg_color, 1.25);
 @define-color bg_lighter mix(@bg_color, @base_color, 0.6);
 @define-color border_normal shade(@bg_color, 0.8);
-@define-color border_insensitive shade(@bg_color, 0.8);
-@define-color border_selected darker(@selected_bg_color);
+@define-color border_insensitive shade(@bg_color, 0.7);
+@define-color border_selected shade(@selected_bg_color, 0.9);
 @define-color highlight #0CFF06;
 @define-color button_bg_normal shade(@bg_color, 1.15);
 @define-color button_bg_insensitive @bg_color;

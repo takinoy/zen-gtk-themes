@@ -261,12 +261,15 @@ GtkSwitch.slider,
     color: @fg_color;
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@button_bg_normal, 1.05)),
-                                     to (shade(@button_bg_normal, 0.95)));
+                                     to (shade(@button_bg_normal, 0.97)));
     border-style: solid;
-    border-top-color: shade(@button_border, 1.12);
+    border-top-color: shade(@button_border, 1.08);
     border-right-color: @button_border;
     border-bottom-color: shade(@button_border, 0.9);
     border-left-color: @button_border;
+
+    box-shadow: inset 0 1px alpha(#FFF, 0.4),
+                inset 1px 0 alpha(#FFF, 0.2);
 }
 
 GtkSwitch:insensitive,
@@ -283,6 +286,8 @@ GtkComboBox:insensitive,
     border-right-color: shade(@border_insensitive, 0.95);
     border-bottom-color: shade(@border_insensitive, 0.9);
     border-left-color: shade(@border_insensitive, 0.95);
+
+    box-shadow: none;
 }
 
 GtkSwitch:hover,
@@ -290,23 +295,20 @@ GtkSwitch:hover,
 .toolbar .button:hover:active {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@bg_hover, 1.05)),
-                                     to (shade(@bg_hover, 0.95)));
-}
-
-.button.default, .button.default:hover {
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from(shade(@bg_active, 1.05)),
-                                     to(shade(@bg_active, 0.92)));
+                                     to (shade(@bg_hover, 0.97)));
 }
 
 .button:active, .toolbar .button:active, .button.default:active {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from(shade(@bg_active,  0.95)),
+                                     from(shade(@bg_active,  0.97)),
                                      to(shade(@bg_active, 1.05)));
+
+    box-shadow: inset 0 1px alpha(#000, 0.05),
+                inset 1px 0 alpha(#000, 0.02);
 }
 
 GtkSwitch.trough:active {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@selected_bg_color, 0.95)), to(shade(@selected_bg_color, 1.05)));
+    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@selected_bg_color, 0.97)), to(shade(@selected_bg_color, 1.05)));
     border-color: @border_selected;
     color: @selected_fg_color;
 }
@@ -336,21 +338,23 @@ GtkComboBox .separator {
 }
 
 .spinbutton {
-    padding: 2px;
+    padding: 2px 4px;
+    border-right-width: 0;
 }
 
-.spinbutton.button {
+.spinbutton.button  {
+    padding: 2px;
+    border-width: 0 1px 0 1px;
     border-radius: 0;
-    border-width: 0px 0px 0px 1px;
     color : mix(@fg_color, @bg_color, 0.3);
+}
+
+.spinbutton.button:last-child {
+    border-width: 0 1px 0 0;
 }
 
 .spinbutton.button:focus {
     box-shadow:none;
-}
-
-.spinbutton.button:last-child {
-    border-radius: 0;
 }
 
 .spinbutton.entry {
@@ -375,6 +379,7 @@ GtkSwitch.trough {
 
 .header .button {
     font: bold;
+    box-shadow: none;
 }
 
 column-header .button {
@@ -383,6 +388,7 @@ column-header .button {
     border-width: 0px 1px 1px 0px;
     border-right-color: mix(@fg_color, @notebook_active, 0.88);
     border-bottom-color: @border_normal;
+    box-shadow: none;
 
     background-color: @notebook_active;
     background-image: none;
@@ -751,30 +757,29 @@ tab * {
 .check:hover, .check:hover:focus, .radio:hover, .radio:hover:focus,
 GtkSwitch:hover,
 .button:hover, .button:hover:focus {
-    border-top-color: @selected_bg_color;
-    border-right-color: shade(@selected_bg_color,0.9);
-    border-bottom-color: shade(@selected_bg_color,0.85);
-    border-left-color: shade(@selected_bg_color,0.9);
+    border-top-color: @border_selected;
+    border-right-color: shade(@border_selected , 0.97);
+    border-bottom-color: shade(@border_selected , 0.9);
+    border-left-color: shade(@border_selected , 0.95);
 }
 
-.button:focus, GtkSwitch:focus {
-    border-top-color: mix(@selected_bg_color, shade(@button_border, 1.12), 0.8);
-    border-right-color: mix(@selected_bg_color, @button_border, 0.8);
-    border-bottom-color: mix(@selected_bg_color, shade(@button_border, 0.9), 0.8);
-    border-left-color: mix(@selected_bg_color, @button_border, 0.8);
-
-    box-shadow: inset 0 1px shade(@selected_bg_color, 1.12),
-                inset -1px 0  @selected_bg_color,
-                inset 0 -1px shade(@selected_bg_color, 0.9),
-                inset 1px 0 @selected_bg_color;
+.button:focus, GtkSwitch:focus, .button.default {
+    border-top-color: @border_selected;
+    border-right-color: shade(@border_selected , 0.9);
+    border-bottom-color: shade(@border_selected , 0.8);
+    border-left-color: shade(@border_selected , 0.9);
+    box-shadow: inset 0 1px @border_selected,
+                inset -1px 0  shade(@border_selected , 0.9),
+                inset 0 -1px shade(@border_selected , 0.8),
+                inset 1px 0 shade(@border_selected , 0.9);
 }
 
 .scrollbar.slider:focus, .entry:focus {
-    border-color: mix(@selected_bg_color, @border_normal, 0.8);
-    box-shadow: inset 0 1px @selected_bg_color,
-                inset -1px 0  @selected_bg_color,
-                inset 0 -1px @selected_bg_color,
-                inset 1px 0 @selected_bg_color;
+    border-color: @border_selected;
+    box-shadow: inset 0 1px @selected_base_color,
+                inset -1px 0  @selected_base_color,
+                inset 0 -1px @selected_base_color,
+                inset 1px 0 @selected_base_color;
 }
 
 .spinbutton.button:hover, .spinbutton.button:hover:focus {
