@@ -437,7 +437,7 @@ GtkCheckButton.check:active, GtkCheckButton.radio:active {
 }
 
 GtkCheckButton:hover, GtkCheckButton:active:hover {
-color: @selected_text_color;
+color: @selected_fg_color;
 }
 
 GtkCheckButton.check:hover, GtkCheckButton.check:active:hover,
