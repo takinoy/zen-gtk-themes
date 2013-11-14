@@ -37,10 +37,12 @@ class "*Xfce*Panel*"			style "panel"
 widget_class "*Panel*GtkToggleButton"	style:highest "panel_button"
 
 # XFCE panel buttons
-widget "*Xfce*Panel*Button*"		style:highest "panel_button"
-class "*Xfce*Panel*Button*"			style:highest "panel_button"
-widget_class "*LauncherPlugin*"		style:highest "panel_button"
-widget_class "*ActionsPlugin*"		style:highest "panel_button"
+widget "*Xfce*Panel*Button*"			style:highest "panel_button"
+class "*Xfce*Panel*Button*"				style:highest "panel_button"
+widget_class "*LauncherPlugin*"			style:highest "panel_button"
+widget_class "*ActionsPlugin*"			style:highest "panel_button"
+widget "whiskermenu-window*Button"		style:highest "button"
+widget "whiskermenu-window*TreeView*"	style:highest "sidepane"
 
 # lxpanel and fbpanel
 widget "*.tclock.*"			style "panel_button"
