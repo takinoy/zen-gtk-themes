@@ -544,7 +544,7 @@ GtkScale.vertical.trough {
 
 GtkProgressBar, GtkScale {
     border-style: solid;
-    border-color: @border_normal;
+    border-color: shade(@scrollbar_slider, 0.9);
     border-width: 1px;
     padding: 0;
     border-radius: 7px;
@@ -586,10 +586,12 @@ GtkProgressBar, GtkScale {
     border-top-color: shade(shade(@bg_darker, 0.9),0.8);
 }
 
-GtkScale {
+GtkScale, GtkScale:insensitive {
     -GtkRange-slider-width: 13;
     -GtkRange-trough-border: 2;
     -GtkScale-slider-length: 13;
+
+    color: transparent;
 }
 
 GtkScale.trough, GtkScale.trough.vertical {
@@ -643,14 +645,14 @@ GtkScale.slider.vertical {
 
 GtkScale.slider:insensitive  {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@bg_color, 1.18)),
-                                     to (shade(@bg_color, 1.03)));
+                                     from (shade(@button_bg_insensitive, 1.02)),
+                                     to (shade(@button_bg_insensitive, 0.97)));
 }
 
 GtkScale.slider.vertical:insensitive  {
     background-image: -gtk-gradient(linear, left top, right top,
-                                     from (shade(@bg_color, 1.18)),
-                                     to (shade(@bg_color, 1.03)));
+                                     from (shade(@button_bg_insensitive, 1.02)),
+                                     to (shade(@button_bg_insensitive, 0.97)));
 }
 
 GtkScale.slider:hover, GtkScale.slider:focus,
