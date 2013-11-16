@@ -48,9 +48,9 @@ style "default" = "default-thickness"
 	GtkRange::stepper-size = 12
 	GtkRange::stepper_spacing = 0
 
-	GtkScale::slider-length = 20	# Length of sliders.
+	GtkScale::slider-length = 13	# Length of sliders.
 	GtkScale::trough-side-details = 1
-	GtkScale::slider-width = 10
+	GtkScale::slider-width = 13
 
 	GtkScrollbar::min-slider-length = 30	# Min. length of scrollbars.
 	GtkScrollbar::slider-width = 9
@@ -134,11 +134,9 @@ style "default" = "default-thickness"
 		comboboxstyle		= 0					# 0 = normal combobox, 1 = colorized combobox below arrow
 		expanderstyle		= 0
 		focusstyle			= 3
-		prelight_shade		= .8				# shade level for scrollbar's slider, comboboxstyle(1), and prelight state with gradient_colors
 		separatorstyle		= 1					# 0 = Hard seperators 1 = Smooth seperators
 		#shadow_shades		= { 0.8, 2.2 }		# gradient for shadows.
 		textstyle			= 0					# 0 = normal text, 1 = inset
-		trough_shades		= { 0.85, 0.95 }	# draw gradient on trough of GtkScrollbar and GtkProgressbar
 		trough_border_shades = { 0.9, 0.9 }
 		}
 }
@@ -152,15 +150,20 @@ style "dark" {
 	bg[PRELIGHT]		= mix(0.2, @selected_bg_color, @dark_bg_color)
 	bg[SELECTED]		= shade(0.5, @selected_bg_color)
 	bg[INSENSITIVE]		= "#000000"
+
 	fg[NORMAL]			= @dark_text_color # Makes panel text light.
 	fg[ACTIVE]			= "#FFFFFF"
 	fg[PRELIGHT]		= "#FFFFFF"
 	fg[SELECTED]		= "#E6E6E6"
 	fg[INSENSITIVE]		= mix(0.65, @dark_bg_color, @dark_text_color)
+
 	text[NORMAL]		= @dark_text_color
-	text[ACTIVE]		= @dark_text_color
+	text[ACTIVE]		= "#FFFFFF"
 	text[PRELIGHT]		= "#FFFFFF"
-	base[NORMAL]		= shade(0.8, @base_color)
+
+	base[NORMAL]		= shade(1.15, @dark_bg_color)
+	base[SELECTED]		= shade(0.7, @selected_base_color)	# Color for selected base items.
+	base[ACTIVE]		= shade(0.7, @selected_base_color)	# Color for selected base items.
 }
 
 style "light" {
@@ -294,17 +297,18 @@ style "button" = "default"
 	xthickness = 3
 	ythickness = 3
 
-	bg[NORMAL]			= mix(0.9, @bg_color, @base_color)	# Color for buttons.
-	bg[PRELIGHT]		= mix(0.6, @bg_color, @base_color)
+	bg[NORMAL]			= mix(0.8, @bg_color, @base_color)	# Color for buttons.
+	bg[PRELIGHT]		= mix(0.55, @bg_color, @base_color)
 	bg[INSENSITIVE]		= shade(1.01, @bg_color)
 	bg[ACTIVE]			= mix(0.25, shade(0.8, @selected_bg_color), @bg_color)
 	bg[SELECTED]		= shade(0.8,@selected_bg_color)
 
 	engine "murrine"
 	{
-		gradient_shades		= {1.05,1.0,1.0,0.95}
-		contrast			= 1.0
-		border_shades		= { 1.12, 0.9 }
+		contrast            = 1.0
+		lightborder_shade   = 1.1
+		gradient_shades     = {1.05,1.0,0.97,0.97}
+		border_shades       = { 1.1, 0.9 }
 	}
 }
 
@@ -352,6 +356,7 @@ widget_class "*<GtkCheckButton>*"		style "radiocheck"
 style "radiocheck-dark" = "radiocheck"
 {
 	bg[PRELIGHT]	= @dark_bg_color
+	base[NORMAL]        = shade(0.8, @base_color)
 }
 
 #########
@@ -431,30 +436,23 @@ widget_class "*.<GtkCMCList>.<GtkButton>*"		style "treeview_header"
 
 style "notebook-bg"
 {
-	bg[ACTIVE]		= shade(0.95, @bg_color)			# Unfocused tab background.
+	bg[ACTIVE]		= shade(0.98, @bg_color)			# Unfocused tab background.
 	bg[NORMAL]		= mix(0.8, @bg_color, @base_color)	# Tab background.
 	bg[PRELIGHT]	= mix(0.8, @bg_color, @base_color)
 }
 
-widget_class "*<GtkNotebook>*<GtkEventBox>"			style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkDrawingArea>"		style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkLayout>"			style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkViewport>"			style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkToolbar>"			style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkLabel>"			style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkRadioButton>"		style "notebook-bg"
-widget_class "*<GtkNotebook>*<GtkCheckButton>"		style "notebook-bg"
+widget_class "*<GtkNotebook>*"		style "notebook-bg"
 
 style "notebook" = "notebook-bg"
 {
 	xthickness = 3	# Width of tabs and notebook borders.
 	ythickness = 1	# Height of tabs and notebook borders.
 
-	engine "murrine"
+	engine "clearlooks"
 	{
-		contrast			= 1.1
-		gradient_shades		= {1.2,1.0,1.0,0.85}
+		radius = 2.0 # Roundness of menu items.
+		style = CLASSIC
+		contrast = 1.0
 	}
 }
 
@@ -481,12 +479,25 @@ style "scrollbar" = "default"
 		trough_shades			= {0.975, 0.975}
 		contrast				= 0.0
 		trough_border_shades	= {1.025, 1.025}
+		prelight_shade			= .8				# shade level for scrollbar's slider, comboboxstyle(1), and prelight state with gradient_colors
 	}
 }
 
 class "GtkScrollbar"				style "scrollbar"
 class "GtkVScrollbar"				style "scrollbar"
 class "GtkHScrollbar"				style "scrollbar"
+
+style "scrollbar-dark" = "dark"
+{
+	bg[SELECTED]		= shade(0.4, @dark_text_color)
+	bg[PRELIGHT]		= shade(0.6, @dark_text_color)
+	bg[ACTIVE]			= @dark_bg_color
+
+	engine "murrine" {
+		border_colors 			= {@dark_bg_color, @dark_bg_color}
+		prelight_shade			= 1.2
+	}
+}
 
 style "scale"="default"
 {
@@ -499,11 +510,10 @@ style "scale"="default"
 
 	engine "murrine"
 	{
+		roundness				= 7
 		gradient_shades			= {1.05,1.0,1.0,0.9}
-		trough_shades			= { 0.95, 1.05 }
-		trough_border_shades	= { 0.95,1.0 }
+		trough_border_shades	= { 0.95,0.95 }
 		border_shades			= { 1.05,0.85 }
-		roundness				= 2
 	}
 }
 

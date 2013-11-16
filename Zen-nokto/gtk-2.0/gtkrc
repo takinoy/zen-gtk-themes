@@ -25,27 +25,7 @@ style "notebook-bg-nokto"
 	bg[PRELIGHT]		= shade(0.8, @bg_color)	# for radio and check button
 }
 
-widget_class "*<GtkNotebook>*<GtkEventBox>"			style "notebook-bg-nokto"
-widget_class "*<GtkNotebook>*<GtkDrawingArea>"		style "notebook-bg-nokto"
-widget_class "*<GtkNotebook>*<GtkLayout>"			style "notebook-bg-nokto"
-widget_class "*<GtkNotebook>*<GtkViewport>"			style "notebook-bg-nokto"
-widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "notebook-bg-nokto"
-widget_class "*<GtkNotebook>*<GtkToolbar>"			style "notebook-bg-nokto"
-widget_class "*<GtkNotebook>*<GtkLabel>"			style "notebook-bg-nokto"
-widget_class "*<GtkNotebook>*<GtkRadioButton>"		style "notebook-bg-nokto"
-widget_class "*<GtkNotebook>*<GtkCheckButton>"		style "notebook-bg-nokto"
-
-style "notebook-nokto" = "notebook-bg-nokto"
-{
-	engine "clearlooks"
-	{
-		radius = 2.0 # Roundness of menu items.
-		style = CLASSIC
-		contrast = 1.1
-	}
-}
-
-widget_class "*<GtkNotebook>"		style "notebook-nokto"
+widget_class "*<GtkNotebook>*"		style "notebook-bg-nokto"
 
 style "button-nokto"
 {
@@ -70,6 +50,10 @@ widget_class "*<GtkCheckButton>*"					style "radiocheck-nokto"
 style "scrollbar-nokto"
 {
 	bg[NORMAL]        = shade(1.5, @bg_color)
+
+	engine "murrine" {
+		prelight_shade		= 1.2
+	}
 }
 
 class "GtkScrollbar"				style "scrollbar-nokto"

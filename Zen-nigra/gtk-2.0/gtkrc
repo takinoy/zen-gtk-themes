@@ -40,27 +40,7 @@ style "notebook-bg-nigra"
 	bg[PRELIGHT]		= shade(1.2, @bg_color)
 }
 
-widget_class "*<GtkNotebook>*<GtkEventBox>"			style "notebook-bg-nigra"
-widget_class "*<GtkNotebook>*<GtkDrawingArea>"		style "notebook-bg-nigra"
-widget_class "*<GtkNotebook>*<GtkLayout>"			style "notebook-bg-nigra"
-widget_class "*<GtkNotebook>*<GtkViewport>"			style "notebook-bg-nigra"
-widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "notebook-bg-nigra"
-widget_class "*<GtkNotebook>*<GtkToolbar>"			style "notebook-bg-nigra"
-widget_class "*<GtkNotebook>*<GtkLabel>"			style "notebook-bg-nigra"
-widget_class "*<GtkNotebook>*<GtkRadioButton>"		style "notebook-bg-nigra"
-widget_class "*<GtkNotebook>*<GtkCheckButton>"		style "notebook-bg-nigra"
-
-style "notebook-nigra" = "notebook-bg-nigra"
-{
-	engine "clearlooks"
-	{
-		radius = 2.0 # Roundness of menu items.
-		style = CLASSIC
-		contrast = 1.1
-	}
-}
-
-widget_class "*<GtkNotebook>"		style "notebook-nigra"
+widget_class "*<GtkNotebook>*"		style "notebook-bg-nigra"
 
 style "treeview_header-nigra" {
 	bg[NORMAL]			= shade(1.2, @bg_color)
@@ -80,6 +60,10 @@ widget_class "*.<GtkCMCList>.<GtkButton>*"		style "treeview_header-nigra"
 style "scrollbar-nigra"
 {
 	bg[NORMAL]        = shade(1.6, @bg_color)
+
+	engine "murrine" {
+		prelight_shade		= 1.2
+	}
 }
 
 class "GtkScrollbar"				style "scrollbar-nigra"
