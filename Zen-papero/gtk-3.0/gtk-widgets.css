@@ -295,9 +295,7 @@ GtkComboBox:insensitive,
     box-shadow: none;
 }
 
-GtkSwitch:hover,
-.button:hover, .button:hover:focus, .button:hover:active,
-.toolbar .button:hover:active {
+GtkSwitch:hover, .button:hover {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@bg_hover, 1.05)),
                                      to (shade(@bg_hover, 0.97)));
