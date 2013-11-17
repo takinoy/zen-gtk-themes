@@ -44,6 +44,9 @@ widget_class "*BonoboDockItem"		style "menubar-dark"
 class "*BonoboDockItem"				style "menubar-dark"
 widget_class "*<GtkMenuBar>*"		style "menubar-dark"
 
+# Scale widget in menus (e.g. ubuntu's sound indicator)
+widget_class "*<GtkMenuItem>.*.<GtkScale>" style "scale"
+
 # Xfce specific theming
 widget_class "*XfsmLogoutDialog*"				style "dark"
 widget_class "*XfsmLogoutDialog*Button"	style 	"dark-button"
