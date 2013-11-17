@@ -2,6 +2,8 @@ style "panel" = "adaptive"
 {
 	xthickness = 2
 	ythickness = 2
+
+	bg_pixmap[NORMAL] = "<none>"
 }
 
 style "panel_button" = "adaptive"
