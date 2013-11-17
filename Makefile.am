@@ -1,14 +1,21 @@
 
 maindir = Zen
+darkdir = $(maindir)-nokto
 
-vardirs =				\
+light_color_dirs =				\
 	$(maindir)-bicolor \
 	$(maindir)-blua \
 	$(maindir)-griza \
-	$(maindir)-nigra \
-	$(maindir)-nokto \
 	$(maindir)-papero \
 	$(maindir)-verda 
+
+dark_color_dirs =				\
+	$(maindir)-nigra
+
+vardirs =				\
+	$(darkdir) \
+	$(light_color_dirs) \
+	$(dark_color_dirs)
 
 themedirs =				\
 	$(maindir) \
@@ -34,22 +41,25 @@ refresh:
 			cp -flrv $(maindir)/$$path $$vardir/$$path; \
 		done; \
 	done;
+	for vardir in $(maindir) $(light_color_dirs); do \
+		cp -flrv $(darkdir)/gtk-3.0/gtk.css \
+		$$vardir/gtk-3.0/gtk-dark.css; \
+	done;
 	cp -flrv $(maindir)/gtk-2.0/resize-grip.png \
 	$(maindir)/gtk-3.0/resize-grip.png; \
-	for vardir in $(maindir)-blua $(maindir)-griza $(maindir)-papero \
-	$(maindir)-verda; do \
+	for vardir in $(light_color_dirs); do \
 		for dir in gtk-2.0 gtk-3.0; do \
 			mkdir -p $$vardir/$$dir; \
 			cp -flrv $(maindir)/$$dir/resize-grip.png \
 			$$vardir/$$dir/resize-grip.png; \
 		done; \
-	done; \
-	cp -flrv $(maindir)-nokto/gtk-2.0/resize-grip.png \
-	$(maindir)-nokto/gtk-3.0/resize-grip.png; \
+	done;
+	cp -flrv $(darkdir)/gtk-2.0/resize-grip.png \
+	$(darkdir)/gtk-3.0/resize-grip.png; \
 	for dir in gtk-2.0 gtk-3.0; do \
-		mkdir -p $(maindir)-nigra/$$dir; \
-		cp -flrv $(maindir)-nokto/$$dir/resize-grip.png \
-		$(maindir)-nigra/$$dir/resize-grip.png; \
+		mkdir -p $(dark_color_dirs)/$$dir; \
+		cp -flrv $(darkdir)/$$dir/resize-grip.png \
+		$(dark_color_dirs)/$$dir/resize-grip.png; \
 	done;
 
 install-data-am :
@@ -75,7 +85,7 @@ install-data-am :
 
 uninstall-am :
 	for themedir in $(themedirs); do \
-		rm -rf  $(DESTDIR)$(themedir)$(datadir)/themes/$$themedir; \
+		rm -rf  $(DESTDIR)$(datadir)/themes/$$themedir; \
 	done; 
 
 distclean-local:
