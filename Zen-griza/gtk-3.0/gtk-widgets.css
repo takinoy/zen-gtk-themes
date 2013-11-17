@@ -902,7 +902,6 @@ GduWindow .menubar {
                color-stop(1, @border_insensitive));
 }
 
-
 /***********
  * Toolbar *
  ***********/
@@ -941,6 +940,14 @@ GtkHandleBox {
 
 .separator {
     color: mix(@text_color, @bg_color, 0.9);
+}
+
+/**************
+ * header-bar *
+ **************/
+.header-bar {
+    padding: 4px;
+    border-style: none;
 }
 
 /***********
