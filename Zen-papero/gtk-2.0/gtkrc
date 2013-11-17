@@ -36,6 +36,9 @@ widget_class "*BonoboDockItem"		style "menubar-adaptive"
 class "*BonoboDockItem"				style "menubar-adaptive"
 widget_class "*<GtkMenuBar>*"		style "menubar-adaptive"
 
+# Scale widget in menus (e.g. ubuntu's sound indicator)
+widget_class "*<GtkMenuItem>.*.<GtkScale>" style "scale"
+
 # Xfce specific theming
 widget "xfwm"						style "titlebar-adaptive"
 class "MetaFrames"					style "titlebar-adaptive"
