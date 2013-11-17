@@ -213,16 +213,22 @@ widget_class "*<GtkMenu>*"		style "murrine-menu"
 
 style "menu-adaptive" {
 	bg[NORMAL]			= mix(0.6, @base_color, @bg_color)
+	bg[ACTIVE]			= mix(0.6, @base_color, @bg_color)
+	bg[INSENSITIVE]		= mix(0.6, @base_color, @bg_color)
 	fg[NORMAL]			= @text_color
 	fg[PRELIGHT]		= @selected_text_color
 	base[NORMAL]		= @base_color	# Color for menu-item radio/checks background.
 	bg[SELECTED]		= shade(1.1, @selected_base_color)
+	bg[PRELIGHT]		= shade(1.1, @selected_base_color)
 	fg[INSENSITIVE]		= mix(0.7, darker(mix(0.6, @base_color, @bg_color)), @text_color)
 }
 
 style "menu-dark" = "dark" {
 	bg[NORMAL]			= shade(1.4, @dark_bg_color)	# color #2E2E2E
+	bg[ACTIVE]			= shade(1.4, @dark_bg_color)
+	bg[INSENSITIVE]		= shade(1.4, @dark_bg_color)
 	bg[SELECTED]		= shade(0.7, @selected_base_color)
+	bg[PRELIGHT]		= shade(0.7, @selected_base_color)
 }
 
 style "menuitem" = "murrine-menu" {

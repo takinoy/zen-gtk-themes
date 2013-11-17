@@ -843,6 +843,13 @@ column-header .button:hover, column-header .button:hover:focus {
     padding: 1px;
 }
 
+.menu.button, .menuitem.button {
+    border-radius: 1px;
+    background-color: transparent;
+    background-image: none;
+    border-style: none;
+}
+
 .menu *:hover, .menu *:active:hover, .menu *:selected {
     color: @menu_fg_selected;
 }
@@ -852,17 +859,18 @@ column-header .button:hover, column-header .button:hover:focus {
     border-width: 1px 1px 1px 1px;
 }
 
-.menuitem .check, .menuitem .radio,
-.menuitem .check:hover, .menuitem .radio:hover,
-.menuitem .check:insensitive, .menuitem .radio:insensitive {
-    border-color: transparent;
-    background-color: transparent;
-}
-
 .menu>*:insensitive, .menuitem>*:insensitive {
     color: mix(@menu_fg_normal, darker(@menu_bg_normal), 0.7);
     border-color: shade(@menu_bg_normal, 0.9);
     text-shadow: 1px 1px shade(@menu_bg_normal, 1.05);
+}
+
+.menuitem .check, .menuitem .radio,
+.menuitem .check:hover, .menuitem .radio:hover,
+.menuitem .check:insensitive, .menuitem .radio:insensitive,
+.menuitem .button:insensitive {
+    border-style: none;
+    background-color: transparent;
 }
 
 .menuitem:hover, .menu:hover {
