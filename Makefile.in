@@ -258,7 +258,7 @@ mainpaths = \
 	gtk-3.0/lightdm-gtk-greeter.css \
 	gtk-3.0/panel.css
 
-DIST = $(themedirs)
+EXTRA_DIST = $(themedirs)
 all: all-am
 
 .SUFFIXES:

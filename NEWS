@@ -1,5 +1,12 @@
-Changelog:
-----------
+0.13.0
+    Add gtk-dark.css files
+    Change notebooks and scale style
+    Adjust buttons style
+    Add whiskermenu-plugin theming support
+    Workaround for file-roller insensitive item and gnome-disks menu color in gtk-3.10
+    Fix buttons state for gtk-3.10
+    Minors others fixes
+
 0.12.1
  - Add lightdm-gtk-greeter theming support
  - Minors fixes and improvements.
