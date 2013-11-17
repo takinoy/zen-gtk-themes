@@ -459,7 +459,7 @@ style "notebook" = "notebook-bg"
 	{
 		radius = 2.0 # Roundness of menu items.
 		style = CLASSIC
-		contrast = 1.0
+		contrast = 0.9
 	}
 }
 
