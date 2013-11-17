@@ -443,25 +443,18 @@ GtkCheckButton.check:active, GtkCheckButton.radio:active {
     background-color: @selected_bg_color;
 }
 
-GtkCheckButton:hover, GtkCheckButton:active:hover {
-color: @selected_fg_color;
+GtkCheckButton:hover, GtkCheckButton:active:hover,
+GtkCheckButton:selected, GtkCheckButton:selected {
+    color: @selected_fg_color;
 }
 
-GtkCheckButton.check:hover, GtkCheckButton.check:active:hover,
-GtkCheckButton.radio:hover, GtkCheckButton.radio:active:hover,
-GtkCheckButton.check:selected, GtkCheckButton.check:selected:focus,
-GtkCheckButton.radio:selected, GtkCheckButton.radio:selected:focus {
-color: @selected_text_color;
-background-color: @selected_base_color;
-}
-
+GtkCheckButton:selected,
 GtkCheckButton.check:insensitive, GtkCheckButton.radio:insensitive,
 GtkCheckButton.check:inconsistent:insensitive,
 GtkCheckButton.radio:inconsistent:insensitive,
-GtkCheckButton.check:inconsistent, GtkCheckButton.radio:inconsistent{
-background-color: transparent;
+GtkCheckButton.check:inconsistent, GtkCheckButton.radio:inconsistent {
+    background-color: transparent;
 }
-
 
 /*********************
  * scrollbar & scale *
