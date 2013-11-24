@@ -1,3 +1,6 @@
+/* NOTES to contributors:
+ * use 4 spaces indents, and keep code ALIGNED and ORDERED */
+
 /**********
 * default *
 ***********/
@@ -901,6 +904,7 @@ GduWindow .menubar {
  ***********/
 
 .toolbar {
+    padding: 1px;
     color: @fg_color;
     background-color: @bg_color;
     background-image: -gtk-gradient (linear,
