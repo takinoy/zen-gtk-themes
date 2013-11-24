@@ -1,3 +1,8 @@
+0.13.1
+    Configure gtk3 icon sizes
+    Adjust gtk3 toolbar padding
+    Fix buttons borders style
+    Fix gtk2 and gtk3 scale colors (fix regressions)
 0.13.0
     Add gtk-dark.css files
     Change notebooks and scale style
@@ -31,7 +36,7 @@
  - Updated to gtk3.8 (menuitem separator, paddings...).
  - Add standard build tools.
 
-0.10.10 : updates and fixes from 0.12 branch.
+0.10.13 : updates and fixes from 0.13 branch.
 0.10.4
  - Fix gtk3 rubberband selection color.
  - Adjust gtk3 panel settings (not tested).
@@ -69,7 +74,7 @@
  - Use the murrine engine for gtk-2 version.
  - Theme ported to gtk3 >=3.4.
 
-0.3.16
+0.3.17
  - Last gtk2 version with the clearlook engine.
  - Updates from 0.10 branch (gtk2).
 
