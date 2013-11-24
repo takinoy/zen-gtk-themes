@@ -508,6 +508,7 @@ GtkScale.vertical.trough {
 .scrollbar.button,
 .scrollbar.trough {
     border-style: none;
+    box-shadow: none;
     background-color: @bg_color;
     background-image: none;
 }
@@ -824,6 +825,7 @@ column-header .button:hover, column-header .button:hover:focus {
     background-color: transparent;
     background-image: none;
     border-style: none;
+    box-shadow: none;
 }
 
 .menu *:hover, .menu *:active:hover, .menu *:selected {
