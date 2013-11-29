@@ -590,8 +590,6 @@ GtkScale, GtkScale:insensitive {
     -GtkRange-slider-width: 13;
     -GtkRange-trough-border: 2;
     -GtkScale-slider-length: 13;
-
-    color: transparent;
 }
 
 GtkScale.trough, GtkScale.trough.vertical {
@@ -635,6 +633,7 @@ GtkScale.slider {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@scrollbar_slider, 1.18)),
                                      to (shade(@scrollbar_slider, 1.03)));
+    color: transparent;
 }
 
 GtkScale.slider.vertical {
