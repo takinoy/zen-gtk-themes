@@ -266,7 +266,7 @@ GtkSwitch.slider,
     border-top-color: shade(@button_border, 1.08);
     border-right-color: @button_border;
     border-bottom-color: shade(@button_border, 0.9);
-    border-left-color: @button_border;
+    border-left-color: shade(@button_border, 1.04);
 
     box-shadow: inset 0 1px alpha(#FFF, 0.4),
                 inset 1px 0 alpha(#FFF, 0.2);
@@ -285,7 +285,7 @@ GtkComboBox:insensitive,
     border-top-color: @border_insensitive;
     border-right-color: shade(@border_insensitive, 0.95);
     border-bottom-color: shade(@border_insensitive, 0.9);
-    border-left-color: shade(@border_insensitive, 0.95);
+    border-left-color: shade(@border_insensitive, 0.98);
 
     box-shadow: none;
 }
@@ -772,36 +772,36 @@ GtkScale.slider.mark {
 GtkSwitch:hover,
 .button:hover, .button:hover:focus {
     border-top-color: @border_selected;
-    border-right-color: shade(@border_selected , 0.97);
-    border-bottom-color: shade(@border_selected , 0.9);
-    border-left-color: shade(@border_selected , 0.95);
+    border-right-color: shade(@border_selected, 0.95);
+    border-bottom-color: shade(@border_selected, 0.9);
+    border-left-color: shade(@border_selected, 0.98);
 }
 
 .button:focus, GtkSwitch:focus, .button.default {
-    border-top-color: @border_selected;
-    border-right-color: shade(@border_selected , 0.9);
-    border-bottom-color: shade(@border_selected , 0.8);
-    border-left-color: shade(@border_selected , 0.9);
+    border-top-color: shade(@border_selected, 0.9);
+    border-right-color: shade(@border_selected, 0.85);
+    border-bottom-color: shade(@border_selected, 0.8);
+    border-left-color: shade(@border_selected, 0.88);
     box-shadow: inset 0 1px @border_selected,
-                inset -1px 0  shade(@border_selected , 0.9),
-                inset 0 -1px shade(@border_selected , 0.8),
-                inset 1px 0 shade(@border_selected , 0.9);
+                inset -1px 0 shade(@border_selected, 0.95),
+                inset 0 -1px shade(@border_selected, 0.9),
+                inset 1px 0 shade(@border_selected, 0.98);
 }
 
 .scrollbar.slider:focus, .entry:focus {
     border-color: @border_selected;
     box-shadow: inset 0 1px @selected_base_color,
-                inset -1px 0  @selected_base_color,
+                inset -1px 0 @selected_base_color,
                 inset 0 -1px @selected_base_color,
                 inset 1px 0 @selected_base_color;
 }
 
 .spinbutton.button:hover, .spinbutton.button:hover:focus {
-    border-left-color: @button_border;
-    box-shadow: inset 0 1px @selected_bg_color,
-                inset -1px 0  shade(@selected_bg_color,0.9),
-                inset 0 -1px shade(@selected_bg_color, 0.85),
-                inset 1px 0 shade(@selected_bg_color,0.9);
+    border-left-color: shade(@button_border, 1.04);
+    box-shadow: inset 0 1px @border_selected,
+                inset -1px 0 shade(@border_selected, 0.95),
+                inset 0 -1px shade(@border_selected, 0.9),
+                inset 1px 0 shade(@border_selected, 0.98);
 }
 
 column-header .button:hover, column-header .button:hover:focus {
