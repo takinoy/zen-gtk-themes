@@ -1,9 +1,9 @@
-zen-gtk-themes version 0.10.12.g34
+zen-gtk-themes version 0.10.13.g34
 ----------------------------
 
 Author : Cédric Leporcq
 Released under the GPL license
-Date : November 17, 2013
+Date : November 29, 2013
 Sources : https://github.com/cedl38/zen-gtk-themes
 
 The main goal of this theme is to keep it simple, consistent and being visually appealing.
@@ -40,6 +40,10 @@ Suggest for firefox users : install the add-on "GTK+ Native" to forces Firefox a
 Changelog:
 ----------
 
+0.10.13
+    Configure gtk3 icon sizes
+    Fix buttons borders style
+    Fix gtk2 and gtk3 scale colors (fix regressions)
 0.10.12
  - Change notebooks and scale style
  - Adjust buttons style
@@ -49,7 +53,7 @@ Changelog:
  - Change gtk3 panel buttons borders for dark themes
  - Fix CheckButton color in XfsmLogoutDialog
  - Disable separators in GtkComboBox
-0.10.10 :
+0.10.10
  - Add Zen-bicolor variant.
  - Change zen-nigra menu style to dark.
  - Fix bug in scrollbars for epiphany.
@@ -112,10 +116,6 @@ Changelog:
 0.4.4
  - Use the murrine engine for gtk-2 version.
  - Theme ported to gtk3 >=3.4.
-
-0.3.16
- - Last gtk2 version with the clearlook engine.
- - Updates from 0.10 branch (gtk2).
 
 0.3.2
  - New color schemes and preconfigured settings.
