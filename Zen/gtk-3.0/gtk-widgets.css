@@ -580,7 +580,6 @@ GtkScale, GtkScale:insensitive {
     -GtkScale-slider-length: 13;
 
     margin: 6px;
-    color: transparent;
 }
 
 GtkScale.slider {
