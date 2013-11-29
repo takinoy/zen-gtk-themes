@@ -448,7 +448,15 @@ style "notebook-bg"
 	bg[PRELIGHT]	= mix(0.8, @bg_color, @base_color)
 }
 
-widget_class "*<GtkNotebook>*"		style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkEventBox>"			style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>"		style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkLayout>"			style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkViewport>"			style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkToolbar>"			style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkLabel>"			style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkRadioButton>"		style "notebook-bg"
+widget_class "*<GtkNotebook>*<GtkCheckButton>"		style "notebook-bg"
 
 style "notebook" = "notebook-bg"
 {
