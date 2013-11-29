@@ -85,9 +85,8 @@ style "scrollbar-nigra"
 	bg[NORMAL]        = shade(1.6, @bg_color)
 }
 
-class "GtkScrollbar"				style "scrollbar-nigra"
-class "GtkVScrollbar"				style "scrollbar-nigra"
-class "GtkHScrollbar"				style "scrollbar-nigra"
+widget_class "*GtkScrollbar*"     style:highest "scrollbar-nigra"
+class "*GtkScrollbar*"            style:highest "scrollbar-nigra"
 
 include "panel.rc"
 include "xfce.rc"

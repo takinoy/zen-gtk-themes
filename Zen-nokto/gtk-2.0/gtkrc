@@ -69,12 +69,11 @@ widget_class "*<GtkCheckButton>*"					style "radiocheck-nokto"
 
 style "scrollbar-nokto"
 {
-	bg[NORMAL]        = shade(1.5, @bg_color)
+	bg[NORMAL]        = shade(1.2, @bg_color)
 }
 
-class "GtkScrollbar"				style "scrollbar-nokto"
-class "GtkVScrollbar"				style "scrollbar-nokto"
-class "GtkHScrollbar"				style "scrollbar-nokto"
+widget_class "*GtkScrollbar*"     style:highest "scrollbar-nokto"
+class "*GtkScrollbar*"            style:highest "scrollbar-nokto"
 
 style "treeview_header-nokto" {
 	bg[NORMAL]			= shade(0.8, @bg_color)
