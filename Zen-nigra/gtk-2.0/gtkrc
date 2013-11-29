@@ -40,7 +40,16 @@ style "notebook-bg-nigra"
 	bg[PRELIGHT]		= shade(1.2, @bg_color)
 }
 
-widget_class "*<GtkNotebook>*"		style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>"		style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>*<GtkEventBox>"			style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>*<GtkDrawingArea>"		style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>*<GtkLayout>"			style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>*<GtkViewport>"			style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>*<GtkScrolledWindow>"	style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>*<GtkToolbar>"			style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>*<GtkLabel>"			style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>*<GtkRadioButton>"		style "notebook-bg-nigra"
+widget_class "*<GtkNotebook>*<GtkCheckButton>"		style "notebook-bg-nigra"
 
 style "treeview_header-nigra" {
 	bg[NORMAL]			= shade(1.2, @bg_color)
