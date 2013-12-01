@@ -290,27 +290,36 @@ GtkComboBox:insensitive,
     box-shadow: none;
 }
 
-GtkSwitch:hover,
-.button:hover, .button:hover:focus, .button:hover:active,
-.toolbar .button:hover:active {
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@bg_hover, 1.05)),
-                                     to (shade(@bg_hover, 0.97)));
-}
-
 .button:active, .toolbar .button:active, .button.default:active {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from(shade(@bg_active,  0.97)),
                                      to(shade(@bg_active, 1.05)));
-
+    border-top-color: shade(@button_border, 0.9);
+    border-right-color: shade(@button_border, 0.95);
+    border-bottom-color: @button_border;
+    border-left-color: shade(@button_border, 0.92);
     box-shadow: inset 0 1 alpha(#000, 0.05),
                 inset 1 0 alpha(#000, 0.02);
 }
 
 GtkSwitch.trough:active {
-    background-image: -gtk-gradient(linear, left top, left bottom, from(shade(@selected_bg_color, 0.97)), to(shade(@selected_bg_color, 1.05)));
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                    from(shade(@selected_bg_color, 0.97)),
+                                    to(shade(@selected_bg_color, 1.05)));
     border-color: @border_selected;
     color: @selected_fg_color;
+}
+
+.button:hover, GtkSwitch:hover {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@bg_hover, 1.05)),
+                                     to (shade(@bg_hover, 0.97)));
+}
+
+.button:hover:active {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@bg_active, 1.02)),
+                                     to (shade(@bg_active, 1.1)));
 }
 
 GtkComboBox, GtkComboBox>.button {
@@ -748,7 +757,7 @@ GtkScale.slider.mark {
 
 .check:hover, .check:hover:focus, .radio:hover, .radio:hover:focus,
 GtkSwitch:hover,
-.button:hover, .button:hover:focus {
+.button:hover, .button:hover:active, .button:hover:focus {
     border-top-color: @border_selected;
     border-right-color: shade(@border_selected, 0.95);
     border-bottom-color: shade(@border_selected, 0.9);
