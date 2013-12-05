@@ -1,15 +1,17 @@
-style "panel" = "dark"
+style "panel" = "panel-dark"
 {
 	xthickness = 2
 	ythickness = 2
 }
 
-style "panel_button" = "dark"
+style "panel_button" = "panel-dark"
 {
 		engine "murrine" {
-		contrast			= 0.9
+		contrast			= 0.0
+		gradient_shades		= { 1.02, 0.9, 0.8, 0.8 }
+		textstyle			= 1
+		text_shade			= 0.2
 		roundness			= 0
-		border_shades		= { 1.2, 0.8 }
 	}
 }
 
@@ -42,7 +44,7 @@ class "*Xfce*Panel*Button*"				style:highest "panel_button"
 widget_class "*LauncherPlugin*"			style:highest "panel_button"
 widget_class "*ActionsPlugin*"			style:highest "panel_button"
 widget "whiskermenu-window*"			style:highest "dark"
-widget "whiskermenu-window*Button"		style:highest "dark-button"
+widget "whiskermenu-window*Button"		style:highest "button-dark-murrine"
 widget "*whiskermenu-window*Scrollbar*"	style:highest "scrollbar-dark"
 
 # lxpanel and fbpanel

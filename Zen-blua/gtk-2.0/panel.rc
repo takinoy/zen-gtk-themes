@@ -1,10 +1,10 @@
-style "panel" = "adaptive"
+style "panel" = "panel-adaptive"
 {
 	xthickness = 2
 	ythickness = 2
 }
 
-style "panel_button" = "adaptive"
+style "panel_button" = "panel-adaptive"
 {
 		engine "murrine" {
 		contrast			= 0.9
