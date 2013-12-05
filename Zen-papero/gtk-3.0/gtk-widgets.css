@@ -75,7 +75,7 @@ GtkWindow {
 *:insensitive {
     color: @fg_insensitive;
     border-color: @border_insensitive;
-    text-shadow: 1px 1px @light_shadow;
+    text-shadow: 1px 1px @text_shadow;
 }
 
 *:hover {
@@ -268,8 +268,8 @@ GtkSwitch.slider,
     border-bottom-color: shade(@button_border, 0.9);
     border-left-color: shade(@button_border, 1.04);
 
-    box-shadow: inset 0 1px alpha(#FFF, 0.4),
-                inset 1px 0 alpha(#FFF, 0.2);
+    box-shadow: inset 0 1px alpha(@light_shadow, 0.4),
+                inset 1px 0 alpha(@light_shadow, 0.2);
 }
 
 GtkSwitch:insensitive,
@@ -298,8 +298,8 @@ GtkComboBox:insensitive,
     border-right-color: shade(@button_border, 0.95);
     border-bottom-color: @button_border;
     border-left-color: shade(@button_border, 0.92);
-    box-shadow: inset 0 1px alpha(#000, 0.05),
-                inset 1px 0 alpha(#000, 0.02);
+    box-shadow: inset 0 1px alpha(@dark_shadow, 0.1),
+                inset 1px 0 alpha(@dark_shadow, 0.05);
 }
 
 GtkSwitch.trough:active {
