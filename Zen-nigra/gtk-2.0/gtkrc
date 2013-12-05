@@ -98,7 +98,7 @@ widget_class "*<GtkMenuItem>.*.<GtkScale>" style "scale"
 
 # Xfce specific theming
 widget_class "*XfsmLogoutDialog*"				style "adaptive-dark"
-widget_class "*XfsmLogoutDialog*Button"	style 	"dark-button"
+widget_class "*XfsmLogoutDialog*Button"			style "button-dark-murrine"
 widget_class "*XfsmLogoutDialog*RadioButton"	style "radiocheck-dark"
 widget_class "*XfsmLogoutDialog*CheckButton"	style "radiocheck-dark"
 widget "xfwm"									style "titlebar-adaptive"

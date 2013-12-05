@@ -57,7 +57,7 @@
 @define-color notebook_active mix(@base_color, @bg_color, 0.8);
 @define-color scrollbar_slider mix(@fg_color, shade(@bg_color, 0.9), 0.8);
 @define-color panel_bg_normal shade(@bg_color, 0.9);
-@define-color panel_bg_prelight mix(@panel_bg_normal, @selected_bg_color, 0.6);
+@define-color panel_bg_prelight mix(@panel_bg_normal, @selected_bg_color, 0.5);
 @define-color panel_bg_active @selected_bg_color;
 @define-color panel_fg_normal @fg_color;
 @define-color panel_fg_selected @selected_fg_color;

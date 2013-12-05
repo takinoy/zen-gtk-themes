@@ -1,10 +1,10 @@
-style "panel" = "light"
+style "panel" = "panel-light"
 {
 	xthickness = 2
 	ythickness = 2
 }
 
-style "panel_button" = "light"
+style "panel_button" = "panel-light"
 {
 		engine "murrine" {
 		contrast			= 0.9

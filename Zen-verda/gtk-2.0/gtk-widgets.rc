@@ -146,9 +146,9 @@ class "GtkWidget"			style "default"
 
 style "dark" {
 	bg[NORMAL]			= @dark_bg_color
-	bg[ACTIVE]			= shade(0.4, @selected_bg_color)
-	bg[PRELIGHT]		= mix(0.2, @selected_bg_color, @dark_bg_color)
-	bg[SELECTED]		= shade(0.5, @selected_bg_color)
+	bg[ACTIVE]			= shade(0.9, @dark_bg_color)
+	bg[PRELIGHT]		= shade(1.02, @dark_bg_color)
+	bg[SELECTED]		= shade(0.6, @selected_bg_color)
 	bg[INSENSITIVE]		= "#000000"
 
 	fg[NORMAL]			= @dark_text_color # Makes panel text light.
@@ -166,23 +166,31 @@ style "dark" {
 	base[ACTIVE]		= shade(0.7, @selected_base_color)	# Color for selected base items.
 }
 
-style "light" {
+style "panel-dark" = "dark" {
+	bg[ACTIVE]			= mix(0.4, @selected_bg_color, @dark_bg_color)
+	bg[PRELIGHT]		= mix(0.3, @selected_bg_color, @dark_bg_color)
+}
+
+style "panel-light" {
 	bg[NORMAL]			= "#CCCCCC"
-	bg[PRELIGHT]		= mix(0.6, @selected_bg_color, "#CCCCCC")
+	bg[PRELIGHT]		= mix(0.5, @selected_bg_color, "#CCCCCC")
 	bg[ACTIVE]			= @selected_bg_color
 }
 
-style "adaptive" {
+style "panel-adaptive" {
 	bg[NORMAL]			= shade(0.9,@bg_color)
-	bg[PRELIGHT]		= mix(0.6, @selected_bg_color, shade(0.9,@bg_color))
+	bg[PRELIGHT]		= mix(0.5, @selected_bg_color, shade(0.9,@bg_color))
 	bg[ACTIVE]			= @selected_bg_color
 	}
 
 style "adaptive-dark" = "dark" {
-	bg[PRELIGHT]		= mix(0.6, @selected_bg_color, @dark_bg_color)
-	bg[ACTIVE]			= @selected_bg_color
 	bg[SELECTED]		= @selected_bg_color
 	}
+
+style "panel-adaptive-dark" = "adaptive-dark" {
+	bg[PRELIGHT]		= mix(0.7, @selected_bg_color, @dark_bg_color)
+	bg[ACTIVE]			= @selected_bg_color
+}
 
 style "entry" {
 	xthickness = 3
@@ -324,15 +332,24 @@ widget_class "*OptionMenu*"			style "button"
 class "*OptionMenu*"				style "button"
 widget_class "*<GtkToolbar>.*.<GtkButton>*" style:highest	"button"
 
-style "dark-button"
+style "button-dark"
 {
 	bg[NORMAL]			= shade(1.6, @dark_bg_color)
 	bg[PRELIGHT]		= shade(1.8, @dark_bg_color)
 	bg[ACTIVE]			= mix(0.5, shade(0.8, @selected_bg_color), @dark_bg_color)
 	bg[SELECTED]		= shade(1.2, @selected_bg_color)
 	bg[INSENSITIVE]		= shade(1.01, @dark_bg_color)
+}
 
-	engine "murrine"	{	roundness = 3	}
+style "button-dark-murrine" = "button-dark"
+{
+	engine "murrine" {
+		contrast			= 0.0
+		gradient_shades		= { 1.02, 0.9, 0.8, 0.8 }
+		textstyle			= 1
+		text_shade			= 0.2
+		roundness = 3
+	}
 }
 
 style "comboboxentry" = "button" {
