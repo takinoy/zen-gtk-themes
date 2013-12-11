@@ -1,3 +1,7 @@
+0.13.2
+    Improve dark buttons style
+    Adjust gtk3 hover:active colors
+    Remove gtk-dialog custom icon size
 0.13.1
     Configure gtk3 icon sizes
     Adjust gtk3 toolbar padding
@@ -36,7 +40,6 @@
  - Updated to gtk3.8 (menuitem separator, paddings...).
  - Add standard build tools.
 
-0.10.13 : updates and fixes from 0.13 branch.
 0.10.4
  - Fix gtk3 rubberband selection color.
  - Adjust gtk3 panel settings (not tested).
