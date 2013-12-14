@@ -43,6 +43,7 @@ class "GtkMenuItem"				style "menu-dark"
 widget_class "*BonoboDockItem"		style "menubar-dark"
 class "*BonoboDockItem"				style "menubar-dark"
 widget_class "*<GtkMenuBar>*"		style "menubar-dark"
+widget_class "*<GtkMenuBar>*"		style "menubar-dark-murrine"
 
 # Scale widget in menus (e.g. ubuntu's sound indicator)
 widget_class "*<GtkMenuItem>.*.<GtkScale>" style "scale"

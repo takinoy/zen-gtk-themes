@@ -95,6 +95,7 @@ class "GtkMenuItem"				style "menu-adaptive"
 widget_class "*BonoboDockItem"		style "menubar-adaptive"
 class "*BonoboDockItem"				style "menubar-adaptive"
 widget_class "*<GtkMenuBar>*"		style "menubar-adaptive"
+widget_class "*<GtkMenuBar>*"		style "menubar-dark-murrine"
 
 # Scale widget in menus (e.g. ubuntu's sound indicator)
 widget_class "*<GtkMenuItem>.*.<GtkScale>" style "scale"

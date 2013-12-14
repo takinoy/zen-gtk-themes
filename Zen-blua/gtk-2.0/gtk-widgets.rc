@@ -292,6 +292,13 @@ style "menubar-dark" = "dark" {
 	bg[SELECTED]		= shade(0.6, @selected_bg_color)
 }
 
+style "menubar-dark-murrine" = "default-thickness" {
+	engine "murrine" {
+		contrast			= 0.0
+		gradient_shades		= { 0.95, 0.95, 0.9, 0.9 }
+	}
+}
+
 style "pager" {
 	xthickness = 0
 	ythickness = 0
@@ -406,7 +413,7 @@ style "iconview" = "view" {
 
 style "treeview" = "iconview"
 {
-	# Enable color variation for odd and even rows.
+	# Enable color variations for odd and even rows.
 	engine "pixmap" {}
 }
 

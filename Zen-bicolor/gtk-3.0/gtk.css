@@ -69,10 +69,11 @@
 @define-color menu_fg_normal @dark_text_color;
 @define-color menu_fg_selected #FFFFFF;
 @define-color menubar_bg_normal shade(@dark_bg_color, 1.82);	/* color #3C3C3C */
-@define-color menubar_bg_selected shade(@selected_bg_color, 0.6);
+@define-color menubar_bg_selected shade(@selected_bg_color, 0.5);
 @define-color menubar_fg_normal @dark_text_color;
 @define-color menubar_fg_selected #FFFFFF;
 @define-color menubar_border darker(@menubar_bg_normal);
+@define-color menubar_border_hover shade(@menubar_bg_selected, 1.05);
 @define-color radio_bg_normal @base_color;
 
 /* window manager colors */
