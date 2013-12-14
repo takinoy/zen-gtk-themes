@@ -73,6 +73,7 @@
 @define-color menubar_fg_normal @fg_color;
 @define-color menubar_fg_selected @selected_fg_color;
 @define-color menubar_border @border_insensitive;
+@define-color menubar_border_hover shade(@menubar_bg_selected, 0.8);
 @define-color radio_bg_normal @base_color;
 
 /* window manager colors */
