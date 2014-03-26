@@ -808,6 +808,10 @@ column-header .button:hover, column-header .button:hover:focus {
     border-color: @menubar_border_hover;
 }
 
+.menubar>.menuitem:insensitive {
+    color: @menubar_fg_insensitive;
+}
+
 /*********
  * Menus *
  *********/
@@ -954,9 +958,97 @@ GtkHandleBox {
 /**************
  * header-bar *
  **************/
+
 .header-bar {
     padding: 4px;
     border-style: none;
+    background-color: @menubar_bg_normal;
+    color: @menubar_fg_normal;
+
+    border-image-slice: 1;
+}
+
+.header-bar *:insensitive {
+    color: @menubar_fg_insensitive;
+}
+
+.header-bar .button {
+    color: @menubar_fg_normal;
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@headerbar_button_bg_normal, 1.05)),
+                                     to (shade(@headerbar_button_bg_normal, 0.97)));
+    border-top-color: shade(@headerbar_button_border, 1.08);
+    border-right-color: @headerbar_button_border;
+    border-bottom-color: shade(@headerbar_button_border, 0.9);
+    border-left-color: shade(@headerbar_button_border, 1.04);
+
+    box-shadow: inset 0 1px alpha(@headerbar_light_shadow, 0.4),
+                inset 1px 0 alpha(@headerbar_light_shadow, 0.2);
+}
+
+.header-bar GtkComboBox:insensitive,
+.header-bar .button:insensitive {
+    color: @menubar_fg_insensitive;
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@menubar_bg_normal, 1.02)),
+                                     to (shade(@menubar_bg_normal, 0.97)));
+    border-top-color: @headerbar_border_insensitive;
+    border-right-color: shade(@headerbar_border_insensitive, 0.95);
+    border-bottom-color: shade(@headerbar_border_insensitive, 0.9);
+    border-left-color: shade(@headerbar_border_insensitive, 0.98);
+}
+
+.header-bar .button:active {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from(shade(@menubar_bg_selected,  0.97)),
+                                     to(shade(@menubar_bg_selected, 1.05)));
+    border-top-color: shade(@headerbar_button_border, 0.9);
+    border-right-color: shade(@headerbar_button_border, 0.95);
+    border-bottom-color: @headerbar_button_border;
+    border-left-color: shade(@headerbar_button_border, 0.92);
+    box-shadow: inset 0 1px alpha(@headerbar_dark_shadow, 0.1),
+                inset 1px 0 alpha(@headerbar_dark_shadow, 0.05);
+}
+
+.header-bar .button:hover {
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@headerbar_bg_hover, 1.05)),
+                                     to (shade(@headerbar_bg_hover, 0.97)));
+}
+
+.header-bar .button:hover:active {
+    color: @menubar_fg_normal;
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                     from (shade(@menubar_bg_selected, 1.02)),
+                                     to (shade(@menubar_bg_selected, 1.1)));
+}
+
+.header-bar .button:hover,
+.header-bar .button:hover:active,
+.header-bar .button:hover:focus {
+    border-top-color: @menubar_border_hover;
+    border-right-color: shade(@menubar_border_hover, 0.95);
+    border-bottom-color: shade(@menubar_border_hover, 0.9);
+    border-left-color: shade(@menubar_border_hover, 0.98);
+}
+
+.button:focus, GtkSwitch:focus, .button.default {
+    border-top-color: shade(@menubar_border_hover, 0.9);
+    border-right-color: shade(@menubar_border_hover, 0.85);
+    border-bottom-color: shade(@menubar_border_hover, 0.8);
+    border-left-color: shade(@menubar_border_hover, 0.88);
+    box-shadow: inset 0 1px @menubar_border_hover,
+                inset -1px 0 shade(@menubar_border_hover, 0.95),
+                inset 0 -1px shade(@menubar_border_hover, 0.9),
+                inset 1px 0 shade(@menubar_border_hover, 0.98);
+}
+
+.header-bar .separator {
+    color: mix(@text_color, @menubar_bg_normal, 0.9);
+}
+
+.header-bar .title {
+	font: Bold;
 }
 
 /***********
