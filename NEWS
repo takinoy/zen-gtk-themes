@@ -1,3 +1,9 @@
+0.14.0
+    Update notebook style for gtk 3.12
+    Add support for the new xfwm4 tabwin
+    Change header-bar style for zen-bicolor
+    Change zen-bicolor background color
+    Fix issues with some gtk 3.8 apps
 0.13.2
     Improve dark buttons style
     Adjust gtk3 hover:active colors
