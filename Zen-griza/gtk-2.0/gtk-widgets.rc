@@ -372,7 +372,7 @@ style "button-dark"
 	bg[NORMAL]			= shade(1.6, @dark_bg_color)
 	bg[PRELIGHT]		= shade(1.8, @dark_bg_color)
 	bg[ACTIVE]			= mix(0.5, shade(0.8, @selected_bg_color), @dark_bg_color)
-	bg[SELECTED]		= shade(1.2, @selected_bg_color)
+	bg[SELECTED]		= @selected_bg_color
 	bg[INSENSITIVE]		= shade(1.01, @dark_bg_color)
 }
 
