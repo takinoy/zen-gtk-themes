@@ -2,10 +2,27 @@
 
 style "xfwm-tabwin"
 {
+	Xfwm4TabwinWidget::border-width = 1
+    Xfwm4TabwinWidget::border-alpha = 1
 	Xfwm4TabwinWidget::icon-size = 64
+	Xfwm4TabwinWidget::listview-icon-size = 16
+    Xfwm4TabwinWidget::alpha = 1
+    Xfwm4TabwinWidget::radius = 10
 }
 
-widget "xfwm4-tabwin*"			style "xfwm-tabwin"
+widget "xfwm4-tabwin"		style "xfwm-tabwin"
+
+style "tabwin-button"
+{
+	bg[ACTIVE] = @selected_bg_color
+	bg[SELECTED] = @selected_bg_color
+}
+
+style "tabwin-button-dark"
+{
+	bg[ACTIVE] = shade(0.6, @selected_bg_color)
+	bg[SELECTED] = shade(0.6, @selected_bg_color)
+}
 
 style "titlebar-adaptive" = "default"
 {

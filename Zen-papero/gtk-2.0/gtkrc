@@ -27,9 +27,9 @@ widget "gtk-tooltip*"				style "tooltips-papero"
 widget_class "*View*"				style "sidepane"
 
 # menu style = [adaptive, dark]
-widget_class "*<GtkMenu>*"		style "menu-adaptive"
-widget_class "*<GtkMenuItem>*"	style "menu-adaptive"
-class "GtkMenuItem"				style "menu-adaptive"
+widget_class "*<GtkMenu>*"			style "menu-adaptive"
+widget_class "*<GtkMenuItem>*"		style "menu-adaptive"
+class "GtkMenuItem"					style "menu-adaptive"
 
 # menubar style = [adaptive, dark]
 widget_class "*BonoboDockItem"		style "menubar-adaptive"
@@ -43,4 +43,6 @@ widget_class "*<GtkMenuItem>.*.<GtkScale>" style "scale"
 widget "xfwm"						style "titlebar-adaptive"
 class "MetaFrames"					style "titlebar-adaptive"
 widget_class "MetaFrames"			style "titlebar-adaptive"
-class"*XfceHeading*"	style"xfceheaders"
+class "*XfceHeading*"				style"xfceheaders"
+# theming for ochosi/tabwin
+widget "xfwm4-tabwin*Button"		style "tabwin-button"

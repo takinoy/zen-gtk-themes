@@ -25,4 +25,6 @@ widget_class "*<GtkMenuItem>.*.<GtkScale>" style "scale"
 widget "xfwm"						style "titlebar-adaptive"
 class "MetaFrames"					style "titlebar-adaptive"
 widget_class "MetaFrames"			style "titlebar-adaptive"
-class"*XfceHeading*"	style"xfceheaders"
+class "*XfceHeading*"				style"xfceheaders"
+# theming for ochosi/tabwin
+widget "xfwm4-tabwin*Button"		style "tabwin-button"

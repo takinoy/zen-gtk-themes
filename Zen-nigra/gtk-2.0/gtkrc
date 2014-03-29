@@ -111,9 +111,11 @@ style "titlebar-nigra" {
 }
 
 widget "xfwm"						style "titlebar-nigra"
-widget "xfwm4-tabwin*"				style "titlebar-nigra"
 class "MetaFrames"					style "titlebar-nigra"
 widget_class "MetaFrames"			style "titlebar-nigra"
 
-class"*XfceHeading*"	style"xfceheaders"
-widget "xfwm4-tabwin*"			style "adaptive-dark"
+class "*XfceHeading*"				style"xfceheaders"
+widget "xfwm4-tabwin*"				style "adaptive-dark"
+# theming for ochosi/tabwin
+widget "xfwm4-tabwin*Button"		style "button-dark-murrine"
+widget "xfwm4-tabwin*Button"		style "tabwin-button"
