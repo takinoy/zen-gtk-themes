@@ -9,7 +9,7 @@ dnl ***************************
 dnl *** Initialize autoconf ***
 dnl ***************************
 AC_COPYRIGHT([Copyright (c) 2012-2013 Cedric Leporcq. All rights reserved.])
-AC_INIT([zen-gtk-themes], [0.10.14.gtk36], [https://github.com/cedl38/zen-gtk-themes])
+AC_INIT([zen-gtk-themes], [0.10.15.gtk36], [https://github.com/cedl38/zen-gtk-themes])
 AC_PREREQ([2.50])
 AC_REVISION([zen-gtk-themes_version_build])
 
