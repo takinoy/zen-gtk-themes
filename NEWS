@@ -1,3 +1,6 @@
+0.10.15
+    Fix gtk2 "button-dark" style
+    Change zen-bicolor background color
 0.10.14
     Improve dark buttons style
     Adjust gtk3 hover:active colors
