@@ -648,19 +648,27 @@ GtkScale.slider.mark {
 
 .notebook {
     -GtkWidget-focus-line-width: 0;
-    background-color: @notebook_active;
     border-style: solid;
     border-width: 1px;
     border-radius: 2px;
     border-color: @border_selected;
 }
 
+.notebook.frame {
+    background-color: @notebook_active;
+}
+
+.notebook.header {
+    border-style: none;
+    background-color: transparent;
+}
+
 .notebook tab {
-    border-radius: 3px 3px 0 0;
     padding: 4px 5px 2px 5px;
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (alpha(@border_normal, 0.28)),
-                                     to (alpha(@border_normal, 0.58)));
+                                     from (alpha(@border_normal, 0.15)),
+                                     to (alpha(@border_normal, 0.5)));
+    border-radius: 3px 3px 0 0;
     border-color: mix(@fg_color, @bg_color, 0.8);
 }
 
@@ -685,8 +693,8 @@ GtkScale.slider.mark {
     padding: 3px 5px 3px 5px;
     border-left-width: 0;
     background-image: -gtk-gradient(linear, right top, left top,
-                                     from (alpha(@border_normal, 0.28)),
-                                     to (alpha(@border_normal, 0.58)));
+                                     from (alpha(@border_normal, 0.15)),
+                                     to (alpha(@border_normal, 0.5)));
     border-radius: 0 3px 3px 0;
 }
 
@@ -702,8 +710,8 @@ GtkScale.slider.mark {
     padding: 2px 5px 4px 5px;
     border-top-width: 0;
     background-image: -gtk-gradient(linear, left bottom, left top,
-                                     from (alpha(@border_normal, 0.28)),
-                                     to (alpha(@border_normal, 0.58)));
+                                     from (alpha(@border_normal, 0.15)),
+                                     to (alpha(@border_normal, 0.5)));
     border-radius: 0 0 3px 3px;
 }
 
@@ -719,8 +727,8 @@ GtkScale.slider.mark {
     padding: 3px 5px 3px 5px;
     border-right-width: 0;
     background-image: -gtk-gradient(linear, left top, right top,
-                                     from (alpha(@border_normal, 0.28)),
-                                     to (alpha(@border_normal, 0.58)));
+                                     from (alpha(@border_normal, 0.15)),
+                                     to (alpha(@border_normal, 0.5)));
     border-radius: 3px 0 0 3px;
 }
 
