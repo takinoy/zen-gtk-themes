@@ -29,7 +29,9 @@
 /* shadow effects */
 @define-color text_shadow alpha(#262626, 0.4);
 @define-color light_shadow #545454;
+@define-color headerbar_light_shadow @light_shadow;
 @define-color dark_shadow #000;
+@define-color headerbar_dark_shadow @dark_shadow;
 
 /* misc colors used by gtk+ */
 @define-color info_fg_color rgb (255, 255, 255);
