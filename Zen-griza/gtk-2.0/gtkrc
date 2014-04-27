@@ -55,7 +55,7 @@ widget_class "*XfsmLogoutDialog*CheckButton"	style "radiocheck-dark"
 widget "xfwm"									style "titlebar-adaptive"
 class "MetaFrames"								style "titlebar-adaptive"
 widget_class "MetaFrames"						style "titlebar-adaptive"
-class"*XfceHeading*"							style "xfceheaders-dark"
+class"*XfceHeading*"							style "xfceheaders"
 widget "xfwm4-tabwin*"							style "dark"
 # theming for ochosi/tabwin
 widget "xfwm4-tabwin*Button"					style "button-dark-murrine"
