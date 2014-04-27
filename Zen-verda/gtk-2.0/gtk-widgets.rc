@@ -310,7 +310,7 @@ style "menubar-dark" = "dark" {
 style "menubar-dark-murrine" = "default-thickness" {
 	engine "murrine" {
 		contrast			= 0.0
-		gradient_shades		= { 0.95, 0.95, 0.9, 0.9 }
+		gradient_shades		= { 1.0, 1.0, 0.9, 0.9 }
 	}
 }
 

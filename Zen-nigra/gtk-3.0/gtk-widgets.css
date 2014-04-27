@@ -795,7 +795,8 @@ column-header .button:hover, column-header .button:hover:focus {
     background-image: -gtk-gradient (linear,
                0 0, 0 1,
                color-stop(0, transparent),
-               color-stop(0.75, alpha(@menubar_border, 0.06)),
+               color-stop(0.25, alpha(@headerbar_light_shadow, 0.0)),
+               color-stop(0.75, alpha(@headerbar_light_shadow, 0.05)),
                color-stop(1, alpha(@menubar_border, 0.2)));
     border-style: solid;
     border-width: 0px 0px 1px 0px;
