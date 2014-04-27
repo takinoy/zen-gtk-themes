@@ -1,4 +1,4 @@
-zen-gtk-themes version 0.14.0
+zen-gtk-themes version 0.14.1
 ----------------------------
 
 Released under the GPL license
@@ -16,9 +16,9 @@ Features
 dependencies
 ------------
 - gtk2 engines: Murrine>=0.98, clearlooks, pixbuf. A gtk2 version with the clearlooks engine is available on the Zen-0.3.x package.
-- gtk3 version 3.8.x or 3.10.x. For gtk-3.6.x and gtk-3.4.x compatibles versions are availables (0.10.x.g36 and 0.10.x.g34 respectively).
+- gtk3 version 3.8.x, 3.10.x. or 3.12.x For gtk-3.6.x and gtk-3.4.x compatibles versions are availables (0.10.x.g36 and 0.10.x.g34 respectively).
 
-The gtk-3 version is mostly tested on few applications under Xfce. Do not hesitate to try it in full gtk-3 environnement and report any issues.
+The gtk-3 version is mostly tested on few applications under Xfce. Do not hesitate to try it in full gtk-3 environment and report any issues.
 
 Install
 --------

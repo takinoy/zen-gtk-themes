@@ -1,3 +1,7 @@
+0.14.1
+    Improve menubar style
+    Fix zen-griza xfce-header color
+    Fix Zen-nigra header-bar style
 0.14.0
     Update notebook style for gtk 3.12
     Add support for the new xfwm4 tabwin
