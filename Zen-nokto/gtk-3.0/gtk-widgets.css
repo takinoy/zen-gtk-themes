@@ -74,7 +74,7 @@ GtkWindow {
 
 *:insensitive {
     color: @fg_insensitive;
-    border-color: @border_insensitive;
+    border-color: @borders;
     text-shadow: 1 1 @text_shadow;
 }
 
@@ -282,10 +282,10 @@ GtkComboBox:insensitive,
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@button_bg_insensitive, 1.02)),
                                      to (shade(@button_bg_insensitive, 0.97)));
-    border-top-color: @border_insensitive;
-    border-right-color: shade(@border_insensitive, 0.95);
-    border-bottom-color: shade(@border_insensitive, 0.9);
-    border-left-color: shade(@border_insensitive, 0.98);
+    border-top-color: @borders;
+    border-right-color: shade(@borders, 0.95);
+    border-bottom-color: shade(@borders, 0.9);
+    border-left-color: shade(@borders, 0.98);
 
     box-shadow: none;
 }
@@ -573,8 +573,8 @@ GtkProgressBar, GtkScale {
     background-image: -gtk-gradient(linear, left top, right top,
                                      from (@bg_darker),
                                      to (shade(@bg_darker, 0.9)));
-    border-top-color: mix(@border_normal, @border_insensitive, 0.5);
-    border-bottom-color: mix(@border_normal, @border_insensitive, 0.5);
+    border-top-color: mix(@border_normal, @borders, 0.5);
+    border-bottom-color: mix(@border_normal, @borders, 0.5);
     border-right-color: shade(shade(@bg_darker, 0.9),0.8);
 }
 
@@ -591,8 +591,8 @@ GtkProgressBar, GtkScale {
     background-image: -gtk-gradient(linear, left bottom, left top,
                                      from (@bg_darker),
                                      to (shade(@bg_darker, 0.9)));
-    border-left-color: mix(@border_normal, @border_insensitive, 0.5);
-    border-right-color: mix(@border_normal, @border_insensitive, 0.5);
+    border-left-color: mix(@border_normal, @borders, 0.5);
+    border-right-color: mix(@border_normal, @borders, 0.5);
     border-top-color: shade(shade(@bg_darker, 0.9),0.8);
 }
 
@@ -804,7 +804,7 @@ column-header .button:hover, column-header .button:hover:focus {
     color: @menubar_fg_normal;
     background-color: @menubar_bg_normal;
     border-style: none;
-    border-color: @border_insensitive;
+    border-color: @borders;
 }
 
 .menubar>.menuitem {
@@ -900,7 +900,7 @@ column-header .button:hover, column-header .button:hover:focus {
     background-color: @bg_color;
     border-style: solid;
     border-width: 1px 0px 0px 0px;
-    border-color: @border_insensitive;
+    border-color: @borders;
 }
 
 .primary-toolbar {
