@@ -77,7 +77,7 @@ GtkWindow {
 
 *:insensitive {
     color: @fg_insensitive;
-    border-color: @border_insensitive;
+    border-color: @borders;
     text-shadow: 1px 1px @text_shadow;
 }
 
@@ -291,10 +291,10 @@ GtkComboBox:insensitive,
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@button_bg_insensitive, 1.02)),
                                      to (shade(@button_bg_insensitive, 0.97)));
-    border-top-color: @border_insensitive;
-    border-right-color: shade(@border_insensitive, 0.95);
-    border-bottom-color: shade(@border_insensitive, 0.9);
-    border-left-color: shade(@border_insensitive, 0.98);
+    border-top-color: @borders;
+    border-right-color: shade(@borders, 0.95);
+    border-bottom-color: shade(@borders, 0.9);
+    border-left-color: shade(@borders, 0.98);
 
     box-shadow: none;
 }
@@ -567,8 +567,8 @@ GtkProgressBar, GtkScale {
     background-image: -gtk-gradient(linear, left top, right top,
                                      from (@bg_darker),
                                      to (shade(@bg_darker, 0.9)));
-    border-top-color: mix(@border_normal, @border_insensitive, 0.5);
-    border-bottom-color: mix(@border_normal, @border_insensitive, 0.5);
+    border-top-color: mix(@border_normal, @borders, 0.5);
+    border-bottom-color: mix(@border_normal, @borders, 0.5);
     border-right-color: shade(shade(@bg_darker, 0.9),0.8);
 }
 
@@ -585,8 +585,8 @@ GtkProgressBar, GtkScale {
     background-image: -gtk-gradient(linear, left bottom, left top,
                                      from (@bg_darker),
                                      to (shade(@bg_darker, 0.9)));
-    border-left-color: mix(@border_normal, @border_insensitive, 0.5);
-    border-right-color: mix(@border_normal, @border_insensitive, 0.5);
+    border-left-color: mix(@border_normal, @borders, 0.5);
+    border-right-color: mix(@border_normal, @borders, 0.5);
     border-top-color: shade(shade(@bg_darker, 0.9),0.8);
 }
 
@@ -916,13 +916,13 @@ GduWindow .menubar {
     background-image: -gtk-gradient (linear,
                0 0, 0 1,
                color-stop(0, transparent),
-               color-stop(0.75, alpha(@border_insensitive, 0.06)),
-               color-stop(1, alpha(@border_insensitive, 0.2)));
+               color-stop(0.75, alpha(@borders, 0.06)),
+               color-stop(1, alpha(@borders, 0.2)));
     border-image-source: -gtk-gradient (linear,
                0 0, 1 0,
-               color-stop(0, @border_insensitive),
-               color-stop(0.9, @border_insensitive),
-               color-stop(1, @border_insensitive));
+               color-stop(0, @borders),
+               color-stop(0.9, @borders),
+               color-stop(1, @borders));
 }
 
 /***********
@@ -935,17 +935,17 @@ GduWindow .menubar {
     background-color: @bg_color;
     background-image: -gtk-gradient (linear,
                0 0, 0 1,
-               color-stop(0, alpha(@border_insensitive, 0.2)),
-               color-stop(0.25, alpha(@border_insensitive, 0.06)),
-               color-stop(0.75, alpha(@border_insensitive, 0.06)),
-               color-stop(1, alpha(@border_insensitive, 0.2)));
+               color-stop(0, alpha(@borders, 0.2)),
+               color-stop(0.25, alpha(@borders, 0.06)),
+               color-stop(0.75, alpha(@borders, 0.06)),
+               color-stop(1, alpha(@borders, 0.2)));
     border-style: solid;
     border-width: 0px 0px 1px 0px;
     border-image-source: -gtk-gradient (linear,
                0 0, 1 0,
                color-stop(0, @bg_color),
-               color-stop(0.1, @border_insensitive),
-               color-stop(0.9, @border_insensitive),
+               color-stop(0.1, @borders),
+               color-stop(0.9, @borders),
                color-stop(1, @bg_color));
     border-image-slice: 1;
 }
@@ -1003,10 +1003,10 @@ GtkHandleBox {
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@menubar_bg_normal, 1.02)),
                                      to (shade(@menubar_bg_normal, 0.97)));
-    border-top-color: @headerbar_border_insensitive;
-    border-right-color: shade(@headerbar_border_insensitive, 0.95);
-    border-bottom-color: shade(@headerbar_border_insensitive, 0.9);
-    border-left-color: shade(@headerbar_border_insensitive, 0.98);
+    border-top-color: @headerbar_borders;
+    border-right-color: shade(@headerbar_borders, 0.95);
+    border-bottom-color: shade(@headerbar_borders, 0.9);
+    border-left-color: shade(@headerbar_borders, 0.98);
 }
 
 .header-bar .button:active {

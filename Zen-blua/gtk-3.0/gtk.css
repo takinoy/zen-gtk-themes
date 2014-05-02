@@ -44,6 +44,7 @@
 @define-color error_bg_color rgb (237, 54, 54);
 @define-color link_color #1f4299;
 @define-color error_color #cc0000;
+@define-color borders shade(@bg_color, 0.9);
 
 /* theme common colors */
 @define-color fg_insensitive mix(@fg_color, darker(@bg_color), 0.6);
@@ -52,7 +53,6 @@
 @define-color bg_hover mix(@base_color, @bg_color, 0.6);
 @define-color bg_lighter mix(@bg_color, @base_color, 0.6);
 @define-color border_normal shade(@bg_color, 0.8);
-@define-color border_insensitive shade(@bg_color, 0.9);
 @define-color border_selected shade(@selected_bg_color, 0.9);
 @define-color highlight #0CFF06;
 @define-color button_bg_normal mix(@base_color, @bg_color, 0.8);
@@ -75,11 +75,11 @@
 @define-color menubar_fg_normal @fg_color;
 @define-color menubar_fg_selected @selected_fg_color;
 @define-color menubar_fg_insensitive @fg_insensitive;
-@define-color menubar_border @border_insensitive;
+@define-color menubar_border @borders;
 @define-color menubar_border_hover shade(@menubar_bg_selected, 0.8);
 @define-color headerbar_bg_hover @bg_hover;
 @define-color headerbar_button_bg_normal @button_bg_normal;
-@define-color headerbar_border_insensitive @border_insensitive;
+@define-color headerbar_borders @borders;
 @define-color headerbar_button_border @button_border;
 @define-color radio_bg_normal @base_color;
 
