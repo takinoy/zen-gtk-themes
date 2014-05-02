@@ -27,7 +27,8 @@ mainpaths = 				\
 	gtk-2.0/apps/libreoffice.rc \
 	gtk-3.0/gtk-widgets.css \
 	gtk-3.0/lightdm-gtk-greeter.css \
-	gtk-3.0/panel.css
+	gtk-3.0/panel.css \
+	gtk-3.0/csd.css
 
 EXTRA_DIST = $(themedirs)
 
@@ -45,21 +46,21 @@ refresh:
 		cp -flrv $(darkdir)/gtk-3.0/gtk.css \
 		$$vardir/gtk-3.0/gtk-dark.css; \
 	done;
-	cp -flrv $(maindir)/gtk-2.0/resize-grip.png \
-	$(maindir)/gtk-3.0/resize-grip.png; \
 	for vardir in $(light_color_dirs); do \
-		for dir in gtk-2.0 gtk-3.0; do \
-			mkdir -p $$vardir/$$dir; \
-			cp -flrv $(maindir)/$$dir/resize-grip.png \
-			$$vardir/$$dir/resize-grip.png; \
-		done; \
+		cp -flrv $(maindir)/gtk-2.0/resize-grip.png \
+		$$vardir/gtk-2.0/resize-grip.png; \
 	done;
-	cp -flrv $(darkdir)/gtk-2.0/resize-grip.png \
-	$(darkdir)/gtk-3.0/resize-grip.png; \
-	for dir in gtk-2.0 gtk-3.0; do \
-		mkdir -p $(dark_color_dirs)/$$dir; \
-		cp -flrv $(darkdir)/$$dir/resize-grip.png \
-		$(dark_color_dirs)/$$dir/resize-grip.png; \
+	for vardir in $(light_color_dirs); do \
+		cp -flrv $(maindir)/gtk-3.0/resize-grip.png \
+		$$vardir/gtk-3.0/resize-grip.png; \
+	done;
+	for vardir in $(dark_color_dirs); do \
+		cp -flrv $(darkdir)/gtk-2.0/resize-grip.png \
+		$$vardir/gtk-2.0/resize-grip.png; \
+	done;
+	for vardir in $(dark_color_dirs); do \
+		cp -flrv $(darkdir)/gtk-3.0/resize-grip.png \
+		$$vardir/gtk-3.0/resize-grip.png; \
 	done;
 
 install-data-am :

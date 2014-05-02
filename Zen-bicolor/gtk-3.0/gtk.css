@@ -81,6 +81,11 @@
 @define-color headerbar_button_bg_normal shade(@menubar_bg_normal, 1.15);
 @define-color headerbar_borders shade(@menubar_bg_normal, 0.8);
 @define-color headerbar_button_border darker(@headerbar_button_bg_normal);
+@define-color titlebar_fg_backdrop shade(@menubar_fg_normal, 0.75);
+@define-color titlebar_border_normal @menubar_bg_normal;
+@define-color titlebar_border_backdrop @menubar_bg_normal;
+@define-color titlebutton_hover #FFF;
+@define-color titlebutton_close_hover #d92626;
 @define-color radio_bg_normal @base_color;
 
 /* window manager colors */
