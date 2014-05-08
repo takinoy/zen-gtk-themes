@@ -76,12 +76,17 @@
     color: @fg_insensitive;
     border-color: @borders;
     text-shadow: 1px 1px @text_shadow;
+    -gtk-image-effect: dim;
 }
 
 *:selected {
     color: @selected_fg_color;
     background-color: @selected_bg_color;
     border-color: @border_selected;
+}
+
+*:hover {
+    -gtk-image-effect: highlight;
 }
 
 /************
