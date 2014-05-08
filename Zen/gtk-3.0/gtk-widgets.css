@@ -1059,7 +1059,7 @@ GtkStatusbar {
  * image & label transparency *
  ******************************/
 
-GtkImage, GtkLabel, GtkBox, GtkGrid {
+GtkImage, GtkLabel {
     background-color: transparent;
 }
 
