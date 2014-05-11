@@ -967,6 +967,7 @@ GtkLabel {
 .info {
     border-style: solid;
     border-width: 1px;
+    font: bold;
     color: @info_fg_color;
     background-image: -gtk-gradient(linear, left top, left bottom,
                                      from (shade(@info_bg_color, 1.1)),
