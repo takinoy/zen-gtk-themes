@@ -22,7 +22,10 @@ widget_class "*<GtkMenuBar>*"		style "menubar-adaptive"
 widget_class "*<GtkMenuItem>.*.<GtkScale>" style "scale"
 
 # Xfce specific theming
-widget "xfwm"								style "titlebar-adaptive"
-class "MetaFrames"							style "titlebar-adaptive"
-widget_class "MetaFrames"					style "titlebar-adaptive"
-class"*XfceHeading*"	style"xfceheaders"
+widget_class "XfsmLogoutDialog"								style "xfsm-logout"
+widget_class "*XfsmLogoutDialog*GtkVBox.GtkVBox.GtkLabel"	style "xfsm-label"
+widget "xfwm"												style "titlebar-adaptive"
+class "MetaFrames"											style "titlebar-adaptive"
+widget_class "MetaFrames"									style "titlebar-adaptive"
+class "*XfceHeading*"										style"xfceheaders"
+
