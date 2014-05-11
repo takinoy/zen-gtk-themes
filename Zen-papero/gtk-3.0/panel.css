@@ -9,6 +9,12 @@ PanelSeparator {
     background-color: @panel_bg_normal;
 }
 
+PanelWidget *:insensitive,
+PanelApplet *:insensitive {
+    color: @panel_fg_insensitive;
+    text-shadow: 1px 1px @dark_shadow;
+}
+
 .gnome-panel-menu-bar,
 PanelMenuBar.menubar,
 PanelAppletFrame, PanelApplet .button {
