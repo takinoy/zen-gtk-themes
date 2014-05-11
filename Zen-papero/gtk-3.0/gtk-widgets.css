@@ -972,22 +972,6 @@ FrWindow .menuitem.separator {
     border-style: none;
 }
 
-/* Workaround: disables menu color for specific applications */
-GduWindow .menubar {
-    color :@text_color;
-    background-color: @bg_normal;
-    background-image: -gtk-gradient (linear,
-               0 0, 0 1,
-               color-stop(0, transparent),
-               color-stop(0.75, alpha(@borders, 0.06)),
-               color-stop(1, alpha(@borders, 0.2)));
-    border-image-source: -gtk-gradient (linear,
-               0 0, 1 0,
-               color-stop(0, @borders),
-               color-stop(0.9, @borders),
-               color-stop(1, @borders));
-}
-
 /***********
  * Toolbar *
  ***********/
