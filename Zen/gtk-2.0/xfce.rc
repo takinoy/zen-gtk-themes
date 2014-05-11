@@ -24,6 +24,16 @@ style "tabwin-button-dark"
 	bg[SELECTED] = shade(0.6, @selected_bg_color)
 }
 
+style "xfsm-logout"
+{
+	GtkDialog::content-area-border = 12
+}
+
+style "xfsm-label"
+{
+	font_name = "14"
+}
+
 style "titlebar-adaptive" = "default"
 {
 	bg[SELECTED]		= shade(0.9, @selected_bg_color)
