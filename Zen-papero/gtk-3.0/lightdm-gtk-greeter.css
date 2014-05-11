@@ -5,11 +5,12 @@
     color: @panel_fg_normal;
     background-color: @panel_bg_normal;
     border-width: 0;
-    box-shadow: inset 3px 0px @panel_bg_active,
-        inset -3px 0px @panel_bg_active,
-        inset 0px 3px @panel_bg_active,
-                inset 0px -3px @panel_bg_active;
+    box-shadow: inset 3px 0px @border_selected,
+        inset -3px 0px @border_selected,
+        inset 0px 3px @border_selected,
+                inset 0px -3px @border_selected;
     border-radius: 10px;
+    font: 12px;
 }
 
 /* workaround to disable selected labels background color */
@@ -24,26 +25,12 @@
 }
 
 #panel_window,
-#panel_window #menubar,
-#panel_window > #menubar {
+#panel_window .menubar,
+#panel_window > .menubar {
     border-width: 0;
     background-color: @panel_bg_normal;
     background-image: none;
     color: @panel_fg_normal;
-}
-
-#panel_window #menubar > .menuitem,
-#panel_window > #menubar > .menuitem {
-    background-color: @panel_bg_normal;
-    color: @panel_fg_normal;
-}
-
-#panel_window > #menubar > .menuitem:active,
-#panel_window #menubar > .menuitem:active,
-#panel_window > #menubar > .menuitem:hover,
-#panel_window #menubar > .menuitem:hover {
-    background-color: @panel_bg_active;
-    border-color: @panel_bg_prelight;
 }
 
 #cancel_button,
@@ -53,10 +40,11 @@
 #restart_button {
     color: @panel_fg_normal;
     border-radius: 4px;
+    padding: 4px 16px 4px 16px;
     border-color: alpha(@panel_button_border, 0.9);
+    box-shadow: none;
     background-color: @panel_bg_normal;
     background-image: none;
-    padding: 4px 16px 4px 16px;
 }
 
 #cancel_button:hover, #cancel_button:focus,
@@ -64,13 +52,14 @@
 #login_window .button:hover, #login_window .button:focus,
 #shutdown_button:hover, #restart_button:hover,
 #shutdown_button:focus, #restart_button:focus {
-    border-color: @panel_bg_active;
+    border-color: @border_selected;
 }
 
 #cancel_button:active,
 #login_button:active,
 #login_window .button:active {
-    border-color: @border_selected;
+    background-color: mix(@panel_bg_normal, shade(@selected_bg_color, 0.8), 0.25);
+    border-color: @panel_button_border;
 }
 
 #cancel_button:focus,
@@ -80,18 +69,6 @@
                 inset -1px 0  @border_selected,
                 inset 0 -1px @border_selected,
                 inset 1px 0 @border_selected;
-}
-
-#user_combobox .menu *,
-#session_combobox .menu *,
-#language_combobox .menu * {
-    color: @text_color;
-}
-
-#user_combobox .menu *:hover,
-#session_combobox .menu *:hover,
-#language_combobox .menu *:hover {
-    color: @selected_text_color;
 }
 
 #logo,

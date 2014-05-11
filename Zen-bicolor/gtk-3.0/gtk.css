@@ -66,12 +66,12 @@
 @define-color panel_fg_normal @dark_text_color;
 @define-color panel_fg_insensitive mix(@panel_fg_normal, darker(@panel_bg_normal), 0.6);
 @define-color panel_fg_selected #FFF;
-@define-color panel_button_border shade(@panel_bg_normal, 1.9);
-@define-color menu_bg_normal shade(@dark_bg_color, 1.4);	/* color #2E2E2E */
+@define-color panel_button_border shade(@panel_bg_normal, 1.8);
+@define-color menu_bg_normal shade(@dark_bg_color, 1.4);    /* color #2E2E2E */
 @define-color menu_bg_selected shade(@selected_base_color, 0.7);
 @define-color menu_fg_normal @dark_text_color;
 @define-color menu_fg_selected #FFFFFF;
-@define-color menubar_bg_normal shade(@dark_bg_color, 1.82);	/* color #3C3C3C */
+@define-color menubar_bg_normal shade(@dark_bg_color, 1.82);    /* color #3C3C3C */
 @define-color menubar_bg_selected shade(@selected_bg_color, 0.5);
 @define-color menubar_fg_normal @dark_text_color;
 @define-color menubar_fg_selected #FFFFFF;

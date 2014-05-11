@@ -65,7 +65,7 @@
 @define-color panel_fg_normal @dark_text_color;
 @define-color panel_fg_insensitive mix(@panel_fg_normal, darker(@panel_bg_normal), 0.6);
 @define-color panel_fg_selected #FFF;
-@define-color panel_button_border shade(@panel_bg_normal, 1.9);
+@define-color panel_button_border shade(@panel_bg_normal, 1.8);
 @define-color menu_bg_normal @bg_lighter;
 @define-color menu_bg_selected shade(@selected_base_color, 1.1);
 @define-color menu_fg_normal @text_color;
