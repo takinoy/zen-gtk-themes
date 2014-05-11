@@ -945,31 +945,8 @@ column-header .button:hover, column-header .button:hover:focus {
 }
 
 .menuitem.separator {
-    padding: 1px;
-    color: transparent;
-    background-image: -gtk-gradient (linear,
-               0 0, 1 0,
-               color-stop(0, @menu_bg_normal),
-               color-stop(0.3, mix(@menu_fg_normal, @menu_bg_normal, 0.9)),
-               color-stop(0.7, mix(@menu_fg_normal, @menu_bg_normal, 0.9)),
-               color-stop(1, @menu_bg_normal));
-    border-style: solid;
-    border-image-source: -gtk-gradient (linear,
-               0 0, 1 0,
-               color-stop(0, @menu_bg_normal),
-               color-stop(0.3, shade(@menu_bg_normal, 1.05)),
-               color-stop(0.7, shade(@menu_bg_normal, 1.05)),
-               color-stop(1, @menu_bg_normal));
-    border-image-slice: 0 0 1 0;
-}
-
-/* Workaround for file-roller insensitive item who behave strangely in 3.10 (should be reconsidered)... */
-FrWindow .menuitem.separator {
     color: mix(@menu_fg_normal, @menu_bg_normal, 0.9);
-
-    background-color: @bg_normal;
-    background-image: none;
-    border-style: none;
+    border-color: mix(@menu_fg_normal, @menu_bg_normal, 0.9);
 }
 
 /***********
