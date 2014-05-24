@@ -43,6 +43,8 @@
 @define-color error_fg_color rgb (251, 214, 214);
 @define-color error_bg_color rgb (237, 54, 54);
 @define-color link_color #1f4299;
+@define-color success_color #4e9a06;
+@define-color warning_color #f57900;
 @define-color error_color #cc0000;
 @define-color borders shade(@bg_color, 0.9);
 
