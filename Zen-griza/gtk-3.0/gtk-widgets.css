@@ -715,7 +715,7 @@ GtkScale.slider.mark {
     padding: 5px 5px 2px 5px;
     color: @text_color;
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (mix(@border_selected, shade(@notebook_active, 1.1), 0.9)),
+                                     from (shade(@notebook_active, 1.06)),
                                      to (@notebook_active));
     border-color: @border_selected;
 
