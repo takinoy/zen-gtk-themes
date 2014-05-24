@@ -1046,6 +1046,7 @@ GtkHandleBox {
 }
 
 .pane-separator {
+    background-color: @bg_color;
 }
 
 /*************
