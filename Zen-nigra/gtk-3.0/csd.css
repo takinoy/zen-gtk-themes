@@ -81,7 +81,9 @@
     border-left-color: shade(@menubar_border_hover, 0.98);
 }
 
-.button:focus, GtkSwitch:focus, .button.default {
+.header-bar .button:focus,
+.header-bar GtkSwitch:focus,
+.header-bar .button.default {
     border-top-color: shade(@menubar_border_hover, 0.9);
     border-right-color: shade(@menubar_border_hover, 0.85);
     border-bottom-color: shade(@menubar_border_hover, 0.8);
