@@ -50,7 +50,7 @@
 @define-color bg_hover mix(@base_color, @bg_color, 0.6);
 @define-color bg_lighter mix(@bg_color, @base_color, 0.6);
 @define-color border_normal shade(@bg_color, 0.8);
-@define-color border_selected shade(@selected_bg_color, 0.8);
+@define-color border_selected darker(@selected_bg_color);
 @define-color highlight #0CFF06;
 @define-color button_bg_normal mix(@base_color, @bg_color, 0.8);
 @define-color button_bg_insensitive @bg_color;

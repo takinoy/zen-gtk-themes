@@ -787,10 +787,10 @@ GtkSwitch:hover,
 }
 
 .button:focus, GtkSwitch:focus, .button.default {
-    border-top-color: shade(@border_selected, 0.9);
-    border-right-color: shade(@border_selected, 0.85);
-    border-bottom-color: shade(@border_selected, 0.8);
-    border-left-color: shade(@border_selected, 0.88);
+    border-top-color: shade(@border_selected, 0.95);
+    border-right-color: shade(@border_selected, 0.9);
+    border-bottom-color: shade(@border_selected, 0.85);
+    border-left-color: shade(@border_selected, 0.93);
     box-shadow: inset 0 1px @border_selected,
                 inset -1px 0 shade(@border_selected, 0.95),
                 inset 0 -1px shade(@border_selected, 0.9),
