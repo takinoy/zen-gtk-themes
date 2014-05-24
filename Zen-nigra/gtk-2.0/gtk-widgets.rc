@@ -576,12 +576,12 @@ style "scale"="default"
 	bg[PRELIGHT]		= mix(0.75, shade(0.95, @bg_color), @fg_color)
 	bg[INSENSITIVE]		= shade(1.01, @bg_color)
 
-	engine "murrine"
-	{
-		roundness				= 7
+	engine "murrine" {
+		border_shades 			= {0.95, 0.8}
 		gradient_shades			= {1.05,1.0,1.0,0.9}
-		trough_border_shades	= { 0.95,0.95 }
-		border_shades			= { 1.05,0.85 }
+		trough_shades			= { 0.95, 1.05 }
+		trough_border_shades	= { 0.95, 0.95 }
+		roundness				= 7
 	}
 }
 
@@ -604,7 +604,7 @@ style "progress" = "default-thickness"
 	engine "murrine" {
 		gradient_shades			= {1.0,1.0,1.0,0.9}
 		trough_shades			= { 0.95, 1.05 }
-		trough_border_shades	= { 0.95,1.0 }
+		trough_border_shades	= { 0.95, 0.95 }
 		roundness				= 7
 		contrast				= 0.6
 	}

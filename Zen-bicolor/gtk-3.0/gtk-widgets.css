@@ -490,28 +490,23 @@ GtkCheckButton.check:inconsistent, GtkCheckButton.radio:inconsistent {
 .trough {
     border-style: solid;
     border-width: 1px;
-    border-color: darker(@bg_color);
+    border-color: @border_normal;
+}
+
+.trough:insensitive {
+    border-color: @borders;
 }
 
 .trough {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@bg_color, 0.8)),
-                                     to (@bg_darker));
+                                     from (shade(@bg_color, 0.85)),
+                                     to (shade(@bg_color, 0.95)));
 }
 
 .trough.vertical {
     background-image: -gtk-gradient(linear, left top, right top,
-                                     from (shade(@bg_color, 0.8)),
-                                     to (@bg_darker));
-}
-
-GtkProgressBar.trough,
-GtkProgressBar.vertical.trough,
-GtkScale.trough,
-GtkScale.vertical.trough {
-    border-color: @border_normal;
-    background-color: @bg_darker;
-    background-image: none;
+                                     from (shade(@bg_color, 0.85)),
+                                     to (shade(@bg_color, 0.95)));
 }
 
 .scrollbar.button, .scrollbar.trough {
@@ -566,42 +561,6 @@ GtkProgressBar, GtkScale {
     border-radius: 7px;
 }
 
-.progressbar {
-    background-image: -gtk-gradient(linear, left top, right top,
-                                     from (@selected_bg_color),
-                                     to (mix(#BF3939, @selected_bg_color, 0.6)));
-    border-top-color: mix(@border_normal, @border_selected, 0.5);
-    border-bottom-color: mix(@border_normal, @border_selected, 0.5);
-    border-right-color: shade(mix(#BF3939, @selected_bg_color, 0.6),0.8);
-}
-
-.progressbar.horizontal:insensitive {
-    background-image: -gtk-gradient(linear, left top, right top,
-                                     from (@bg_darker),
-                                     to (shade(@bg_darker, 0.9)));
-    border-top-color: mix(@border_normal, @borders, 0.5);
-    border-bottom-color: mix(@border_normal, @borders, 0.5);
-    border-right-color: shade(shade(@bg_darker, 0.9),0.8);
-}
-
-.progressbar.vertical {
-    background-image: -gtk-gradient(linear, left bottom, left top,
-                                     from (@selected_bg_color),
-                                     to (mix(#BF3939, @selected_bg_color, 0.6)));
-    border-left-color: mix(@border_normal, @border_selected, 0.5);
-    border-right-color: mix(@border_normal, @border_selected, 0.5);
-    border-top-color: shade(mix(#BF3939, @selected_bg_color, 0.6),0.8);
-}
-
-.progressbar.vertical:insensitive {
-    background-image: -gtk-gradient(linear, left bottom, left top,
-                                     from (@bg_darker),
-                                     to (shade(@bg_darker, 0.9)));
-    border-left-color: mix(@border_normal, @borders, 0.5);
-    border-right-color: mix(@border_normal, @borders, 0.5);
-    border-top-color: shade(shade(@bg_darker, 0.9),0.8);
-}
-
 GtkScale, GtkScale:insensitive {
     -GtkRange-slider-width: 13;
     -GtkRange-trough-border: 2;
@@ -634,24 +593,51 @@ GtkScale.slider.vertical:insensitive  {
                                      to (shade(@button_bg_insensitive, 0.97)));
 }
 
-GtkScale.slider:hover, GtkScale.slider:focus,
-GtkScale.slider.vertical:hover, GtkScale.slider.vertical:focus {
+GtkScale.slider:hover {
     background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(mix(@fg_color, @scrollbar_slider, 0.8), 1.18)),
-                                     to (shade(mix(@fg_color, @scrollbar_slider, 0.8), 1.03)));
+                                     from (shade(mix(@fg_color, @scrollbar_slider, 0.8), 1.28)),
+                                     to (shade(mix(@fg_color, @scrollbar_slider, 0.8), 0.93)));
+    border-color: @border_selected;
+}
+
+GtkScale.slider.vertical:hover {
+    background-image: -gtk-gradient(linear, left top, right top,
+                                     from (shade(mix(@fg_color, @scrollbar_slider, 0.8), 1.28)),
+                                     to (shade(mix(@fg_color, @scrollbar_slider, 0.8), 0.93)));
     border-color: @border_selected;
 }
 
 GtkScale.slider.mark {
 }
 
+.progressbar,
 .scale.highlight.left, .scale.highlight.bottom {
-    background-color: @selected_bg_color;
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                      from (@selected_bg_color),
+                                      to (shade(@selected_bg_color, 0.9)));
     border-color: @border_selected;
 }
 
+.progressbar.vertical,
+.scale.highlight.left.vertical, .scale.highlight.bottom.vertical {
+    background-image: -gtk-gradient(linear, left top, right top,
+                                      from (@selected_bg_color),
+                                      to (shade(@selected_bg_color, 0.9)));
+}
+
+.progressbar:insensitive,
 .scale.highlight.left:insensitive, .scale.highlight.bottom:insensitive {
-    background-color: @bg_color;
+    background-image: -gtk-gradient(linear, left top, left bottom,
+                                      from (@bg_color),
+                                      to (shade(@bg_color, 0.9)));
+    border-color: @border_normal;
+}
+
+.progressbar.vertical:insensitive,
+.scale.highlight.left.vertical:insensitive, .scale.highlight.bottom.vertical:insensitive {
+    background-image: -gtk-gradient(linear, left top, right top,
+                                      from (@bg_color),
+                                      to (shade(@bg_color, 0.9)));
 }
 
 /******************
