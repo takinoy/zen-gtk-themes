@@ -252,18 +252,18 @@ GtkAssistant .sidebar {
 .button {
     -GtkWidget-focus-padding: 1;
     -GtkWidget-focus-line-width: 0;
-    padding: 2px;
+    padding: 2px 3px;
     border-style: solid;
     border-width: 1px;
     border-radius: 3px;
 }
 
 .button.text-button {
-    padding: 2px 3px;
+    padding: 3px 4px;
 }
 
 .button.image-button {
-    padding: 3px;
+    padding: 4px;
 }
 
 GtkSwitch.slider,
@@ -366,28 +366,64 @@ GtkComboBox .separator {
     -GtkWidget-vertical-separator: 0;
 }
 
-.spinbutton {
-    padding: 2px 4px;
-    border-right-width: 0;
-}
-
-.spinbutton.button  {
-    padding: 2px;
-    border-width: 0 1px 0 1px;
-    border-radius: 0;
+/* disable box-shadow focus effects for spinbutton */
+.spinbutton .button, .spinbutton .button:focus {
+    padding: 2px 3px;
     color : mix(@fg_color, @bg_color, 0.3);
+    border-width: 1px 0 1px 1px;
+    border-radius: 0;
+    box-shadow: inset 0 1px alpha(@light_shadow, 0.4),
+                inset -1px 0 @borders,
+                inset 1px 0 alpha(@light_shadow, 0.2);
 }
 
-.spinbutton.button:last-child {
-    border-width: 0 1px 0 0;
+.spinbutton .button:focus:insensitive {
+    color: @fg_insensitive;
 }
 
-.spinbutton.button:focus {
-    box-shadow:none;
+.spinbutton .button:insensitive {
+    border-color: @button_border;
+    box-shadow: inset -1px 0 @borders;
 }
 
+.spinbutton .button:last-child:insensitive {
+    border-color: @button_border;
+    box-shadow: none;
+}
+
+.spinbutton .button:last-child {
+    border-width: 1px 1px 1px 0;
+    border-radius: 0 3px 3px 0;
+    box-shadow: inset 0 1px alpha(@light_shadow, 0.4),
+                inset 1px 0 alpha(@light_shadow, 0.2);
+}
+
+/* display spinbutton entry borders using box shadow */
 .spinbutton.entry {
-    border-radius: 3px 1px 1px 3px;
+    /* center text into box-entry */
+    padding: 2px 3px 2px 5px;
+    border-width: 0;
+    border-radius: 3px;
+    box-shadow: inset 0 1px @border_normal,
+                inset 0 -1px @border_normal,
+                inset 1px 0 @border_normal;
+}
+
+.spinbutton.vertical .button {
+    border-width: 1px;
+    border-radius: 3px 3px 0 0;
+    box-shadow: inset 0 1px alpha(@light_shadow, 0.4),
+                inset 1px 0 alpha(@light_shadow, 0.2);
+}
+
+.spinbutton.vertical .button:last-child {
+    border-radius: 0 0 3px 3px;
+}
+
+.spinbutton.vertical.entry {
+    border-radius: 0;
+    border-width: 0 1px 0 1px;
+    box-shadow: none;
 }
 
 GtkSwitch {
@@ -434,18 +470,22 @@ column-header:last-child .button {
 }
 
 .linked .entry, .linked .button {
-    border-width: 1px 0 1px 1px;
+    border-width: 1px 0 1px 0;
     border-radius: 0;
+    box-shadow: inset 0 1px alpha(@light_shadow, 0.4),
+                inset -1px 0 @borders,
+                inset 1px 0 alpha(@light_shadow, 0.2);
 }
 
 /* leftmost button */
 .linked .entry:first-child, .linked .button:first-child {
+    border-width: 1px 0 1px 1px;
     border-radius: 3px 0 0 3px;
 }
 
 /* rightmost button */
 .linked .entry:last-child, .linked .button:last-child {
-    border-width: 1px;
+    border-width: 1px 1px 1px 0;
     border-radius: 0 3px 3px 0;
 }
 
@@ -453,6 +493,26 @@ column-header:last-child .button {
 .linked .entry:only-child, .linked .button:only-child {
     border-width: 1px;
     border-radius: 3px;
+}
+
+/* remove right box shadow from last-child and only-child */
+.linked .entry:last-child, .linked .button:last-child,
+.linked .entry:only-child, .linked .button:only-child {
+    box-shadow: inset 0 1px alpha(@light_shadow, 0.4),
+                inset 1px 0 alpha(@light_shadow, 0.2);
+}
+
+.linked .button:active {
+    box-shadow: inset 0 1px alpha(@dark_shadow, 0.1),
+                inset -1px 0 @borders,
+                inset 1px 0 alpha(@dark_shadow, 0.05);
+}
+
+/* remove right box shadow from last-child and only-child */
+.linked .entry:last-child:active, .linked .button:last-child:active,
+.linked .entry:only-child:active, .linked .button:only-child:active {
+    box-shadow: inset 0 1px alpha(@dark_shadow, 0.1),
+                inset 1px 0 alpha(@dark_shadow, 0.05);
 }
 
 GtkCheckButton.check, GtkCheckButton.radio {
@@ -802,15 +862,6 @@ GtkScale.slider.mark {
  * hover & focus *
  *****************/
 
-.check:hover, .check:hover:focus, .radio:hover, .radio:hover:focus,
-GtkSwitch:hover,
-.button:hover, .button:hover:active, .button:hover:focus {
-    border-top-color: @border_selected;
-    border-right-color: shade(@border_selected, 0.95);
-    border-bottom-color: shade(@border_selected, 0.9);
-    border-left-color: shade(@border_selected, 0.98);
-}
-
 .button:focus, GtkSwitch:focus, .button.default {
     border-top-color: shade(@border_selected, 0.95);
     border-right-color: shade(@border_selected, 0.9);
@@ -830,12 +881,69 @@ GtkSwitch:hover,
                 inset 1px 0 @selected_base_color;
 }
 
-.spinbutton.button:hover, .spinbutton.button:hover:focus {
-    border-left-color: shade(@button_border, 1.04);
-    box-shadow: inset 0 1px @border_selected,
+.spinbutton.entry:focus {
+    box-shadow: inset 0 2px @selected_base_color,
+                inset -2px 0 @selected_base_color,
+                inset 0 -2px @selected_base_color,
+                inset 2px 0 @selected_base_color,
+                inset 0 1px @border_selected,
+                inset -1px 0 @border_selected,
+                inset 0 -1px @border_selected,
+                inset 1px 0 @border_selected;
+}
+
+.spinbutton.vertical.entry:focus {
+    box-shadow: inset 0 1px @selected_base_color,
+                inset -1px 0 @selected_base_color,
+                inset 0 -1px @selected_base_color,
+                inset 1px 0 @selected_base_color;
+}
+
+/* remove focus color on spinbuttons */
+.spinbutton .button:focus {
+    border-color: @button_border;
+    border-left-color: shade(@border_selected, 0.93);
+}
+
+.spinbutton.vertical .button:focus {
+    border-bottom-color: shade(@border_selected, 0.85);
+}
+
+.spinbutton.vertical .button:focus:last-child {
+    border-top-color: shade(@border_selected, 0.95);
+}
+
+.button:hover, .button:hover:focus, .button:hover:active, GtkSwitch:hover,
+.check:hover, .radio:hover {
+    border-top-color: @border_selected;
+    border-right-color: shade(@border_selected, 0.95);
+    border-bottom-color: shade(@border_selected, 0.9);
+    border-left-color: shade(@border_selected, 0.98);
+}
+
+/* Hover effects on left/right borders for linked buttons */
+.linked .button:hover {
+    box-shadow: inset 0 1px alpha(@light_shadow, 0.4),
+                inset 2px 0 alpha(@light_shadow, 0.2),
                 inset -1px 0 shade(@border_selected, 0.95),
-                inset 0 -1px shade(@border_selected, 0.9),
                 inset 1px 0 shade(@border_selected, 0.98);
+}
+
+.linked .button:first-child:hover, .spinbutton .button:hover {
+    box-shadow: inset 0 1px alpha(@light_shadow, 0.4),
+                inset 1px 0 alpha(@light_shadow, 0.2),
+                inset -1px 0 shade(@border_selected, 0.95);
+}
+
+.linked .button:last-child:hover, .spinbutton .button:last-child:hover {
+    box-shadow: inset 0 1px alpha(@light_shadow, 0.4),
+                inset 2px 0 alpha(@light_shadow, 0.2),
+                inset 1px 0 shade(@border_selected, 0.98);
+}
+
+.spinbutton.vertical .button:hover {
+    box-shadow: inset 0 1px alpha(@light_shadow, 0.4),
+                inset 1px 0 alpha(@light_shadow, 0.2);
 }
 
 column-header .button:hover, column-header .button:hover:focus {
