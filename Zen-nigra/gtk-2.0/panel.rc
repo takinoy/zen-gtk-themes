@@ -1,10 +1,10 @@
-style "panel" = "panel-adaptive-dark"
+style "panel" = "panel-nokto-darker"
 {
 	xthickness = 2
 	ythickness = 2
 }
 
-style "panel_button" = "panel-adaptive-dark"
+style "panel_button" = "panel-nokto-darker"
 {
 		engine "murrine" {
 		contrast			= 0.0
@@ -43,7 +43,7 @@ widget "*Xfce*Panel*Button*"			style:highest "panel_button"
 class "*Xfce*Panel*Button*"				style:highest "panel_button"
 widget_class "*LauncherPlugin*"			style:highest "panel_button"
 widget_class "*ActionsPlugin*"			style:highest "panel_button"
-widget "whiskermenu-window*"			style:highest "adaptive-dark"
+widget "whiskermenu-window*"			style:highest "nokto-darker"
 widget "whiskermenu-window*Button"		style:highest "button-dark-murrine"
 widget "*whiskermenu-window*Scrollbar*"	style:highest "scrollbar-dark"
 

@@ -1,11 +1,11 @@
 /* color scheme */
 @define-color bg_color #3C3C3C;
-@define-color fg_color #D0C9B1;
+@define-color fg_color #D0D0D0;
 @define-color base_color #EEE;
 
 @define-color text_color #101010;
 @define-color selected_bg_color #246662;
-@define-color selected_fg_color #D0D0D0;
+@define-color selected_fg_color #FFF;
 @define-color tooltip_fg_color #000;
 @define-color tooltip_bg_color #F7EFBA;
 
@@ -56,7 +56,7 @@
 @define-color button_bg_insensitive @bg_color;
 @define-color button_border darker(@button_bg_normal);
 @define-color notebook_active shade(@bg_color, 1.2);
-@define-color scrollbar_slider shade(@bg_color, 1.6);
+@define-color scrollbar_slider shade(@fg_color, 0.5);
 @define-color panel_bg_normal @dark_bg_color;
 @define-color panel_bg_prelight mix(@panel_bg_normal, @selected_bg_color, 0.7);
 @define-color panel_bg_active @selected_bg_color;
