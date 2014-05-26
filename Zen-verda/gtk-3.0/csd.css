@@ -23,9 +23,9 @@
 
 .header-bar .button {
     color: @menubar_fg_normal;
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@headerbar_button_bg_normal, 1.05)),
-                                     to (shade(@headerbar_button_bg_normal, 0.97)));
+    background-image: linear-gradient(to bottom,
+                                     shade(@headerbar_button_bg_normal, 1.05),
+                                     shade(@headerbar_button_bg_normal, 0.97));
     border-top-color: shade(@headerbar_button_border, 1.08);
     border-right-color: @headerbar_button_border;
     border-bottom-color: shade(@headerbar_button_border, 0.9);
@@ -38,9 +38,9 @@
 .header-bar GtkComboBox:insensitive,
 .header-bar .button:insensitive {
     color: @menubar_fg_insensitive;
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@menubar_bg_normal, 1.02)),
-                                     to (shade(@menubar_bg_normal, 0.97)));
+    background-image: linear-gradient(to bottom,
+                                     shade(@menubar_bg_normal, 1.02),
+                                     shade(@menubar_bg_normal, 0.97));
     border-top-color: @headerbar_borders;
     border-right-color: shade(@headerbar_borders, 0.95);
     border-bottom-color: shade(@headerbar_borders, 0.9);
@@ -48,9 +48,9 @@
 }
 
 .header-bar .button:active {
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from(shade(@menubar_bg_selected,  0.97)),
-                                     to(shade(@menubar_bg_selected, 1.05)));
+    background-image: linear-gradient(to bottom,
+                                     shade(@menubar_bg_selected,  0.97),
+                                     shade(@menubar_bg_selected, 1.05));
     border-top-color: shade(@headerbar_button_border, 0.9);
     border-right-color: shade(@headerbar_button_border, 0.95);
     border-bottom-color: @headerbar_button_border;
@@ -60,16 +60,16 @@
 }
 
 .header-bar .button:hover {
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@headerbar_bg_hover, 1.05)),
-                                     to (shade(@headerbar_bg_hover, 0.97)));
+    background-image: linear-gradient(to bottom,
+                                     shade(@headerbar_bg_hover, 1.05),
+                                     shade(@headerbar_bg_hover, 0.97));
 }
 
 .header-bar .button:hover:active {
     color: @menubar_fg_normal;
-    background-image: -gtk-gradient(linear, left top, left bottom,
-                                     from (shade(@menubar_bg_selected, 1.02)),
-                                     to (shade(@menubar_bg_selected, 1.1)));
+    background-image: linear-gradient(to bottom,
+                                     shade(@menubar_bg_selected, 1.02),
+                                     shade(@menubar_bg_selected, 1.1));
 }
 
 .header-bar .button:hover,
