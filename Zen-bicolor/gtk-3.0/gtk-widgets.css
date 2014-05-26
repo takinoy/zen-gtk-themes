@@ -8,6 +8,8 @@
 * {
     engine: none;
 
+    background-clip: padding-box;
+
     -GtkButton-child-displacement-x: 1;
     -GtkButton-child-displacement-y: 1;
     -GtkButton-default-border: 0;
@@ -994,11 +996,11 @@ column-header .button:hover, column-header .button:hover:focus {
     color: @menubar_fg_insensitive;
 }
 
-/*********
- * Menus *
- *********/
+/*******************
+ * Menus & Popover *
+ ******************/
 
-.menu {
+.menu, GtkPopover {
     color: @menu_fg_normal;
     background-color: @menu_bg_normal;
     border: solid;
@@ -1007,12 +1009,16 @@ column-header .button:hover, column-header .button:hover:focus {
     padding: 1px;
 }
 
-.menu.button, .menuitem.button {
-    border-radius: 1px;
-    background-color: transparent;
+.menu.button, .menuitem.button, GtkPopover .button {
+    color: @menu_fg_normal;
     background-image: none;
-    border-style: none;
-    box-shadow: none;
+    background-color: transparent;
+    border-color: mix(@menu_fg_normal, @menu_bg_normal, 0.9);
+}
+
+.menu.button:active, .menuitem.button:active {
+    background-color: mix(@menu_bg_normal, shade(@selected_bg_color, 0.8), 0.5);
+    border-color: shade(@menu_bg_normal, 0.8);
 }
 
 .menu *:hover, .menu *:active:hover, .menu *:selected {
@@ -1030,6 +1036,18 @@ column-header .button:hover, column-header .button:hover:focus {
     text-shadow: 1px 1px shade(@menu_bg_normal, 1.05);
 }
 
+.menuitem:hover, .menuitem:hover:active, .menu:hover {
+    border: solid;
+    border-width: 1px;
+    background-image: none;
+    background-color: @menu_bg_selected;
+    border-color: shade(@menu_bg_selected, 0.8);
+}
+
+GtkPopover .check, GtkPopover .radio,
+GtkPopover .check:hover, GtkPopover .radio:hover,
+GtkPopover .check:hover:active, GtkPopover .radio:hover:active,
+GtkPopover .check:insensitive, GtkPopover .radio:insensitive,
 .menuitem .check, .menuitem .radio,
 .menuitem .check:hover, .menuitem .radio:hover,
 .menuitem .check:insensitive, .menuitem .radio:insensitive,
@@ -1038,23 +1056,37 @@ column-header .button:hover, column-header .button:hover:focus {
     background-color: transparent;
 }
 
-.menuitem:hover, .menu:hover {
-    border: solid;
-    border-width: 1px;
-    background-image: none;
-    background-color: @menu_bg_selected;
-    border-color: shade(@menu_bg_selected, 0.8);
-}
-
 .menu:selected, .menuitem:selected {
     color: @menu_fg_selected;
     background-color: @selected_base_color;
     border-color: @border_selected;
 }
 
-.menuitem.separator {
+.menuitem.separator, GtkPopover .separator {
     color: mix(@menu_fg_normal, @menu_bg_normal, 0.9);
     border-color: mix(@menu_fg_normal, @menu_bg_normal, 0.9);
+}
+
+GtkPopover {
+    border-radius: 5px;
+    background-clip: border-box;
+}
+
+GtkPopover .button{
+    border-radius: 5px;
+}
+
+GtkPopover > .list,
+GtkPopover > .view,
+GtkPopover > .toolbar {
+    background-color: transparent;
+}
+
+GtkModelButton.button:active:hover,
+GtkModelButton.button:hover,
+GtkModelButton.button:selected,
+GtkModelButton.button {
+    background-image: none;
 }
 
 /***********
