@@ -182,13 +182,15 @@ style "panel-adaptive" {
 	bg[NORMAL]			= shade(0.9,@bg_color)
 	bg[PRELIGHT]		= mix(0.5, @selected_bg_color, shade(0.9,@bg_color))
 	bg[ACTIVE]			= @selected_bg_color
-	}
+}
 
-style "adaptive-dark" = "dark" {
+style "nokto-darker" = "dark" {
+	fg[NORMAL]			= @fg_color
+	fg[INSENSITIVE]		= mix(0.65, @dark_bg_color, @fg_color)
 	bg[SELECTED]		= @selected_bg_color
-	}
+}
 
-style "panel-adaptive-dark" = "adaptive-dark" {
+style "panel-nokto-darker" = "nokto-darker" {
 	bg[PRELIGHT]		= mix(0.7, @selected_bg_color, @dark_bg_color)
 	bg[ACTIVE]			= @selected_bg_color
 }

@@ -2,7 +2,7 @@
 gtk-color-scheme ="base_color:#262626\nfg_color:#D0C9B1\ntooltip_fg_color:#DDDDDD\nselected_bg_color:#246662\nselected_fg_color:#D0D0D0\ntext_color:#D0D0D0\nbg_color:#3C3C3C\ntooltip_bg_color:#333333"
 gtk-color-scheme = "selected_base_color:#246662"
 gtk-color-scheme = "selected_text_color:#FFFFFF"
-gtk-color-scheme = "dark_bg_color:#212121\ndark_text_color:#D0C9B1"
+gtk-color-scheme = "dark_bg_color:#212121\ndark_text_color:#D0D0D0"
 
 include "gtk-widgets.rc"
 include "panel.rc"
@@ -62,10 +62,12 @@ widget_class "*<GtkCheckButton>*"					style "radiocheck-nokto"
 
 style "scrollbar-nokto"
 {
-	bg[NORMAL]        = shade(1.5, @bg_color)
+	bg[SELECTED]		= shade(0.4, @text_color)
+	bg[PRELIGHT]		= shade(0.6, @text_color)
 
 	engine "murrine" {
-		prelight_shade		= 1.2
+		border_colors 			= {shade(0.8, @bg_color), shade(0.8, @bg_color)}
+		prelight_shade			= 1.2
 	}
 }
 
@@ -101,7 +103,7 @@ widget_class "*<GtkMenuBar>*"		style "menubar-dark-murrine"
 widget_class "*<GtkMenuItem>.*.<GtkScale>" style "scale"
 
 # Xfce specific theming
-widget_class "*XfsmLogoutDialog*"							style "adaptive-dark"
+widget_class "*XfsmLogoutDialog*"							style "nokto-darker"
 widget_class "XfsmLogoutDialog"								style "xfsm-logout"
 widget_class "*XfsmLogoutDialog*GtkVBox.GtkVBox.GtkLabel"	style "xfsm-label"
 widget_class "*XfsmLogoutDialog*Button"						style "button-dark-murrine"
@@ -114,7 +116,7 @@ widget "xfwm"												style "titlebar-adaptive"
 class "MetaFrames"											style "titlebar-adaptive"
 widget_class "MetaFrames"									style "titlebar-adaptive"
 class "*XfceHeading*"										style"xfceheaders"
-widget "xfwm4-tabwin*"										style "adaptive-dark"
+widget "xfwm4-tabwin*"										style "nokto-darker"
 # theming for ochosi/tabwin
 widget "xfwm4-tabwin*Button"								style "button-dark-murrine"
 widget "xfwm4-tabwin*Button"								style "tabwin-button"

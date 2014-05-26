@@ -45,17 +45,17 @@ style "titlebar-dark" = "default"
 {
 	bg[NORMAL]			= shade(1.82, @dark_bg_color)
 	bg[SELECTED]		= shade(1.82, @dark_bg_color)
-	fg[SELECTED]		= @dark_text_color
+	fg[SELECTED]		= mix(0.26, @dark_bg_color, "#FFFFFF")
 	fg[INSENSITIVE]		= shade(0.75, @dark_text_color)
 }
 
-style"xfceheaders"
+style "xfceheaders"
 {
 	text[NORMAL]	=@fg_color
 	base[NORMAL]	=@bg_color
 }
 
-style"xfceheaders-dark"
+style "xfceheaders-dark"
 {
 	text[NORMAL]	=@dark_text_color
 	base[NORMAL]	=shade(1.82, @dark_bg_color)
