@@ -1,3 +1,11 @@
+0.14.2
+    Client-side decorations support.
+    Change gtk3 progress bar, level-bar and scale style.
+    Add support for app-notification and popover.
+    Update buttons, spinbuttons, separator for gtk 3.12.
+    Revert workaround for gtk 3.8 and gtk 3.10 apps.
+    Various style adjustment for gtk2 and gtk3.
+    Fix borders style for gnome disk utility.
 0.14.1
     Improve menubar style
     Fix zen-griza xfce-header color
