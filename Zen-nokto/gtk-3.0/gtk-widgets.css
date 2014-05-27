@@ -131,15 +131,6 @@
     color: alpha(@fg_color, 0.8);
 }
 
-.tooltip, .floating-bar {
-    border:solid;
-    border-width: 1px;
-    color: @tooltip_fg_color;
-    background-image: none;
-    background-color: @tooltip_bg_color;
-    border-color: darker(@tooltip_bg_color);
-}
-
 .view, .entry {
     color: @text_color;
     -GtkWidget-focus-line-pattern: "\1";
@@ -542,6 +533,32 @@ GtkCheckButton.check:inconsistent:insensitive,
 GtkCheckButton.radio:inconsistent:insensitive,
 GtkCheckButton.check:inconsistent, GtkCheckButton.radio:inconsistent {
     background-color: transparent;
+}
+
+/***************************
+ * tooltip & notifications *
+ ***************************/
+ 
+.tooltip, .floating-bar, .app-notification {
+    border:solid;
+    border-width: 1px;
+    color: @tooltip_fg_color;
+    background-image: none;
+    background-color: @tooltip_bg_color;
+    border-color: darker(@tooltip_bg_color);
+}
+
+.app-notification {
+    padding: 0 0 0 6px;
+}
+
+.app-notification .button {
+    background-image: none;
+}
+
+.app-notification .button:active {
+    background-color: mix(@tooltip_bg_color, shade(@selected_bg_color, 0.8), 0.5);
+    background-image: none;
 }
 
 /*********************
