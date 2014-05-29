@@ -800,12 +800,15 @@ column-header .button:hover, column-header .button:hover:focus {
                color-stop(1, alpha(@menubar_border, 0.2)));
     border-style: solid;
     border-width: 0px 0px 1px 0px;
+    border-image-slice: 1;
+}
+
+.menubar, .header-bar {
     border-image-source: -gtk-gradient (linear,
                0 0, 1 0,
                color-stop(0, @menubar_border),
                color-stop(0.9, @menubar_border),
                color-stop(1, @menubar_bg_normal));
-    border-image-slice: 1;
 }
 
 .menubar>.menuitem {
@@ -941,13 +944,16 @@ GduWindow .menubar {
                color-stop(1, alpha(@borders, 0.2)));
     border-style: solid;
     border-width: 0px 0px 1px 0px;
+    border-image-slice: 1;
+}
+
+.toolbar, .header-bar {
     border-image-source: -gtk-gradient (linear,
                0 0, 1 0,
                color-stop(0, @bg_color),
                color-stop(0.1, @borders),
                color-stop(0.9, @borders),
                color-stop(1, @bg_color));
-    border-image-slice: 1;
 }
 
 .primary-toolbar {
