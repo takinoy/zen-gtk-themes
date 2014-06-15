@@ -1,3 +1,7 @@
+0.10.16
+    Change gtk3 progress bar, level-bar and scale style.
+    Various style adjustment for gtk2 and gtk3.
+    Fix borders style for gnome disk utility.
 0.10.15
     Fix gtk2 "button-dark" style
     Change zen-bicolor background color
