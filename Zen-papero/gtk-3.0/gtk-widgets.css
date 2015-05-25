@@ -303,6 +303,14 @@ GtkComboBox:insensitive,
     box-shadow: none;
 }
 
+.button.flat,
+GtkComboBox.flat {
+    border-color: transparent;
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+}
+
 .button:active, .toolbar .button:active, .button.default:active {
     background-image: linear-gradient(to bottom,
                                      shade(@bg_active,  0.97),

@@ -35,7 +35,7 @@
                 inset 1px 0 alpha(@headerbar_light_shadow, 0.2);
 }
 
-.header-bar .linked .entry, .linked .button {
+.header-bar .linked .entry, .header-bar .linked.button {
     box-shadow: inset 0 1px alpha(@headerbar_light_shadow, 0.4),
                 inset -1px 0 @headerbar_borders,
                 inset 1px 0 alpha(@headerbar_light_shadow, 0.2);
