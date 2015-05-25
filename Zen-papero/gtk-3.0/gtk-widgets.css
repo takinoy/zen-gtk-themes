@@ -1028,10 +1028,13 @@ column-header .button:hover, column-header .button:hover:focus {
 .menu, GtkPopover {
     color: @menu_fg_normal;
     background-color: @menu_bg_normal;
-    border: solid;
+    border-style: solid;
     border-width: 1px;
     border-color: shade(@menu_bg_normal, 0.8);
-    padding: 1px;
+/*
+    Workaround to avoid border issue...
+*/
+    padding: 0px;
 }
 
 .menu.button, .menuitem.button, GtkPopover .button {
@@ -1051,7 +1054,7 @@ column-header .button:hover, column-header .button:hover:focus {
 }
 
 .menuitem {
-    padding: 3px 4px;
+    padding: 3px 5px;
     border-width: 1px 1px 1px 1px;
 }
 

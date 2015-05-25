@@ -212,7 +212,11 @@
     icon-shadow: 0 1px @headerbar_light_shadow;
 }
 
-.window-frame {
+/**********************
+ * Window Decorations *
+ *********************/
+
+.window-frame.csd {
     border-style: none;
     border-radius: 2px 2px 0 0;
     box-shadow: 0 1px 7px alpha(black, 0.7),
@@ -221,6 +225,11 @@
                 0 0 0 1px mix(@titlebar_border_normal, @menubar_bg_normal, 0.5);
     /* this is used for the resize cursor area */
     margin: 10px;
+}
+
+.window-frame.csd.popup, .window-frame.csd.tooltip {
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .window-frame.tiled {
