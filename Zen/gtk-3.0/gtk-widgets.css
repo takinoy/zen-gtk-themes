@@ -1030,7 +1030,6 @@ column-header .button:hover, column-header .button:hover:focus {
 
 .menu, GtkPopover {
     color: @menu_fg_normal;
-    background-color: @menu_bg_normal;
     border-style: solid;
     border-width: 1px;
     border-color: shade(@menu_bg_normal, 0.8);
@@ -1040,16 +1039,34 @@ column-header .button:hover, column-header .button:hover:focus {
     padding: 0px;
 }
 
-.menu.button, .menuitem.button, GtkPopover .button {
+.menu, GtkPopover.background {
+    background-color: @menu_bg_normal;
+}
+
+.menu.button, GtkPopover .button {
     color: @menu_fg_normal;
     background-image: none;
     background-color: transparent;
+    border-style:solid;
+    border-color: mix(@menu_fg_normal, @menu_bg_normal, 0.9);
+    box-shadow:none;
+}
+
+.menu.button:active, .menu.button:checked,
+GtkPopover .button:active, GtkPopover .button:checked {
+    background-color: mix(@menu_bg_normal, shade(@selected_bg_color, 0.8), 0.5);
+    border-color: shade(@menu_bg_normal, 0.8);
+    box-shadow:none;
+}
+
+GtkPopover .trough {
+    background-image:none;
+    background-color: shade(@menu_bg_normal, 0.85);
     border-color: mix(@menu_fg_normal, @menu_bg_normal, 0.9);
 }
 
-.menu.button:active, .menu.button:checked {
-    background-color: mix(@menu_bg_normal, shade(@selected_bg_color, 0.8), 0.5);
-    border-color: shade(@menu_bg_normal, 0.8);
+GtkPopover .trough:insensitive {
+    background-color: @menu_bg_normal;
 }
 
 .menu *:hover, .menu *:active:hover, .menu *:selected {
@@ -1077,7 +1094,6 @@ column-header .button:hover, column-header .button:hover:focus {
 
 GtkPopover .check, GtkPopover .radio,
 GtkPopover .check:hover, GtkPopover .radio:hover,
-GtkPopover .check:hover:active, GtkPopover .radio:hover:active,
 GtkPopover .check:insensitive, GtkPopover .radio:insensitive,
 .menuitem .check, .menuitem .radio,
 .menuitem .check:hover, .menuitem .radio:hover,
@@ -1105,6 +1121,10 @@ GtkPopover {
 
 GtkPopover .button{
     border-radius: 5px;
+}
+
+GtkPopover .menuitem{
+    border-radius: 3px;
 }
 
 GtkPopover > .list,
@@ -1239,3 +1259,4 @@ GtkImage, GtkLabel {
 @import url("panel.css");
 @import url("csd.css");
 @import url("lightdm-gtk-greeter.css");
+
