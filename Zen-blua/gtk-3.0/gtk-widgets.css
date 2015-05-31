@@ -643,7 +643,7 @@ GtkLevelBar.vertical {
     border-color: @borders;
 }
 
-.trough, .level-bar.fill-block.empty-fill-block {
+.trough, GtkSwitch.trough, .level-bar.fill-block.empty-fill-block {
     background-image: linear-gradient(to bottom,
                                      shade(@bg_color, 0.85),
                                      shade(@bg_color, 0.95));
