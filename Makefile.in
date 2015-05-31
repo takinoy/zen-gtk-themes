@@ -119,7 +119,7 @@ am__can_run_installinfo = \
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 am__DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/README.in \
 	$(top_srcdir)/arch/PKGBUILD.in AUTHORS COPYING ChangeLog \
-	INSTALL NEWS README compile install-sh missing
+	INSTALL NEWS README TODO compile install-sh missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
@@ -610,7 +610,7 @@ refresh:
 			cp -flrv $(maindir)/$$path $$vardir/$$path; \
 		done; \
 	done;
-	for vardir in $(maindir) $(light_color_dirs); do \
+	for vardir in $(maindir) $(light_color_dirs) $(dark_color_dirs); do \
 		cp -flrv $(darkdir)/gtk-3.0/gtk.css \
 		$$vardir/gtk-3.0/gtk-dark.css; \
 	done;

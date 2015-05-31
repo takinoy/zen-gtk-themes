@@ -42,7 +42,7 @@ refresh:
 			cp -flrv $(maindir)/$$path $$vardir/$$path; \
 		done; \
 	done;
-	for vardir in $(maindir) $(light_color_dirs); do \
+	for vardir in $(maindir) $(light_color_dirs) $(dark_color_dirs); do \
 		cp -flrv $(darkdir)/gtk-3.0/gtk.css \
 		$$vardir/gtk-3.0/gtk-dark.css; \
 	done;
