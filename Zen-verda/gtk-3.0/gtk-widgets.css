@@ -708,11 +708,19 @@ GtkProgressBar, GtkScale {
 }
 
 GtkScale, GtkScale:insensitive {
-    -GtkRange-slider-width: 13;
-    -GtkRange-trough-border: 2;
-    -GtkScale-slider-length: 13;
+    -GtkRange-slider-width: 15;
+    -GtkRange-trough-border: 0;
+    -GtkScale-slider-length: 15;
 
-    margin: 6px;
+    margin: 1;
+}
+
+.scale.trough {
+    margin: 5px 0;
+}
+
+.scale.trough.vertical {
+    margin: 0 5px;
 }
 
 GtkScale.slider {
