@@ -1,3 +1,15 @@
+0.16.0
+    Fix gtk3 scale widget
+
+0.14.3
+    Fix gtk3 switch widget
+    Fix GtkPopover widget
+    Add gtk-dark.css for zen-nigra
+    Fix checked button state
+    Fix button border issue
+    Fix menu border issue
+    Fix flat button appearance
+    Update makefiles
 0.14.2
     Client-side decorations support.
     Change gtk3 progress bar, level-bar and scale style.
@@ -16,6 +28,7 @@
     Change header-bar style for zen-bicolor
     Change zen-bicolor background color
     Fix issues with some gtk 3.8 apps
+
 0.13.2
     Improve dark buttons style
     Adjust gtk3 hover:active colors

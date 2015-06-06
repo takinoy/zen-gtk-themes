@@ -16,7 +16,7 @@ Features
 dependencies
 ------------
 - gtk2 engines: Murrine>=0.98, clearlooks, pixbuf. A gtk2 version with the clearlooks engine is available on the Zen-0.3.x package.
-- gtk3 version 3.12.x, for older releases compatibles versions are availables.
+- gtk3 version 3.16.x, for older releases compatibles versions are availables.
 
 Install
 --------
